@@ -1,0 +1,38 @@
+\@ifundefined {etoctocstyle}{\let \etoc@startlocaltoc \@gobble \let \etoc@settocdepth \@gobble \let \etoc@depthtag \@gobble \let \etoc@setlocaltop \@gobble }{}
+\babel@toc {spanish}{}
+\contentsline {chapter}{\nonumberline \'{I}ndice general}{\es@scroman {v}}{chapter*.1}%
+\contentsline {part}{\nonumberline Mecánica Analítica}{1}{part*.3}%
+\contentsline {chapter}{\numberline {1}Cálculo Variacional}{2}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Método de pequeñas variaciones}{2}{section.1.1}%
+\contentsline {subsection}{\nonumberline Variación de una función}{3}{subsection*.6}%
+\contentsline {subsection}{\nonumberline Variación de un funcional}{3}{subsection*.8}%
+\contentsline {section}{\numberline {1.2}Extremizar un funcional}{3}{section.1.2}%
+\contentsline {subsubsection}{\nonumberline Geodésica del plano}{4}{subsubsection*.10}%
+\contentsline {subsection}{\nonumberline Identidad de Beltrami}{4}{subsection*.12}%
+\contentsline {section}{\numberline {1.3}Generalización a varias variables}{5}{section.1.3}%
+\contentsline {subsection}{\nonumberline Ligaduras}{5}{subsection*.14}%
+\contentsline {subsubsection}{\nonumberline Multiplicadores de Lagrange}{5}{subsubsection*.16}%
+\contentsline {chapter}{\numberline {2}Mecánica Lagrangiana}{8}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Principio de Hamilton}{8}{section.2.1}%
+\contentsline {subsubsection}{\nonumberline Muelle elástico}{8}{subsubsection*.18}%
+\contentsline {section}{\numberline {2.2}Coordendas generalizadas}{8}{section.2.2}%
+\contentsline {section}{\numberline {2.3}Ligaduras}{9}{section.2.3}%
+\contentsline {subsubsection}{\nonumberline Tipos de ligaduras}{9}{subsubsection*.20}%
+\contentsline {subsection}{\nonumberline Sistema holonómico}{10}{subsection*.22}%
+\contentsline {subsection}{\nonumberline Multiplicadores de Lagrange}{10}{subsection*.24}%
+\contentsline {section}{\numberline {2.4}Teorema de la Energía Cinética}{10}{section.2.4}%
+\contentsline {subsection}{\nonumberline Función k-homogénea}{10}{subsection*.26}%
+\contentsline {subsubsection}{\nonumberline Teorema de Euler}{10}{subsubsection*.28}%
+\contentsline {subsection}{\nonumberline Forma cuadrática}{11}{subsection*.30}%
+\contentsline {subsection}{\nonumberline Teorema}{11}{subsection*.32}%
+\contentsline {chapter}{\numberline {3}Simetrias y cantidades conservadas}{13}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Ejemplos de invariancias}{13}{section.3.1}%
+\contentsline {subsection}{\nonumberline Invariancia temporal y Hamiltoniano}{13}{subsection*.34}%
+\contentsline {subsection}{\nonumberline Invariancia espacial}{13}{subsection*.36}%
+\contentsline {section}{\numberline {3.2}Teorema de Noether}{13}{section.3.2}%
+\contentsline {subsection}{\nonumberline Enunciado}{13}{subsection*.38}%
+\contentsline {subsection}{\nonumberline Demostración}{13}{subsection*.40}%
+\contentsline {subsection}{\nonumberline Ejemplos}{13}{subsection*.42}%
+\contentsline {chapter}{\numberline {4}Mecánica Hamiltoniana}{14}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Transformada de Legendre}{14}{section.4.1}%
+\contentsline {subsection}{\nonumberline Equivalencia Lagrange $\DOTSB \tmspace +\thickmuskip {.2777em}\DOTSB \Leftarrow \joinrel \Rightarrow \tmspace +\thickmuskip {.2777em}$ Hamilton}{14}{subsection*.44}%
