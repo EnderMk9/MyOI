@@ -1,0 +1,21 @@
+\chapter{Paréntesis de Poisson} \refstepcounter{subsection}
+Sea $f=f(\{q_j,p_j\};t)$ una función de las coordenadas canónicas, podemos hacer su derivada total con respecto al tiempo, tal que
+\begin{equation} \label{5.0.1}
+    \frac{d f}{dt} = \sum^s \left(\frac{\partial f}{\partial q_j}\dot{q}_j+\frac{\partial f}{\partial p_j}\dot{p}_j\right) + \frac{\patial f}{\partial t}
+\end{equation} \refstepcounter{subsection}
+Usando (4.2.5) (Ecs. H.) llegamos a 
+\begin{equation} \label{5.0.2}
+\frac{d f}{dt} = \sum^s \left(\frac{\partial f}{\partial q_j}\frac{\partial \pazocal{H}}{\partial p_j}-\frac{\partial f}{\partial p_j}\frac{\partial \pazocal{H}}{\partial q_j}\right) + \frac{\patial f}{\partial t} = [f,\pazocal{H}] + \frac{\patial f}{\partial t}
+\end{equation} \refstepcounter{subsection}
+Dónde $[f,\pazocal{H}]$ es el \textit{paréntesis de Poisson} de $f$ y $\pazocal{H}$, en general lo definimos para dos funciones como
+\begin{equation} \label{5.0.3}
+    [f,g]=  \sum^s \left(\frac{\partial f}{\partial q_j}\frac{\partial g}{\partial p_j}-\frac{\partial f}{\partial p_j}\frac{\partial g}{\partial q_j}\right)
+\end{equation} \refstepcounter{subsection}
+Sus propiedades algebraicas son muy similares a aquellas del producto vectorial puesto que su expresión es muy similar, son sencillas de verificar reemplando a fuerza bruta en (5.0.3).
+\begin{itemize}
+    \item Es alternada $[f,g]=-[g,f]$ y $[f,f]=0$.
+    \item Si $[f,g]=0 \iff [f,g]=[g,f]=0$ las funciones conmutan.
+    \item Es lineal, $[f,\alpha g + \beta h] = \alpha [f,g] + \beta [f,h]$.
+    \item Existe una regla del producto $[f,gh]=g[f,h]+h[f,g]$.
+    \item Se verifica la \textit{Identidad de Jacobi}, $\left[f,[g,h]\right]+\left[h,[f,g]\right]+\left[g,[h,f]\right]=0$.
+\end{itemize}

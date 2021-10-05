@@ -1,7 +1,7 @@
 \chapter{Simetrias y cantidades conservadas}
 \labch{intro}
 
-\section{Ejemplos de invariancias}
+\section{Ejemplos de invariancias} 
 \subsection{Invariancia temporal y Hamiltoniano}\refstepcounter{subsection}
 Si tenemos un desplazamiento arbitratio en el tiempo, $t\mapsto t + \delta t$, y se verifica que $\pazocal{L}(\{q_j,\dot{q}_j\};t)=\pazocal{L}(\{q_j,\dot{q}_j\};t+\delta t)$, esto implica que la parcial de $\pazocal{L}$ con respecto a $t$ es 0. Si ahora desarrollamos la derivadada total de de $\pazocal{L}$ con respecto a $t$, tenemos
 \vspace{-13pt}
@@ -28,7 +28,7 @@ Si tenemos un desplazamiento arbitrario en una de las coordenadas generalizadas,
 \begin{equation} \label{3.2.1}
     \frac{d}{dt}\left(\frac{\partial \pazocal{L}}{\partial \dot{q}_k}\right) = \dot{p}_k = 0 \implies p_k = C
 \end{equation} \refstepcounter{subsection}
-\section{Teorema de Noether}
+\section{Teorema de Noether} \refstepcounter{subsection}
 Consideremos unas transformaciones genéricas $h_j$ de las coordendas $q_j$, parametrizadas por un parámetro $\epsilon$ independiente del tiempo tal que 
 \begin{equation} \label{3.3.1}
     q_j \mapsto q'=h_j(\{q_i\},\epsilon) \ \ \ \ h_j(\{q_i\},0)=q_j
@@ -36,11 +36,11 @@ Consideremos unas transformaciones genéricas $h_j$ de las coordendas $q_j$, par
 \vspace{-40pt}
 \subsection{Enunciado} 
 Si el conjunto de las transformaciones $h_j$ deja invariante a $\pazocal{L}$ a orden $\epsilon$ (orden uno)
-\begin{equation} \label{3.3.1}
+\begin{equation} \label{3.3.2}
     \pazocal{L}(\(\{q_j,\dot{q}_j\};t)+ O(\epsilon^2)=\pazocal{L}(\(h_j(\{q_i\},\epsilon),\dot{h}_j(\{q_i,\dot{q}_i\},\epsilon)\);t)
 \end{equation} \refstepcounter{subsection}
 Entonces se conseva la siguiente cantidad
-\begin{equation} \label{3.3.1}
+\begin{equation} \label{3.3.3}
     I (\{q_j,\dot{q}_j\};t) = \sum_j^s{\frac{\partial \pazocal{L}}{\partial \dot{q}_j}\frac{d h_j}{d\epsilon}} \ \ \ \ \ \frac{d I}{dt} = 0
 \end{equation} \refstepcounter{subsection}
 Nuestra misión va a ser encontrar las transformaciones (simetrías) que no alteren $\pazocal{L}$ para hallar cantidades conservadas asociadas.
