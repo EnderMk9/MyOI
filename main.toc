@@ -29,10 +29,12 @@
 \contentsline {section}{\numberline {3.1}Ejemplos de invariancias}{13}{section.3.1}%
 \contentsline {subsection}{\nonumberline Invariancia temporal y Hamiltoniano}{13}{subsection*.34}%
 \contentsline {subsection}{\nonumberline Invariancia espacial}{13}{subsection*.36}%
-\contentsline {section}{\numberline {3.2}Teorema de Noether}{13}{section.3.2}%
-\contentsline {subsection}{\nonumberline Enunciado}{13}{subsection*.38}%
-\contentsline {subsection}{\nonumberline Demostración}{13}{subsection*.40}%
-\contentsline {subsection}{\nonumberline Ejemplos}{13}{subsection*.42}%
-\contentsline {chapter}{\numberline {4}Mecánica Hamiltoniana}{14}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Transformada de Legendre}{14}{section.4.1}%
-\contentsline {subsection}{\nonumberline Equivalencia Lagrange $\DOTSB \tmspace +\thickmuskip {.2777em}\DOTSB \Leftarrow \joinrel \Rightarrow \tmspace +\thickmuskip {.2777em}$ Hamilton}{14}{subsection*.44}%
+\contentsline {section}{\numberline {3.2}Teorema de Noether}{14}{section.3.2}%
+\contentsline {subsection}{\nonumberline Enunciado}{14}{subsection*.38}%
+\contentsline {subsection}{\nonumberline Ejemplo}{14}{subsection*.40}%
+\contentsline {chapter}{\numberline {4}Mecánica Hamiltoniana}{15}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Transformada de Legendre}{15}{section.4.1}%
+\contentsline {subsection}{\nonumberline Varias variables}{15}{subsection*.43}%
+\contentsline {subsubsection}{\nonumberline Transformada de Legendre del Lagrangiano}{15}{subsubsection*.45}%
+\contentsline {section}{\numberline {4.2}Ecuaciones de Hamilton}{16}{section.4.2}%
+\contentsline {subsubsection}{\nonumberline Ejemplo}{16}{subsubsection*.47}%

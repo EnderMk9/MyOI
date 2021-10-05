@@ -6,13 +6,13 @@ Definimos además las derivadas totales temporales como $\{\dot{x}_{\alpha i}\}$
 
 \section{Principio de Hamilton}\refstepcounter{subsection}
 
-Definimos una función llamada \textbf{Lagrangiano}\sidenote{La definición de \textbf{Lagrangiano} dependerá mucho de la configuración del sistema físico, pero como norma géneral en mecánica clásica (2.1.1) es la expresión más común de la función.}
+Definimos una función llamada \textbf{Lagrangiano}\sidenote{La definición de \textbf{Lagrangiano} dependerá de la configuración del sistema físico, pero como norma géneral en mecánica clásica (2.1.1) es la expresión más común de la función que verifica (2.1.3).}
 \begin{equation} \label{2.1.1}
     \pazocal{L}(\{x_{\alpha i},\dot{x}_{\alpha i}\};t)=T-U
 \end{equation} \refstepcounter{subsection}
 Dónde $T$ es la energía cinética del sistema y $U$ es la energía potencial (conservativa o no), de tal forma que definimos el siguiente funcional llamado \textbf{acción}
 \begin{equation} \label{2.1.2}
-    S = \int_{t_A}^{t_B}{\pazocal{L}(\{x_{\alpha i},\dot{x}_{\alpha i}\};t)dt}
+    S \equiv \int_{t_A}^{t_B}{\pazocal{L}(\{x_{\alpha i},\dot{x}_{\alpha i}\};t)dt}
 \end{equation} \refstepcounter{subsection}
 \textbf{Principio de Hamilton o de mínima acción.} La evolución temporal de un sistema físico es aquella que extremiza la acción, es decir que $\delta S = 0$ para la evolución real del sistema, lo cual es equivalente a
 \begin{equation} \label{2.1.3}
@@ -39,9 +39,9 @@ De esta forma, podemos expresar $\pazocal{L}$ en función de las coordenadas y v
     \boxed{\frac{\partial \pazocal{L}}{\partial q_j} -\frac{d}{dt}\left(\frac{\partial \pazocal{L}}{\partial \dot{q}_j}\right) =0}
 \end{equation} \refstepcounter{subsection}\normalsize
 
-Definimos además el \textbf{momento generalizado}, que para cartesianas es el momento lineal y para polares es el momento angular. También definimos la \textbf{fuerza generalizada}, que es la proyección del vector cartesiano en el sistema de vectores ortonormal asociado a las coordenadas generalizadas.
+Definimos además el \textbf{momento generalizado}, que para cartesianas es el momento lineal y para polares es el momento angular. También definimos la \textbf{fuerza generalizada}, que es la proyección del vector cartesiano en el sistema de vectores asociado a las coordenadas generalizadas.
 \begin{equation} \label{2.2.2}
-    p_j = \frac{\partial \pazocal{L}}{\partial \dot{q}_j} \ \ \ \ Q_j = -\frac{\partial U}{\partial q_j}=\sum_\alpha^N{\mathbf{F}_\alpha\cdot \frac{\partial \mathbf{r}_{\alpha}}{\partial q_j}} \ \ \ \ \mathbf{F}=\sum_j^n{Q_j \hat{u}_{q_j}}
+    p_j = \frac{\partial \pazocal{L}}{\partial \dot{q}_j} \ \ \ \ Q_j = -\frac{\partial U}{\partial q_j}=\sum_\alpha^N{\mathbf{F}_\alpha\cdot \frac{\partial \mathbf{r}_{\alpha}}{\partial q_j}}
 \end{equation} \refstepcounter{subsection}
 %-------------------------------------------------------------------------------------------
 \section{Ligaduras}\refstepcounter{subsection}
@@ -59,7 +59,7 @@ Entonces podemos ver que nos queda la regla de la cadena e integramos
 Luego a parte si la ligadura depende explícitamente del tiempo se llama \textbf{forzada} o \textbf{reónoma}, si no depende explcítamente del tiempo, se denominan \textbf{naturales} o \textbf{esclerónomas}.
 %-------------------------------------------------------------------------------------------
 \subsection{Sistema holonómico}
-Decimos que un sistema es \textbf{holonómico} cuando podemos resolver (o bien en cartesianas o en generalizadas) las ecuaciones de ligadura (holónomas) y expresar $m$ coordenadas como explícitamente dependientes de $s$ coordenadas independientes, reduciendo el sistema a $s$ variables que podemos resolver usando (2.2.1).
+Decimos que un sistema es \textbf{holonómico} cuando podemos resolver (o bien en cartesianas o en generalizadas) las ecuaciones de ligadura (holónomas) y expresar $m$ coordenadas como explícitamente dependientes de $s$ coordenadas independientes, reduciendo el sistema a $s$ variables que podemos resolver usando (2.2.1)  (\textit{E-L}).
 %-------------------------------------------------------------------------------------------
 \subsection{Multiplicadores de Lagrange}
 En el caso en el que el sistema no sea holonómico, y no podamos resolver las ecuaciones de ligadura, al igual que en la sección 1.3 tenemos que recurrir a multiplicadores de multiplicadores de \textit{Lagrange}, podemos obtener una expresión equivalente a (1.3.15) modificando el lagrangiano de la siguiente forma
@@ -87,52 +87,55 @@ Una función k-homogéna cumple la siguiente expresión, donde $\lambda$ es un p
 Podemos derivar cada lado de (2.4.1) con respecto al parámetro
 \[\frac{\partial}{\partial \lambda} f(\{\lambda x_i\})= \frac{\partial}{\partial \lambda} \lambda^k f(\{x_i\})\]
 En el primer miembro hacemos la regla de la cadena y en el segundo es la derivada de una potencia
-\[\sum_j \frac{\partial f(\{\lambda x_i\})}{\partial (\lambda x_j)} \frac{d (\lambda x_j)}{d \lambda}= \sum_j \frac{\partial f(\{\lambda x_i\})}{\partial (\lambda x_j)} x_j=  k \lambda^{k-1} f(\{x_i\})\]
+\[\sum_j^N \frac{\partial f(\{\lambda x_i\})}{\partial (\lambda x_j)} \frac{d (\lambda x_j)}{d \lambda}= \sum_j^N \frac{\partial f(\{\lambda x_i\})}{\partial (\lambda x_j)} x_j=  k \lambda^{k-1} f(\{x_i\})\]
 Como $\lambda$ es un parámetro arbitrario, podemos tomar $\lambda=1$ y tenemos
 \begin{equation} \label{2.4.2}
-    \sum_j \frac{\partial f(\{x_i\})}{\partial x_j} x_j=  k f(\{x_i\})
+    \sum_j^N \frac{\partial f(\{x_i\})}{\partial x_j} x_j=  k f(\{x_i\})
 \end{equation} \refstepcounter{subsection}
 %------------------------------------------------------------------------------------------
 \subsection{Forma cuadrática}
 Una forma cuadrática es una función 2-homogénea de la siguiente forma
 \begin{equation} \label{2.4.3}
-    f(\{x_i\})=\sum_{i,j}{{a_{jk} x_j x_k}}=\mathbf{x} A \mathbf{x}^T
+    f(\{x_i\})=\sum_{i,j}^N{{a_{jk} x_j x_k}}=\mathbf{x} A \mathbf{x}^T
 \end{equation} \refstepcounter{subsection}
 Donde $a_{jk}$ no tienen por que ser constantes, pueden ser funciones de otras variables, pero no de $x_i$.
 %------------------------------------------------------------------------------------------
 \subsection{Teorema}
 En coordenadas cartesianas la expresión de la energía cinética es una forma cuadrática que solo depende de las velocidades que tiene la siguiente forma
 \begin{equation} \label{2.4.4}
-    T=T(\{x_{\alpha i}\})=\frac{1}{2} \sum_{\alpha, i} m_\alpha \dot{x}_{\alpha i}^2
+    T=T(\{x_{\alpha i}\})=\frac{1}{2} \sum_{\alpha, i}^{N,d} m_\alpha \dot{x}_{\alpha i}^2
 \end{equation} \refstepcounter{subsection}
 \vspace{-25pt}
 
 Si $x_{\alpha i}(\{q_j\};t)$, entonces
 \begin{equation} \label{2.4.5}
-    \dot{x}_{\alpha i}=\sum_j \frac{\partial x_{\alpha i}}{\partial q_j}\dot{q}_j + \frac{\partial x_{\alpha i}}{\partial t}=\dot{x}_{\alpha i}(\{q_j,\dot{q}_j\};t)
+    \dot{x}_{\alpha i}=\sum_j^s \frac{\partial x_{\alpha i}}{\partial q_j}\dot{q}_j + \frac{\partial x_{\alpha i}}{\partial t}=\dot{x}_{\alpha i}(\{q_j,\dot{q}_j\};t)
 \end{equation} \refstepcounter{subsection}
 Elevando (2.4.5) al cuadrado tenemos
-\[\dot{x}_{\alpha i}^2= \left(\sum_j \frac{\partial x_{\alpha i}}{\partial q_j}\dot{q}_j \right) \left(\sum_k \frac{\partial x_{\alpha i}}{\partial q_k}\dot{q}_k \right) + 2\frac{\partial x_{\alpha i}}{\partial t} \sum_j \frac{\partial x_{\alpha i}}{\partial q_j}\dot{q}_j  + \left(\frac{\partial x_{\alpha i}}{\partial t}\right)^2 = \]
+\[\dot{x}_{\alpha i}^2= \left(\sum_j^s \frac{\partial x_{\alpha i}}{\partial q_j}\dot{q}_j \right) \left(\sum_k^s \frac{\partial x_{\alpha i}}{\partial q_k}\dot{q}_k \right) + 2\frac{\partial x_{\alpha i}}{\partial t} \sum_j^s \frac{\partial x_{\alpha i}}{\partial q_j}\dot{q}_j  + \left(\frac{\partial x_{\alpha i}}{\partial t}\right)^2 = \]
 \begin{equation} \label{2.4.6}
-    = \sum_{j,k}{\frac{\partial x_{\alpha i}}{\partial q_j}\frac{\partial x_{\alpha i}}{\partial q_k}\dot{q}_j\dot{q}_k} + 2\frac{\partial x_{\alpha i}}{\partial t} \sum_j \frac{\partial x_{\alpha i}}{\partial q_j}\dot{q}_j + \left(\frac{\partial x_{\alpha i}}{\partial t}\right)^2
+    = \sum_{j,k}^s{\frac{\partial x_{\alpha i}}{\partial q_j}\frac{\partial x_{\alpha i}}{\partial q_k}\dot{q}_j\dot{q}_k} + 2\frac{\partial x_{\alpha i}}{\partial t} \sum_j^s \frac{\partial x_{\alpha i}}{\partial q_j}\dot{q}_j + \left(\frac{\partial x_{\alpha i}}{\partial t}\right)^2
 \end{equation} \refstepcounter{subsection}
 Sustituyendo (2.4.6) en (2.4.4)
-\[ T = \frac{1}{2} \sum_{\alpha, i} m_\alpha \left[\sum_{j,k}{\frac{\partial x_{\alpha i}}{\partial q_j}\frac{\partial x_{\alpha i}}{\partial q_k}\dot{q}_j\dot{q}_k} + 2\frac{\partial x_{\alpha i}}{\partial t} \sum_j \frac{\partial x_{\alpha i}}{\partial q_j}\dot{q}_j + \left(\frac{\partial x_{\alpha i}}{\partial t}\right)^2\right]\]
+\[ T = \frac{1}{2} \sum_{\alpha, i}^{N,d} m_\alpha \left[\sum_{j,k}^s{\frac{\partial x_{\alpha i}}{\partial q_j}\frac{\partial x_{\alpha i}}{\partial q_k}\dot{q}_j\dot{q}_k} + 2\frac{\partial x_{\alpha i}}{\partial t} \sum_j^s \frac{\partial x_{\alpha i}}{\partial q_j}\dot{q}_j + \left(\frac{\partial x_{\alpha i}}{\partial t}\right)^2\right]\]
 Usando que los sumatorios conmutan y son lineales llegamos a
 \begin{equation}  
-    T = \sum_{j,k}{\left(\sum_{\alpha,i}{ \frac{1}{2} m_\alpha \frac{\partial x_{\alpha i}}{\partial q_j}\frac{\partial x_{\alpha i}}{\partial q_k}\right)\dot{q}_j\dot{q}_k}} + \sum_j {\left( \sum_{\alpha,i}{m_\alpha \frac{\partial x_{\alpha i}}{\partial t}\frac{\partial x_{\alpha i}}{\partial q_j}\right)}\dot{q}_j} + \sum_{\alpha,i}{\frac{1}{2} m_\alpha\left(\frac{\partial x_{\alpha i}}{\partial t}\right)^2} \label{2.4.7}
+    T = \sum_{j,k}^s{\left(\sum_{\alpha,i}^{N,d}{ \frac{1}{2} m_\alpha \frac{\partial x_{\alpha i}}{\partial q_j}\frac{\partial x_{\alpha i}}{\partial q_k}\right)\dot{q}_j\dot{q}_k}} + \sum_j^s{\left( \sum_{\alpha,i}^{N,d}{m_\alpha \frac{\partial x_{\alpha i}}{\partial t}\frac{\partial x_{\alpha i}}{\partial q_j}\right)}\dot{q}_j} + \sum_{\alpha,i}^{N,d}{\frac{1}{2} m_\alpha\left(\frac{\partial x_{\alpha i}}{\partial t}\right)^2} \label{2.4.7}
 \end{equation} \refstepcounter{subsection}
 De una forma más reducida obtenemos
 \begin{equation} \label{2.4.8}
-    T = T(\{q_j,\dot{q}_j\};t) = \sum_{j,k}A_{ij}\dot{q}_j\dot{q}_k + \sum_j B_j \dot{q}_j + C
+    T = T(\{q_j,\dot{q}_j\};t) = \sum_{j,k}^sA_{ij}\dot{q}_j\dot{q}_k + \sum^s_j B_j \dot{q}_j + C
 \end{equation} \refstepcounter{subsection}
 Así, fijándonos en (2.4.7), si el cambio de coordenadas no depende explícitamente del tiempo, $B_j$ y $C$ se anulan, y entonces $T$ es una forma cuadrática en los $\dot{q}_j$.
 
-Si ahora en el caso de que sea una forma cuadrática hacemos la parcial de $T$ con respecto a un $\dot{q}_l$ dado, obtenemos
-\[\frac{\partial T}{\partial \dot{q}_l} = \overbrace{\frac{\partial}{\partial \dot{q}_l} \sum_{j,k\neq l}{A_{jk}\dot{q}_j\dot{q}_k}}^0+\frac{\partial}{\partial \dot{q}_l} \sum_{j=l, k\neq l}{A_{lk}\dot{q}_l\dot{q}_k} + \frac{\partial}{\partial \dot{q}_l} \sum_{j\neq l, k = l}{A_{jl}\dot{q}_j\dot{q}_l + \frac{\partial}{\partial \dot{q}_l} \left(A_{ll} \dot{q}_l^2\right) = \]
+\textbf{Teorema de la Energía cinética.} Si las coordenadas no dependen explícitamente del tiempo, entonces $T$ es una forma cuadrática en los $\dot{q}$.
+
+Si ahora partimos de este supuesto y hacemos la parcial de $T$ con respecto a un $\dot{q}_l$ dado, obtenemos
+\[\frac{\partial T}{\partial \dot{q}_l} = \cancelto{0}{\frac{\partial}{\partial \dot{q}_l} \sum_{j,k\neq l}^s{A_{jk}^s\dot{q}_j\dot{q}_k}}+\frac{\partial}{\partial \dot{q}_l} \sum_{j=l, k\neq l}^s{A_{lk}\dot{q}_l\dot{q}_k} + \frac{\partial}{\partial \dot{q}_l} \sum_{j\neq l, k = l}^s{A_{jl}\dot{q}_j\dot{q}_l + \frac{\partial}{\partial \dot{q}_l} \left(A_{ll} \dot{q}_l^2\right) = \]
 \begin{equation} \label{2.4.9}
-    =\sum_{j=l, k\neq l}{A_{lk}\dot{q}_k} + \sum_{j\neq l, k = l}{A_{jl}\dot{q}_j} + 2A_{ll} \dot{q}_l =2 \sum_i A_{li} \dot{q}_i=2 \sum_i A_{il} \dot{q}_i
+    =\sum_{j=l, k\neq l}^s{A_{lk}\dot{q}_k} + \sum_{j\neq l, k = l}^s{A_{jl}\dot{q}_j} + 2A_{ll} \dot{q}_l =2 \sum_i^s A_{li} \dot{q}_i=2 \sum_i^s A_{il} \dot{q}_i
 \end{equation} \refstepcounter{subsection}
 Si ahora hacemos lo siguiente usando (2.4.9), vemos que se verifica (2.4.2)
-\begin{equation} \label{2.4.10}\sum_j \frac{\partial T}{\partial \dot{q}_j} \dot{q}_j = 2 \sum_{i,k}{A_{kj}\dot{q}_j\dot{q}_k=2 T}
+\begin{equation} \label{2.4.10}
+    \sum_j^s \frac{\partial T}{\partial \dot{q}_j} \dot{q}_j = 2 \sum_{i,k}^s{A_{kj}\dot{q}_j\dot{q}_k=2 T}
 \end{equation} \refstepcounter{subsection}
