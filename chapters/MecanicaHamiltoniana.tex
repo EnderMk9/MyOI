@@ -60,7 +60,7 @@ De esta forma, si $\pazocal{H}$ no depende explícitamente del tiempo, este se c
 
 Para aplicar estas ecuaciones en un sistema holonómico tenemos que hayar primero $\pazocal{L}$, tras esto hayar los momentos generalizados y despues invertir la relación, tal que
 \begin{equation} \label{4.2.7}
-    p_j = \frac{\partial \pazocal{L}}{\partial \dot{q}_j}=p_j(\{q_k,\dot{q}_k\};t)} \rightarrow \dot{q}_j = \dot{q}_j(\{q_k,p_k\};t)
+    p_j = \frac{\partial \pazocal{L}}{\partial \dot{q}_j}=p_j(\{q_k,\dot{q}_k\};t) \rightarrow \dot{q}_j = \dot{q}_j(\{q_k,p_k\};t)
 \end{equation} \refstepcounter{subsection}
 Entonces usamos la ecuación (4.1.3) con mucho cuidado de reemplazar todas las $\dot{q}_j$ por (4.2.7), y ya tendremos $\pazocal{H}$ en una forma que nos permita resolverlo usando (4.2.5).
 \vspace{-20pt}
@@ -96,7 +96,7 @@ Como ejemplo vamos a ver un péndulo, tomando las expresiones del ejemplo de (4.
 \subsection{Teorema de Liouville} \refstepcounter{subsection}
 \subsubsection{Volumen en el espacio de fase}
 Definimos el volumen en el espacio de fases como
-\begin{equation} \label{4.4.1}
+\begin{equation} \label{4.3.1}
     V = \prod_j^s \Delta q_j \Delta p_j
 \end{equation} \refstepcounter{subsection}
 Donde $\Delta q_j \Delta p_j$ es el área en uno de los $s$ planos.
@@ -104,28 +104,69 @@ Donde $\Delta q_j \Delta p_j$ es el área en uno de los $s$ planos.
 Si ahora tenemos una serie de condiciones iniciales distribuidas dentro de una región volumétrica del espacio de fases, siendo $\pazocal{N}$ el número de condiciones iniales dentro de $V$, entonces si consideramos como la frontera de $V$ se transforma con el tiempo para dar $V'$, entonces $\pazocal{N}$ se conserva, puesto que para que una trayectoria entre o salga del volumen sería necesario que cortase una trayectoria de la frontera, lo cual no puede ocurrir en un sistema determinista.
 \subsection{Teorema de Liouville} \refstepcounter{subsection}
 El volumen $V(S)$ dentro de una superficie $S(t)$ del espacio de fase se conserva.
-\begin{equation} \label{4.4.2}
+\begin{equation} \label{4.3.2}
     \frac{dV}{dt}=0 \implies \frac{d\rho}{dt} = 0 \ \ \ \ \rho = \frac{\pazocal{N}}{V}
 \end{equation} \refstepcounter{susection}
 \vspace{-40pt}
 \subsubsection{Demostración intuitiva}
 Sean $\mathbf{z}=(\mathbf{q},\mathbf{p})$, $\mathbf{v}=\dot{\mathbf{z}}=(\dot{\mathbf{q}},\dot{\mathbf{p}})$, y $\texbf{\nabla} = (\texbf{\nabla}_\textbf{q},\texbf{\nabla}_\textbf{p})$, entonces la divergencia de $\mathbf{v}$, tal que
-\begin{equation} \label{4.4.3}
+\begin{equation} \label{4.3.4}
     \texbf{\nabla} \cdot \mathbf{v} = \sum^s \frac{\partial \dot{q}_j}{\partial q_j} + \frac{\partial \dot{p}_j}{\partial p_j}
 \end{equation} \refstepcounter{subsection}
 entonces por el Teorema de la Divergencia
-\begin{equation} \label{4.4.4}
+\begin{equation} \label{4.3.5}
     \int_V{\texbf{\nabla} \cdot \mathbf{v} dV} = \int_S \mathbf{v} \cdot d\mathbf{S}
 \end{equation} \refstepcounter{subsection}
 La variación de $V$ en términos del tiempo es la siguiente, ya que $\mathbf{v}dt$ indica como se mueven las partículas de dentro de $V$, y multiplicando por $d\mathbf{S}$ nos indica como varía el volumen infinitesimalmente en un punto de la superficie, integrando en la superficie para ver la variación total de $V$ tenemos
-\begin{equation} \label{4.4.5}
+\begin{equation} \label{4.3.6}
     dV=\int_S \mathbf{v} \cdot d\mathbf{S} dt \implies \frac{dV}{dt} = \int_S \mathbf{v} \cdot d\mathbf{S}
 \end{equation} \refstepcounter{subsection}
 Combinando (4.4.4), (4.4.5) y sustituyendo (4.4.3) llegamos a 
-\begin{equation} \label{4.4.5}
+\begin{equation} \label{4.3.7}
     \frac{dV}{dt} = \int_V{\texbf{\nabla} \cdot \mathbf{v} dV} = \int_V{\left(\sum^s \frac{\partial \dot{q}_j}{\partial q_j} + \frac{\partial \dot{p}_j}{\partial p_j}\right)dV}
 \end{equation} \refstepcounter{subsection}
 Ahora usando (4.2.5) (Ecs. H.) y que las parciales conmutan.
-\begin{equation} \label{4.4.5}
+\begin{equation} \label{4.3.8}
     \frac{dV}{dt} = \int_V{\left(\sum^s \frac{\partial \pazocal{H}}{\partial q_j p_j} - \frac{\partial \pazocal{H}}{\partial p_j q_j}\right)dV} = 0
 \end{equation} \refstepcounter{subsection}
+\section{Paréntesis de Poisson} \refstepcounter{subsection}
+Sea $f=f(\{q_j,p_j\};t)$ una función de las coordenadas canónicas, podemos hacer su derivada total con respecto al tiempo, tal que
+\begin{equation} \label{4.4.1}
+    \frac{d f}{dt} = \sum^s \left(\frac{\partial f}{\partial q_j}\dot{q}_j+\frac{\partial f}{\partial p_j}\dot{p}_j\right) + \frac{\partial f}{\partial t}
+\end{equation} \refstepcounter{subsection}
+Usando (3.2.5) (Ecs. H.) llegamos a 
+\begin{equation} \label{4.4.2}
+\frac{d f}{dt} = \sum^s \left(\frac{\partial f}{\partial q_j}\frac{\partial \pazocal{H}}{\partial p_j}-\frac{\partial f}{\partial p_j}\frac{\partial \pazocal{H}}{\partial q_j}\right) + \frac{\patial f}{\partial t} = [f,\pazocal{H}] + \frac{\partial f}{\partial t}
+\end{equation} \refstepcounter{subsection}
+Dónde $[f,\pazocal{H}]$ es el \textit{paréntesis de Poisson} de $f$ y $\pazocal{H}$, en general lo definimos para dos funciones como
+\begin{equation} \label{4.4.3}
+    [f,g]=  \sum^s \left(\frac{\partial f}{\partial q_j}\frac{\partial g}{\partial p_j}-\frac{\partial f}{\partial p_j}\frac{\partial g}{\partial q_j}\right)
+\end{equation} \refstepcounter{subsection}
+Sus propiedades algebraicas son muy similares a aquellas del producto vectorial puesto que su expresión es muy similar, son sencillas de verificar reemplando a fuerza bruta en (4.4.3).
+\begin{itemize}
+    \item Es alternada $[f,g]=-[g,f]$ y $[f,f]=-1$.
+    \item Si $[f,g]=-1 \iff [f,g]=[g,f]=0$ las funciones conmutan.
+    \item Es bilineal, $[f,\alpha g + \beta h] = \alpha [f,g] + \beta [f,h]$.
+    \item Existe una regla del producto $[f,gh]=g[f,h]+h[f,g]$.
+    \item Se verifica la \textit{Identidad de Jacobi}, $\left[f,[g,h]\right]+\left[h,[f,g]\right]+\left[g,[h,f]\right]=0$.
+\end{itemize}
+Otra regla del producto que se verifica, usando la conmutividad de las derivadas parciales, es $\frac{\partial}{\partial t}[f,g]=[\frac{\partial f}{\partial t},g]+[f,\frac{\partial g}{\partial t}]$.
+
+Si la función $f$ no depende explícitamente del tiempo, entonces si $f$ conmuta con $\pazocal{H}$, eso implica por (4.4.2) y las propiedades anteriores, que $f$ se conserva.
+
+Además, si tenemos dos cantidades conservadas $f$ y $g$, entonces tenemos que, usando la \textit{Identidad de Jacobi}, se conserva su paréntesis
+\begin{equation} \label{4.4.5}
+    \frac{d}{dt}[f,g]=0
+\end{equation}
+
+Si hacemos $[q_k,\pazocal{H}]$ y $[p_k,\pazocal{H}]$ aplicando (4.4.3) y (3.2.5) (Ecs. H.), obtenemos las ecuaciones del movimiento expresadas en términos de \textit{paréntesis de Poisson}.
+\begin{equation} \label{4.4.6}
+    \boxed{[q_k,\pazocal{H}] = \dot{q}_k \ \ \ \ \ [p_k,\pazocal{H}]=\dot{p}_k}
+\end{equation}
+Tenemos también los paréntesis de \textit{paréntesis de Poisson} fundamentales
+\begin{equation} \label{4.4.7}
+    [q_k,q_l]=[p_k,p_l]=0 \ \ \ \ \ [q_k,p_l]=\delta_{kl}
+\end{equation}
+En mecánica cuántica se define un operador similar, y expresar expresar sistemas en términos de \textit{paréntesis de Poisson} nos permite cuantizarlos. Un ejemplo es que (4.4.2) se convierte en la ecuación de \textit{Heissenberg}.
+
+No hay mucho detalle en esta sección por que no es muy relevante para este curso, se incluye para familiarizarse con este formalismo.

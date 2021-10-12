@@ -42,7 +42,7 @@
 \usepackage{blindtext}
 %\usepackage{showframe} % Uncomment to show boxes around the text area, margin, header and footer
 %\usepackage{showlabels} % Uncomment to output the content of \label commands to the document where they are used
-
+\usepackage{graphicx}
 \usepackage{mathbbol}
 \counterwithout{subsubsection}{subsection}
 \let\theequation\thesubsection
@@ -231,7 +231,20 @@ ONDAS}}}
 \input{chapters/MecanicaLagrangiana.tex}
 \input{chapters/SimetriaConservacion.tex}
 \input{chapters/MecanicaHamiltoniana.tex}
-\input{chapters/Poisson.tex}
+
+\pagelayout{wide} % No margins
+\addpart[Fuerzas centrales y sistemas no inerciales]{\fontsize{55pt}{0pt} \setstretch{2} \textbeuron{Fuerzas centrales sistemas no inerciales}}
+\pagelayout{margin} % Restore margins
+
+\input{chapters/FuerzasCentrales.tex}
+
+\pagelayout{wide} % No margins
+\addpart[Sólido Rígido]{\fontsize{55pt}{0pt} \setstretch{2} \textbeuron{SOLIDO RIGIDO}}
+\pagelayout{margin} % Restore margins
+
+\pagelayout{wide} % No margins
+\addpart[Oscilaciones]{\fontsize{55pt}{0pt} \setstretch{2} \textbeuron{Oscilaciones}}
+\pagelayout{margin} % Restore margins
 
 %----------------------------------------------------------------------------------------
 

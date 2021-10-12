@@ -1,0 +1,48 @@
+\chapter{Fuerzas centrales} 
+\refstepcounter{subsection}
+Llamamos fuerza central a toda fuerza $\mathbf{F}(\mathbf{r})=F(\mathbf{r}) \hat{\mathbf{e}}_r \label{5.0.1} \inlineeqnum$, es decir, que ocurre en dirección radial a un punto determinado, si además esta fuerza central es conservativa, es equivalente a $\mathbf{F}(r)=F(r) \hat{\mathbf{e}}_r \label{5.0.2} \inlineeqnum$, es decir que es esférica simétricamente y solo depende de la distancia al origen, ya que
+\[\mathbf{F}=F(r) \hat{\mathbf{e}}_r=-\nabla U(r,\theta,\varphi)=\frac{\partial U}{\partial r}\hat{\mathbf{e}}_r + \frac{1}{r}\frac{\partial U}{\partial \theta}\hat{\mathbf{e}}_\theta+\frac{1}{r\sin\theta}\frac{\partial U}{\partial \varphi}\hat{\mathbf{e}}_\varphi \implies \frac{\partial U}{\partial \theta}=\frac{\partial U}{\partial \varphi}=0\]
+puesto que $1/r$ y $1/r\sin\theta$ no pueden ser 0, esto implica que $U=U(r)$ y $F=F(r)$, además llegamos a la siguiente expresión de $F$
+\begin{equation} \label{5.0.3}
+    F(r)=-\frac{\partial U}{\partial r}
+\end{equation} \refstepcounter{subsection}
+La recíproca, que $\mathbf{F}(r)=F(r) \hat{\mathbf{e}}_r$ es conservativa se puede obtener calculando su rotacional y verificando que es igual a 0.
+\section{Problema de los dos cuerpos} \refstepcounter{subsection}
+\begin{marginfigure}[-2cm]
+    \def\svgwidth{125 pt}
+    \tiny
+	\input{images/centralf.pdf_tex}
+	\labfig{margin2}
+\end{marginfigure}
+Si tenemos dos masas $m_1$ y $m_2$ con posiciones $\mathbf{r}_1$ y $\mathbf{r}_2$, de tal forma que sufren cada una una fuerza central conservativa creada por la otra masa, siguiendo la tercera ley de newton, entonces $U=U(r)$, donde $r=|\mathbf{r}_1-\mathbf{r}_2|=|\mathbf{r}| \label{5.1.1} \inlineeqnum$, tal que $\mathbf{r}=\mathbf{r}_1-\mathbf{r}_2 \label{5.1.2} \inlineeqnum$.
+
+Podemos definir también el centro de masas del sistema de ambas masas, que se encuentra necesariamente en un punto intermedio entre ambas masas, y más cercano a la masa mayor
+\begin{equation} \label{5.1.3}
+    \mathbf{R} = \frac{1}{M}\sum^n{m_i \mathbf{r_i}} = \frac{m_1 \mathbf{r}_1 + m_2 \mathbf{r}_2}{m_1+m_2} \ \ \ \ \ M=\sum^n m_i
+\end{equation} \refstepcounter{subsection}
+De esta forma podemos hacer el cambio de las coordenadas $(\mathbf{r}_1,\mathbf{r}_2) \mapsto (\mathbf{r},\mathbf{R})$, que podemos invertir despejando $\mathbf{r}_1$ y de (5.1.2) y (5.1.3) e igualando para despejar $\mathbf{r}_2$, después sacamos $\mathbf{r}_1$ de una de las anteriores, tal que
+\begin{equation} \label{5.1.4}
+    \mathbf{r}_1 = \mathbf{R} + \frac{m_2}{M}\mathbf{r} \ \ \ \ \ \ \mathbf{r}_2 = \mathbf{R} - \frac{m_1}{M}\mathbf{r}
+\end{equation} \refstepcounter{subsection}
+Ahora podemos escribir $\pazocal{L}$ del sistema, para la energía cinética, veremos que los términos cruzados se cancelan
+\begin{equation} \label{5.1.5}
+    T=\frac{1}{2}m_1(\dot{\mathbf{r}}_1)^2+\frac{1}{2}m_2(\dot{\mathbf{r}}_2)^2=\frac{1}{2}M(\dot{\mathbf{R}})^2 + \frac{1}{2}\mu(\dot{\mathbf{r}})^2 \ \ \ \ \ 
+    \boxed{\mu = \frac{m_1 m_2}{m_1+m_2}} \ \ \ \ \ \ \ U = U(r)
+\end{equation} \refstepcounter{subsection}
+\begin{equation} \label{5.1.5}
+    \pazocal{L} = \pazocal{L}_{CM} + \pazocal{L}_{\mbox{rel}}= \left(\frac{1}{2}M(\dot{\mathbf{R}})^2\right) + \left(\frac{1}{2}\mu(\dot{\mathbf{r}})^2-U(r)\right)
+\end{equation} \refstepcounter{subsection}
+Es de notar que cuando la diferencia en las masas es muy grande, la masa reducida, $\mu$ tiene a la masa más pequeña.
+
+De la ecuación (5.1.6) podemos concluir usando (E-L) que el momento asociado a $\mathbf{R}$ se conserva, puesto que que $\pazocal{L}$ no depende explícitamente de $\mathbf{R}$, entonces podemos llegar a tres ecuaciones resumidas en $M\ddot{\mathbf{R}}=0 \label{5.1.7} \inlineeqnum$, que indican que la velocidad del CM es constante.
+
+Para el movimiento relativo en $\mathbf{r}$, aplicando (E-L), podemos llegar a tres ecuaciones que resuminos en $\mu\ddot{\mathbf{r}}=-\nabla U \label{5.1.8} \inlineeqnum$.
+
+Entonces por (5.1.7), el sistema de referencia relativo al CM es un sistema incercial, de tal forma que estableciendo $\mathbf{R}=0$, podemos obtener las expresiones de $\mathbf{r}_1$ y $\mathbf{r}_2$ en el sistema del CM.
+\begin{equation} \label{5.1.*}
+    \mathbf{r}_1=\frac{m_2}{M}\mathbf{r} \ \ \ \ \ \mathbf{r}_2=-\frac{m_1}{M}\mathbf{r}
+\end{equation} \refstepcounter{subsection}
+Observando el dibujo de la página anterior, esta claro que en el sistema del CM, las posiciones de ambas masas deben estar en el mismo eje, es decir, sus vectores de posición son paralelos, puesto que $\mathbf{R}$ se encuentra siempre entre la recta que une a ambas masas.
+
+Hay que tener cuidado por que $\mathbf{r}$ no es un vector posición, sino como definimos en (5.1.2), es la diferencia entre los dos vectores de posición.
+\subsection{Conservación del momento angular} \refstepcounter{subsection}
