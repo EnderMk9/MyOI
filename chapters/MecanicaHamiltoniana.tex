@@ -28,7 +28,7 @@ Ahora si tenemos $\pazocal{L}(\{q_j,\dot{q}_j\};t)$, $\{\dot{q}_j\}$ serán nues
 \begin{equation} \label{4.1.3}
         p_i(\{q_i,\dot{q}_i\};t)=\frac{\partial \pazocal{L}}{\partial q_i} \ \ \ \ \ \  g(\{q_i,p_i\};t) =\pazocal{L}(\{q_i,p_i\};t) -\sum_j^s \dot{q}_j p_j(\{q_i,p_i\}) = -\pazocal{H}
 \end{equation} \refstepcounter{subsection}
-De esta forma, $\pazocal{H}$ es equivalente a la \textit{Transformada de Legendre} de $\pazocal{L}$ con respecto a los $\dot{q}_j$, y esta es inversible, la demostración de que el jacobiano de $[\partial_{\dot{q}_j}p_i]$ es no nulo bajo ciertas circumstancias es *añadir*.
+De esta forma, $\pazocal{H}$ es equivalente a la \textit{Transformada de Legendre} de $\pazocal{L}$ con respecto a los $\dot{q}_j$, y esta es inversible, la demostración de que el jacobiano $[\partial_{\dot{q}_j}p_i]$ es no nulo bajo ciertas circumstancias es *añadir*.
 
 De esta forma, no hemos perdido ninguna información del sistema al pasar de $\pazocal{L}$ a $\pazocal{H}$, y a continuación reformularemos las ecuaciones del movimiento en función de esta cantidad de una forma equivalente a la fomulación lagrangiana.
 \section{Ecuaciones de Hamilton} \refstepcounter{subsection}
@@ -38,7 +38,7 @@ Si hacemos la diferencial exacta de $\pazocal{H}$ usando la regla de la cadena t
 \end{equation} \refstepcounter{subsection}
 Si por otro lado hacemos el diferencial de $\pazocal{H}$ desde (3.1.2) o (4.1.3)
 \begin{equation} \label{4.2.2}
-    d\pazocal{H} = \sum^s\left(p_j dq_j+\dot{q}_j dp_j\right)-dL
+    d\pazocal{H} = \sum^s\left(p_j dq_j+\dot{q}_j dp_j\right)-d\pazocal{L}
 \end{equation} \refstepcounter{subsection}
 si $d\pazocal{L}$ es por regla de la cadena, y usando (2.2.1) y (2.2.2)
 \begin{equation} \label{4.2.3}

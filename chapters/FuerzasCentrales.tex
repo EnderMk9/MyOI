@@ -29,7 +29,7 @@ Ahora podemos escribir $\pazocal{L}$ del sistema, para la energía cinética, ve
     T=\frac{1}{2}m_1(\dot{\mathbf{r}}_1)^2+\frac{1}{2}m_2(\dot{\mathbf{r}}_2)^2=\frac{1}{2}M(\dot{\mathbf{R}})^2 + \frac{1}{2}\mu(\dot{\mathbf{r}})^2 \ \ \ \ \ 
     \boxed{\mu = \frac{m_1 m_2}{m_1+m_2}} \ \ \ \ \ \ \ U = U(r)
 \end{equation} \refstepcounter{subsection}
-\begin{equation} \label{5.1.5}
+\begin{equation} \label{5.1.6}
     \pazocal{L} = \pazocal{L}_{CM} + \pazocal{L}_{\mbox{rel}}= \left(\frac{1}{2}M(\dot{\mathbf{R}})^2\right) + \left(\frac{1}{2}\mu(\dot{\mathbf{r}})^2-U(r)\right)
 \end{equation} \refstepcounter{subsection}
 Es de notar que cuando la diferencia en las masas es muy grande, la masa reducida, $\mu$ tiende a la masa más pequeña.
@@ -39,10 +39,90 @@ De la ecuación (5.1.6) podemos concluir usando (E-L) que el momento asociado a 
 Para el movimiento relativo en $\mathbf{r}$, aplicando (E-L), podemos llegar a tres ecuaciones que resuminos en $\mu\ddot{\mathbf{r}}=-\nabla U \label{5.1.8} \inlineeqnum$.
 
 Entonces por (5.1.7), el sistema de referencia relativo al CM es un sistema inercial, de tal forma que estableciendo $\mathbf{R}=0$, podemos obtener las expresiones de $\mathbf{r}_1$ y $\mathbf{r}_2$ en el sistema del CM.
-\begin{equation} \label{5.1.*}
+\begin{equation} \label{5.1.9}
     \mathbf{r}_1=\frac{m_2}{M}\mathbf{r} \ \ \ \ \ \mathbf{r}_2=-\frac{m_1}{M}\mathbf{r}
 \end{equation} \refstepcounter{subsection}
 Observando el dibujo de la página anterior, esta claro que en el sistema del CM, las posiciones de ambas masas deben estar en el mismo eje, es decir, sus vectores de posición son paralelos, puesto que $\mathbf{R}$ se encuentra siempre entre la recta que une a ambas masas.
 
 Hay que tener cuidado por que $\mathbf{r}$ no es un vector posición, sino como definimos en (5.1.2), es la diferencia entre los dos vectores de posición.
-\subsection{Conservación del momento angular} \refstepcounter{subsection}
+\subsection{Conservación del momento angular} 
+Definimos el momento angular total con respecto a O como $\mathbf{J} = \mathbf{J}_1 + \mathbf{J}_2 \label{5.1.10} \inlineeqnum$, donde $\mathbf{J}_i = \mathbf{r}_i \times \mathbf{p}_i = m_i \mathbf{r}_i \times \dot{\mathbf{r}}_i \label{5.1.11} \inlineeqnum$. La derivada del momento angular será entonces
+\begin{equation} \label{5.1.12}
+    \dot{\mathbf{J}_i}= m \left(\dot{\mathbf{r}}_i \times \dot{\mathbf{r}}_i + \mathbf{r}_i \times \ddot{\mathbf{r}}_i \right) = m \mathbf{r}_i \times \mathbf{r}_i = \mathbf{r}_i \times \mathbf{F}_i
+\end{equation} \refstepcounter{subsection}
+Entonces, usando la 3ª LN, (5.1.2) y (5.0.1), el momento angular total se conserva.
+\begin{equation} \label{5.1.13}
+    \dot{\mathbf{J}}=\mathbf{r}_1 \times \mathbf{F}_{12}+\mathbf{r}_2 \times \mathbf{F}_{21}=(\mathbf{r}_1-\mathbf{r}_2)\times \mathbf{F}=F \mathbf{r} \times \hat{\mathbf{u}}_r = 0
+\end{equation} \refstepcounter{subsection}
+El momento angular total en el sistema del CM es entonces, usando (5.1.9)
+\begin{equation} \label{5.1.14}
+    \mathbf{J} = \frac{m_1 m_2^2}{M^2} (\mathbf{r}\times \dot{\mathbf{r}})+ \frac{m_2 m_1^2}{M^2} (\mathbf{r}\times \dot{\mathbf{r}}) = \mu (\mathbf{r}\times \dot{\mathbf{r}})
+\end{equation} \refstepcounter{subsection}
+Como este se conserva puesto que sigue siendo inercial, esto implica que el movimiento de ambas masas debe ocurrir en un plano*, el perpendicular a $\mathbf{J}$.
+
+Entonces podemos expresar la configuración del sistema con coordenadas polares, puesto que tenemos dos grados de libertad. Expresando el lagrangiano del sistema en coordenadas polares usando (5.1.6) y $\dot{\mathbf{r}}=d{(r \hat{\mathbf{u}}_r)}/dt=\dot{r}\hat{\mathbf{u}}_r + r \dot{\varphi}\hat{\mathbf{u}}_\varphi$ tenemos
+\begin{equation} \label{5.1.15}
+    \pazocal{L} = \frac{1}{2}\mu(\dot{\mathbf{r}})^2-U(r) = \frac{1}{2}\mu\left(\dot{r}^2+r^2\dot{\varphi}^2\right)-U(r)
+\end{equation} \refstepcounter{subsection}
+Vemos que entonces $\varphi$ es ignorable pues no aparece explícitamente y entonces su momento se conserva
+\begin{equation} \label{5.1.16}
+    p_\varphi = J = \frac{\partial \pazocal{L}}{\partial \dot{\varphi}} = \mu r^2 \dot{\varphi} \ \ \ \  \dot{p_\varphi} = 0
+\end{equation} \refstepcounter{subsection}
+Lo cual es exáctamente el módulo de $\mathbf{J}=\mu (r\hat{\mathbf{u}_r}\times (\dot{r}\hat{\mathbf{u}_r} + r \dot{\varphi} \hat{\mathbf{u}_\varphi}))= \mu r^2 \dot{\varphi}\hat{\mathbf{u}_z}$
+\vspace{5pt}
+\subsubsection{Esféricas *}
+Podemos también demostrar que el movimiento ocurre en un plano escribiento el lagrangiano usando coordenadas esféricas, similar a (5.2.15), donde $\dot{\mathbf{r}}=d{(r \hat{\mathbf{u}}_r)}/dt=\dot{r}\hat{\mathbf{u}}_r + r \dot{\theta }\hat{\mathbf{u}}_\theta + r\sin \theta \dot{\varphi} \hat{\mathbf{u}}_\varphi$, tal que 
+\begin{equation} \label{5.1.17}
+    \pazocal{L} = \frac{1}{2}\mu(\dot{\mathbf{r}})^2-U(r) = \frac{1}{2}\mu\left(\dot{r}^2+r^2\dot{\theta}^2 + r^2 \sin^2 \theta \dot{\varphi}^2\right)-U(r)
+\end{equation} \refstepcounter{subsection}
+De esta forma vemos que $\varphi$ es la ignorable, de tal forma que su momento asociado se conservará
+\begin{equation} \label{5.1.18}
+    p_\varphi = \frac{\partial \pazocal{L}}{\partial \dot{\varphi}} = \mu r^2 \sin^2 \theta \dot{\varphi} \ \ \ \  \dot{p_\varphi} = 0
+\end{equation} \refstepcounter{subsection}
+Si ahora consideramos $\mathbf{J}$ en estas coordenadas usando (5.1.14)
+\begin{equation} \label{5.1.19}
+    \mathbf{J} = \mu (\mathbf{r} \times (\dot{r}\hat{\mathbf{u}}_r + r \dot{\theta}\hat{\mathbf{u}}_\theta + r\sin \theta \dot{\varphi} \hat{\mathbf{u}}_\varphi))=-\mu r^2 \sin \theta \dot{\varphi} \hat{\mathbf{u}}_\theta + \mu r^2 \dot{\theta}\hat{\mathbf{u}}_\varphi
+\end{equation} \refstepcounter{subsection}
+Como $\mathbf{J}$ se conserva, sus componentes se conservan, y entonces usando (5.1.19) en (5.1.18), verificamos que el movimiento ocurre en un plano, donde $\theta$ es constante.
+\begin{equation} \label{5.1.20}
+    p_\varphi = \mu r^2 \sin^2 \theta \dot{\varphi} = J_\theta \sin\theta \implies \frac{d}{dt} \sin\theta = \dot{\theta} \cos \theta = 0 \implies \dot{\theta} = 0
+\end{equation} \refstepcounter{subsection}
+\vspace{-30pt}
+\subsubsection{Velocidad areolar}
+Si consideramos el área que barre $\mathbf{r}$ en un pequeño incremento del tiempo como si fuera un triángulo, tenemos que, donde el primer término es la base del triángulo y el segundo la altura del triángulo, vemos que esta cantidad se conserva.
+\begin{equation} \label{5.1.21}
+    dA = \frac{1}{2} r\cdot r\dot{\varphi} dt \ \ \ \ \ \dot{A} = \frac{J}{2\mu} \ \ \ \ \ddot{A} = 0
+\end{equation} \refstepcounter{subsection}
+Esta ecuación se conoce como la segunda ley de \textit{Kepler}.
+\subsubsection{Energía}
+La energía (conservada e igual a $\pazocal{H}$), tiene la siguiente expresión usando (5.1.16)
+\begin{equation} \label{5.1.22}
+    E = T+U = \frac{1}{2}\mu\left(\dot{r}^2+r^2\dot{\varphi}^2\right)+U(r)=\frac{1}{2}\mu\dot{r}^2 + \left(\frac{J^2}{2mr^2}+U(r)\right) = \frac{1}{2}\mu\dot{r}^2 + U_{\mbox{eff}}(r)
+\end{equation} \refstepcounter{subsection}
+Donde el primer término de lo que denominamos potencial efectivo es lo que llamamos potencial centrífugo, propio de las fuerzas centrales.
+
+La ecuación (5.1.22) es una EDO de primer orden separable que nos permite hallar $r(t)$, invirtiendo la siguiente expresión
+\begin{equation} \label{5.1.23}
+    \int_{r_0}^r{\left[\frac{2}{\mu}\left(E-U(r)\right)-\frac{J^2}{\mu^2 r^2}\right]^{-\frac{1}{2}}dr}=t-t_0
+\end{equation} \refstepcounter{subsection}
+
+Usando (5.1.16) podemos encontrar $\varphi(t)$ una vez tenemos $r(t)$, de forma similar al formalismo Hamiltoniano.
+\subsubsection{Ecuación del movimiento}
+Haciendo (2.2.1)(E-L) con respecto a $r$ obtenemos la ecuación del movimiento del sistema
+\begin{equation} \label{5.1.24}
+    \mu \ddot{r} = \mu r \dot{\varphi}^2 - \frac{\partial U}{\partial r} = \frac{J^2}{\mu r^3}+ F(r)
+\end{equation} \refstepcounter{subsection}
+
+Nos va a interesar encontrar $r(\varphi)$ para no tener una expresión paramétrica de ambos sino la ecuación de una curva, para ello haremos el cambio de variable $u=1/r$.
+
+Usando la regla de la cadena, el teorema de la función inversa y (5.1.16)
+\begin{equation} \label{5.1.25}
+    \frac{d u}{d\varphi}  = -\frac{1}{r^2} \frac{dr}{d\varphi} = -\frac{1}{r^2} \frac{dr}{dt} \frac{dt}{d\varphi}= -\frac{1}{r^2} \dot{r} \frac{1}{\frac{d\varphi}{dt}}=-\frac{1}{r^2} \dot{r} \frac{1}{\dot{\varphi}}= -\frac{1}{r^2} \dot{r} \frac{r^2 \mu}{J} = -\frac{\mu \dot{r}}{J}
+\end{equation} \refstepcounter{subsection}
+\begin{equation} \label{5.1.26}
+    \frac{d^2 u}{d\varphi^2}  = \frac{d}{d\varphi}\left(-\frac{\mu \dot{r}}{J}\right)=-\frac{\mu}{J} \frac{d \dot{r}}{dt} \frac{dt}{d\varphi} = -\frac{\mu}{J} \frac{d \dot{r}}{dt} \frac{1}{\frac{d\varphi}{dt}} = -\frac{\mu}{J} \ddot{r} \frac{1}{\dot{\varphi}}= - \frac{\mu^2}{J^2} r^2 \ddot{r}
+\end{equation} \refstepcounter{subsection}
+Despejando $\ddot{r}$ de (5.1.26) y sustituyendo en (5.1.24) llegamos a la ecuación de la trayectoria, cuya solución es $r(\varphi)$
+\begin{equation} \label{5.1.27}
+    \frac{\partial^2 u}{\partial \varphi^2} + u = -\frac{\mu}{J^2 u^2}F(u) \iff \frac{\partial^2}{\partial \varphi^2}\left(\frac{1}{r}\right) + \frac{1}{r} = -\frac{\mu}{J^2}r^2F(r)
+\end{equation} \refstepcounter{subsection}
