@@ -30,7 +30,7 @@ Ahora podemos escribir $\pazocal{L}$ del sistema, para la energía cinética, ve
     \boxed{\mu = \frac{m_1 m_2}{m_1+m_2}} \ \ \ \ \ \ \ U = U(r)
 \end{equation} \refstepcounter{subsection}
 \begin{equation} \label{5.1.6}
-    \pazocal{L} = \pazocal{L}_{CM} + \pazocal{L}_{\mbox{rel}}= \left(\frac{1}{2}M(\dot{\mathbf{R}})^2\right) + \left(\frac{1}{2}\mu(\dot{\mathbf{r}})^2-U(r)\right)
+    \pazocal{L} = \pazocal{L}_{CM} + \pazocal{L}_{\mbox{\small rel}}= \left(\frac{1}{2}M(\dot{\mathbf{R}})^2\right) + \left(\frac{1}{2}\mu(\dot{\mathbf{r}})^2-U(r)\right)
 \end{equation} \refstepcounter{subsection}
 Es de notar que cuando la diferencia en las masas es muy grande, la masa reducida, $\mu$ tiende a la masa más pequeña.
 
@@ -45,7 +45,7 @@ Entonces por (5.1.7), el sistema de referencia relativo al CM es un sistema iner
 Observando el dibujo de la página anterior, esta claro que en el sistema del CM, las posiciones de ambas masas deben estar en el mismo eje, es decir, sus vectores de posición son paralelos, puesto que $\mathbf{R}$ se encuentra siempre entre la recta que une a ambas masas.
 
 Hay que tener cuidado por que $\mathbf{r}$ no es un vector posición, sino como definimos en (5.1.2), es la diferencia entre los dos vectores de posición.
-\subsection{Conservación del momento angular} 
+\section{Conservación del momento angular}  \refstepcounter{subsection}
 Definimos el momento angular total con respecto a O como $\mathbf{J} = \mathbf{J}_1 + \mathbf{J}_2 \label{5.1.10} \inlineeqnum$, donde $\mathbf{J}_i = \mathbf{r}_i \times \mathbf{p}_i = m_i \mathbf{r}_i \times \dot{\mathbf{r}}_i \label{5.1.11} \inlineeqnum$. La derivada del momento angular será entonces
 \begin{equation} \label{5.1.12}
     \dot{\mathbf{J}_i}= m \left(\dot{\mathbf{r}}_i \times \dot{\mathbf{r}}_i + \mathbf{r}_i \times \ddot{\mathbf{r}}_i \right) = m \mathbf{r}_i \times \mathbf{r}_i = \mathbf{r}_i \times \mathbf{F}_i
@@ -70,8 +70,8 @@ Vemos que entonces $\varphi$ es ignorable pues no aparece explícitamente y ento
 \end{equation} \refstepcounter{subsection}
 Lo cual es exáctamente el módulo de $\mathbf{J}=\mu (r\hat{\mathbf{u}_r}\times (\dot{r}\hat{\mathbf{u}_r} + r \dot{\varphi} \hat{\mathbf{u}_\varphi}))= \mu r^2 \dot{\varphi}\hat{\mathbf{u}_z}$
 \vspace{5pt}
-\subsubsection{Esféricas *}
-Podemos también demostrar que el movimiento ocurre en un plano escribiento el lagrangiano usando coordenadas esféricas, similar a (5.2.15), donde $\dot{\mathbf{r}}=d{(r \hat{\mathbf{u}}_r)}/dt=\dot{r}\hat{\mathbf{u}}_r + r \dot{\theta }\hat{\mathbf{u}}_\theta + r\sin \theta \dot{\varphi} \hat{\mathbf{u}}_\varphi$, tal que 
+\subsection{Esféricas *}
+Podemos también demostrar que el movimiento ocurre en un plano escribiento el lagrangiano usando coordenadas esféricas, similar a (5.2.6), donde $\dot{\mathbf{r}}=d{(r \hat{\mathbf{u}}_r)}/dt=\dot{r}\hat{\mathbf{u}}_r + r \dot{\theta }\hat{\mathbf{u}}_\theta + r\sin \theta \dot{\varphi} \hat{\mathbf{u}}_\varphi$, tal que 
 \begin{equation} \label{5.1.17}
     \pazocal{L} = \frac{1}{2}\mu(\dot{\mathbf{r}})^2-U(r) = \frac{1}{2}\mu\left(\dot{r}^2+r^2\dot{\theta}^2 + r^2 \sin^2 \theta \dot{\varphi}^2\right)-U(r)
 \end{equation} \refstepcounter{subsection}
@@ -79,11 +79,11 @@ De esta forma vemos que $\varphi$ es la ignorable, de tal forma que su momento a
 \begin{equation} \label{5.1.18}
     p_\varphi = \frac{\partial \pazocal{L}}{\partial \dot{\varphi}} = \mu r^2 \sin^2 \theta \dot{\varphi} \ \ \ \  \dot{p_\varphi} = 0
 \end{equation} \refstepcounter{subsection}
-Si ahora consideramos $\mathbf{J}$ en estas coordenadas usando (5.1.14)
+Si ahora consideramos $\mathbf{J}$ en estas coordenadas usando (5.2.5)
 \begin{equation} \label{5.1.19}
     \mathbf{J} = \mu (\mathbf{r} \times (\dot{r}\hat{\mathbf{u}}_r + r \dot{\theta}\hat{\mathbf{u}}_\theta + r\sin \theta \dot{\varphi} \hat{\mathbf{u}}_\varphi))=-\mu r^2 \sin \theta \dot{\varphi} \hat{\mathbf{u}}_\theta + \mu r^2 \dot{\theta}\hat{\mathbf{u}}_\varphi
 \end{equation} \refstepcounter{subsection}
-Como $\mathbf{J}$ se conserva, sus componentes se conservan, y entonces usando (5.1.19) en (5.1.18), verificamos que el movimiento ocurre en un plano, donde $\theta$ es constante.
+Como $\mathbf{J}$ se conserva, sus componentes se conservan, y entonces usando (5.2.10) en (5.2.9), verificamos que el movimiento ocurre en un plano, donde $\theta$ es constante.
 \begin{equation} \label{5.1.20}
     p_\varphi = \mu r^2 \sin^2 \theta \dot{\varphi} = J_\theta \sin\theta \implies \frac{d}{dt} \sin\theta = \dot{\theta} \cos \theta = 0 \implies \dot{\theta} = 0
 \end{equation} \refstepcounter{subsection}
@@ -94,20 +94,18 @@ Si consideramos el área que barre $\mathbf{r}$ en un pequeño incremento del ti
     dA = \frac{1}{2} r\cdot r\dot{\varphi} dt \ \ \ \ \ \dot{A} = \frac{J}{2\mu} \ \ \ \ \ddot{A} = 0
 \end{equation} \refstepcounter{subsection}
 Esta ecuación se conoce como la segunda ley de \textit{Kepler}.
-\subsubsection{Energía}
-La energía (conservada e igual a $\pazocal{H}$), tiene la siguiente expresión usando (5.1.16)
+\section{Energía} \refstepcounter{subsection}
+La energía (conservada e igual a $\pazocal{H}$), es, por (5.2.6) y (5.2.7)
 \begin{equation} \label{5.1.22}
-    E = T+U = \frac{1}{2}\mu\left(\dot{r}^2+r^2\dot{\varphi}^2\right)+U(r)=\frac{1}{2}\mu\dot{r}^2 + \left(\frac{J^2}{2mr^2}+U(r)\right) = \frac{1}{2}\mu\dot{r}^2 + U_{\mbox{eff}}(r)
+    E = T+U = \frac{1}{2}\mu\left(\dot{r}^2+r^2\dot{\varphi}^2\right)+U(r)=\frac{1}{2}\mu\dot{r}^2 + \frac{J^2}{2\mu r^2}+U(r)
 \end{equation} \refstepcounter{subsection}
-Donde el primer término de lo que denominamos potencial efectivo es lo que llamamos potencial centrífugo, propio de las fuerzas centrales.
-
-La ecuación (5.1.22) es una EDO de primer orden separable que nos permite hallar $r(t)$, invirtiendo la siguiente expresión
+La ecuación (5.3.1) es una EDO de primer orden separable que nos permite hallar $r(t)$, invirtiendo la siguiente expresión
 \begin{equation} \label{5.1.23}
     \int_{r_0}^r{\left[\frac{2}{\mu}\left(E-U(r)\right)-\frac{J^2}{\mu^2 r^2}\right]^{-\frac{1}{2}}dr}=t-t_0
 \end{equation} \refstepcounter{subsection}
 
-Usando (5.1.16) podemos encontrar $\varphi(t)$ una vez tenemos $r(t)$, de forma similar al formalismo Hamiltoniano.
-\subsubsection{Ecuación del movimiento}
+Usando (5.2.7) podemos encontrar $\varphi(t)$ una vez tenemos $r(t)$, de forma similar al formalismo Hamiltoniano.
+\section{Ecuación del movimiento} \refstepcounter{subsection}
 Haciendo (2.2.1)(E-L) con respecto a $r$ obtenemos la ecuación del movimiento del sistema
 \begin{equation} \label{5.1.24}
     \mu \ddot{r} = \mu r \dot{\varphi}^2 - \frac{\partial U}{\partial r} = \frac{J^2}{\mu r^3}+ F(r)
@@ -122,7 +120,108 @@ Usando la regla de la cadena, el teorema de la función inversa y (5.1.16)
 \begin{equation} \label{5.1.26}
     \frac{d^2 u}{d\varphi^2}  = \frac{d}{d\varphi}\left(-\frac{\mu \dot{r}}{J}\right)=-\frac{\mu}{J} \frac{d \dot{r}}{dt} \frac{dt}{d\varphi} = -\frac{\mu}{J} \frac{d \dot{r}}{dt} \frac{1}{\frac{d\varphi}{dt}} = -\frac{\mu}{J} \ddot{r} \frac{1}{\dot{\varphi}}= - \frac{\mu^2}{J^2} r^2 \ddot{r}
 \end{equation} \refstepcounter{subsection}
-Despejando $\ddot{r}$ de (5.1.26) y sustituyendo en (5.1.24) llegamos a la ecuación de la trayectoria, cuya solución es $r(\varphi)$
+Despejando $\ddot{r}$ de (5.4.3) y sustituyendo en (5.4.1) llegamos a la ecuación de la trayectoria, cuya solución es $r(\varphi)$
 \begin{equation} \label{5.1.27}
     \frac{\partial^2 u}{\partial \varphi^2} + u = -\frac{\mu}{J^2 u^2}F(u) \iff \frac{\partial^2}{\partial \varphi^2}\left(\frac{1}{r}\right) + \frac{1}{r} = -\frac{\mu}{J^2}r^2F(r)
 \end{equation} \refstepcounter{subsection}
+\section{Potencial efectivo} \refstepcounter{subsection}
+El primer término de la ecuación (5.4.1) se denomina fuerza centrífuga, a la que podemos asociar un potencial, tal que 
+\begin{equation} \label{5.1.28}
+    F_{\mbox{\small cf}} = \frac{J}{\mu r^3} = -\frac{\partial U_{\mbox{\small cf}}}{\partial r} \implies U_{\mbox{\small cf}} = \frac{J^2}{2\mu r^2}
+\end{equation} \refstepcounter{subsection}
+De esta forma las expresiónes (5.4.1) y (5.3.1) nos quedan
+\begin{equation} \label{5.1.29}
+    \mu \ddot{r} = -\frac{\partial}{\partial r} (U_{\mbox{\small cf}}+U) = -\frac{\partial U_{\mbox{\small ef}}}{\partial r} \ \ \ \ \ \  U_{\mbox{\small ef}} = U(r) + \frac{J^2}{2\mu r^2}
+\end{equation} \refstepcounter{subsection}
+\begin{equation} \label{5.1.29}
+    E = \frac{1}{2}\mu \dot{r}^2 + \left(\frac{J^2}{2\mu r^2}+U(r)\right) = \frac{1}{2}\mu\dot{r}^2 + U_{\mbox{\small ef}}(r)
+\end{equation} \refstepcounter{subsection}
+El primer término de (5.5.3) lo llamamos el término cinético y siempre es positivo, esto implica necesariamente la siguiente relación que determinará que valores de $r$ podrá tomar el sistema.
+\begin{equation} \label{5.1.30}
+    E\geq U_{\mbox{\small uf}}(r) \ \ \forall ts \ \ \ \ \ \ E = U_{\mbox{\small uf}}(r) \implies \dot{r}=0
+\end{equation} \refstepcounter{subsection}
+
+
+\clearpage
+\section{Potenciales $-\gamma/r$}\refstepcounter{subsection}
+Si tenemos un potencial de la forma siguiente, entonces el potencial efectivo asociado toma la siguiente expresión representada en la figura.
+\begin{equation} \label{5.6.1}
+    U(r) = -\frac{\gamma}{r} \ \ \ \ \gamma>0 \ \ \ \ \ \ U_{\mbox{\small ef}} =  \frac{J^2}{2\mu r^2} -\frac{\gamma}{r}
+\end{equation} \refstepcounter{subsection}
+\begin{figure}[h]
+    \includegraphics[width=12cm]{uf.png}
+\end{figure}
+Aplicando (5.5.4) podemos deducir ciertas propiedades del movimiento.
+
+Si $E>0$, tenemos que la recta corta en un solo punto a $U_{\mbox{\small ef}}$, en ese punto serán iguales y la velocidad radial se anula. Esto nos indica que si r va disminuyendo, su velocidad radial es negativa pero su modulo va aumentando hasta que llega a $r_c$, donde la diferencia entre $E$ y $U_{\mbox{ \small ef}}$ es mayor y alcaza su pico, entonces el modulo de la velocidad radial disminuye hasta que se anula en el punto $r$ donde se cortan, entonces r volverá a aumentar, siendo su velocidad positiva y creciente, hasta alcanzar su pico en $r_c$, tras lo cual la velocidad decrece hasta un valor límite cuanto r tiende a infinito.
+
+En cambio, si $E>0$, esta corta en dos puntos a $U_{ \mbox{\small ef}}$, donde la velocidad radial se anulará, lo que significa que $r$ esta acotado entre esos dos puntos $r_{\mbox{\small min}}$ y $r_{\mbox{\small max}}$, llamados \textit{periápside} y \textit{apoápside} respectivamente, entorno a los cuales oscilará, puesto que fuera de esa región no se cumple (5.5.4).
+
+Estos valores pueden encontrarse igualando (5.6.1) a $E$ y resolviendo para $1/r$ como una ecuación cuadrática, obteniendo
+\begin{equation} \label{5.6.2}
+    \frac{1}{r}=\frac{\gamma \mu}{J^2}\left(1\pm\sqrt{1+\frac{2J^2 E}{\gamma^2 \mu}}\right)
+\end{equation} \refstepcounter{subsection}
+
+Diremos que una de trayectoria es cerrada cuando exista un periodo $\tau$ tal que $r(t+\tau)=r(t)$ y $\varphi(t+\tau)=\varphi(t) +2 \pi k$ para algún $k \in \mathbb{Z}$.
+
+Si $E=U_{\mbox{\small ef}}$, la velocidad radial se anula y $r$ es constante, describiendo una órbita circular de radio $r_c$.
+
+\section{Órbitas de Kepler} \refstepcounter{subsection}
+Tenemos de nuevo $U(r)=-\gamma/r$ y $F(r)=-\gamma/r^2$ tal que $\gamma > 0$. Usando la ecuación de la trayectoria (5.4.4), tenemos que $F(u)=-\gamma u^2$, si $u=u(\varphi)$, entonces
+\begin{equation} \label{5.7.1}
+    u'' + \left(u -\frac{\mu \gamma}{J^2}\right) = 0 = u'' + \omega(\varphi) \rightarrow \omega'' = u'' \implies \omega'' + \omega = 0 
+\end{equation} \refstepcounter{subsection}
+Haciendo ese cambio de variable hemos encontrado una EDO facil de resolver, tal que , pudiendo escoger $\delta =0$ al escoger los ejes adecuados (el origen de $\varphi$)
+\begin{equation} \label{5.7.2}
+    \omega = A \cos{\varphi +\delta} \implies u(\varphi) = \omega + \frac{\mu \gamma}{J^2} = A \cos{\varphi} +\frac{\mu \gamma}{J^2} = \frac{\mu \gamma}{J^2}\left(1+ \frac{A J^2}{\mu \gamma} \cos(\varphi)\right)
+\end{equation} \refstepcounter{subsection}
+Renombrando ciertas constantes, usando que $A\geq0$y sustituyendo $u$ llegamos a 
+\begin{equation} \label{5.7.3}
+    \frac{1}{c} = \frac{\mu \gamma}{J^2}>0 \ \ \ \ \epsilon=\frac{A J^2}{\mu \gamma}\geq 0 \ \ \ \ \ \ r(\varphi) = \frac{c}{1+\epsilon \cos\varphi}
+\end{equation} \refstepcounter{subsection}
+Veremos que (5.7.3) es la ecuación de las secciones cónicas en coordenadas polares.
+\subsection{Caso $0 \leq \epsilon < 1 $}
+Si $0 \leq \epsilon < 1 $, entonces el denominador de (5.7.3) nunca se anula, lo que significa que $r$ va a estar acotado con extremos $r_{\mbox{\small min}}$ y $r_{\mbox{\small max}}$ que ocurrirán en $\cos \varphi = \{-1,1\}$
+\begin{equation} \label{5.7.4}
+    r_{\mbox{\small min}}= \frac{c}{1-\epsilon} \ \ \ \ \ \ r_{\mbox{\small max}} = \frac{c}{1+\epsilon}
+\end{equation} \refstepcounter{subsection}
+Como el denominador no se anula, $r(\varphi+2\pi k)=r(\varphi)$ para cualquier $k\in \mathbb{Z}$, es decir es periódica en $\varphi$, lo cual también implica que es cerrdada.
+
+Si ahora expresamos (5.7.3) en cartesianas, primero definiendo las transformaciones
+\begin{equation} \label{5.1.5}
+    x = r\cos\theta \ \ \ \ y = r\sin \theta \ \ \ \ r^2=x^2+y^2
+\end{equation} \refstepcounter{subsection}
+\vspace{-15pt}
+\begin{equation} \label{5.1.6}
+    c = r +\epsilon r \cos\varphi = r+\epsilon x \rightarrow r = c-\epsilon x
+\end{equation} \refstepcounter{subsection}
+\vspace{-20pt}
+\begin{equation} \label{5.1.7}
+    (c-\epsilon x)^2 = c^2 + \epsilon^2 x^2 -2\epsilon c x = x^2 + y^2 \rightarrow x^2 +2 \frac{c\epsilon}{1-\epsilon^2}x +\frac{y^2}{1-\epsilon^2}=\frac{c^2}{1-\epsilon^2}
+\end{equation} \refstepcounter{subsection}
+Despejando c de (5.7.3) en (5.7.6), sustituyendo en (5.7.5) y operando llegamos a (5.7.7). Si ahora definimos las siguientes constantes
+\begin{equation} \label{5.1.8}
+    d = \frac{c\epsilon}{1-\epsilon^2} \ \ \ \ \ b^2 = \frac{c^2}{1-\epsilon^2} \ \ \ \ \ b^2 + d^2 = \frac{c^2}{(1-\epsilon^2)^2} = a^2
+\end{equation} \refstepcounter{subsection}
+\vspace{-15pt}
+\begin{equation} \label{5.1.8}
+    b^2 = a^2(1-\epsilon^2) \ \ (b<a) \ \ \ \ \ d=a\epsilon
+\end{equation} \refstepcounter{subsection}
+Podemos reescribir (5.7.7) y completar el cuadrado de $x$
+\begin{equation} \label{5.1.7}
+    x^2 +2dx +\frac{y^2}{1-\epsilon^2}=b^2 \rightarrow (x+d)^2 +\frac{y^2}{1-\epsilon^2}=b^2 + d^2 = a^2
+\end{equation} \refstepcounter{subsection}
+De esta forma pasando $a^2$ dividiendo y usando (5.7.9) obtenemos la ecuación de una elipse
+\begin{equation} \label{5.1.7}
+    \left(\frac{x+d}{a}\right)^2 +\left(\frac{y}{b}\right)^2=1
+\end{equation} \refstepcounter{subsection}
+\begin{figure}[H]
+    \def\svgwidth{15 cm}
+    \normalsize
+	\input{images/orbit.pdf_tex}
+	\labfig{margin2}
+\end{figure}
+\vspace{-40pt}
+Como se puede apreciar en (5.7.11), el centro de la elipse esta desplazdo $d$ unidades hacía la derecha de $O$, la posición $m_2$.
+\subsection{Caso $ç\epsilon = 1 $}
+\subsection{Caso $ç\epsilon > 1 $}
