@@ -19,15 +19,15 @@
      inkscape:pageopacity="0.0"
      inkscape:pagecheckerboard="0"
      showgrid="false"
-     inkscape:zoom="1.6522727"
-     inkscape:cx="158.87208"
-     inkscape:cy="359.2022"
+     inkscape:zoom="13.218182"
+     inkscape:cx="326.48212"
+     inkscape:cy="364.61142"
      inkscape:window-width="1920"
      inkscape:window-height="1050"
      inkscape:window-x="0"
      inkscape:window-y="30"
      inkscape:window-maximized="1"
-     inkscape:current-layer="g1556" />
+     inkscape:current-layer="g149" />
   <defs
      id="defs5">
     <clipPath
@@ -127,43 +127,12 @@
          font-style="normal"
          font-weight="normal"
          text-decoration="normal"
-         x="334"
-         y="387"
+         x="330.5975"
+         y="387.41135"
          text-anchor="start"
          dominant-baseline="alphabetic"
          fill-opacity="1"
-         id="text33">b</text>
-      <text
-         fill="none"
-         stroke="#ffffff"
-         font-family="geogebra-sans-serif, sans-serif"
-         font-size="32px"
-         font-style="normal"
-         font-weight="normal"
-         text-decoration="normal"
-         x="334"
-         y="387"
-         text-anchor="start"
-         dominant-baseline="alphabetic"
-         stroke-opacity="1"
-         stroke-linejoin="bevel"
-         stroke-miterlimit="10"
-         stroke-width="3"
-         id="text35">b</text>
-      <text
-         fill="#cc0000"
-         stroke="none"
-         font-family="geogebra-sans-serif, sans-serif"
-         font-size="32px"
-         font-style="normal"
-         font-weight="normal"
-         text-decoration="normal"
-         x="334"
-         y="387"
-         text-anchor="start"
-         dominant-baseline="alphabetic"
-         fill-opacity="1"
-         id="text37">$b$</text>
+         id="text37">$a$</text>
       <path
          fill="none"
          stroke="#6600cc"
@@ -188,7 +157,7 @@
          text-anchor="start"
          dominant-baseline="alphabetic"
          fill-opacity="1"
-         id="text45">$a$</text>
+         id="text45">$b$</text>
       <path
          fill="none"
          stroke="#99ff00"
@@ -213,7 +182,7 @@
          text-anchor="start"
          dominant-baseline="alphabetic"
          fill-opacity="1"
-         id="text53">$h$</text>
+         id="text53">$a$</text>
       <path
          fill="none"
          stroke="#00ffff"
@@ -438,7 +407,7 @@
          sodipodi:nodetypes="ssssss" />
       <g
          id="g1367"
-         transform="translate(-92.876205,12.808107)">
+         transform="translate(-74.785371,11.444795)">
         <text
            fill="#0000ff"
            stroke="none"

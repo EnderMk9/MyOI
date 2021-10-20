@@ -58,9 +58,7 @@
     \put(0,0){\includegraphics[width=\unitlength,page=2]{orbit.pdf}}%
     \put(0.76282446,0.36589527){\color[rgb]{0,0.39215686,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\varphi$\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=3]{orbit.pdf}}%
-    \put(0.2530303,0.37348485){\color[rgb]{0.8,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}b\end{tabular}}}}%
-    \put(0.2530303,0.37348485){\color[rgb]{1,1,1}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}b\end{tabular}}}}%
-    \put(0.2530303,0.37348485){\color[rgb]{0.8,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$a$\end{tabular}}}}%
+    \put(0.25045265,0.37317322){\color[rgb]{0.8,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$a$\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=4]{orbit.pdf}}%
     \put(0.51060606,0.47254902){\color[rgb]{0.4,0,0.8}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$b$\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=5]{orbit.pdf}}%
