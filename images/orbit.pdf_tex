@@ -60,11 +60,11 @@
     \put(0,0){\includegraphics[width=\unitlength,page=3]{orbit.pdf}}%
     \put(0.2530303,0.37348485){\color[rgb]{0.8,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}b\end{tabular}}}}%
     \put(0.2530303,0.37348485){\color[rgb]{1,1,1}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}b\end{tabular}}}}%
-    \put(0.2530303,0.37348485){\color[rgb]{0.8,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$b$\end{tabular}}}}%
+    \put(0.2530303,0.37348485){\color[rgb]{0.8,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$a$\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=4]{orbit.pdf}}%
-    \put(0.51060606,0.47254902){\color[rgb]{0.4,0,0.8}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$a$\end{tabular}}}}%
+    \put(0.51060606,0.47254902){\color[rgb]{0.4,0,0.8}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$b$\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=5]{orbit.pdf}}%
-    \put(0.62107322,0.48340115){\color[rgb]{0.6,1,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$h$\end{tabular}}}}%
+    \put(0.62107322,0.48340115){\color[rgb]{0.6,1,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$a$\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=6]{orbit.pdf}}%
     \put(0.58738195,0.36794105){\color[rgb]{0,1,1}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$d$\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=7]{orbit.pdf}}%
@@ -80,8 +80,8 @@
     \put(0,0){\includegraphics[width=\unitlength,page=12]{orbit.pdf}}%
     \put(0.51182011,0.32778949){\color[rgb]{0,1,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$C$\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=13]{orbit.pdf}}%
-    \put(0.81297257,0.37135749){\color[rgb]{0,0,1}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}Periápside\end{tabular}}}}%
-    \put(0.81297257,0.37135749){\color[rgb]{0,0,1}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}Periápside\end{tabular}}}}%
+    \put(0.82667775,0.37239031){\color[rgb]{0,0,1}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}Periápside\end{tabular}}}}%
+    \put(0.82667775,0.37239031){\color[rgb]{0,0,1}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}Periápside\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=14]{orbit.pdf}}%
     \put(0.05807573,0.37068355){\color[rgb]{0.8,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}Apoápside\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=15]{orbit.pdf}}%

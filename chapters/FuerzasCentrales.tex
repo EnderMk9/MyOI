@@ -181,11 +181,11 @@ Renombrando ciertas constantes, usando que $A\geq0$y sustituyendo $u$ llegamos a
 \end{equation} \refstepcounter{subsection}
 Veremos que (5.7.3) es la ecuación de las secciones cónicas en coordenadas polares.
 \subsection{Caso $0 \leq \epsilon < 1 $}
-Si $0 \leq \epsilon < 1 $, entonces el denominador de (5.7.3) nunca se anula, lo que significa que $r$ va a estar acotado con extremos $r_{\mbox{\small min}}$ y $r_{\mbox{\small max}}$ que ocurrirán en $\cos \varphi = \{-1,1\}$
+Si $0 \leq \epsilon < 1 $, entonces el denominador de (5.7.3) nunca se anula, lo que significa que $r$ va a estar acotado con extremos $r_{\mbox{\small min}}$ y $r_{\mbox{\small max}}$ que ocurrirán en $\cos \varphi = \{1,-1\}$
 \begin{equation} \label{5.7.4}
     r_{\mbox{\small min}}= \frac{c}{1+\epsilon} \ \ \ \ \ \ r_{\mbox{\small max}} = \frac{c}{1-\epsilon}
 \end{equation} \refstepcounter{subsection}
-Como el denominador no se anula, $r(\varphi+2\pi k)=r(\varphi)$ para cualquier $k\in \mathbb{Z}$, es decir es periódica en $\varphi$, lo cual también implica que es cerrdada.
+Como el denominador no se anula, $r(\varphi+2\pi k)=r(\varphi)$ para cualquier $k\in \mathbb{Z}$, es decir es periódica en $\varphi$.
 
 Si ahora expresamos (5.7.3) en cartesianas, primero definiendo las transformaciones
 \begin{equation} \label{5.1.5}
@@ -222,6 +222,65 @@ De esta forma pasando $a^2$ dividiendo y usando (5.7.9) obtenemos la ecuación d
 	\labfig{margin2}
 \end{figure}
 \vspace{-40pt}
-Como se puede apreciar en (5.7.11), el centro de la elipse esta desplazdo $d$ unidades hacía la derecha de $O$, la posición $m_2$.
+Como se puede apreciar en (5.7.11), el centro de la elipse esta desplazado $d$ unidades hacía la derecha de $O$, la posición $m_2$. Las constantes $a$ y $b$ son los semiejes mayor y menor respectivamente.
+
+\subsubsection{Primera Ley de \texit{Kepler}}
+Es importante notar que no estamos en el sistema del CM, sino en el sistema de $m_2$, aunque si la relación de masas es muy grade ambas posiciones son muy cercanas, de lo contrario siempre podemos usar (5.1.9) para obtener el moviemiento entorno al CM.
+
+$m_2$ se encuentra en uno de los focos de la elipse por estar precisamente una distancia d del centro, esta es la primera ley de \texit{Kepler}.
+
+\subsubsection{Excentricidad}
+$\epsilon$ es la excentricidad de la elipse, podemos hallar una expresión de esta en función de $a$ y $b$ usando (5.7.9)
+\begin{equation} \label{5.1.12}
+    \epsilon = \sqrt{1-\frac{b^2}{a^2}}
+\end{equation} \refstepcounter{subsection}
+Cuando $a$ y $b$ son iguales tenemos un círculo y su excentricidad es 0, lo que implica que $r_{\mbox{\small min}} = r_{\mbox{\small max}}$.
+
+Tenemos dos nuevas expresiones de los extremos $r_{\mbox{\small min}} = a (1-\epsilon)$ y  $r_{\mbox{\small max}} = a (1+\epsilon)$ usando (5.7.4) y (5.7.8).
+\subsubsection{Periodo}
+Como vimos en (5.2.12), la velocidad areolar es constante, lo que implica que el área total debe ser igual a la velocidad areolar por el periodo, tal que
+\begin{equation} \label{5.1.13}
+    a b \pi =A = \frac{J}{2 \mu} \tau
+\end{equation} \refstepcounter{subsection}
+Usando (5.7.3), (5.7.8) y (5.7.9) llegamos a 
+\begin{equation} \label{5.1.14}
+    \tau^2 = 4 \pi^2 \frac{\mu^2 a^2 b^2}{J^2} = 4 \pi^2 \frac{\mu^2 a^2 b^2}{c \gamma \mu} =  \frac{4 \pi^2  \mu}{\gamma} a^3
+\end{equation} \refstepcounter{subsection}
+Que si $m_2 >> m_1$, $\mu = m_1$ y $\gamma = G m_1 m_2 $, se transforma en la tercera ley de \texit{Kepler}.
+\begin{equation} \label{5.1.14}
+    \tau^2 =\frac{4 \pi^2}{G m_2} a^3
+\end{equation} \refstepcounter{subsection}
+\subsubsection{Energía}
+Como la energía se conserva, podemos relacionar la energía con las constantes que hemos estado definiendo en un punto concreto de la trayectoria y se cumplirá para todos.
+Para ello tomamos el caso del apoápside, donde la velocidad radial se anula.
+\begin{equation} \label{5.1.14}
+    E = \frac{J^2}{2\mu r_{\mbox{\small min}}^2}-\frac{\gamma }{r_{\mbox{\small min}}}
+\end{equation} \refstepcounter{subsection}
+Despejando $r_{\mbox{\small min}}$ de (5.7.4) y sustituyendo $c$ de (5.7.3) llegamos a 
+\begin{equation} \label{5.1.14}
+    r_{\mbox{\small min}} = \frac{J^2}{\gamma \mu (1+\epsilon)}
+\end{equation} \refstepcounter{subsection}
+Sustituyendo en (5.17.16) y operando llegamos a 
+\begin{equation} \label{5.1.14}
+    E = \frac{\gamma^2 \mu}{2 J^2} (\epsilon^2-1) \ \ \ \ \ \epsilon = \sqrt{1+\frac{2EJ^2}{\gamma^2 \mu}}
+\end{equation} \refstepcounter{subsection}
+Esta expresión se cumple para cualquier valor de $\epsilon$, lo que nos permite realcionar los valores de $\epsilon$ a las energías y relacionar con lo visto en (5.6), donde por ejemplo (5.6.2) es equivalente a las expresiones encontradas ahora.
 \subsection{Caso $ç\epsilon = 1 $}
+En este caso, el denominador se anula en $\cos \varphi = -1$, que ocurre cuando $\varphi$ tiende a $\pi$. Si de nuevo expresamos la ecuación (5.3.7) en cartesianas tenemos.
+\begin{equation} \label{5.1.14}
+    r = \frac{c}{1+\cos\varphi} \rightarrow r+x=c \rightarrow x^2+y^2 = (c-x)^2
+\end{equation} \refstepcounter{subsection}
+\vspace{-15pt}
+\begin{equation} \label{5.1.14}
+    y^2 = c^2 -2cx \rightarrow x = \frac{c^2 - y^2}{2c}
+\end{equation} \refstepcounter{subsection}
+Esta es la ecuación de una parábola en $y$ que se abre hacía la izquierda, cuando $\varphi$ tiende a $\pi$.
 \subsection{Caso $ç\epsilon > 1 $}
+En este caso, el denominador se anulará cuando $\cos \varphi = -1/\epsilon \label{5.1.7} \inlineeqnum$. Podemos aprovechar las mismas expresiones que en (5.7.11), pero teneiendo en cuenta que en (5.7.8) y (5.7.9), $1-\epsilon < 0$ y $1-\epsilon^2 < 0$, redefiniendo las constantes para que nos queden positivas tenemos
+\begin{equation} \label{5.1.14}
+    \delta = -d <0 \ \ \ \ \  \beta^2 = -b^2 <0 \ \ \ \ \alpha = -a<0
+\end{equation} \refstepcounter{subsection}  
+Tal que  (5.7.11) nos queda la ecuación de una hipérbola cuyas asíntotas verifican (5.7.21)
+\begin{equation} \label{5.1.7}
+    \left(\frac{x+d}{\alpha}\right)^2 -\left(\frac{y}{\beta}\right)^2=1
+\end{equation} \refstepcounter{subsection}
