@@ -72,7 +72,7 @@ Que aplicando las ecuaciones de \textit{Euler-Lagrange} tanto para $q_j$ como pa
 \Large\begin{equation} \label{2.3.5}
     \frac{\partial \pazocal{L}}{\partial q_j} -\frac{d}{dt}\left(\frac{\partial \pazocal{L}}{\partial \dot{q}_j}\right) +\underbrace{\sum^m\lambda_i(t)\frac{\partial G_i}{\partial q_j}}_{Q^L_j}=0
 \end{equation} \refstepcounter{subsection}\normalsize
-Donde $Q^L_j$ es la componente $j$ de la fuerza de ligadura total, tal que $\mathbf{F}^L=\sum{Q^L_j \hat{u}_{q_j}}$, que cumplen que $dW^L = \mathbf{F}^L\cdot d\mathbf{r}=0$ son fuerzas que o siempre perpendiculares a la ligadura, o que provocan que $d\mathbf{r}=0 \iff \mathbf{v}=0$ en el punto de contacto.
+Donde $Q^L_j$ es la componente $j$ de la fuerza de ligadura total, tal que $\mathbf{F}^L=\sum{Q^L_j \partial_{q_j} \mathbf{r}}$, que cumplen que $dW^L = \mathbf{F}^L\cdot d\mathbf{r}=0$ son fuerzas que o siempre perpendiculares a la ligadura, o que provocan que $d\mathbf{r}=0 \iff \mathbf{v}=0$ en el punto de contacto.
 
 %-------------------------------------------------------------------------------------------
 \section{Teorema de la Energía Cinética}\refstepcounter{subsection}
