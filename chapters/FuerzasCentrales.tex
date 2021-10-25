@@ -284,3 +284,24 @@ Tal que  (5.7.11) nos queda la ecuación de una hipérbola cuyas asíntotas veri
 \begin{equation} \label{5.1.7}
     \left(\frac{x+d}{\alpha}\right)^2 -\left(\frac{y}{\beta}\right)^2=1
 \end{equation} \refstepcounter{subsection}
+\subsubsection{Cambio de Órbitas}
+Vamos a suponer que partimos del periápside de una órbita, le damos un cierto impulso tangencial con $\mu$ constante, cambiando la órbita a $r_2$, teniendo que
+\begin{equation} \label{5.1.24}
+    r_1(\varphi_0)=r_2(\varphi_0) \rightarrow \frac{c_1}{1+\epsilon_1 \cos(\varphi_0-\delta_1)} = \frac{c_2}{1+\epsilon_2 \cos(\varphi_0-\delta_2)}
+\end{equation} \refstepcounter{subsection}
+Como partimos del periápside, tenemos que $\varphi_0=\delta_1=0 \label{5.1.25} \inlineeqnum$. Como el impulso es tangencial, es perpendicular al eje x (porque $\delta_1=0$ y el eje x coincide con el periápside).
+
+Esto solo ocurre para los extremos debido a la geometría de la elipse, esto implica entonces entonces que cuando cambiemos a la nueva órbita, también nos hallaremos en un extremo, pues la velocidad seguirá siendo tangencial, así $\delta_2=0$.
+
+El impulso va a cambiar la velocidad de $v_1$ a $v_2$, y llamamos factor de impulso a $\lambda=v_2/v_1$, si $\lambda>1$, entonces la velocidad aumenta, si $\lambda < 1$, la velocidad disminuye.
+
+Como la velocidad es perpendicular a $\mathbf{r}$, eso implica que $J_1=\mu r_1 v_1$ y $J_2=\mu r_2 v_2$, y haciendo despejando $\mu$ e igualando llegamos a $J_2 = \lambda J_1$.
+
+Por otro lado, tenemos la expresión de $c$ (5.7.3), como $\gamma$ no cambia, despejamos $\mu \gamma$ e igualamos y obtenemos $c_2= \lambda c_1$.
+
+Ahora de (5.7.24) podemos despejar $\epsilon_2$ y susituimos las expresiones que acabamos de obtener y tenemos
+\begin{equation} \label{5.1.24}
+    \epsilon_2 = \lambda^2 \epsilon_1 + \lambda^2 -1
+\end{equation} \refstepcounter{subsection}
+
+Entonces si $\lambda >1$, tenemos que $\epsilon_2>\epsilon_1$, y entonces la órbita es mayor, si  $\lambda <1$, tenemos que $\epsilon_2<\epsilon_1$, y entonces la órbita es menor.
