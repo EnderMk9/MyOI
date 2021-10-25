@@ -1,11 +1,10 @@
-
 \chapter{Sistemas de referencia no inerciales} 
 \refstepcounter{subsection}
-Llamemos $\pazocal{S}_0$, al sistema de referencia inercial, que lleva asociado un origen espacial $\mathcal{O}_0 = \mathbf{O}$, un origen temporal $t_0=0$, cuyos ejes cartesianos se encuentran fijos, con coordenadas $(x_0,y_0,z_0)$. Lo representamos por $\pazocal{S}_0 = \left\{\mathcal{O}_0,(\mathbf{e}_{x_0},\mathbf{e}_{y_0},\mathbf{e}_{z_0})\right\}$.
+Llamemos $\pazocal{S}_0$, al sistema de referencia inercial, que lleva asociado un origen espacial $\pazocal{O}_0 = \mathbf{O}_{\pazocal{S}_0}$, un origen temporal $\pazocal{O}_{t_0}=0_{\pazocal{S}_0}$, cuyos ejes cartesianos se encuentran fijos, con coordenadas $(x_0,y_0,z_0)$. Lo representamos por $\pazocal{S}_0 = \left\{\pazocal{O}_0,\pazocal{O}_{t_0},(\mathbf{e}_{x_0},\mathbf{e}_{y_0},\mathbf{e}_{z_0})\right\}$.
 
-Tenemos otro sistema de referencia $\pazocal{S}$ no inercial, con sus orígenes, $\mathcal{O}$ y $t$ que pueden ser iguales a los de $\pazocal{S}_0$ o no, con sus ejes cartesianos fijos en el cuerpo, con coordenadas $(x,y,z)$, tal que $\pazocal{S} = \left\{\mathcal{O},(\mathbf{e}_x,\mathbf{e}_y,\mathbf{e}_z)\right\}$.
+Tenemos otro sistema de referencia $\pazocal{S}$ no inercial, con sus orígenes, $\pazocal{O}$ y $\pazocal{O}_{t}$ que pueden ser iguales o distintos a los de $\pazocal{S}_0$, con sus ejes cartesianos fijos en él mismo, con coordenadas $(x,y,z)$, tal que $\pazocal{S} = \left\{\pazocal{O},\pazocal{O}_{t},(\mathbf{e}_x,\mathbf{e}_y,\mathbf{e}_z)\right\}$.
 
-Definimos formalmente que los ejes estan fijos cuando 
+Definimos formalmente que los ejes estan fijos con respecto a un sistema de referencia cuando 
 \begin{equation} \label{6.1.1}
     \left(\frac{d}{dt}\mathbf{e}_{j_0}\right)_{\pazocal{S}_0} = 0 \ \ \ \ \ \left(\frac{d}{dt}\mathbf{e}_j\right)_{\pazocal{S}} = 0 \ \ \ \ \ \forall j
 \end{equation} \refstepcounter{subsection}
@@ -13,16 +12,16 @@ Entonces un sistema de referencia es no inercial cuando, para algún $j$,
 \begin{equation} \label{6.1.1}
     \left(\frac{d}{dt}\mathbf{e}_j\right)_{\pazocal{S}_0} \neq 0 \iff \left(\frac{d}{dt}\mathbf{e}_{j_0}\right)_{\pazocal{S}} \neq 0 
 \end{equation} \refstepcounter{subsection}
-es decir, alguno de los vectores de $\pazocal{S}$ no es constante respecto a $\pazocal{S}_0$. También es un sistema no inercial en general cuando este acelerado.
-\section{Aceleración sin rotación}
+es decir, alguno de los vectores de $\pazocal{S}$ no es constante respecto a $\pazocal{S}_0$. También es un sistema no inercial en general cuando $\pazocal{O}$ este acelerado con respecto a un $\pazocal{S}_0$.
+\section{Aceleración rectilínea}
 \refstepcounter{subsection}
-Si tenemos que $\pazocal{S}$ esta se mueve con respecto a $\pazocal{S}_0$ con aceleración $\mathbf{A}=\dot{\mathbf{V}}$, donde $\mathbf{V}$ es la velocidad entre ambos sistemas.
+Si tenemos que $\pazocal{S}$ esta se mueve de forma rectilínea respecto a $\pazocal{S}_0$ con aceleración $\mathbf{A}=\dot{\mathbf{V}}$, donde $\mathbf{V}$ es la velocidad de $\pazocal{S}$ respecto a $\pazocal{S}_0$.
 
-Si $\mathbf{r}_0$ y $\mathbf{r}$ son vectores de posición equivalente en cada sistema de referencia, estos se relacionan por
+Si $\mathbf{r}_0$ y $\mathbf{r}$ son vectores de posición equivalentes en cada sistema de referencia, estos se relacionan por
 \begin{equation} \label{6.1.1}
     \dot{\mathbf{r}}_0=\dot{\mathbf{r}}+\mathbf{V} \rightarrow \ddot{\mathbf{r}}_0=\ddot{\mathbf{r}}+\mathbf{A}
 \end{equation} \refstepcounter{subsection}
-Ai ahora tenemos la 2LN, llegamos a 
+Si ahora tenemos la 2LN, llegamos a 
 \begin{equation} \label{6.1.1}
-    \mathbf{F} = m\ddot{\mathbf{r}}_0 = \mathbf{F} = m\ddot{\mathbf{r}} + m \mathbf{A} \implies m\ddot{\mathbf{r}} = \mathbf{F}-m \mathbf{A} = \mathbf{F}+\mathbf{F}_{\mbox{\small iner.}}
+    \mathbf{F} = m\ddot{\mathbf{r}}_0 = m\ddot{\mathbf{r}} + m \mathbf{A} \implies m\ddot{\mathbf{r}} = \mathbf{F}-m \mathbf{A} = \mathbf{F}+\mathbf{F}_{\mbox{\small iner.}}
 \end{equation} \refstepcounter{subsection}

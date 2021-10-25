@@ -220,9 +220,11 @@ De esta forma pasando $a^2$ dividiendo y usando (5.7.9) obtenemos la ecuación d
     \normalsize
 	\input{images/orbit.pdf_tex}
 	\labfig{margin2}
+    \vspace{-75pt}
+    \caption{Trayectoria $r(\varphi)$}
 \end{figure}
-\vspace{-40pt}
-Como se puede apreciar en (5.7.11), el centro de la elipse esta desplazado $d$ unidades hacía la derecha de $O$, la posición $m_2$. Las constantes $a$ y $b$ son los semiejes mayor y menor respectivamente.
+\vspace{15pt}
+Como se puede apreciar en (5.7.11), el centro de la elipse esta desplazado $d$ unidades hacía la derecha de $O$, la posición de $m_2$. Las constantes $a$ y $b$ son los semiejes mayor y menor respectivamente.
 
 \subsubsection{Primera Ley de \texit{Kepler}}
 Es importante notar que no estamos en el sistema del CM, sino en el sistema de $m_2$, aunque si la relación de masas es muy grade ambas posiciones son muy cercanas, de lo contrario siempre podemos usar (5.1.9) para obtener el moviemiento entorno al CM.
@@ -236,7 +238,7 @@ $\epsilon$ es la excentricidad de la elipse, podemos hallar una expresión de es
 \end{equation} \refstepcounter{subsection}
 Cuando $a$ y $b$ son iguales tenemos un círculo y su excentricidad es 0, lo que implica que $r_{\mbox{\small min}} = r_{\mbox{\small max}}$.
 
-Tenemos dos nuevas expresiones de los extremos $r_{\mbox{\small min}} = a (1-\epsilon)$ y  $r_{\mbox{\small max}} = a (1+\epsilon)$ usando (5.7.4) y (5.7.8).
+Tenemos dos nuevas expresiones de los extremos $r_{\mbox{\small min}} = a (1-\epsilon) $ y  $r_{\mbox{\small max}} = a (1+\epsilon)$ usando (5.7.4) y (5.7.8).
 \subsubsection{Periodo}
 Como vimos en (5.2.12), la velocidad areolar es constante, lo que implica que el área total debe ser igual a la velocidad areolar por el periodo, tal que
 \begin{equation} \label{5.1.13}
@@ -246,7 +248,7 @@ Usando (5.7.3), (5.7.8) y (5.7.9) llegamos a
 \begin{equation} \label{5.1.14}
     \tau^2 = 4 \pi^2 \frac{\mu^2 a^2 b^2}{J^2} = 4 \pi^2 \frac{\mu^2 a^2 b^2}{c \gamma \mu} =  \frac{4 \pi^2  \mu}{\gamma} a^3
 \end{equation} \refstepcounter{subsection}
-Que si $m_2 >> m_1$, $\mu = m_1$ y $\gamma = G m_1 m_2 $, se transforma en la tercera ley de \texit{Kepler}.
+Que dado $m_2 >> m_1$, entonces $\mu = m_1$ y si $\gamma = G m_1 m_2 $, (5.7.14) se transforma en la tercera ley de \texit{Kepler}.
 \begin{equation} \label{5.1.14}
     \tau^2 =\frac{4 \pi^2}{G m_2} a^3
 \end{equation} \refstepcounter{subsection}
@@ -285,21 +287,21 @@ Tal que  (5.7.11) nos queda la ecuación de una hipérbola cuyas asíntotas veri
     \left(\frac{x+d}{\alpha}\right)^2 -\left(\frac{y}{\beta}\right)^2=1
 \end{equation} \refstepcounter{subsection}
 \subsubsection{Cambio de Órbitas}
-Vamos a suponer que partimos del periápside de una órbita, le damos un cierto impulso tangencial con $\mu$ constante, cambiando la órbita a $r_2$, teniendo que
+Vamos a suponer que partimos del periápside de una órbita, le damos un cierto impulso tangencial con $\mu$ y $\gamma$ constante, cambiando la órbita de $r_1(\varphi)$ a $r_2(\varphi)$, teniendo que
 \begin{equation} \label{5.1.24}
     r_1(\varphi_0)=r_2(\varphi_0) \rightarrow \frac{c_1}{1+\epsilon_1 \cos(\varphi_0-\delta_1)} = \frac{c_2}{1+\epsilon_2 \cos(\varphi_0-\delta_2)}
 \end{equation} \refstepcounter{subsection}
-Como partimos del periápside, tenemos que $\varphi_0=\delta_1=0 \label{5.1.25} \inlineeqnum$. Como el impulso es tangencial, es perpendicular al eje x (porque $\delta_1=0$ y el eje x coincide con el periápside).
+Como partimos del periápside, podemos escoger $\delta_1=0 \label{5.1.25} \inlineeqnum$ y entonces $\varphi_0=0 \label{5.1.25} \inlineeqnum$. Como el impulso es tangencial, es perpendicular a $\mathbf{r}_1$.
 
-Esto solo ocurre para los extremos debido a la geometría de la elipse, esto implica entonces entonces que cuando cambiemos a la nueva órbita, también nos hallaremos en un extremo, pues la velocidad seguirá siendo tangencial, así $\delta_2=0$.
+Esto solo ocurre para los extremos debido a la geometría de la elipse, esto implica entonces entonces que cuando cambiemos a la nueva órbita, también nos hallaremos en un extremo, pues la velocidad será perpendicular a $\mathbf{r}_2$, así $\delta_2=0 \label{5.1.25} \inlineeqnum$.
 
 El impulso va a cambiar la velocidad de $v_1$ a $v_2$, y llamamos factor de impulso a $\lambda=v_2/v_1$, si $\lambda>1$, entonces la velocidad aumenta, si $\lambda < 1$, la velocidad disminuye.
 
-Como la velocidad es perpendicular a $\mathbf{r}$, eso implica que $J_1=\mu r_1 v_1$ y $J_2=\mu r_2 v_2$, y haciendo despejando $\mu$ e igualando llegamos a $J_2 = \lambda J_1$.
+Como la velocidad es perpendicular a $\mathbf{r}$, eso implica que $J_1=\mu r_1 v_1$ y $J_2=\mu r_2 v_2$, y haciendo despejando $\mu$ e igualando llegamos a $J_2 = \lambda J_1  \label{5.1.25} \inlineeqnum$.
 
-Por otro lado, tenemos la expresión de $c$ (5.7.3), como $\gamma$ no cambia, despejamos $\mu \gamma$ e igualamos y obtenemos $c_2= \lambda c_1$.
+Por otro lado, usando (5.7.3), la expresión de $c$, y (5.7.27), despejamos $\mu \gamma$ e igualamos y obtenemos $c_2= \lambda^2 c_1\label{5.1.25} \inlineeqnum$.
 
-Ahora de (5.7.24) podemos despejar $\epsilon_2$ y susituimos las expresiones que acabamos de obtener y tenemos
+Ahora de (5.7.24) podemos despejar $\epsilon_2$ y susituimos (5.7.25-26-27) y (5.7.29)
 \begin{equation} \label{5.1.24}
     \epsilon_2 = \lambda^2 \epsilon_1 + \lambda^2 -1
 \end{equation} \refstepcounter{subsection}
