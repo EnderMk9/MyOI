@@ -1,0 +1,23 @@
+\documentclass[10pt]{article}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.15}
+\usepackage{mathrsfs}
+\usetikzlibrary{arrows}
+\pagestyle{empty}
+\begin{document}
+\definecolor{ffttww}{rgb}{1,0.2,0.4}
+\definecolor{zzttqq}{rgb}{0.6,0.2,0}
+\definecolor{ffdxqq}{rgb}{1,0.8431372549019608,0}
+\definecolor{yqqqqq}{rgb}{0.5019607843137255,0,0}
+\definecolor{uuuuuu}{rgb}{0.26666666666666666,0.26666666666666666,0.26666666666666666}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1cm,y=1cm]
+\clip(-3.054701448288572,-4.155568586839246) rectangle (4.400549122107138,3.2996819835564635);
+\draw [line width=2pt,color=ffdxqq,fill=ffdxqq,fill opacity=0.2] (0,0) circle (3cm);
+\fill[line width=0pt,color=zzttqq,fill=zzttqq,fill opacity=0.51] (0,0) -- (3.6055512754639896,0) -- (1.1094003924504583,1.6641005886756874) -- cycle;
+\draw [line width=5.2pt,color=ffttww] (0,0)-- (3,0);
+\begin{scriptsize}
+\draw [fill=uuuuuu] (0,0) circle (4.5pt);
+\draw [fill=yqqqqq] (3,0) circle (4.5pt);
+\end{scriptsize}
+\end{tikzpicture}
+\end{document}

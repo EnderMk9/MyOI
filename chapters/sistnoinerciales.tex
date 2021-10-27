@@ -21,7 +21,140 @@ Si $\mathbf{r}_0$ y $\mathbf{r}$ son vectores de posición equivalentes en cada 
 \begin{equation} \label{6.1.1}
     \dot{\mathbf{r}}_0=\dot{\mathbf{r}}+\mathbf{V} \rightarrow \ddot{\mathbf{r}}_0=\ddot{\mathbf{r}}+\mathbf{A}
 \end{equation} \refstepcounter{subsection}
-Si ahora tenemos la 2LN, llegamos a 
+Si ahora tenemos la 2LN, llegamos a que aparece lo que llamamos '\textit{fuerza inercial}' en el sistema no inercial
 \begin{equation} \label{6.1.1}
     \mathbf{F} = m\ddot{\mathbf{r}}_0 = m\ddot{\mathbf{r}} + m \mathbf{A} \implies m\ddot{\mathbf{r}} = \mathbf{F}-m \mathbf{A} = \mathbf{F}+\mathbf{F}_{\mbox{\small iner.}}
 \end{equation} \refstepcounter{subsection}
+\vspace{-25pt}
+\subsection{Mareas}
+Vamos a asumir que ha habido un diluvio universal y la Tierra esta cubierta de océano. Las mareas son un fenómeno en el que la altura del mar varía con periodo de unas 12 horas.
+
+Si tenemos un objeto $m$ en la superficie del océano. Considerando que la rotación de la Luna sobre la Tierra tiene un periodo mucho mayor que las mareas, podremos considerar el sistema de referencia de la Tierra como un sistema no inercial con aceleración rectilínea y que la Tierra y la Luna no rotan en ese intervalo temporal.
+\begin{figure}[H]
+    \def\svgwidth{15 cm}
+    \normalsize
+	\input{images/marea.pdf_tex}
+	\labfig{margin2}
+    \vspace{-75pt}
+    \caption{Diagrama del sistema}
+\end{figure}
+\vspace{15pt}
+La aceleración de la Tierra con respecto al CM de ambos cuerpos es la fuerza gravitatoria que sufre la tierra debida a la masa de la luna partido por la masa de la tierra, dirección a la Luna.
+\begin{equation} \label{6.1.1}
+    \mathbf{A} = -\frac{G M_L}{d_0^2} \mathbf{e}_{d_0}
+\end{equation} \refstepcounter{subsection}
+
+Entonces por (6.1.2) la fuerza inercial que sufre $m$ en su sistema de referencia es
+\begin{equation} \label{6.1.1}
+    \mathbf{F}_{\mbox{\small iner.}} = \frac{GmM_L}{d_0^2}\mathbf{e}_{d_0}
+\end{equation} \refstepcounter{subsection} 
+Además, $m$ sufre las fuerzas gravitatorias de la Tierra, la Luna, y la fuerza de Arquímedes del agua, tal que
+\begin{equation} \label{6.1.1}
+    \mathbf{F}_T = m\mathbf{g} \ \ \ \ \ \mathbf{F}_L = -\frac{GmM_L}{d^2}\mathbf{e}_d
+\end{equation} \refstepcounter{subsection}
+También deberíamos tener en cuenta la fuerza centrífuga de la rotación de la Tierra sobre su propio eje, pero la vamos a despreciar por que no es muy grande en comparación al resto.
+Entonces, usando (6.1.2), la 2LN para $m$ nos queda
+\begin{equation} \label{6.1.1}
+    m \ddot{\mathbf{r}} = m\mathbf{g} + \mathbf{F}_A - GmM_L\left(\frac{\mathbf{e}_d}{d^2}-\frac{\mathbf{e}_{d_0}}{d_0^2}\right) = m\mathbf{g} + \mathbf{F}_A + \mathbf{F}_{\mbox{\small marea}}
+\end{equation} \refstepcounter{subsection}
+Los casos en los que $m$ se encuentra en los puntos $A$ y $B$, donde $\mathbf{e}_d=\mathbf{e}_{d_0}$, en el primer caso $d<d_0$ y en el segundo $d>d_0$, así podemos obtener el sentido de la fuerza de marea en esos puntos usando (6.1.6), como se observa en el diagrama 
+\begin{equation} \label{6.1.1}
+    \mathbf{F}_{\mbox{\small marea}}=-GmM_L\left(\frac{1}{d^2}-\frac{1}{d_0^2}\right)\mathbf{e}_d \ \ \ \ \ \begin{matrix}
+        \mathbf{F}^A_{\mbox{\small marea}} \propto -\mathbf{e}_d \\
+        \mathbf{F}^B_{\mbox{\small marea}} \propto \ \ \ \mathbf{e}_d
+    \end{matrix}
+\end{equation} \refstepcounter{subsection}
+Cuando $m$ se encuentra en $C$ o $D$, $d^2=r^2+d_0^2$, y podemos hacer la siguiente aproximación por series de Taylor cuando $r<<d_0$, lo cual es cierto en este caso.
+\begin{equation} \label{6.1.1}
+    d = d_0\left[1+\left(\frac{r}{d_0}\right)^2\right]^{1/2} = d_0+ O\left(\left(\frac{r}{d_0}\right)^2\right)
+\end{equation} \refstepcounter{subsection}
+Por otro lado $d\mathbf{e}_d = d_0\mathbf{e}_{d_0}+ \mathbf{r}$, usando (6.1.7) llegamos a que
+\begin{equation} \label{6.1.1}
+    \mathbf{e}_d \approx \mathbf{e}_{d_0}+ \frac{\mathbf{r}}{d_0}
+\end{equation} \refstepcounter{subsection}
+Entonces usando (6.1.6), (6.1.8) y (6.1.9) llegamos a que, como se observa en el diagrama
+\begin{equation} \label{6.1.1}
+    \mathbf{F}_{\mbox{\small marea}}\approx-GmM_L\frac{\mathbf{r}}{d_0^3} \propto -\mathbf{r}
+\end{equation} \refstepcounter{subsection}
+Entonces de (6.1.7) y (6.1.10) concluimos que horizontalmente las fuerzas son hacía fuera, y verticalmente son hacía dentro, por lo que de forma cualitativa nos podemos imaginar de forma cualitativa que el océano hace la curva achatada dibujada en el diagrama.
+
+El hecho de que la Tierra este en rotación sobre su propio eje explica el periodo de 12 horas de las mareas, puesto que al transcurrir medio día, te encuentras en el punto antipodal al que te encontrabas, pero la altura de la marea es muy similar.
+
+\subsubsection{Diferencia de altura}
+Ahora queremos determinar la diferencia de altura del océano entre $A$ y $C$.
+
+Como $\mathbf{F}_A$ es perpendicular a la superficie, eso implica que $m\mathbf{g}+\mathbf{F}_{\mbox{\small marea}}$ también lo es en el equilibrio por (6.1.6). Entonces los puntos de equilibrio deben de formar una superficie equipotencial de un potencial asociado a $m\mathbf{g}+\mathbf{F}_{\mbox{\small marea}}$, pues su gradiente, $m\mathbf{g}+\mathbf{F}_{\mbox{\small marea}}$, es siempre perpendicular a esa superficie.
+
+El potencial de $m\mathbf{g}$ es de la forma $mgr$ con $r$ por ejemplo la distancia al centro de la Tierra, tal que $m\mathbf{g}=-\nabla(mgr)=-mg\mathbf{e}_r=m\mathbf{g}$.
+
+La fuerza de marea la podemos descomponer en dos sumandos, tal que
+\begin{equation} \label{6.1.1}
+    \mathbf{F}_{\mbox{\small marea}}= -GmM_L\frac{\mathbf{e}_d}{d^2}+GmM_L\frac{\mathbf{e}_{d_0}}{d_0^2}=-\nabla\left(\frac{GmM_L}{d}\right)-\nabla\left(\frac{GmM_Lx}{d_0^2}\right)
+\end{equation} \refstepcounter{subsection}
+$d_0$ es aproximadamente constante en las escalas temporales en las que trabajamos. $x$ es la coordenada cartesiana horizontal y $\mathbf{e}_x=\mathbf{e}_d$. $d$ es una coordenada esférica no centrada en el origen, podemos expresar el gradiente así porque $\mathbf{d}=\mathbf{d}_0+\mathbf{r}$ y los gradientes de $d$ y $r$ son iguales ya que $\mathbf{d}_0$ es constante.
+
+Entonces como tratamos con una superfice equipotencial, tenemos que $U(A)=U(C)$ y entonces tenemos que pasando los términos similares a cada lado
+\begin{equation} \label{6.1.1}
+    mg\Delta r = \Delta U_{\mbox{\small marea}}
+\end{equation} \refstepcounter{subsection}
+$\Delta r = h$ es la diferencia de altura que queremos hallar, así que tenemos que trabajar con el lado derecho para encontrar una expresión para esta.
+
+A partir de (6.1.11) llegamos a que $U_{\mbox{\small marea}}$ es 
+\begin{equation} \label{6.1.1}
+    U_{\mbox{\small marea}} = -GmM_L\left(\frac{1}{d}-\frac{x}{d_0^2}\right)
+\end{equation} \refstepcounter{subsection}
+Entonces para $C$ tenemos que $d_c$ podemos aproximarla al igual que (6.1.8)
+\begin{equation} \label{6.1.1}
+    \frac{1}{d_c} = \frac{1}{d_0}\left[1+\left(\frac{r}{d_0}\right)^2\right]^{-1/2} = \frac{1}{d_0}\left[1-\frac{1}{2}\left(\frac{r}{d_0}\right)^2\right] +O\left(\left(\frac{r}{d_0}\right)^4\right)
+\end{equation} \refstepcounter{subsection}
+Entonces $U_{\mbox{\small marea}}(c)$ es, usando (6.1.13), (6.1.14), que $x_C=0$ y que $r = R_T+h \approx R_T$
+\begin{equation} \label{6.1.1}
+    U_{\mbox{\small marea}}(C) \approx -\frac{GmM_L}{d_0}\left(1-\frac{R_T^2}{2d_0^2}\right)
+\end{equation} \refstepcounter{subsection}
+Para $A$ tenemos que si $x_A = -r$, entonces $d_A = d_0+x_A =d_0-r$, esta última la aproximaremos para que también nos salga un orden cuadrático como en  (1.1.14)
+\begin{equation} \label{6.1.1}
+    \frac{1}{d_A} = \frac{1}{d_0}\left[1+\frac{r}{d_0}\right]^{-1} = \frac{1}{d_0}\left[1-\frac{r}{d_0} + \left(\frac{r}{d_0}\right)^2\right] +O\left(\left(\frac{r}{d_0}\right)^3\right)
+\end{equation} \refstepcounter{subsection}
+Entonces usando $r \approx R_T$, $U_{\mbox{\small marea}}(A)$ será
+\begin{equation} \label{6.1.1}
+    U_{\mbox{\small marea}}(A) \approx -\frac{GmM_L}{d_0}\left(1-\frac{R_T^2}{d_0^2}\right)
+\end{equation} \refstepcounter{subsection}
+Entonces finalmente desarrollamos (6.1.12) usando (6.1.15) y (6.1.17)
+\begin{equation} \label{6.1.1}
+mgh = U_{\mbox{\small marea}}(C)-U_{\mbox{\small marea}}(A) \approx \frac{GmM_L}{d_0} \frac{3}{2} \frac{R_T^2}{d_0^2}
+\end{equation} \refstepcounter{subsection}
+Entonces despejando $h$ de (6.1.18) y usando $g=GM_T/R_T^2$ llegamos a
+\begin{equation} \label{6.1.1}
+    h \approx \frac{GM_L}{gd_0} \frac{3}{2} \frac{R_T^2}{d_0^2} = \frac{3}{2} \frac{M_L}{M_T} \frac{R_T^4}{d_0^3} 
+    \end{equation} \refstepcounter{subsection}
+Para la Luna esto nos da del orden de medio metro, y para un sistema equivalente con el Sol nos da un cuarto de metro.
+
+En función de la posición del Sol y la Luna, las mareas de ambos se sumarán o se restarán.
+\section{Sistemas no inerciales en rotación}\refstepcounter{subsection}
+Cualquier trayectoria no rectilínea puede intepresarse como una sucesión de arcos de círculo con radio y centro variables. Definimos la velocidad angular $\omega$ como $\dot{\theta}$, siendo $\theta$ el ángulo que recorre en ese arco circular.
+\subsection{Rotación respecto a un punto fijo}
+\begin{marginfigure}[0pt]
+    \def\svgwidth{4 cm}
+    \normalsize
+	\input{images/rot.pdf_tex}
+	\labfig{margin2}
+    \vspace{-30pt}
+    \caption{Diagrama del sistema}
+\end{marginfigure}
+\vspace{15pt}
+Si tenemos un cuerpo describiendo un movimiento circular entorno a un eje y el origen de coordenadas del sistema inercial se encuentra en cualquier punto del eje.
+
+La velocidad es, siendo $\rho$ el radio de rotación
+\begin{equation} \label{6.1.1}
+    v = \frac{ds}{dt} = \rho \frac{d\theta}{dt} = \rho \omega
+    \end{equation} \refstepcounter{subsection}
+Tenemos que $\rho = r \sin\alpha$, donde $r$ es la distancia al origen y $\alpha$ el ángulo que forma el vector posición $\mathbf{r}$ y el eje.
+Entonces tenemos
+\begin{equation} \label{6.1.1}
+    v =  r \sin\alpha \omega
+    \end{equation} \refstepcounter{subsection}
+$\mathbf{v}$ es perpendicular al plano que forman $\mathbf{r}$ y el eje, pues es tangencial. Si definimos $\vec{\omega}=\omega \mathbf{e}_z$ donde $\mathbf{e}_z$ es paralelo al eje y va hacía arriba podemos deducir junto a (6.2.1)
+\begin{equation} \label{6.1.1}
+    \mathbf{v} =  \vec{\omega} \times \mathbf{r}
+    \end{equation} \refstepcounter{subsection}
+El orden hace que (6.2.3) verifique la regla de la mano derecha.
