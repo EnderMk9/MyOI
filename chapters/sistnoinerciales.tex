@@ -139,7 +139,6 @@ Cualquier trayectoria no rectilínea puede intepresarse como una sucesión de ar
 	\input{images/rot.pdf_tex}
 	\labfig{margin2}
     \vspace{-30pt}
-    \caption{Diagrama del sistema}
 \end{marginfigure}
 \vspace{15pt}
 Si tenemos un cuerpo describiendo un movimiento circular entorno a un eje y el origen de coordenadas del sistema inercial se encuentra en cualquier punto del eje.
@@ -158,3 +157,260 @@ $\mathbf{v}$ es perpendicular al plano que forman $\mathbf{r}$ y el eje, pues es
     \mathbf{v} =  \vec{\omega} \times \mathbf{r}
     \end{equation} \refstepcounter{subsection}
 El orden hace que (6.2.3) verifique la regla de la mano derecha.
+
+Entonces si tenemos $\mathbf{r}=\mathbf{e}_r$, podemos obtener la derivada de ese vector, que esta fijo en el sistema de referencia no inercial
+\begin{equation} \label{6.1.1}
+    \left(\frac{d \mathbf{e}_r}{dt}\right)_{\pazocal{S}_0} =  \vec{\omega} \times \mathbf{e}_r \implies \left(\frac{d \mathbf{e}}{dt}\right)_{\pazocal{S}_0} =  \vec{\omega} \times \mathbf{e}
+    \end{equation} \refstepcounter{subsection}
+Esto es por que en esféricas, $\mathbf{e}_r$ puede representar cualquier dirección.
+
+Entonces si tenemos un vector cualquiera $\mathbf{Q}$ expresado en la base del sistema no inercial tenemos, usando la notación de Einstein para sumaciones
+\begin{equation} \label{6.1.1}
+    \mathbf{Q}=Q_i \mathbf{e}_i \ \ \ \ \ \ \dot{\mathbf{Q}}=\left(\frac{d \mathbf{Q}}{dt}\right)_\pazocal{S} = \frac{d Q_i}{dt} \mathbf{e}_i
+    \end{equation} \refstepcounter{subsection}
+La derivada de las componentes no depende del sistema de referencia por que son escalares. Como estamos en $\pazocal{S}$, su base es constante. Entonces si ahora hallamos la derivada con respecto a $\pazocal{S}_0$, usando (6.2.4)
+\begin{equation} \label{6.1.1}
+    \left(\frac{d \mathbf{Q}}{dt}\right)_{\pazocal{S}_0} = \frac{d Q_i}{dt} \mathbf{e}_i + Q_i \left(\frac{d \mathbf{e_i}}{dt}\right)_{\pazocal{S}_0} = \left(\frac{d \mathbf{Q}}{dt}\right)_\pazocal{S} + Q_i \vec{\omega} \times \mathbf{e}_i = \left(\frac{d \mathbf{Q}}{dt}\right)_\pazocal{S} + \vec{\omega} \times \mathbf{Q}
+    \end{equation} \refstepcounter{subsection}
+Esta expresión es muy importante y nos permite relacionar derivadas vectoriales de un vector en cada sistema de referencia.
+
+Ahora vamos a reescribir la 2LN en el sistema de referencia $\pazocal{S}$, primero lo escribimos en $\pazocal{S}_0$
+\begin{equation} \label{6.1.1}
+    m\left(\frac{d^2 \mathbf{r}}{dt^2}\right)_{\pazocal{S}_0}= \mathbf{F}
+    \end{equation} \refstepcounter{subsection}
+Y entonces expresamos la derivada en términos de $\pazocal{S}$
+\[
+    \left(\frac{d^2 \mathbf{r}}{dt^2}\right)_{\pazocal{S}_0}= \left(\frac{d}{dt}\left(\frac{d \mathbf{r}}{dt}\right)_{\pazocal{S}_0}\right)_{\pazocal{S}_0} = \left(\frac{d}{dt}\left[\left(\frac{d \mathbf{r}}{dt}\right)_\pazocal{S} + \vec{\omega} \times \mathbf{r}\right]\right)_{\pazocal{S}_0}=
+    \]
+\begin{equation} \label{6.1.1}
+    = \left(\frac{d}{dt}\left(\frac{d \mathbf{r}}{dt}\right)_\pazocal{S}\right)_{\pazocal{S}_0} + \vec{\omega} \times \left(\frac{d\mathbf{r}}{dt}\right)_{\pazocal{S}_0} = \left(\frac{d^2 \mathbf{r}}{dt^2}\right)_\pazocal{S} + 2\vec{\omega} \times \left(\frac{d \mathbf{r}}{dt}\right)_\pazocal{S} + \vec{\omega} \times \left(\vec{\omega} \times \mathbf{r}\right)
+    \end{equation} \refstepcounter{subsection}
+Usando (6.2.8) llegamos a que (6.2.7) nos queda en $\pazocal{S}$ como
+\begin{equation} \label{6.1.1}
+    m\left(\frac{d^2 \mathbf{r}}{dt^2}\right)_{\pazocal{S}}= m\ddot{\mathbf{r}}=  \mathbf{F} + 2 m \dot{\mathbf{r}} \times  \vec{\omega} + m\left(\vec{\omega} \times \mathbf{r}\right) \times \vec{\omega} = \mathbf{F} + \mathbf{F}_{\mbox{\small cor}} + \mathbf{F}_{\mbox{\small cf}}
+    \end{equation} \refstepcounter{subsection}
+
+Esta es la ecuación que describe el movimiento de un cuerpo visto desde un sistema no inercial giratorio, por ejemplo, las auténticas ecuaciones que rigen la caída libre vista desde un observador en movimiento junto a la Tierra.
+\subsection{Rotación Terrestre}    
+La $\omega$ de la Tierra con respecto a su eje es de alrededor $7.3 \cdot 10^{-5}$ s$^{-1}$, de (6.2.9) podemos saber que a una altura pequeña tal que $r\approx R_T$, $|\mathbf{F}_{\mbox{\small cf}}|\sim m \omega^2 R_T $ y $|\mathbf{F}_{\mbox{\small cor}}|\sim m v \omega$.
+
+Entonces haciendo el siguiente cociente, obtenemos las velocidades para las que la fuerza de coriolis es despreciable en la superficie terrestre.
+\begin{equation} \label{6.1.1}
+    \frac{|\mathbf{F}_{\mbox{\small cor}}|}{|\mathbf{F}_{\mbox{\small cf}}|} \sim \frac{v}{\omega R_T} \approx \frac{v}{500 \mbox{ m s}^{-1}} \rightarrow v \ll 500 \mbox{ m s}^{-1} \implies \mathbf{F}_{\mbox{\small cor}} \mbox{ es despreciable}
+\end{equation} \refstepcounter{subsection}
+\vspace{-20pt}
+\subsubsection{Fuerza centrífuga}  
+\begin{marginfigure}[0pt]
+    \def\svgwidth{3.5 cm}
+    \normalsize
+	\input{images/tierracf.pdf_tex}
+	\labfig{margin2}
+    \vspace{-30pt}
+\end{marginfigure}
+Vamos a estudiar la fuerza centrígufa, que es $m\left(\vec{\omega} \times \mathbf{r}\right) \times \vec{\omega}$, sin tener en cuenta la fuerza de Coriolis, que estudiaremos posteriormente.
+
+Analizando con la regla de la mano derecha, podemos concluir que la dirección de la fuerza centrífuga es $\mathbf{e}_\rho$, en el plano de giro, normal a trayectoria y hacía fuera.
+
+El producto vectorial primero es (6.2.2) y (6.2.3), y ese vector es tiene dirección $\mathbf{e}_\varphi$, que es perpendicular a $\vec{\omega}$ por que es resultado de un producto vectorial de $\vec{\omega}$, entonces tenemos que la fuerza centrífuga puede expresarse como, donde $\theta$ es la colatitud
+\begin{equation} \label{6.1.1}
+    \mathbf{F}_{\mbox{\small cf}}= m r \omega^2 \sin \theta \  \mathbf{e}_\rho = m \rho \omega^2 \  \mathbf{e}_\rho
+\end{equation} \refstepcounter{subsection}
+Vamos a estudiar entonces la caída libre en un cuerpo en rotación como puede ser la tierra, suponiendo primero que estamos a una altura relativamente baja de la tierra, es decir $r\approx R_T$, tenemos entonces que la fuerza gravitatoria es
+\begin{equation} \label{6.1.1}
+    \mathbf{F}_{g}= - m \frac{M_T}{R_T^2} \mathbf{e}_r = -m g_0 \mathbf{e}_r = m \mathbf{g}_0
+\end{equation} \refstepcounter{subsection}
+Haciendo el siguiente cociente, obtenemos el orden de magnitud de (6.2.11)
+\begin{equation} \label{6.1.1}
+    \frac{|\mathbf{F}_{\mbox{\small cf}}|}{|\mathbf{F}_{\mbox{g}}|} \sim \frac{\omega^2 R_T}{g_0} \approx 3 \cdot 10^{-3}}
+\end{equation} \refstepcounter{subsection}
+\begin{marginfigure}[0pt]
+    \def\svgwidth{5 cm}
+    \normalsize
+	\input{images/earth2.pdf_tex}
+	\labfig{margin2}
+    \vspace{-10pt}
+\end{marginfigure}
+\vspace{-15}
+Podemos descomponer $\mathbf{e}_\rho$ en términos de $\mathbf{e}_r$ y $\mathbf{e}_\theta$, tal que
+\begin{equation} \label{6.1.1}
+    \mathbf{e}_\rho = \sin\theta \mathbf{e}_r + \cos\theta \mathbf{e}_\theta
+\end{equation} \refstepcounter{subsection}
+De esta forma, la suma de (6.2.11) y (6.2.12) resulta en, donde $\mathbf{g}$ es la aceleración de caída libre en el SRNI
+\begin{equation} \label{6.1.1}
+    \mathbf{F}_{g} +  \mathbf{F}_{\mbox{\small cf}} = m\left[\left(r\omega^2\sin^2\theta-g_0\right) \mathbf{e}_r + r\omega^2 \sin \theta \cos \theta \mathbf{e}_\theta \right] = m \left[-g_r \mathbf{e}_r + g_\theta \mathbf{e}_\theta\right] =  m\mathbf{g}
+\end{equation} \refstepcounter{subsection}
+De esta forma $\mathbf{g}$ forma un ángulo con $\mathbf{g}_0$, que es lo que normalmente consideramos únicamente, pero teniendo en cuenta la fuerza centrífuga, observamos que una masa no cae hacía el centro de la tierra, sino que cae ligeramente inclinado hacía el ecuador, esta va a ser la dirección vertical o de plomada.
+
+Esta inclinación es del orden de unos pocos minutos de arco como máximo (para $\theta=\pm 45^\circ$) y viene dada por
+\begin{equation} \label{6.1.1}
+    \alpha = \tan^{-1}\left(\left|\frac{g_\theta}{g_r}\right|\right) = \tan^{-1}\left(\left|\frac{r\omega^2 \sin \theta \cos \theta}{r\omega^2\sin^2\theta-g_0}\right|\right)
+\end{equation} \refstepcounter{subsection}
+\vspace{-20pt}
+\subsubsection{Fuerza de Coriolis}
+Ahora vamos a estudiar la fuerza de Coriolis, que es $2 m \dot{\mathbf{r}} \times  \vec{\omega}$, que vemos que es el producto de la velocidad por otro vector, lo que nos recuerda a la fuerza magnética $q \mathbf{v} \times \mathbf{B}$, como en este caso $\vec\omega$ es constante, el comportamiento será análogo al de una carga en presencia de un campo magnético uniforme, es decir, va a tender a girar.
+
+Tenemos entonces la siguiente ecuación del movimiento para la caída libre
+\begin{equation} \label{6.1.1}
+    m\ddot{\mathbf{r}}=  m\mathbf{g} + 2 m \dot{\mathbf{r}} \times  \vec{\omega}
+\end{equation} \refstepcounter{subsection}
+Cuando $\mathbf{r} \approx \mathbf{R}_T$ tenemos $\mathbf{g}$ constante, entonces la ecuación no depende de $\mathbf{r}$, y podemos hacer una traslación del origen desde el centro de la tierra a un punto de la superficie, tal que ahora $\tilde{\mathbf{r}} = \mathbf{r} - \mathbf{R}_T$, y como $\mathbf{R}_T$ es constante $\dot{\tilde{\mathbf{r}}} = \dot{\mathbf{r}}$. Como $\mathbf{r} \approx \mathbf{R}_T$, $\tilde{\mathbf{r}}$ es muy pequeño en comparación de $\mathbf{R}_T$.
+
+Un punto viene representado por las coordenadas $(x,y,z)$ relativas a un punto concreto de la superficie, que se asocian a los vectores $(\mathbf{e}_\varphi,-\mathbf{e}_\theta,-\mathbf{e}_\mathbf{g} \approx \mathbf{e}_r)$, tal que $x$ representa el este, $y$ representa el norte, y $z$ representa la altura en términos de la dirección de plomada que aproximaremos a la dirección radial tal que $\alpha << 1$.
+
+Entonces tenemos que
+\begin{equation} \label{6.1.1}
+    m\ddot{\tilde{\mathbf{r}}}=  m\mathbf{g} + 2 m \dot{\tilde{\mathbf{r}}} \times  \vec{\omega} \ \ \ \ \mathbf{g} = \left(R_T\omega^2\sin^2\theta-g_0\right) \mathbf{e}_r + R_T\omega^2 \sin \theta \cos \theta \mathbf{e}_\theta 
+\end{equation} \refstepcounter{subsection}
+Vamos a calcular la fuerza de Coriolis en la base ortonormal y dextrógira que hemos escogido, expresando $\vec{\omega}$ en esa base
+\begin{equation} \label{6.1.1}
+    \left(\begin{matrix}
+        \dot{x} \\ \dot{y} \\ \dot{z}
+    \end{matrix}\right) \times \omega \left(\begin{matrix}
+        0 \\  \sin\theta \\ \cos \theta
+    \end{matrix}\right) = \omega \left(\begin{matrix}
+        \dot{y}\cos\theta -\dot{z}\sin\theta \\  -\dot{x}\cos\theta \\ \dot{x}\sin\theta
+    \end{matrix}\right)
+\end{equation} \refstepcounter{subsection}
+Llegamos entonces al siguiente sistema de ecuaciones diferenciales de segundo orden acopladas
+\begin{equation} \label{6.1.1}
+\left\{\begin{matrix}
+  \ddot{x} = 2\dot{y}\omega\cos\theta -2\dot{z}\omega\sin\theta\\
+  \ddot{y} = -2\dot{x}\omega \sin\theta \phantom{----,,}\\
+  \ddot{z} = -g + 2\dot{x}\omega \sin\theta \phantom{---}
+\end{matrix}\right.
+\end{equation} \refstepcounter{subsection}
+Las vamos a estudiar perturbativamente para $\omega<<1$, primero para orden $\omega = 0$ obtenemos
+\begin{equation} \label{6.1.1}
+    \left\{\begin{matrix}
+      \ddot{x} = 0\\
+      \ddot{y} = 0\\
+      \ddot{z} = -g
+    \end{matrix}\right. \implies
+    \left\{\begin{matrix}
+        x = x_0 + v_{x_0}t\phantom{--,,}\\
+        y = y_0 + v_{y_0}t\phantom{--,,}\\
+        z = z_0 + v_{z_0}t-\frac{g}{2}t^2
+      \end{matrix}\right. , \ \ 
+    \left\{\begin{matrix}
+    \dot{x} = v_{x_0}\phantom{--,}\\
+    \dot{y} = v_{y_0}\phantom{--,}\\
+    \dot{z} = v_{z_0}-gt
+    \end{matrix}\right. , \ \ g=g_0
+\end{equation} \refstepcounter{subsection}
+Este es el caso en el que la Tierra no gira, pero podemos tomar estas soluciones e introducirlas de nuevo en (6.2.2)
+\begin{equation} \label{6.1.1}
+    \left\{\begin{matrix}
+      \ddot{x} = 2 v_{y_0} \omega\cos\theta -2 v_{z_0}\omega\sin\theta + 2 gt \omega\sin\theta\\
+      \ddot{y} = -2 v_{x_0} \omega \sin\theta \phantom{----------,,}\\
+      \ddot{z} = -g +2 v_{x_0} \omega \sin\theta \phantom{---------}
+    \end{matrix}\right. 
+\end{equation} \refstepcounter{subsection}
+\begin{equation} \label{6.1.1}
+    \left\{\begin{matrix}
+      \dot{x} = \omega\left(2 v_{y_0} \cos\theta -2 v_{z_0}\sin\theta\right)t +  gt^2 \omega\sin\theta + v_{x_0}\\
+      \dot{y} = -2 v_{x_0} \omega \sin\theta t + v_{y_0} \phantom{-----------,}\\
+      \dot{z} = \left(-g +2 v_{x_0} \omega \sin\theta\right)t + v_{z_0} \phantom{--------,,}
+    \end{matrix}\right. 
+\end{equation} \refstepcounter{subsection}
+\begin{equation} \label{6.1.1}
+    \left\{\begin{matrix}
+        x = \omega\left( v_{y_0} \cos\theta - v_{z_0}\sin\theta\right)t^2 +  \frac{g}{3}t^3 \omega\sin\theta + v_{x_0}t + x_0\\
+        y = -v_{x_0} \omega \sin\theta t^2 + v_{y_0}t + y_0 \phantom{-----------}\\
+        z = -\frac{g}{2}t^2 + v_{x_0} \omega \sin\theta t^2 + v_{z_0}t+z_0 \phantom{--------,,}
+    \end{matrix}\right. 
+\end{equation} \refstepcounter{subsection}
+Esta es la solución a primer orden del sistema de ecuaciones, si volvemos a introducir (6.2.24) en (6.2.20) obtenemos términos $\omega^2$ y podríamos obtener una solución de segundo orden.
+\begin{equation} \label{6.1.1}
+    x =  x_0 + \frac{g}{3}t^3 \omega\sin\theta; \ \ y = y_0; \ \ z =z_0-\frac{g}{2}t^2 
+\end{equation} \refstepcounter{subsection}
+En el caso particular de que $\mathbf{v}_0 = 0$ tenemos un desplazamiento proporcional a $z_0^{3/2}$ en $z=0$ hacía el este en ambos hemisferios por que $\sin\theta >0$ siempre en la Tierra 
+\begin{equation} \label{6.1.1}
+    t = z_0^{1/2} \sqrt{\frac{2}{g}} \implies \Delta x = \frac{ \omega \sin\theta}{3} \sqrt{\frac{8}{g}} z_0^{3/2}
+\end{equation} \refstepcounter{subsection}
+\vspace{-15}
+\subsubsection{Péndulo de Foucault}
+\begin{marginfigure}[0pt]
+    \def\svgwidth{3.5 cm}
+    \normalsize
+	\input{images/foucault.pdf_tex}
+	\labfig{margin2}
+    \vspace{-10pt}
+\end{marginfigure}
+
+\begin{marginfigure}[0pt]
+    \def\svgwidth{3.5 cm}
+    \normalsize
+	\input{images/foucault2.pdf_tex}
+	\labfig{margin2}
+    \vspace{-10pt}
+\end{marginfigure}
+
+Tendremos una masa $m$ muy pequeña unida a una cuerda muy larga de longitud $L$, que puede oscilar durante un largo tiempo.
+
+Además de las fuerzas no incerciales y la gravedad, hay que tener en cuenta la tensión de la cuerda, que usando el teorema de Tales y trigonometría llegamos a
+\begin{equation} \label{6.1.1}
+    \frac{-T_x}{T} = \frac{x}{L} \ \ \ \ \ \frac{-T_y}{T} = \frac{y}{L} \ \ \ \ \ T_z = T \cos \beta \ \ \ \ \ \sqrt{x^2 +y^2} =\rho = L \sin \beta \ \ \ \ \  \cos\beta = \frac{L-h}{L}
+\end{equation} \refstepcounter{subsection}
+Vamos a tomar oscilaciones tales que $\beta \ll 1$, tal que
+\begin{equation} \label{6.1.1}
+    \cos\beta = 1 -\frac{\beta^2}{2} + O(\beta^4) \ \ \ \ \ \ \ \sin \beta = \beta + O(\beta^3)
+\end{equation} \refstepcounter{subsection}
+Que hace que las expresiones de (6.2.27) nos queden como
+\begin{equation} \label{6.1.1}
+    \frac{\rho}{L} \approx \beta \implies \frac{x}{L} \approx \frac{y}{L} \approx \beta \ \ \ \ \ T_z \approx T \ \ \ \ \  \frac{h}{L} \approx \frac{\beta^2}{2}
+\end{equation} \refstepcounter{subsection}
+De esta forma, $h$ y sus derivadas son de orden cuadrado y podemos despreciarlos.
+
+Escribimos entonces la 2 LN, y separamos las componentes, de la misma forma que en (6.2.20) añadiendo el término de la tensión
+\begin{equation} \label{6.1.1}
+    m\ddot{\tilde{\mathbf{r}}}= \mathbf{T} + m\mathbf{g} + 2 m \dot{\tilde{\mathbf{r}}} \times  \vec{\omega}
+\end{equation} \refstepcounter{subsection}
+\begin{equation} \label{6.1.1}
+    \left\{\begin{matrix}
+      \ddot{x} = T_x/m +2\dot{y}\omega\cos\theta -2\dot{z}\omega\sin\theta\\
+      \ddot{y} = T_y/m -2\dot{x}\omega \sin\theta \phantom{-----,}\\
+      \ddot{h} = T_z/m -g + 2\dot{x}\omega \sin\theta \phantom{---,,}
+    \end{matrix}\right. \rightarrow
+    \left\{\begin{matrix}
+        \ddot{x} = T_x/m +2\dot{y}\omega\cos\theta \\
+        \ddot{y} = T_y/m -2\dot{x}\omega \sin\theta \phantom{}\\
+        0 = T_z/m -g \phantom{---,,}
+      \end{matrix}\right.
+\end{equation} \refstepcounter{subsection}
+De tal forma que hemos despreciado $\ddot{h}$ por que es de orden $\beta^2$, el último término de la tercera ecuación porque ese término es de orden $\beta \omega$, siendo $\omega$ pequeño, y es mucho más pequeño en comparación con $T_z/m-g$, lo mismo ocurre con el último término de la primera ecuación, que es de orden $\beta^2 \omega$, mientras que los otros términos son de orden $\beta$ o $\beta \omega$. 
+
+Con la tercera ecuación y (6.2.29) llegamos a que $T=mg$, y entonces usando (6.2.27) llegamos a 
+\begin{equation} \label{6.1.1}
+    \left\{\begin{matrix}
+        \ddot{x} = -xg/L  +2\dot{y}\omega\cos\theta \\
+        \ddot{y} = -yg/L -2\dot{x}\omega \sin\theta
+      \end{matrix}\right. \rightarrow
+    \left\{\begin{matrix}
+        \ddot{x} = -\omega_0^2 x  +2\dot{y}\omega_z \\
+        \ddot{y} = -\omega_0^2 y -2\dot{x}\omega_z
+    \end{matrix}\right. \ \ \ \ \ \ \omega_0^2 = \frac{g}{L} \ \ \ \ \ \omega_z = \omega \cos\theta
+\end{equation} \refstepcounter{subsection}
+Para resolver este sistema de ecuaciones planteamos el número complejo $\eta = x+iy$, tal que $\ddot{\eta} = \ddot{x}+ i\ddot{y}$, entonces sustityendo desde (6.2.32) llegamos a 
+\begin{equation} \label{6.1.1}
+    \ddot{\eta} + 2 i \omega_z \dot{\eta} + \omega_0^2 \eta = 0 \ \ \ \ \ \ \eta = e^{-i\alpha t} \implies \alpha^2 -2\omega_z\alpha-\omega_0^2 = 0
+\end{equation} \refstepcounter{subsection}
+Las raices de ese polinomio son, aproximadamente, considerando que $\omega_z \ll \omega_0$
+\begin{equation} \label{6.1.1}
+    \alpha = \omega_z \pm \sqrt{\omega_z^2+\omega_0^2} = \omega_z \pm \omega_0 \sqrt{1+\frac{\omega_z^2}{\omega_0^2}} = \omega_z \pm \omega_0 \left(1 + O\left(\frac{\omega_z^2}{\omega_0^2}\right)\right) \approx \omega_z \pm \omega_0
+\end{equation} \refstepcounter{subsection}
+Tal que llegamos a 
+\begin{equation} \label{6.1.1}
+    \eta = e^{-i\omega_z t}\left(C_1 e^{i\omega_0t}+C_2e^{-i\omega_0t}\right)
+\end{equation} \refstepcounter{subsection}
+Imponiendo las condiciones iniciales $x_0 = A$, $y_0 = 0 \implies \eta(0) = A$ y $\dot{\eta}(0) = 0$, es decir parte desde un punto en reposo, usando $\omega_z \ll \omega_0$ llegamos a 
+\begin{equation} \label{6.1.1}
+    \eta = A \cos(\omega_0t)\left[\cos(\omega_zt) -i \sin(\omega_zt))\right]
+\end{equation} \refstepcounter{subsection}
+Y tomando la parte real para $x$ y la parte compleja para $y$ llegamos a 
+\begin{equation} \label{6.1.1}
+    \left\{\begin{matrix}
+        x = \phantom{-}A \cos(\omega_0t)\cos(\omega_zt) \\
+        y = -A \cos(\omega_0t)\sin(\omega_zt)
+    \end{matrix}\right.
+\end{equation} \refstepcounter{subsection}
+La primera oscilación, rápida, ocurre en una dimensión y se corresponde al comportamiento oscilatorio habitual, mientras que la segunda oscilación corresponde a un moviento circular en sentido horario mucho más lento.
