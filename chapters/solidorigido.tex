@@ -1,0 +1,195 @@
+\chapter{Sólido Rígido} 
+\refstepcounter{subsection}
+Un sólido rígido es un conjunto de $N$ partículas tales que las distancias entre ellas $r_{\alpha \beta}$ son constantes.
+
+En el espacio, bastan las posiciones de otras tres masas y sus distancias a otra para ubicarla por triangulación, de tal forma que si partimos de un sistema de tres masas no colineales con distancia fija, tenemos 3 ligaduras, lo que implica 6 grados de libertad.
+
+Si ahora añadimos otra masa cuya distancia a las tres anteriores debe ser fija, hemos añadido 3 ligaduras y tres grados de libertad, por que lo que los grados de libertad del sistema no aumentan, y así podemos hacer contínuamente, puesto que solo necesitamos 3 ligaduras cada vez que añadimos una partícula para asegurar que la distancia al resto es fija.
+
+Por lo tanto, un sólido rígido tiene a lo sumo 6 grados de libertad, 3 de ellos relacionados con la posición del centro de masas, y otros 3 de ellos relacionados con la posición rotacional del sólido.
+\section{Orientación}
+\refstepcounter{subsection}
+Vamos a analizar dos sistemas de referencia, ambos con origen en el centro de masas del sólido, uno de ellos, $\pazocal{S}_0 = \left\{\pazocal{O},(\mathbf{e}_x,\mathbf{e}_y,\mathbf{e}_z)\right\}$ no tiene por que ser un sistema inercial, y tenemos $\pazocal{S} = \left\{\pazocal{O},(\mathbf{e}_1,\mathbf{e}_2,\mathbf{e}_3)\right\}$ cuyo movimiento relativo con respecto a $\pazocal{S}_0$ es el de rotación con respecto al centro de masas.
+
+Representamos el cambio de base como un producto matricial
+\begin{equation} \label{6.1.1}
+    \mathbf{e}'_i = A(t)_{ij} \mathbf{e}_j \ \ \ \ \ A_{ij} = \mathbf{e}'_i \cdot \mathbf{e}_j
+\end{equation} \refstepcounter{subsection}
+Si ahora hacemos el producto de dos vectores de la base $\pazocal{S}'$, teniendo en cuenta que $\mathbf{e}'_i \cdot \mathbf{e}'_j = \delta_{ij}$, es decir, la base es ortonormal, obtenemos
+\begin{equation} \label{6.1.1}
+    \mathbf{e}'_i \cdot \mathbf{e}'_j = \left(A_{ik} \mathbf{e}_k\right)\cdot \left(A_{jl} \mathbf{e}_l\right) = A_{ik} A_{jl} \mathbf{e}'_k \cdot \mathbf{e}'_l = A_{ik} A_{jl} \delta_{kl} =  A_{ik} A_{jk} = A_{ik} A^T_{kj} = \delta_{ij}
+\end{equation} \refstepcounter{subsection}
+Esta expresión nos da las siguientes relaciones entre las entradas de $A$
+\begin{equation} \label{6.1.1}
+    \sum_k (A_{ik})^2 = 1 \ \ \ i=1,2,3 \ \ \ \ \ \ \ \ A_{ik} A_{jk} = 0 \ \ \ \ i\neq j \rightarrow (1,2), (1,3), (2,3)
+\end{equation} \refstepcounter{subsection}
+Por lo que tenemos en total 6 relaciones y 9 componentes, lo que resulta en que $A$ solamente tiene 3 componentes independientes. Las relaciones de (8.1.3) lo que nos dicen es que las columnas de $A$ deben ser vectores unitarios y que las columnas entre sí son ortogonales. Es decir, la matriz es ortogonal, de hecho la igualdad final de (8.1.2) es la definición de matriz ortogonal, $AA^T = I$.
+\newpage
+Para expresar un vector $\mathbf{b}$ de una base a otra tenemos en cuenta que
+\begin{equation} \label{6.1.1}
+    b_i = \mathbf{b} \cdot \mathbf{e}_i \ \ \ \ \ \ \ b'_i = \mathbf{b} \cdot \mathbf{e}'_i
+\end{equation} \refstepcounter{subsection}
+\vspace{-20pt}
+\begin{equation} \label{6.1.1}
+    b'_i = \mathbf{b} \cdot A_{ij} \mathbf{e}_j = A_{ij} \mathbf{b} \cdot  \mathbf{e}_j = A_{ij} b_j
+\end{equation} \refstepcounter{subsection}
+Las matrices ortogonales se corresponden a rotaciones o simetrías, y tienen la propiedad de que $det(A) = \pm 1$, pero nos vamos a centrar en las transformaciones de determinante positivo, que son rotaciones.
+\vspace{-10pt}
+\subsection{Ángulos de Euler}
+\begin{marginfigure}[2pt]
+    \def\svgwidth{5.5 cm}
+    \hspace{-50pt}
+    \normalsize
+	\input{images/eangles.pdf_tex}
+	\labfig{margin2}
+    \vspace{-30pt}
+\end{marginfigure}
+Podemos describir cualquier orientación en el espacio mediante tres rotaciones con respecto a ciertos planos, tal que $\mathbf{T} = \mathbf{T}_\psi \mathbf{T}_\theta \mathbf{T}_\phi$
+\[\mathbf{T}_\phi = \left[\begin{matrix}
+    \cos\phi && -\sin\phi&& 0\\
+    \sin\phi && \cos\phi && 0\\
+    0 && 0 && 1
+\end{matrix}\right]
+\mathbf{T}_\theta = \left[\begin{matrix}
+    1 && 0 &&0 \\
+    0&& \cos\theta&& - \sin\theta\\
+    0&& \sin\theta&& \cos\theta
+\end{matrix}\right]\]
+\[\mathbf{T}_\psi = \left[\begin{matrix}
+    \cos\psi && -\sin\psi&& 0\\
+    \sin\psi && \cos\psi && 0\\
+    0 && 0 && 1
+\end{matrix}\right]\]
+\vspace{-15pt}
+\section{Tensor de Inercia}
+\vspace{-15pt}
+\subsection{Tensores}
+Consideramos $\mathbb{R}^d$ con base ortonormal, un tensor $\mathbb{T}$ rango $N$ tiene $d^N$ componentes, con índices ordenados $\mathbb{T}_{ijk \dots}$ donde cada letra toma valores $(1,2,3,\dots,d)$. Este se transforma bajo transformaciones ortonormales como
+\begin{equation} \label{6.1.1}
+    \mathbb{T}'_{ijk \dots} = \sum_{l,m,n,\dots^N} A_{il} A_{jm} A_{kn} \dots \mathbb{T}_{lmn \dots}
+\end{equation} \refstepcounter{subsection}
+Si $N=0$ no tiene índices y solo una componente, por lo que se trata de un escalar y es invariante ante transformaciones.
+Para $N=1$ tenemos un índice y $d$ componentes, por lo que se trata de un vector y (8.1.6) es idéntica a (8.1.5) y es un cambio de base.
+Para $N=2$ tenemos dos índices y $d^2$ componentes, y entonces la podemos interpretar como una matriz que puede actuar como una transformación lineal o una forma bilineal, que se transforma como 
+\begin{equation} \label{6.1.1}
+    \mathbb{T}'_{ij} = \sum_{l,m} A_{il} A_{jm} \mathbb{T}_{lm} = \sum_{l,m} A_{il} \mathbb{T}_{lm} A^T_{mj} \rightarrow  \mathbb{T}' = A \mathbb{T} A^T = A \mathbb{T} A^{-1}
+\end{equation} \refstepcounter{subsection}
+\vspace{-25pt}
+\subsection{Momento angular}
+El centro masas de un sólido es
+\begin{equation} \label{6.1.1}
+    \mathbf{R} = \frac{1}{M} \sum_\alpha^N m_\alpha \mathbf{r}_\alpha = \frac{1}{M} \int_V \rho \mathbf{r} dV \ \ \ \ \ \ M = \sum_\alpha^N m_\alpha=\int_V \rho dV
+\end{equation} \refstepcounter{subsection}
+Si además $\mathbf{r}_\alpha = \mathbf{R} + \mathbf{r}'_\alpha$, entonces
+\begin{equation} \label{6.1.1}
+    \mathbf{R} = \frac{1}{M} \sum_\alpha^N m_\alpha \mathbf{r}_\alpha = \mathbf{R} \frac{1}{M} \sum_\alpha^N m_\alpha + \frac{1}{M} \sum_\alpha^N m_\alpha \mathbf{r}'_\alpha \implies \sum_\alpha^N m_\alpha \mathbf{r}'_\alpha = 0
+\end{equation} \refstepcounter{subsection}
+Y entonces obtenemos las siguientes relaciones
+\begin{equation} \label{6.1.1}
+    \mathbf{p}_T = M \dot{\mathbf{R}} \ \ \ \ \ \ \mathbf{L}|_O = \mathbf{L}_{\mbox{\small CM}}|_O+\mathbf{L}|_{\mbox{\small CM}}  \ \ \ \ \ \ T = T_{\mbox{\small CM}} + T_{\mbox{\small rel.}}
+\end{equation} \refstepcounter{subsection}
+\vspace{-30pt}
+\subsection{Tensor de Inercia}
+Tomamos el sistema de referencia fijo en el sólido, $\pazocal{S}'$, que estará en rotación con respecto a el sistema de referencia inercial, $\pazocal{S}$. El origen es fijo en $\pazocal{S}'$, pero es arbitrario y no es necesario tomar como el origen el CM.
+
+Tenemos una rotación con respecto al origen y a un eje representado por $\vec{\omega}(t)$, entonces el momento ángular con respecto al origen $O$ que hemos elegido es, recordando (6.2.3)
+\[
+    \mathbf{L} = \sum_\alpha^N r_\alpha \times m_\alpha \mathbf{v}_\alpha = \sum_\alpha^N m_\alpha r_\alpha \times (\vec{\omega} \times \mathbf{r}_\alpha) = \sum_\alpha^N m_\alpha \left[\vec{\omega} (\mathbf{r}_\alpha \cdot \mathbf{r}_\alpha) - \mathbf{r}_\alpha (\mathbf{r}_\alpha \cdot \vec{\omega})\right]
+\]\vspace{-10pt}
+\[
+    \mathbf{L} = \sum_\alpha^N m_\alpha \left[\vec{\omega} \mathbf{r}_\alpha^2 - \mathbf{r}_\alpha (\mathbf{r}_\alpha \cdot \vec{\omega})\right] \ \ \ \ \ \ L_i = \sum_\alpha m_\alpha \left[ \sum_{kj} x^2_{\alpha k} \omega_i - x_{\alpha j} \omega_j x_{\alpha i}\right] = 
+\]\vspace{-10pt}
+\[
+    = \sum_\alpha m_\alpha \left[ \sum_{kj} \delta_{ij}x^2_{\alpha k} \omega_j - x_\alpha j \omega_j x_{\alpha i}\right] = \sum_j \left(\sum_\alpha m_\alpha \left[\delta_{ij}\sum_k x^2_{\alpha k} - x_{\alpha j} x_{\alpha i}\right]\right) \omega_j
+\]
+\vspace{-10pt}
+\begin{equation} \label{6.1.1}
+    I_{ij} = \sum_\alpha m_\alpha \left[\delta_{ij} \sum_k x^2_{\alpha k} - x_\alpha j x_{\alpha i}\right] = \int \left[\delta_{ij}\sum_k x^2_{k} - x_{j} x_{i}\right] \rho dV = I_{ji}
+\end{equation} \refstepcounter{subsection}
+De esta forma tenemos que
+\begin{equation} \label{6.1.1}
+    L_i = \sum_j I_{ij} \omega_j \iff \mathbf{L} = \mathbf{I} \vec{\omega}
+\end{equation} \refstepcounter{subsection}
+$\mathbf{I}$ es un tensor de rango 2 real, y simético. Los elementos de la diagonal se llaman momentos de inercia, y el resto productos de inercia, y el momento de inercia con respecto a una dirección se define como $\hat{n}^T \mathbf{I} \hat{n}$.
+
+\subsubsection{Simetrías}
+Si por ejemplo tenemos que una distribución de masa es simétrica bajo una transformación $x_i \mapsto -x_i$, con respecto al plano perpendicular al eje que define $x_i$, de tal forma que $\rho(x_i) = -\rho(-x_i)$, haremos una integral de un producto de función par, la densidad de masa, por una función impar, $x_i$, con respecto al intervalo de integración simétrico, entonces el resultado será 0 para todos los productos de inercia donde $I_{ji}$ donde apareza ese índice serán 0.
+
+Si tenemos una simetría axial, tal que $\rho = \rho(r,z)$, es decir, expresada en cilíndicas, no depende del ángulo con respecto al eje. Al igual que en el caso anterior, tendremos una simetría para cualquier plano que contenga al eje y entonces los productos de inercia son 0 y el tensor es diagonal.
+
+Además, si el eje de simetría es $z$, entonces $I_{xx} = I_{yy}$ por que hay simetría axial, y se puede demostrar que las integrales son idénticas por que los intervalos de integración son iguales.
+\subsubsection{Teorema de Steiner}
+Sea un sólido rígido de masa M, y consideramos dos sistemas de referencia con ejes paralelos y distintos orígenes, $\pazocal{O}$ y $\pazocal{O}'$, con coordenadas $x_i$ y $X_i$.
+
+Sea $\mathbf{a} = \pazocal{O}-\pazocal{O}'$ el vector que relaciona ambos orígenes, entonces si $\mathbf{I}$ es el tensor de inercia en el sistema $\pazocal{O}$, entonces $\mathbf{J}$ es el tensor de inercia en el sistema de $\pazocal{O}'$ y vienen relacionados por
+\begin{equation} \label{6.1.1}
+    I_{ij} = J_{ij} - M\left(\delta_{ij}a^2 -a_i a_j\right)
+\end{equation} \refstepcounter{subsection}
+\vspace{-20pt}
+\subsubsection{Ejes principales}
+Llamamos ejes principales aquellos en los que $\mathbf{L} = \lambda \vec{\omega}$ cuando $\vec{\omega}$ es paralelo al eje.
+Siempre existen tres ejes principales, ya que $\mathbf{I}$ es hermítico, entonces siempre existe una base ortonormal de autovectores que verifican la condición anterior.
+\section{Dinámica}
+\subsection{Energía cinética de rotación}
+Tenemos la siguiente expresión de la energía cinética para un sistema de partículas, que ya hemos utilizado previamente
+\begin{equation} \label{6.1.1}
+    T = \frac{1}{2} \sum_\alpha^N m_\alpha v_\alpha^2 = \frac{1}{2}\int \rho v^2 dV
+\end{equation} \refstepcounter{subsection}
+Vamos a desarrolar el término de la velocidad al cuadrado, teniendo en cuenta que $\mathbf{v} = \vec{\omega} \times \mathbf{r}$, tal que
+\[v^2 =  (\vec{\omega} \times \mathbf{r}) \cdot (\vec{\omega} \times \mathbf{r}) = \sum_{ijklm} \epsilon_{ijk} \epsilon_{ilm} \omega_j \omega_l r_k r_m = \sum_{jklm} (\delta_{jl} \delta_{km}- \delta_{jm} \delta_{kl}) \omega_j \omega_l r_k r_m =\]
+\vspace{-10pt}
+\begin{equation} \label{6.1.1}
+    = \sum_{jk} \omega_j^2 r_k^2 - \sum_{jk}\omega_j \omega_k r_k r_j = \sum_{j} \omega_j \sum_{k} \omega_j |\mathbf{r}|^2 - \omega_k r_k r_j = \sum_{j} \omega_j \sum_{k} \omega_k \left(\delta_{ik}|\mathbf{r}|^2  - r_k r_j\right)
+\end{equation} \refstepcounter{subsection}
+Entonces, sustituyendo en (8.2.0) tenemos
+\begin{equation} \label{6.1.1}
+    T = \frac{1}{2} \sum_{jk} \omega_j \omega_k \sum_\alpha^N m_\alpha\left(\delta_{ik}|\mathbf{r}_\alpha|^2 - r_{\alpha k} r_{\alpha j}}\right) = \frac{1}{2} \sum_{jk} \omega_j \omega_k I_{jk} = \frac{1}{2} \sum_{j} \omega_j L_j
+\end{equation} \refstepcounter{subsection}
+\begin{equation} \label{6.1.1}
+    T = \frac{1}{2} \vec{\omega} \cdot \mathbf{L} = \frac{1}{2} \vec{\omega}^T \mathbf{I} \vec{\omega}
+\end{equation} \refstepcounter{subsection}
+Y en la base de autovectores, donde $\lambda_i$ son los autovalores, tendremos
+\begin{equation} \label{6.1.1}
+    T = \frac{1}{2} \sum \omega_i^2 \lambda_i \end{equation}\refstepcounter{subsection}
+\subsubsection{Precesión de una peonza simétrica}
+Tenemos un sistema de referencia inercial, y un sistema de referencia no inercial solidario al trompo, que gira con él. Además los ejes de ese sistema son los ejes principales de la peonza, tal que el momento de inercia es de la forma, pues es simétrica con respecto al un eje
+\begin{equation} \label{6.1.1}
+    \left[\begin{matrix}
+        \lambda_1 && 0 && 0 \\
+        0 && \lambda_1 && 0 \\
+        0 && 0 && \lambda_3 
+    \end{matrix}\right]
+\end{equation}\refstepcounter{subsection}
+Consideramos el centro de masa de la peonza, con posición $\mathbf{R}$ con respecto al origen de $\pazocal{S}_0$.
+Tenemos que la peonza apoya su punta sobre el origen del sistema de referencia inercial, que esta fijo.
+
+Considerando $\vec{\omega} = \omega \mathbf{e}_3$ y $\mathbf{L} = \lambda_3 \omega \mathbf{e}_3$, entonces aplicando la 2 LN, tenemos que, si no consideramos la gravedad
+\begin{equation} \label{6.1.1}
+    \left(\frac{d\mathbf{L}}{dt}\right)_{\pazocal{S}_0} = \mathbf{\Gamma} = \mathbf{r} \times \mathbf{F} = 0 \implies \mathbf{L} = \mbox{ cte.}
+\end{equation}\refstepcounter{subsection}
+En cambio, en presencia de gravedad, teniendo que $\mathbf{F}_g = -g \mathbf{e}_z$, entonces tenemos, donde theta es el ángulo que forman $\mathbf{r}$ y $\mathbf{e}_z$
+\begin{equation} \label{6.1.1}
+    \left(\frac{d\mathbf{L}}{dt}\right)_{\pazocal{S}_0} = \mathbf{\Gamma}_g = \mathbf{r} \times \mathbf{F}_g = gMR \left(\mathbf{e}_z \times \mathbf{e}_3\right); \ \ \ \ |\mathbf{\Gamma}_g| =  gMR \sin\theta 
+\end{equation}\refstepcounter{subsection}
+Si ahora suponemos que $\mathbf{\Gamma}_g$ es pequeño, es decir $|\mathbf{\Gamma}_g| \ll \lambda_3 \omega^2$ ($\Omega \ll \omega$), $\vec{\omega}$ no cambiará mucho, y entonces 
+\begin{equation} \label{6.1.1}
+    \left(\frac{d\mathbf{L}}{dt}\right)_{\pazocal{S}_0} \approx \lambda_3 \omega \left(\frac{d\mathbf{e}_3}{dt}\right)_{\pazocal{S}_0} \implies \left(\frac{d\mathbf{e}_3}{dt}\right)_{\pazocal{S}_0} = \frac{gMR}{\lambda_3 \omega} \left(\mathbf{e}_z \times \mathbf{e}_3\right) = \vec{\Omega} \times \mathbf{e}_3
+\end{equation}\refstepcounter{subsection}
+Es decir, la peonza rotará en torno al eje vertical con velocidad angular $\Omega$ aproximadamente constante, además del giro con respecto a su propio eje.
+\subsection{Ecuaciones de Euler}
+Usando (6.2.5), podemos llegar a la siguiente expresión, la ecuación de Euler
+\begin{equation} \label{6.1.1}
+    \left(\frac{d\mathbf{L}}{dt}\right)_{\pazocal{S}_0} = \mathbf{\Gamma} = \left(\frac{d\mathbf{L}}{dt}\right)_{\pazocal{S}} + \omega \times \mathbf{L} = \dot{\mathbf{L}} + \omega \times \mathbf{L}
+\end{equation}\refstepcounter{subsection}
+que podemos escribir por coordenadas en la base de ejes principales explícitamente usando,
+\begin{equation} \label{6.1.1}
+    \left(\frac{d \vec{\omega}}{dt}\right)_{\pazocal{S}_0} = \left(\frac{d \vec{\omega}}{dt}\right)_\pazocal{S} + \cancelto{0}{\vec{\omega} \times \vec{\omega}}
+\end{equation}\refstepcounter{subsection}
+resultando en 
+\begin{equation} \label{6.1.1}
+    \left\{\begin{matrix}
+        \lambda_1 \dot{\omega}_1 + (\lambda_3-\lambda_2) \omega_3 \omega_2 = \Gamma_1 \\
+        \lambda_2 \dot{\omega}_2 + (\lambda_1-\lambda_3) \omega_3 \omega_1 = \Gamma_2\\
+        \lambda_1 \dot{\omega}_3 + (\lambda_2-\lambda_1) \omega_1 \omega_2 = \Gamma_3
+    \end{matrix}\right.
+\end{equation}\refstepcounter{subsection}
