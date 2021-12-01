@@ -1,4 +1,4 @@
-%% Creator: Inkscape 1.1.1 (3bf5ae0d25, 2021-09-20), www.inkscape.org
+%% Creator: Inkscape 1.1.1 (3bf5ae0d25, 2021-09-20, custom), www.inkscape.org
 %% PDF/EPS/PS + LaTeX output extension by Johan Engelen, 2010
 %% Accompanies image file 'eangles.pdf' (pdf, eps, ps)
 %%
@@ -38,7 +38,7 @@
   \newcommand*\fsize{\dimexpr\f@size pt\relax}%
   \newcommand*\lineheight[1]{\fontsize{\fsize}{#1\fsize}\selectfont}%
   \ifx\svgwidth\undefined%
-    \setlength{\unitlength}{595.27559055bp}%
+    \setlength{\unitlength}{408.49161944bp}%
     \ifx\svgscale\undefined%
       \relax%
     \else%
@@ -50,26 +50,26 @@
   \global\let\svgwidth\undefined%
   \global\let\svgscale\undefined%
   \makeatother%
-  \begin{picture}(1,1.41428571)%
+  \begin{picture}(1,2.60334231)%
     \lineheight{1}%
     \setlength\tabcolsep{0pt}%
     \put(0,0){\includegraphics[width=\unitlength,page=1]{eangles.pdf}}%
-    \put(0.64089572,0.41407466){\color[rgb]{0,0.66666667,0.30980392}\makebox(0,0)[lt]{\smash{\begin{tabular}[t]{l}\textbf{N}\end{tabular}}}}%
-    \put(0,0){\includegraphics[width=\unitlength,page=2]{eangles.pdf}}%
-    \put(0.23202131,0.51347419){\color[rgb]{0,0.55294118,0.81960784}\makebox(0,0)[lt]{\smash{\begin{tabular}[t]{l}x\end{tabular}}}}%
-    \put(0.85055931,0.7858346){\color[rgb]{0,0.55294118,0.81960784}\makebox(0,0)[lt]{\smash{\begin{tabular}[t]{l}y\end{tabular}}}}%
-    \put(0.41021596,1.34058709){\color[rgb]{0,0.55294118,0.81960784}\makebox(0,0)[lt]{\smash{\begin{tabular}[t]{l}z\end{tabular}}}}%
-    \put(0,0){\includegraphics[width=\unitlength,page=3]{eangles.pdf}}%
-    \put(0.02235767,1.05552155){\color[rgb]{0.92156863,0.17647059,0.18039216}\makebox(0,0)[lt]{\smash{\begin{tabular}[t]{l}\textbf{Z}\end{tabular}}}}%
-    \put(0,0){\includegraphics[width=\unitlength,page=4]{eangles.pdf}}%
-    \put(0.68416793,0.7246164){\color[rgb]{0.92156863,0.17647059,0.18039216}\makebox(0,0)[lt]{\smash{\begin{tabular}[t]{l}\textbf{X}\end{tabular}}}}%
-    \put(0,0){\includegraphics[width=\unitlength,page=5]{eangles.pdf}}%
-    \put(0.5874418,1.17261106){\color[rgb]{0.92156863,0.17647059,0.18039216}\makebox(0,0)[lt]{\smash{\begin{tabular}[t]{l}\textbf{Y}\end{tabular}}}}%
-    \put(0,0){\includegraphics[width=\unitlength,page=6]{eangles.pdf}}%
-    \put(0.38910596,0.62395141){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\phi$\end{tabular}}}}%
-    \put(0,0){\includegraphics[width=\unitlength,page=7]{eangles.pdf}}%
-    \put(0.35962636,0.92952307){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\theta$\end{tabular}}}}%
-    \put(0,0){\includegraphics[width=\unitlength,page=8]{eangles.pdf}}%
-    \put(0.56071485,0.66734438){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\psi$\end{tabular}}}}%
+    \put(-0.02061109,2.11785487){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\mathbf{e}_x$\end{tabular}}}}%
+    \put(0.40341848,1.76454237){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\mathbf{e}_y$\end{tabular}}}}%
+    \put(0.54474704,1.69921966){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\mathbf{e}_z$\end{tabular}}}}%
+    \put(0.16385234,1.58999568){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\mathbf{e}_3$\end{tabular}}}}%
+    \put(0.29994514,0.76020282){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\mathbf{e}_3$\end{tabular}}}}%
+    \put(0.59296605,2.52783412){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\mathbf{e}_z$\end{tabular}}}}%
+    \put(0.21482773,1.9782501){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\phi$\end{tabular}}}}%
+    \put(0.54092257,1.8935044){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\phi$\end{tabular}}}}%
+    \put(0.1615159,1.83404183){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\mathbf{e}_1'$\end{tabular}}}}%
+    \put(0.02484835,0.88089438){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\mathbf{e}_1''$\end{tabular}}}}%
+    \put(0.87676609,1.8570037){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\mathbf{e}_2'$\end{tabular}}}}%
+    \put(0.79986191,0.97786574){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\mathbf{e}_2'$\end{tabular}}}}%
+    \put(0.79140316,0.1468355){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\mathbf{e}_2'$\end{tabular}}}}%
+    \put(0.56025522,0.02102872){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\mathbf{e}_1$\end{tabular}}}}%
+    \put(0.89927593,0.60924235){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\mathbf{e}_2$\end{tabular}}}}%
+    \put(0.39996726,1.54837439){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\theta$\end{tabular}}}}%
+    \put(0.72484763,0.30108498){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\psi$\end{tabular}}}}%
   \end{picture}%
 \endgroup%

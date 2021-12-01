@@ -2,13 +2,13 @@
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
 
 <svg
-   width="210mm"
-   height="297mm"
-   viewBox="0 0 210 297"
+   width="144.10677mm"
+   height="375.15924mm"
+   viewBox="0 0 144.10677 375.15924"
    version="1.1"
    id="svg5"
    inkscape:version="1.1.1 (3bf5ae0d25, 2021-09-20, custom)"
-   sodipodi:docname="Eulerangles.svg"
+   sodipodi:docname="eangles.svg"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
@@ -23,9 +23,9 @@
      inkscape:pagecheckerboard="0"
      inkscape:document-units="mm"
      showgrid="false"
-     inkscape:zoom="0.94222653"
-     inkscape:cx="441.50742"
-     inkscape:cy="133.19515"
+     inkscape:zoom="0.83182076"
+     inkscape:cx="378.68735"
+     inkscape:cy="1090.9802"
      inkscape:window-width="1920"
      inkscape:window-height="1050"
      inkscape:window-x="0"
@@ -35,22 +35,29 @@
   <defs
      id="defs2">
     <rect
-       x="540.14541"
+       x="416.58947"
+       y="1219.5249"
+       width="137.32707"
+       height="57.011929"
+       id="rect42179" />
+    <rect
+       x="540.14539"
        y="230.61247"
        width="208.39473"
        height="74.092728"
        id="rect18581" />
     <rect
-       x="69.661617"
-       y="83.922078"
-       width="234.13038"
+       x="69.661613"
+       y="83.922081"
+       width="234.13039"
        height="56.646149"
        id="rect11443" />
   </defs>
   <g
      inkscape:label="Capa 1"
      inkscape:groupmode="layer"
-     id="layer1">
+     id="layer1"
+     transform="translate(-15.899892,41.966934)">
     <path
        id="path2195"
        style="fill:#000000;stroke-width:0.264583"
@@ -64,14 +71,14 @@
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:10.5833px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
-       x="14.418352"
-       y="23.413982"
+       x="12.929694"
+       y="27.99509"
        id="text13891"><tspan
          sodipodi:role="line"
          id="tspan13889"
          style="stroke-width:0.264583"
-         x="14.418352"
-         y="23.413982">$\mathbf{e}_x$</tspan></text>
+         x="12.929694"
+         y="27.99509">$\mathbf{e}_x$</tspan></text>
     <text
        xml:space="preserve"
        transform="scale(0.26458333)"
@@ -80,24 +87,183 @@
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:10.5833px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
-       x="145.26764"
-       y="62.942406"
+       x="74.035225"
+       y="78.909813"
        id="text19951"><tspan
          sodipodi:role="line"
          id="tspan19949"
          style="stroke-width:0.264583"
-         x="145.26764"
-         y="62.942406">$\mathbf{e}_y$</tspan></text>
+         x="74.035225"
+         y="78.909813">$\mathbf{e}_y$</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:10.5833px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
-       x="91.712196"
-       y="-58.576416"
+       x="94.401627"
+       y="88.323257"
        id="text21451"><tspan
          sodipodi:role="line"
          id="tspan21449"
          style="stroke-width:0.264583"
-         x="91.712196"
-         y="-58.576416">$\mathbf{e}_z$</tspan></text>
+         x="94.401627"
+         y="88.323257">$\mathbf{e}_z$</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:10.5833px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="39.512123"
+       y="104.06317"
+       id="text21451-2"><tspan
+         sodipodi:role="line"
+         id="tspan21449-1"
+         style="stroke-width:0.264583"
+         x="39.512123"
+         y="104.06317">$\mathbf{e}_3$</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:10.5833px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="59.124016"
+       y="223.64194"
+       id="text21451-2-7"><tspan
+         sodipodi:role="line"
+         id="tspan21449-1-8"
+         style="stroke-width:0.264583"
+         x="59.124016"
+         y="223.64194">$\mathbf{e}_3$</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:10.5833px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="101.35031"
+       y="-31.085693"
+       id="text21451-9"><tspan
+         sodipodi:role="line"
+         id="tspan21449-6"
+         style="stroke-width:0.264583"
+         x="101.35031"
+         y="-31.085693">$\mathbf{e}_z$</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:10.5833px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="46.858021"
+       y="48.113083"
+       id="text24157"><tspan
+         sodipodi:role="line"
+         id="tspan24155"
+         style="stroke-width:0.264583"
+         x="46.858021"
+         y="48.113083">$\phi$</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:10.5833px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="93.850494"
+       y="60.325512"
+       id="text26855"><tspan
+         sodipodi:role="line"
+         id="tspan26853"
+         style="stroke-width:0.264583"
+         x="93.850494"
+         y="60.325512">$\phi$</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:10.5833px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="39.175426"
+       y="68.89447"
+       id="text28047"><tspan
+         sodipodi:role="line"
+         id="tspan28045"
+         style="stroke-width:0.264583"
+         x="39.175426"
+         y="68.89447">$\mathbf{e}_1'$</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:10.5833px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="19.480707"
+       y="206.24947"
+       id="text28047-3"><tspan
+         sodipodi:role="line"
+         id="tspan28045-1"
+         style="stroke-width:0.264583"
+         x="19.480707"
+         y="206.24947">$\mathbf{e}_1''$</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:10.5833px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="142.24782"
+       y="65.58551"
+       id="text29851"><tspan
+         sodipodi:role="line"
+         id="tspan29849"
+         style="stroke-width:0.264583"
+         x="142.24782"
+         y="65.58551">$\mathbf{e}_2'$</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:10.5833px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="131.16541"
+       y="192.27524"
+       id="text29851-7"><tspan
+         sodipodi:role="line"
+         id="tspan29849-5"
+         style="stroke-width:0.264583"
+         x="131.16541"
+         y="192.27524">$\mathbf{e}_2'$</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:10.5833px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="129.94644"
+       y="312.03232"
+       id="text29851-7-5"><tspan
+         sodipodi:role="line"
+         id="tspan29849-5-7"
+         style="stroke-width:0.264583"
+         x="129.94644"
+         y="312.03232">$\mathbf{e}_2'$</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:10.5833px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="96.636459"
+       y="330.16193"
+       id="text29851-7-5-4"><tspan
+         sodipodi:role="line"
+         id="tspan29849-5-7-1"
+         style="stroke-width:0.264583"
+         x="96.636459"
+         y="330.16193">$\mathbf{e}_1$</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:10.5833px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="145.49164"
+       y="245.39636"
+       id="text29851-7-5-4-8"><tspan
+         sodipodi:role="line"
+         id="tspan29849-5-7-1-5"
+         style="stroke-width:0.264583"
+         x="145.49164"
+         y="245.39636">$\mathbf{e}_2$</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:10.5833px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="73.53788"
+       y="110.06108"
+       id="text38097"><tspan
+         sodipodi:role="line"
+         id="tspan38095"
+         style="stroke-width:0.264583"
+         x="73.53788"
+         y="110.06108">$\theta$</tspan></text>
+    <text
+       xml:space="preserve"
+       transform="matrix(0.26458333,0,0,0.26458333,15.899892,-41.966934)"
+       id="text42177"
+       style="font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;font-family:sans-serif;white-space:pre;shape-inside:url(#rect42179);fill:#000000;fill-opacity:1;stroke:none" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:10.5833px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="120.35534"
+       y="289.80392"
+       id="text42713"><tspan
+         sodipodi:role="line"
+         id="tspan42711"
+         style="stroke-width:0.264583"
+         x="120.35534"
+         y="289.80392">$\psi$</tspan></text>
   </g>
 </svg>

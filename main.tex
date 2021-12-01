@@ -52,6 +52,7 @@
 \def\tagform@#1{\maketag@@@{\color{Blue}(#1)}}
 \makeatother
 
+\usepackage{tikz}
 
 \usepackage{color}
 \newcommand{\inlineeqnum}{~~\color{Blue}\mbox{(\theequation)}\refstepcounter{subsection}}
@@ -278,11 +279,18 @@ ONDAS}}}
 
 \input{chapters/FuerzasCentrales.tex}
 \input{chapters/sistnoinerciales.tex}
+
+\pagelayout{wide} % No margins
+\addpart[Sólido Rígido]{\fontsize{55pt}{0pt} \setstretch{2} \textbeuron{Solido Rigido}}
+\pagelayout{margin} % Restore margins
+
 \input{chapters/solidorigido.tex}
 
 \pagelayout{wide} % No margins
 \addpart[Oscilaciones]{\fontsize{55pt}{0pt} \setstretch{2} \textbeuron{Oscilaciones}}
 \pagelayout{margin} % Restore margins
+
+\input{chapters/oscilaciones.tex}
 
 \pagelayout{wide} % No margins
 \addpart[Apéndices]{\fontsize{55pt}{0pt} \setstretch{2} \textbeuron{Apendices}}

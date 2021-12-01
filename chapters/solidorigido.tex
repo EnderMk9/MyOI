@@ -35,28 +35,26 @@ Para expresar un vector $\mathbf{b}$ de una base a otra tenemos en cuenta que
 \end{equation} \refstepcounter{subsection}
 Las matrices ortogonales se corresponden a rotaciones o simetrías, y tienen la propiedad de que $det(A) = \pm 1$, pero nos vamos a centrar en las transformaciones de determinante positivo, que son rotaciones.
 \vspace{-10pt}
-\subsection{Ángulos de Euler}
-\begin{marginfigure}[2pt]
-    \def\svgwidth{5.5 cm}
-    \hspace{-50pt}
-    \normalsize
-	\input{images/eangles.pdf_tex}
-	\labfig{margin2}
-    \vspace{-30pt}
-\end{marginfigure}
+\subsection{Ángulos de Euler (I)}
+\begin{tikzpicture}[remember picture, overlay]
+    \node [shift={(-2.8cm, -12cm)}] at (current page.north east)
+        { \normalsize
+        \def\svgwidth{4.5 cm}
+        \input{images/eangles.pdf_tex} };
+\end{tikzpicture}
 Podemos describir cualquier orientación en el espacio mediante tres rotaciones con respecto a ciertos planos, tal que $\mathbf{T} = \mathbf{T}_\psi \mathbf{T}_\theta \mathbf{T}_\phi$
 \[\mathbf{T}_\phi = \left[\begin{matrix}
-    \cos\phi && -\sin\phi&& 0\\
-    \sin\phi && \cos\phi && 0\\
+    \cos\phi && \sin\phi&& 0\\
+    -\sin\phi && \cos\phi && 0\\
     0 && 0 && 1
-\end{matrix}\right]
+\end{matrix}\right] \ \ \ \ \ \ \ 
 \mathbf{T}_\theta = \left[\begin{matrix}
-    1 && 0 &&0 \\
-    0&& \cos\theta&& - \sin\theta\\
-    0&& \sin\theta&& \cos\theta
+    \cos\theta && 0 && -\sin\theta \\
+    0&& 1&& 0\\
+    \sin\theta&& 0&& \cos\theta
 \end{matrix}\right]\]
 \[\mathbf{T}_\psi = \left[\begin{matrix}
-    \cos\psi && -\sin\psi&& 0\\
+    \cos\psi && \sin\psi&& 0\\
     \sin\psi && \cos\psi && 0\\
     0 && 0 && 1
 \end{matrix}\right]\]
@@ -94,13 +92,13 @@ Tomamos el sistema de referencia fijo en el sólido, $\pazocal{S}'$, que estará
 
 Tenemos una rotación con respecto al origen y a un eje representado por $\vec{\omega}(t)$, entonces el momento ángular con respecto al origen $O$ que hemos elegido es, recordando (6.2.3)
 \[
-    \mathbf{L} = \sum_\alpha^N r_\alpha \times m_\alpha \mathbf{v}_\alpha = \sum_\alpha^N m_\alpha r_\alpha \times (\vec{\omega} \times \mathbf{r}_\alpha) = \sum_\alpha^N m_\alpha \left[\vec{\omega} (\mathbf{r}_\alpha \cdot \mathbf{r}_\alpha) - \mathbf{r}_\alpha (\mathbf{r}_\alpha \cdot \vec{\omega})\right]
+    \mathbf{L} = \sum_\alpha^N \mathbf{r}_\alpha \times m_\alpha \mathbf{v}_\alpha = \sum_\alpha^N m_\alpha \mathbf{r}_\alpha \times (\vec{\omega} \times \mathbf{r}_\alpha) = \sum_\alpha^N m_\alpha \left[\vec{\omega} (\mathbf{r}_\alpha \cdot \mathbf{r}_\alpha) - \mathbf{r}_\alpha (\mathbf{r}_\alpha \cdot \vec{\omega})\right]
 \]\vspace{-10pt}
 \[
     \mathbf{L} = \sum_\alpha^N m_\alpha \left[\vec{\omega} \mathbf{r}_\alpha^2 - \mathbf{r}_\alpha (\mathbf{r}_\alpha \cdot \vec{\omega})\right] \ \ \ \ \ \ L_i = \sum_\alpha m_\alpha \left[ \sum_{kj} x^2_{\alpha k} \omega_i - x_{\alpha j} \omega_j x_{\alpha i}\right] = 
 \]\vspace{-10pt}
 \[
-    = \sum_\alpha m_\alpha \left[ \sum_{kj} \delta_{ij}x^2_{\alpha k} \omega_j - x_\alpha j \omega_j x_{\alpha i}\right] = \sum_j \left(\sum_\alpha m_\alpha \left[\delta_{ij}\sum_k x^2_{\alpha k} - x_{\alpha j} x_{\alpha i}\right]\right) \omega_j
+    = \sum_\alpha m_\alpha \left[ \sum_{kj} \delta_{ij}x^2_{\alpha k} \omega_j - x_{\alpha j} \omega_j x_{\alpha i}\right] = \sum_j \left(\sum_\alpha m_\alpha \left[\delta_{ij}\sum_k x^2_{\alpha k} - x_{\alpha j} x_{\alpha i}\right]\right) \omega_j
 \]
 \vspace{-10pt}
 \begin{equation} \label{6.1.1}
@@ -110,20 +108,18 @@ De esta forma tenemos que
 \begin{equation} \label{6.1.1}
     L_i = \sum_j I_{ij} \omega_j \iff \mathbf{L} = \mathbf{I} \vec{\omega}
 \end{equation} \refstepcounter{subsection}
-$\mathbf{I}$ es un tensor de rango 2 real, y simético. Los elementos de la diagonal se llaman momentos de inercia, y el resto productos de inercia, y el momento de inercia con respecto a una dirección se define como $\hat{n}^T \mathbf{I} \hat{n}$.
+$\mathbf{I}$ es un tensor de rango 2 real, y simético y definido positivo. Los elementos de la diagonal se llaman momentos de inercia, y el resto productos de inercia, y el momento de inercia con respecto a una dirección se define como $\hat{n}^T \mathbf{I} \hat{n}$.
 
 \subsubsection{Simetrías}
-Si por ejemplo tenemos que una distribución de masa es simétrica bajo una transformación $x_i \mapsto -x_i$, con respecto al plano perpendicular al eje que define $x_i$, de tal forma que $\rho(x_i) = -\rho(-x_i)$, haremos una integral de un producto de función par, la densidad de masa, por una función impar, $x_i$, con respecto al intervalo de integración simétrico, entonces el resultado será 0 para todos los productos de inercia donde $I_{ji}$ donde apareza ese índice serán 0.
+Si por ejemplo tenemos que una distribución de masa es simétrica bajo una transformación $x_i \mapsto -x_i$, con respecto al plano perpendicular al eje que define $x_i$, de tal forma que $\rho(x_i) = \rho(-x_i)$, haremos una integral de un producto de función par, la densidad de masa, por una función impar, $x_i$, con respecto al intervalo de integración simétrico, entonces el resultado será 0 para todos los productos de inercia donde $I_{ji}$ donde apareza ese índice serán 0.
 
 Si tenemos una simetría axial, tal que $\rho = \rho(r,z)$, es decir, expresada en cilíndicas, no depende del ángulo con respecto al eje. Al igual que en el caso anterior, tendremos una simetría para cualquier plano que contenga al eje y entonces los productos de inercia son 0 y el tensor es diagonal.
 
 Además, si el eje de simetría es $z$, entonces $I_{xx} = I_{yy}$ por que hay simetría axial, y se puede demostrar que las integrales son idénticas por que los intervalos de integración son iguales.
 \subsubsection{Teorema de Steiner}
-Sea un sólido rígido de masa M, y consideramos dos sistemas de referencia con ejes paralelos y distintos orígenes, $\pazocal{O}$ y $\pazocal{O}'$, con coordenadas $x_i$ y $X_i$.
-
-Sea $\mathbf{a} = \pazocal{O}-\pazocal{O}'$ el vector que relaciona ambos orígenes, entonces si $\mathbf{I}$ es el tensor de inercia en el sistema $\pazocal{O}$, entonces $\mathbf{J}$ es el tensor de inercia en el sistema de $\pazocal{O}'$ y vienen relacionados por
+Sea un sólido rígido de masa M, y consideramos dos sistemas de referencia con ejes paralelos y distintos orígenes, $\pazocal{O}$ y $\pazocal{G}$. Sea $\mathbf{a} = \overline{\pazocal{G}\pazocal{O}} = \pazocal{O}-\pazocal{G}$ el vector que relaciona ambos orígenes, tenemos entonces que, donde $\mathbb{E}_3$ es la identidad y $\otimes$ es el producto tensorial
 \begin{equation} \label{6.1.1}
-    I_{ij} = J_{ij} - M\left(\delta_{ij}a^2 -a_i a_j\right)
+    I^\pazocal{G}_{ij} = I^\pazocal{O}_{ij} + M\left(||\mathbf{a}||^2 \delta_{ij} -a_i a_j\right) \iff \mathbf{I}_\pazocal{G} = \mathbf{I}_\pazocal{O} + M\left(||\mathbf{a}||^2 \mathbb{E}_3+\mathbf{a} \otimes \mathbf{a}\right)
 \end{equation} \refstepcounter{subsection}
 \vspace{-20pt}
 \subsubsection{Ejes principales}
@@ -185,7 +181,7 @@ que podemos escribir por coordenadas en la base de ejes principales explícitame
 \begin{equation} \label{6.1.1}
     \left(\frac{d \vec{\omega}}{dt}\right)_{\pazocal{S}_0} = \left(\frac{d \vec{\omega}}{dt}\right)_\pazocal{S} + \cancelto{0}{\vec{\omega} \times \vec{\omega}}
 \end{equation}\refstepcounter{subsection}
-resultando en 
+resultando en las ecuaciones de Euler
 \begin{equation} \label{6.1.1}
     \left\{\begin{matrix}
         \lambda_1 \dot{\omega}_1 + (\lambda_3-\lambda_2) \omega_3 \omega_2 = \Gamma_1 \\
@@ -193,3 +189,119 @@ resultando en
         \lambda_1 \dot{\omega}_3 + (\lambda_2-\lambda_1) \omega_1 \omega_2 = \Gamma_3
     \end{matrix}\right.
 \end{equation}\refstepcounter{subsection}
+\subsubsection{Ejemplos}
+Vamos a trabajar en casos en los que $\mathbf{\Gamma} = 0$, de tal forma que tenemos
+\begin{equation} \label{6.1.1}
+    \left\{\begin{matrix}
+        \lambda_1 \dot{\omega}_1 = (\lambda_2-\lambda_3) \omega_3 \omega_2  \\
+        \lambda_2 \dot{\omega}_2 = (\lambda_3-\lambda_1) \omega_3 \omega_1 \\
+        \lambda_1 \dot{\omega}_3 = (\lambda_1-\lambda_2) \omega_1 \omega_2 
+    \end{matrix}\right.
+\end{equation}\refstepcounter{subsection}
+Vamos a cosiderar un primer caso en el que todos los $\lambda_i$ son distintos, y que tenemos una $\vec{\omega}^0 = \omega^0 \mathbf{e}_3$, tal que $\omega_2 = \omega_1 = 0$, entonces tenemos que $\vec{\omega}$ es constante por (7.3.12).
+
+Ahora vamos a considerar una pequeña perturbación del caso anterior, tal que $\vec{\omega}^0 = \omega_3^0 \mathbf{e}_3 + \epsilon (\omega_1^0 \mathbf{e}_1+\omega_2^0\mathbf{e}_2)$, tal que en (7.3.12) obtenemos
+\begin{equation} \label{6.1.1}
+    \left\{\begin{matrix}
+        \lambda_1 \dot{\omega}_1 = (\lambda_2-\lambda_3) \omega_3^0 \omega_2 \epsilon \\
+        \lambda_2 \dot{\omega}_2 = (\lambda_3-\lambda_1) \omega_3^0 \omega_1 \epsilon\\
+        \lambda_1 \dot{\omega}_3 = (\lambda_1-\lambda_2) \epsilon^2 \omega_1^0 \omega_2^0 
+    \end{matrix}\right.
+\end{equation}\refstepcounter{subsection}
+A primer orden de $\epsilon$ tenemos que $\omega_3$ es constante, tal que $\omega_3 = \omega_3^0$ y entonces en general $\vec{\omega} = \omega_3 \mathbf{e}_3 + \epsilon (\omega_1(t) \mathbf{e}_1+\omega_2(t)\mathbf{e}_2)$ y su derivada $\dot{\vec{\omega}}= \epsilon(\dot{\omega}_1 \mathbf{e}_1+\dot{\omega}_2\mathbf{e}_2)$, tal que 
+\begin{equation} \label{6.1.1}
+    \left\{\begin{matrix}
+        \dot{\omega}_1 \epsilon = \left(\frac{\lambda_2-\lambda_3}{\lambda_1} \omega_3\right) \omega_2 \epsilon \\
+        \dot{\omega}_2 \epsilon = \left(\frac{\lambda_3-\lambda_1}{\lambda_2} \omega_3\right)  \omega_1 \epsilon
+    \end{matrix}\right.
+\end{equation}\refstepcounter{subsection}
+Cancelando los $\epsilon$, derivando una de las ecuaciones y sustituyendo en la otra tenemos 
+\begin{equation} \label{6.1.1}
+    \ddot{\omega}_1 = -\left[\frac{(\lambda_3-\lambda_2)(\lambda_3-\lambda_1)}{\lambda_1 \lambda_2} \omega_3^2\right] \omega_1 = - \Omega^2 \omega_1 \ \ \ \ \ \ddot{\omega}_2 = - \Omega^2 \omega_2
+\end{equation}\refstepcounter{subsection}
+De tal forma que cuando $\Omega^2 >0$, las oscilaciones serán estables, esto ocurre cuando $\lambda_3 > \lambda_2$ y $\lambda_3 > \lambda_1$ o $\lambda_3 < \lambda_2$ y $\lambda_3 < \lambda_1$, es decir, cuando $\lambda_3$ es el momento principal mayor o menor. Cuando es el intermedio, $\lambda_1 < \lambda_3 < \lambda_2$ o $\lambda_2 < \lambda_3 < \lambda_1$, tenemos que las oscilaciones no serán inestables.
+
+Si ahora consideramos el mismo caso, pero para un sólido simétrico en el que $\lambda_1 = \lambda_2$, tenemos $\omega_3$ es constante a cualquier orden de $\epsilon$, y las oscilaciones son siempre estables ya que tenemos
+\begin{equation} \label{6.1.1}
+    \Omega^2 = \frac{(\lambda_3-\lambda_1)^2}{\lambda_1^2} \omega_3^2
+\end{equation}\refstepcounter{subsection}
+Resolviendo las ecuaciones como un sistema de ecuaciones lineales e imponiendo condiciones iniciales $\omega_1(0)=\omega_0$ y $\omega_2(0)=0$ tenemos que
+\[
+    \left\{\begin{matrix}
+        \dot{\omega}_1  = \left(\frac{\lambda_1-\lambda_3}{\lambda_1} \omega_3\right) \omega_2 = \Omega \omega_2 \\
+        \dot{\omega}_2  = -\left(\frac{\lambda_1-\lambda_3}{\lambda_2} \omega_3\right)  \omega_1 = -\Omega \omega_1
+    \end{matrix}\right. \rightarrow \left(\begin{matrix}
+        \dot{\omega}_1 \\ \dot{\omega}_2
+    \end{matrix}\right) = \left(\begin{matrix}
+        0 & \Omega \\ -\Omega & 0 
+    \end{matrix}\right) \left(\begin{matrix}
+        \omega_1 \\ \omega_2
+    \end{matrix}\right)
+\]
+\begin{equation} \label{6.1.1}
+    \left(\begin{matrix}
+        \omega_1 \\ \omega_2
+    \end{matrix}\right) = A \left(\begin{matrix}
+        \cos{\Omega t} \\ -\sin{\Omega t}
+    \end{matrix}\right) + B \left(\begin{matrix}
+        \sin{\Omega t} \\ \cos{\Omega t}
+    \end{matrix}\right) \ \ \ \ \omega_2(0) = 0 \implies B=0 \rightarrow \left(\begin{matrix}
+        \omega_1 \\ \omega_2
+    \end{matrix}\right) = A \left(\begin{matrix}
+        \cos{\Omega t} \\ -\sin{\Omega t}
+    \end{matrix}\right)
+\end{equation}\refstepcounter{subsection}
+\begin{equation} \label{6.1.1}
+    \vec{\omega} = A(\cos\Omega t \mathbf{e}_1 - \sin\Omega t \mathbf{e}_2) + \omega_3 \mathbf{e}_3
+\end{equation}\refstepcounter{subsection}
+
+De tal forma que $\vec{\omega}$, desde el sistema de referencia del sólido, traza un movimiento de precesión circular con sentido horario con respecto a $\mathbf{e}_3$, y lo mismo con $\mathbf{L}$, que además es coplanar a $\vec{\omega}$ tal que
+\begin{equation} \label{6.1.1}
+    \mathbf{L} = A\lambda_1(\cos\Omega t \mathbf{e}_1 - \sin\Omega t \mathbf{e}_2) + \lambda_3 \omega_3 \mathbf{e}_3
+\end{equation}\refstepcounter{subsection}
+Como $\mathcal{\Gamma} = 0$, entonces $\mathbf{L}$ es constante en el sistema de referencia inercial, y entonces son $\vec{\omega}$ y $\mathbf{e}_3$ los que precesan en torno a $\mathbf{L}$.
+\subsection{Ángulos de Euler (II)}
+De los dibujos que pueden verse cuando fueron definidos los ángulos de euler, puede verse que 
+\begin{equation} \label{6.1.1}
+    \vec{\omega} = \dot{\phi} \mathbf{e}_z + \dot{\theta} \mathbf{e}_2'+\dot{\psi} \mathbf{e}_3
+\end{equation}\refstepcounter{subsection}
+Vamos a considerar sólidos con simetría axial, entonces $\mathbf{e}_2'$ es un eje principal perfectamente válido, como queremos tenerlo todo en la misma base, lo pondremos en la base del sólido, tal que, donde $\mathbf{e}_1''$ es otro eje principal perfectamente válido
+\begin{equation} \label{6.1.1}
+    \mathbf{e}_z = \cos\theta \mathbf{e}_3 - \sin\theta \mathbf{e}_1'' \ \ \ \ \ \vec{\omega} = -\dot{\phi}\sin\theta \mathbf{e}_1 + \dot{\theta} \mathbf{e}_2+(\dot{\psi}+\dot{\phi}\cos\theta)\mathbf{e}_3
+\end{equation}\refstepcounter{subsection}
+Y en consecuencia tenemos que el momento angular puede expresarse como
+\begin{equation} \label{6.1.1}
+    \mathbf{L} = -\lambda_1\dot{\phi}\sin\theta \mathbf{e}_1 + \lambda_1 \dot{\theta} \mathbf{e}_2+\lambda_3(\dot{\psi}+\dot{\phi}\cos\theta)\mathbf{e}_3
+\end{equation}\refstepcounter{subsection}
+Así, la energía cinética toma la forma
+\begin{equation} \label{6.1.1}
+    T = \frac{1}{2}\lambda_1\left(\dot{\phi}^2\sin^2\theta+ \dot{\theta}^2\right)+\frac{1}{2}\lambda_3\left(\dot{\psi}+\dot{\theta}\cos\theta\right)^2
+\end{equation}\refstepcounter{subsection}
+Por otro lado, podemos expresar $\vec{\omega}$ y $\mathbf{L}$ en términos de la base del sistema inercial, tal que
+\begin{equation} \label{6.1.1}
+    \vec{\omega} = \left(\begin{matrix}
+    \dot{\psi}\sin\theta\cos\phi - \dot{\theta}\sin\phi\\
+    \dot{\psi}\sin\theta\sin\phi - \dot{\theta}\cos\phi\\
+    \dot{\phi} + \dot{\psi}\cos\theta
+    \end{matrix}\right)_{(\mathbf{e}_x,\mathbf{e}_y,\mathbf{e}_z)}
+\end{equation}\refstepcounter{subsection}
+\begin{equation} \label{6.1.1}
+    \mathbf{L} = \left(\begin{matrix}
+    \lambda_3(\dot{\psi}+\dot{\phi}\cos\theta)\sin\theta \cos\phi-\lambda_1\dot{\theta}\sin\theta -\lambda_1 \dot{\phi} \sin\theta\cos\theta\cos\phi\\
+    \lambda_3(\dot{\psi}+\dot{\phi}\cos\theta)\sin\theta \sin\phi+\lambda_1\dot{\theta}\cos\theta-\lambda_1 \dot{\phi} \sin\theta\cos\theta\sin\theta\\
+    \lambda_3(\dot{\psi}+\dot{\phi}\cos\theta)\cos\theta+\lambda_1 \dot{\phi} \sin^2\theta
+    \end{matrix}\right)_{(\mathbf{e}_x,\mathbf{e}_y,\mathbf{e}_z)}
+\end{equation}\refstepcounter{subsection}
+Podemos observar que $L_z = L_3 \cos\theta + \lambda_1 \dot{\phi} \sin^2\theta$, de tal forma que veremos que tanto $L_3$ como $L_z$ se conservan en deteminadas circumstancias y podemos obtener la relación
+\begin{equation} \label{6.1.1}
+    \dot{\phi}(\theta) = \frac{L_z - L_3 \cos\theta}{\sin^2\theta}
+\end{equation}\refstepcounter{subsection}
+En esos casos en los que $L_3$ y $L_z$ se conservan, tenemos que en función de los valores de ambas, un sólido simético va a realizar, además de la precesión con respecto a $\mathbf{e}_z$ que ya hemos visto antes, un movimiento de nutación, es decir una oscilación de $\theta$ entre dos valores, aplicando las ecuaciones de Euler-Lagrange.
+
+Si (7.3.26) no se anula, se describe un movimiento sinusoidal, mientras que si se anula en lo límites de $\theta$, describe un movimiento similar al anterior pero con picos o cúspides, y si no se anula en los límites de $\theta$, sino en el intervalo, va a haber momentos de retroceso y va a formar una serie de bucles.
+\begin{tikzpicture}[remember picture, overlay]
+    \node [shift={(-18.5cm, -22cm)}] at (current page.north east)
+        { \normalsize
+        \def\svgwidth{4 cm}
+        \input{images/peonza.pdf_tex} };
+\end{tikzpicture}
