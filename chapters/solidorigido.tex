@@ -119,7 +119,7 @@ Además, si el eje de simetría es $z$, entonces $I_{xx} = I_{yy}$ por que hay s
 \subsubsection{Teorema de Steiner}
 Sea un sólido rígido de masa M, y consideramos dos sistemas de referencia con ejes paralelos y distintos orígenes, $\pazocal{O}$ y $\pazocal{G}$. Sea $\mathbf{a} = \overline{\pazocal{G}\pazocal{O}} = \pazocal{O}-\pazocal{G}$ el vector que relaciona ambos orígenes, tenemos entonces que, donde $\mathbb{E}_3$ es la identidad y $\otimes$ es el producto tensorial
 \begin{equation} \label{6.1.1}
-    I^\pazocal{G}_{ij} = I^\pazocal{O}_{ij} + M\left(||\mathbf{a}||^2 \delta_{ij} -a_i a_j\right) \iff \mathbf{I}_\pazocal{G} = \mathbf{I}_\pazocal{O} + M\left(||\mathbf{a}||^2 \mathbb{E}_3+\mathbf{a} \otimes \mathbf{a}\right)
+    I^\pazocal{G}_{ij} = I^\pazocal{O}_{ij} + M\left(||\mathbf{a}||^2 \delta_{ij} -a_i a_j\right) \iff \mathbf{I}_\pazocal{G} = \mathbf{I}_\pazocal{O} + M\left(||\mathbf{a}||^2 \mathbb{E}_3-\mathbf{a} \otimes \mathbf{a}\right)
 \end{equation} \refstepcounter{subsection}
 \vspace{-20pt}
 \subsubsection{Ejes principales}
@@ -275,7 +275,7 @@ Y en consecuencia tenemos que el momento angular puede expresarse como
 \end{equation}\refstepcounter{subsection}
 Así, la energía cinética toma la forma
 \begin{equation} \label{6.1.1}
-    T = \frac{1}{2}\lambda_1\left(\dot{\phi}^2\sin^2\theta+ \dot{\theta}^2\right)+\frac{1}{2}\lambda_3\left(\dot{\psi}+\dot{\theta}\cos\theta\right)^2
+    T = \frac{1}{2}\lambda_1\left(\dot{\phi}^2\sin^2\theta+ \dot{\theta}^2\right)+\frac{1}{2}\lambda_3\left(\dot{\psi}+\dot{\phi}\cos\theta\right)^2
 \end{equation}\refstepcounter{subsection}
 Por otro lado, podemos expresar $\vec{\omega}$ y $\mathbf{L}$ en términos de la base del sistema inercial, tal que
 \begin{equation} \label{6.1.1}
@@ -294,7 +294,7 @@ Por otro lado, podemos expresar $\vec{\omega}$ y $\mathbf{L}$ en términos de la
 \end{equation}\refstepcounter{subsection}
 Podemos observar que $L_z = L_3 \cos\theta + \lambda_1 \dot{\phi} \sin^2\theta$, de tal forma que veremos que tanto $L_3$ como $L_z$ se conservan en deteminadas circumstancias y podemos obtener la relación
 \begin{equation} \label{6.1.1}
-    \dot{\phi}(\theta) = \frac{L_z - L_3 \cos\theta}{\sin^2\theta}
+    \dot{\phi}(\theta) = \frac{L_z - L_3 \cos\theta}{\lambda_1\sin^2\theta}
 \end{equation}\refstepcounter{subsection}
 En esos casos en los que $L_3$ y $L_z$ se conservan, tenemos que en función de los valores de ambas, un sólido simético va a realizar, además de la precesión con respecto a $\mathbf{e}_z$ que ya hemos visto antes, un movimiento de nutación, es decir una oscilación de $\theta$ entre dos valores, aplicando las ecuaciones de Euler-Lagrange.
 
