@@ -1,0 +1,20 @@
+\section{Ejercicio 1.1}
+
+\fbox{\begin{minipage}{35em}
+Considerar un medio inhomogéneo con índice de refracción n$(x)$. Implementar el principio de Fermat que establece que entre dos puntos del medio, la luz sigue el camino que extremiza su tiempo de propagación. Usar las ecuaciones de Euler para obtener el camino de la luz para el caso de un medio homogéneo.
+\end{minipage}}
+
+Si $ds=\sqrt{1+(y')^2} \ dx$ es la longitud infintesimal, entonces $\frac{ds}{v}$ será el tiempo que tardará la luz en recorrela, $v$ está relacionada con n$(x)$, tal que $v=\frac{c}{\mbox{n}(x)}$, así el tiempo que tarda en recorrer la luz un intervalo $dx$ es
+\[ \frac{\mbox{n}(x) \sqrt{1+(y')^2}}{c} \ dx\]
+De esta forma, si tenemos el siguiente funcional
+\[ F[y] = \int_{x_A}^{x_B}{\frac{\mbox{n}(x) \sqrt{1+(y')^2}}{c} \ dx}\]
+podemos hallar su extremo aplicando la ecuación de \textit{Euler-Lagrange} para la función del integrando
+\[\frac{\partial g}{\partial y} - \frac{d}{dx}\left(\frac{\partial g}{\partial y'}\right)=0\]
+La función no depende explícitamente de $y$, entonces el primer término es 0, y luego el segundo tenemos
+\[\frac{\partial g}{\partial y'} = \frac{ y' \mbox{n}(x)}{c \sqrt{1+(y')^2}}\]
+Como la derivada de esta expresión debe ser igual a 0, significa que esta expresión es igual a una constante $k$, y manipulando algebraicamente llegamos a la siguiente expresión
+\[y' = \frac{kc}{\sqrt{n(x)^2-k^2 c^2}}\]
+Esta EDO de variable separable se puede resolver integrando a cada lado
+\[y = \int{\frac{kc}{\sqrt{n(x)^2-k^2 c^2}} dx} + \beta\]
+Si el medio es homogéneo, n$(x)$=n constante, y entonces el resultado es 
+\[y = \alpha x + \beta \ ; \ \ \alpha = \frac{kc}{\sqrt{n^2-k^2 c^2}}\]

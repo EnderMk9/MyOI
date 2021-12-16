@@ -1,0 +1,25 @@
+\section{Ejercicio 1.3}
+
+\fbox{\begin{minipage}{35em}
+Escribir las ecuaciones de Euler-Lagrange y los momentos generalizados en coordenadas polares para una partícula en movimiento sobre un plano sometida a una fuerza conservativa.    
+\end{minipage}}
+
+Si tenemos una fuerza conservativa $\mathbf{F}(\mathbf{r})$ significa que podemos expresarla como $\mathbf{F}(\mathbf{r})=-\nabla V$, donde V es el potencial de la fuerza.
+
+Entonces tomando coordenadas polares en un plano donde esta confinada la partícula, $V=V(r,\theta)$
+
+Ahora podemos hallar el \textit{Lagrangiano} del sistema, $L = T-V=\frac{1}{2}mv^2-V$.
+
+Necesitamos encontrar la expresión de $v$ en coordenadas polares, si $\hat{u}_r=\cos{\theta} \hat{u}_x + \sin{\theta} \hat{u}_y$, entonces si $\mathbf{r}=r \hat{u}_r$, 
+\[\dot{\mathbf{r}}=\dot{r} \hat{u}_r + r \frac{d \hat{u}_r}{dt}=\dot{r} \hat{u}_r + \frac{\partial \hat{u}_r}{\partial r} r\dot{r} + \frac{\partial \hat{u}_r}{\partial \theta} r\dot{\theta}=\dot{r} \hat{u}_r+0 + \hat{u}_{\theta} r\dot{\theta}\]
+\[v^2=\dot{r}\dot{r}={\dot{r}}^2+r^2{\dot{\theta}}^2; \ \ \ \ L = \frac{1}{2}m({\dot{r}}^2+r^2{\dot{\theta}}^2)-V(r,\theta)\]
+
+
+Ahora podemos aplicar las ecuaciones de \textit{Euler-Lagrange} para hallar la ecuación del movimiento del sistema.
+\[\frac{\partial L}{\partial q_i}-\frac{d}{dt}\left(\frac{\partial L}{\partial \dot{q}_i}\right)=0 \ \ \ \ \begin{matrix}
+    q_1= r \\ q_2 = \theta 
+\end{matrix}\]
+\[mr\dot{\theta}^2-\frac{\partial V}{\partial r}-m\ddot{r}=0; \ \ \ \ \frac{\partial V}{\partial \theta} + mr^2\ddot{\theta}+2mr\dot{r}\dot{\theta}=0\]
+
+También podemos calcular los momentos generalizados.
+\[p_i = \frac{\partial L}{\partial \dot{q}_i}; \ \ \ \ p_r = \frac{\partial L}{\partial \dot{r}}=m\dot{r}; \ \ \ \ p_{\theta} = \frac{\partial L}{\partial \dot{\theta}}=mr^2\dot{\theta}\]

@@ -1,0 +1,160 @@
+% file: main.tex
+
+\documentclass[14pt,a4paper,oneside]{extarticle}
+\usepackage{setspace}
+\usepackage[spanish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{fancyhdr}
+\usepackage{tabularx}
+\usepackage{xfrac}
+%\renewcommand{\rmdefault}{phv}
+%\renewcommand{\sfdefault}{phv}
+\usepackage[a4paper,left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry}
+\onehalfspacing
+
+\setcounter{tocdepth}{2} % to get subsubsections in toc 
+% cf. http://www.latex-community.org/forum/viewtopic.php?f=47&p=44760
+
+\usepackage{amssymb,latexsym}
+\usepackage{amsmath, amsthm}
+\usepackage{bm}
+
+%for bibliography; installation using 'sudo tlmgr install amsrefs'
+\usepackage{amsrefs}
+
+\usepackage{graphics}
+
+\usepackage{hyperref}
+\hypersetup{colorlinks=true, urlcolor=blue}
+
+\usepackage{cancel} % http://jansoehlke.com/2010/06/strikethrough-in-latex/
+
+\usepackage{listings} % http://en.wikibooks.org/wiki/LaTeX/Source_Code_Listings
+% http://olmjo.com/files/teaching/PSC505/LaTeXandR.pdf
+
+% package for flower symbol (\ding(96))
+\usepackage{pifont}
+% required installation: sudo apt-get install texlive-fonts-recommended (30MB)
+% http://tug.ctan.org/info/symbols/comprehensive/symbols-a4.pdf
+
+\usepackage{tikz} % for diagrams
+\usetikzlibrary{matrix,positioning,arrows,calc,decorations.pathmorphing,shapes}
+% for snaky lines (http://tex.stackexchange.com/questions/209942/curved-arrows-in-tikz) 
+\tikzset{snake it/.style={-stealth,
+decoration={snake, 
+    amplitude = .4mm,
+    segment length = 2mm,
+    post length=0.9mm},decorate}}
+
+\usepackage[parfill]{parskip}
+
+\usepackage{framed} %for putting some text in boxes using \begin{framed}
+
+\usepackage{enumerate}
+
+%for displaying tensor indices properly. requires installation of tensor package using 'sudo tlmgr install tensor'
+\usepackage{tensor}
+
+%for placing captions of figures on the side instead of above/below the figure
+\usepackage{sidecap}
+\linespread{1.2}
+
+%plain makes sure that we have page numbers
+\pagestyle{plain}
+
+\theoremstyle{plain}
+\newtheorem{axiom}{Axioma}
+\newtheorem{theorem}{Teorema}
+\newtheorem{corollary}{Corolario}
+\newtheorem*{main}{Teorema Principal}
+\newtheorem{lemma}{Lema}
+\newtheorem{proposition}{Proposición}
+
+\theoremstyle{definition}
+\newtheorem{definition}{Definición}
+
+\theoremstyle{remark}
+\newtheorem*{notation}{Notación}
+
+\numberwithin{equation}{section}
+\numberwithin{figure}{section}
+\numberwithin{theorem}{section}
+
+
+\newcommand{\lrg}[1]{\hspace{-10pt} \begin{large} #1 \end{large} \hspace{-10pt}}
+
+%symbol for maps
+\renewcommand{\to}{\longrightarrow}
+\newcommand{\injmapto}{\hookrightarrow}
+\newcommand{\surjmapto}{\twoheadrightarrow}
+\newcommand{\linearmapto}{\stackrel{\sim}{\longrightarrow}}
+\newcommand{\projmapto}{\stackrel{\pi}{\longrightarrow}}
+
+%for real numbers
+\newcommand{\R}{\mathbb{R}}
+
+% manifold, atlas and topology
+\newcommand{\A}{\mathcal{A}}
+%\newcommand{\O}{\mathcal{O}}
+\newcommand{\mfd}{(M, \mathcal{O}, \mathcal{A})}
+
+\newcommand{\after}{\circ}
+\newcommand{\stdtop}{\mathcal{O}_{std}}
+\newcommand{\cibasis}[2][]{\frac{\partial #1}{\partial #2}}
+
+%connection coefficient functions or gammas
+\newcommand{\ccf}[2]{\Gamma\indices{^{#1}_{#2}}}
+\newcommand{\ccfx}[3]{\left(\Gamma_{#3}\right)\indices{^{#1}_{#2}}} % with chart index
+
+%set theory symbols
+%\renewcommand{\exists}{\exists\,}
+%\renewcommand{\forall}{\forall\,}
+
+%This defines a new command \questionhead which takes one argument and prints out Question #. with some space.
+\newcommand{\questionhead}[1]
+  {
+   \noindent{\small\bf Question #1.}
+  }
+
+\newcommand{\problemhead}[1]
+  {
+   \noindent{\small\bf Problem #1.}
+  }
+
+\newcommand{\exercisehead}[1]
+  { \smallskip
+   \noindent{\small\bf Exercise #1.}
+  }
+
+\newcommand{\solutionhead}[1]
+  {
+   \noindent{\small\bf Solution #1.}
+  }
+
+\newcommand{\bubblethis}[2]{
+  \tikz[remember picture,baseline]{\node[anchor=base,inner sep=0,outer sep=0](#1) {#1};\node[overlay,cloud callout,callout relative pointer={(0.2cm,-0.7cm)}, aspect=2.5,fill=white!90] at ($(#1.north)+(-0.5cm,1.6cm)$) {#2};}
+}
+
+%-----------------------------------
+\begin{document}
+
+%-----------------------------------
+
+\linespread{1}
+
+\title{Problemas resueltos MO I}
+\author{Abel Rosado}
+\date{\today}
+
+\maketitle
+
+\tableofcontents
+
+\include{1_1}
+\include{beltrami}
+\include{1_2}
+\include{1_3}
+\include{1_4}
+\include{1_11}
+
+\end{document}

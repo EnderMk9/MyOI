@@ -1,0 +1,29 @@
+\section{Ejercicio 1.11}
+
+\fbox{\begin{minipage}{35em}
+Demostrar que la geodésica entre dos puntos A y B sobre una superficie esférica de centro O, se encuentra sobre la curva formada por la intersección de esta superficie con el plano que pasa por los puntos A, B y O.    
+\end{minipage}}
+
+En coordenadas esféricas, fijando $r=R$ constante, tenemos una esfera de centro O y radio $R$, tal que $d\mathbf{l}=Rd\theta \hat{u}_{\theta}+R\sin{\theta} d\varphi \hat{u}_{\varphi}$, así pues tenemos que el diferencial de distancia es $ds^2=R^2(d\theta^2+\sin^2{\theta}d\varphi^2)$.
+
+Si suponemos entonces que $\varphi = \varphi(\theta)$, entonces $d\varphi = \varphi' d\theta$ y podemos expresar $ds$ tal que $ds^2 = R^2(1+\sin^2{\theta}\varphi'^2)d\theta^2$.
+Entonces podemos extremizar el siguiente funcional
+\[F[\varphi]=\int_A^B{ds}=R\int_{t_A}^{t_B}{\sqrt{1+\sin^2{\theta}\varphi'^2}d\theta}\]
+Usando la ecuación de \textit{Euler-Lagrange}
+\[\frac{\partial G}{\partial \varphi}-\frac{d}{d\theta}\left(\frac{\partial G}{\partial \varphi'}\right)=0\]
+Vemos que $G$ no depende explícitamente de $\varphi$, entonces lo que encontramos dentro de la derivada del segundo término debe ser constante
+\[\frac{\partial G}{\partial \varphi'}=\frac{\sin^2{\theta}\varphi'}{\sqrt{1+\sin^2{\theta}\varphi'^2}}=c \rightarrow \varphi'^2(\sin^4{\theta}-c_1\sin^2{\theta})=c_1\]
+\[\frac{d\varphi}{d \theta} = \frac{k}{\sin{\theta}\sqrt{\sin^2{\theta}-k^2}} \rightarrow \varphi -\varphi_0= \int{\frac{k}{\sin{\theta}\sqrt{\sin^2{\theta}-k^2}}d\theta}\]
+Podemos hacer el cambio de variable $u=k \cot{\theta}$, $du=k\csc^2{\theta}$, si $k/\sin{\theta}=h$ y $h\cos{\theta}=u$, esto implica que $h^2=u^2+k^2$ y entonces $\sin{\theta}=k/\sqrt{u^2+k^2}$.
+\[\varphi -\varphi_0= \int{\frac{k}{\sin{\theta}\sqrt{\sin^2{\theta}-k^2}}d\theta}=\int{\frac{k\sin{\theta}}{\sin^2{\theta}\sqrt{\sin^2{\theta}-k^2}}d\theta}=-\int{\frac{\sin{\theta}}{\sqrt{\sin^2{\theta}-k^2}}du}=\]
+\[=-\int{\frac{du}{\sqrt{1-\frac{k^2}{\sin^2{\theta}}}}}=-\int{\frac{du}{\sqrt{1-k^2-u^2}}}=-\int{\frac{du}{\sqrt{\alpha^2-u^2}}}=-\frac{1}{\alpha}\int{\frac{du}{\sqrt{1-\frac{u}{\alpha}^2}}}=\]
+\[=\arccos{\frac{u}{\alpha}}=\arccos{\beta \frac{\cos\theta}{\sin\theta}}\implies \cos({\varphi -\varphi_0})=\beta \frac{\cos\theta}{\sin\theta}\]
+Ahora queremos intersecar un plano que pasa por O $ax+by+cz=0$ con la esfera $x^2+y^2+z^2=R^2$ y comprobar si obtenemos una expresión equivalente.
+
+Tenemos que $x=R\sin{\theta}\cos{\varphi}$, $y=R\sin{\theta}\sin{\varphi}$ y $z=R\cos{\theta}$, sustituyendo en la ecuación del plano tenemos
+\[a\sin{\theta}\cos{\varphi}+b\sin{\theta}\sin{\varphi}+c\cos{\theta}=0 \rightarrow a\cos{\varphi}+b\sin{\varphi}=-c\frac{\cos{\theta}}{\sin{\theta}}\]
+Usando la identidad de la adición armónica
+\[a\cos{\varphi}+b\sin{\varphi}=\sqrt{a^2+b^2}\cos\left({x+\arctan\left({-\frac{b}{a}}\right)}\right)\]
+Tal que si $\varphi_0=-\arctan{-a/b}$ y $\beta = -c/\sqrt{a^2+b^2}$
+\[\cos({\varphi -\varphi_0})=\beta \frac{\cos\theta}{\sin\theta}\]
+Vemos por lo tanto que la intersección entre el plano y la esfera se corresponde a la geodésica de la esfera, lo que se denomina círculo mayor.
