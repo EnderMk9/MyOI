@@ -93,6 +93,7 @@ Si es anisótropo, es decir, los autovalores no coinciden, solo realizará traye
 En función de ese cociente, las trayectorias trazadas se llaman curvas de Lissajous.
 \newpage
 \section{Oscilaciones amortigudas}
+\refstepcounter{subsection}
 Si añadimos una fuerza que se opone linealmente a la velocidad de la forma $-b \dot{x}$ (para una dimensión), obtenemos la siguiente ecuación diferencial.
 \begin{equation} \label{6.1.1}
     \ddot{x} + 2\beta\dot{x} + \omega_0^2 x = 0 \ \ \ \ \ 2\beta = \frac{b}{m} \ \ \ \ \ \omega_0^2 = \frac{k}{m}
@@ -136,7 +137,7 @@ Si representamos el parámetro de extinción en función de $\beta$ utilizando l
 A mayores $\beta$, hay menos posibilidad de amortiguamiento porque el sistema casi no oscila y por lo tanto la velocidad va a ser pequeña.
 
 \section{Oscilaciones forzadas}
-
+\refstepcounter{subsection}
 Supongamos que tenemos una fuerza externa además de la fuerza elástica y el rozamiento, de tal forma que obtenemos la siguiente ecuación diferencial
 \begin{equation} \label{6.1.1}
     \ddot{x} + 2\beta\dot{x} + \omega_0^2 x = f(t) \ \ \ \ \ 2\beta = \frac{b}{m} \ \ \ \ \ \omega_0^2 = \frac{k}{m}  \ \ \ \ \ \ f(t) = \frac{F}{m}
@@ -201,7 +202,7 @@ Si ahora tomamos $\omega_0$ y variamos $\omega$, tenemos que
     \left.\frac{d^2}{d \omega^2}\right|_0 = 8\beta^2 - 4\omega_0^2  \ \ \ \ \ \left.\frac{d^2}{d \omega^2}\right|_{\sqrt{\omega_0^2-2\beta^2}} = 8\omega_0^2-16\beta^2
 \end{equation}\refstepcounter{subsection}
 \begin{tikzpicture}[]
-    \node [shift={(-16cm, -27.3cm)}] at (current page.north east)
+    \node [shift={(-16.5cm, -27.8cm)}] at (current page.north east)
         \includegraphics[width=6.3cm]{images/osforz.png}
 \end{tikzpicture}
 Cuando $\beta > \omega_0 /\sqrt{2}$, tenemos un solo máximo en $\bar{\omega} = 0$.
@@ -233,7 +234,7 @@ Se define originalmente para un oscilador no forzado como el periodo caracterís
 \end{tikzpicture}
 $Q$ entonces representa el inverso del factor de extinción de la energía \newline por radián. Para sistemas forzados tenemos que es la energía del sistema \newline entre  la energía disipada por radián, y nos queda la misma expresión.
 
-Tenemos además como hemos visto en (8.3.12), se define de forma más general \newline como la frecuencia de resonancia entre la anchura a altura media, que como se observa en la figura, es la anchura de la gráfica $A^2$, en función de $\omega$ cuando 
+Tenemos además como hemos visto en (8.3.13), se define de forma más general \newline como la frecuencia de resonancia entre la anchura a altura media, que como se observa en la figura, es la anchura de la gráfica $A^2$, en función de $\omega$ cuando 
 \begin{equation} \label{6.1.1}
     A(\tilde{\omega})^2 = \frac{A^2_{\mbox{\small max.}}}{2}
 \end{equation}\refstepcounter{subsection}
@@ -243,5 +244,82 @@ Resolviendo la ecuación de segundo grado en $\tilde{\omega}$ que nos queda y lu
 \end{equation}\refstepcounter{subsection}
 De esta forma $Q$ es una especie de inverso de un error relativo, y cuanto mayor sea este, más estrecha será la banda de resonancia. A su vez, según las interpretaciones anteriores, a mayor $Q$, menor será el amortiguamiento y menor energía será disipada.
 \subsubsection{Desfase}
+\begin{tikzpicture}[]
+    \node [shift={(-32cm, -22cm)}] at (current page.north east)
+        \includegraphics[width=6.3cm]{images/delta.png}
+\end{tikzpicture}
+Analizando (8.3.4), vemos que cuando $\omega \rightarrow \omega_0$, $\tan \delta \rightarrow \infty$ y por lo tanto $\delta \rightarrow \pi/2 +\pi k_1$. Si $\omega \rightarrow 0^+$, entonces $\tan \delta \rightarrow 0^+$ y $\delta \rightarrow 0 +\pi k_2$, y si $\omega \rightarrow \infty$, entonces $\tan \delta \rightarrow 0^-$ y $\delta \rightarrow 0 +\pi k_3$.
+
+Para que la función sea contínua, tomamos $k=0$ cuando $\omega < \omega_0$ y $k=1$ cuando $\omega > \omega_0$, de tal forma que definimos naturalmente $\delta(\omega_0) = \pi/2$.
+
+Se observa este comportamiento en la figura de la derecha y como \newline cambia la función en términos de $\beta$, haciéndose casi un escalon, \newline pues cuando $\beta \rightarrow 0$, $\tan \delta \rightarrow 0$ y $\delta \rightarrow 0+\pi k$.
 \subsection{Potencia}
-\section{Fourier}
+Definimos la potencia en general como la derivada del trabajo \newline producido por una fuerza con respecto al tiempo, que podemos \newline reescribir tal que
+\begin{equation} \label{6.1.1}
+    P(t) = \frac{dW}{dt} = F \frac{dx}{dt} = F \dot{x} \implies P(t) = \mathbf{F} \cdot \dot{\mathbf{x}}
+\end{equation}\refstepcounter{subsection}
+Definimos entonces la potencia media como la integral del valor medio de la función $P(t)$ durante un periodo entero, tal que 
+\begin{equation} \label{6.1.1}
+    \bar{P} = \frac{1}{T} \int_0^T P(t)dt = \frac{1}{T} \int_{-T/2}^{T/2} P(t)dt
+\end{equation}\refstepcounter{subsection}
+Y haciendo la integral para un oscilador forzado obtenemos el siguiente resutado
+\begin{equation} \label{6.1.1}
+    P(t)= -m f_0 A \omega \cos(\omega t) \sin(\omega t -\delta) \ \ \ \ \ \bar{P} = \frac{1}{2} m f_0 \omega A \sin\delta 
+\end{equation}\refstepcounter{subsection}
+\vspace{-30pt}
+\section{Fourier}\refstepcounter{subsection}
+\subsection{Teorema de Fourier}
+Sea $f(t)$ una función periódica, es decir, $\exists \ T$ tal que $f(t+T) = f(t) \ \forall \ t$, entoces podemos expresar $f(t)$ de la siguiente forma
+\begin{equation} \label{6.1.1}
+    f(t) = \sum_{n=0}^\infty a_n \cos (n\omega t) + b_n \sin (n\omega t) \ \ \ \ \ \omega = \frac{2\pi}{T}
+\end{equation}\refstepcounter{subsection}
+Donde los coeficientes $a_n$ y $b_n$ vienen determinados por 
+\begin{equation} \label{6.1.1}
+    a_0 = \frac{1}{T}\int_{-\frac{T}{2}}^{\frac{T}{2}} f(t)dt \ \ \ \ \ a_n = \frac{2}{T}\int_{-\frac{T}{2}}^{\frac{T}{2}} f(t)\cos(n\omega t)dt \ \ \ \ \ b_n = \frac{2}{T}\int_{-\frac{T}{2}}^{\frac{T}{2}} f(t)\sin(n\omega t)dt
+\end{equation}\refstepcounter{subsection}
+Si $f(t)$ es par, $b_n =0 \ \forall \ n$, y si $f(t)$ es impar $a_n =0 \ \forall \ n$.
+\subsection{Ortogonalidad}
+No se va a demostrar el Teorema de Fourier, eso implicaria demostrar que el conjunto de funciones
+\begin{equation} \label{6.1.1}
+    \left\{\cos(n\omega t),\sin(n\omega t)\right\} \ \ \forall \ n \in \mathbb{N}_0
+\end{equation}\refstepcounter{subsection}
+es completo (base de un espacio de Hilbert) y puede generar cualquier función periódica, pero sí podemos demostrar que el conjunto (8.4.3) forman un conjunto ortogonal bajo una determinada forma bilineal simétrica, que definimos como
+\begin{equation} \label{6.1.1}
+    \langle f,g \rangle = \frac{2}{T}\int_{-\frac{T}{2}}^{\frac{T}{2}} f(t) g(t) dx
+\end{equation}\refstepcounter{subsection}
+De tal forma que si $\varphi_i$ y $\varphi_j$ son elementos cualesquiera de (8.4.3), se verifica haciendo las integrales correspondientes que 
+\begin{equation} \label{6.1.1}
+    \langle \varphi_i, \varphi_j \rangle = \delta_{ij}
+\end{equation}\refstepcounter{subsection}
+Entonces si suponemos que $f(t) = \sum c_k \varphi_k$, como tenemos en (8.4.1), podemos hallar los coeficientes del la siguiente forma
+\begin{equation} \label{6.1.1}
+    \langle f(t), \varphi_j \rangle =\langle \sum c_k \varphi_k, \varphi_j \rangle =  \sum c_k \langle \varphi_k, \varphi_j \rangle= \sum c_k \delta_{kj} = c_j
+\end{equation}\refstepcounter{subsection}
+Realmente el sistema no es ortonormal, sino ortogonal, por que $\langle 1,1\rangle = 2$, de ahí que $a_0$ en (8.4.2) sea distinto que $a_n$, pero para $n\geq 1$, si que son ortonormales las funciones de acuerdo con (8.4.4).
+\subsection{Teorema de convergencia}
+Sea $f(t)$ una función periódica, discontínua en un número numerable de puntos, la expresion (8.4.1) converge a $f(t)$ en los puntos en los que la función es contínua y converge a $[f(t_0^+) + f(t_0^-)]/2$ en los puntos $t_0$ dónde $f(t)$ no es contínua.
+
+Por ejemplo, la función de dientes de sierra, o unos pulsos binarios periódicos, pueden representarse mediante una Serie de Fourier a pesar de no ser contínuas.
+\subsection{Oscilador forzado}
+Supongamos ahora un oscilador sometido a una fuerza externa genérica $F(t)$ periódica con fracuencia angular $\omega$, de tal forma que la expresión (8.3.1) podemos expresarla usando (8.4.1) como
+\begin{equation} \label{6.1.1}
+    \ddot{x} +2\beta \dot{x} +\omega_0^2 x = f(t) = \sum_{n=0}^\infty a_n \cos (n\omega t) + b_n \sin (n\omega t)
+\end{equation}\refstepcounter{subsection}
+Primero tenemos que $x = \sum x_n$, puesto que la ecuación es lineal, y luego que $x_n = \mathfrak{Re}\{Ce^{in\omega t}\}+\mathfrak{Im}\{De^{in\omega t}\}$, de tal forma que 
+\begin{equation} \label{6.1.1}
+    C(-n^2\omega^2 +2 i\beta n\omega +\omega_0^2)e^{in\omega t} = a_n e^{in\omega t}
+\end{equation}\refstepcounter{subsection}
+\vspace{-20pt}
+\begin{equation} \label{6.1.1}
+    D(-n^2\omega^2 +2 i\beta n\omega +\omega_0^2)e^{in\omega t} = b_n e^{in\omega t}
+\end{equation}\refstepcounter{subsection}
+Nos quedan entonces de forma simlar a (8.3.3), (8.3.4) y (8.3.5), que la solución estacionaria es 
+\begin{equation} \label{6.1.1}
+    A_n = \frac{a_n}{\sqrt{\left(\omega_0^2 -n^2\omega^2\right)^2+4n^2\omega^2 \beta^2}} \ \ \ \ B_n = \frac{b_n}{\sqrt{\left(\omega_0^2 -n^2\omega^2\right)^2+4n^2\omega^2 \beta^2}}
+\end{equation}\refstepcounter{subsection}
+\begin{equation} \label{6.1.1}
+    \tan \delta_n = \frac{2n\omega \beta}{\omega_0^2 - n^2\omega^2}
+\end{equation}\refstepcounter{subsection}
+\begin{equation} \label{6.1.1}
+    x =  \sum_{n=0}^\infty A_n \cos(n\omega t - \delta_n) + B_n\sin(n\omega t - \delta_n)
+\end{equation}\refstepcounter{subsection}
