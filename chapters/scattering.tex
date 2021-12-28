@@ -1,2 +1,103 @@
 \chapter{Teoría de la dispersión}
 \refstepcounter{subsection}
+\begin{marginfigure}[0pt]
+    \def\svgwidth{3.5 cm}
+    \small
+    \vspace{20pt}
+	\input{images/col3d.pdf_tex}
+	\labfig{margin2}
+\end{marginfigure}
+\begin{figure}[H]
+    \def\svgwidth{15 cm}
+    \normalsize
+	\input{images/col.pdf_tex}
+	\labfig{margin2}
+    \vspace{15pt}
+    \caption{Diagrama del sistema}
+\end{figure}
+\vspace{15pt}
+
+Vamos a considerar el siguiente sistema, una partícula que parte con un momento $\mathbf{p}_0$ en $t\rightarrow -\infty$ paralelo a un cierto eje que llamaremos $z$, a una distancia $b$ de este, y que por interacción con un blanco, se desvía y acaba obteniendo un momento $\mathbf{p}_f$ en $t\rightarrow \infty$, que forma un ángulo $\theta$ con respecto a $\mathbf{p}_0$.
+
+Llamaremos a $b$ el parámetro de impacto, y $\theta$ el ángulo de dispersión, de tal forma que estan relacionados, tal que $\theta = \theta(b)$ y $b = b(\theta)$, experimentalmente nos interesa más la segunda relación porque medir el ángulo de dispersión es mucho más sencillo que medir el parámetro de impacto, que en experimentos de fisica nuclear y de partículas en una distancia muy pequeña.
+
+\section{Sección eficaz} \refstepcounter{subsection}
+Vamos considerar el ejemplo de que el blanco es una bola maziza de radio $R$, habrá colisión si $b \leq R$, de lo contrario no habrá colisión.
+
+Definimos entonces la sección eficáz en este caso como $\sigma=\pi R^2$, que es el area transversa de la bola maziza.
+
+Si ahora suponemos que la partícula es otra bola, con radio $R_1$ y el radio del blanco es $R_2$, entonces ahora hay colisión si $b \leq R_1+R_2$, y entonces en este caso definimos la sección eficaz como $\sigma=\pi (R_1+R_2)^2$.
+
+Por lo que $\sigma$ depende tanto de la partícula incidente como del blanco, y puede pensarse como un area transversa efectiva, es decir, la que se proyectada sobre el plano perpendicular a $z$, teniendo en cuenta el área de la partícula incidente.
+
+\subsection{Probabilidad}
+Vamos ahora a pasar a sistemas con más blancos, generalmente trataremos con láminas delgadas de algún material, de tal forma, que si $A$ es el área de la lámina y $\delta$ es su grosor, que por lo general va a ser muy pequeño.
+
+Podemos definir la densidad de blancos $n_b = N_b/A \inlineeqnum$ como el número de blancos entre el área de la lámina.
+
+Por otro lado cada blanco tiene una sección eficaz $\sigma$, y suponiendo que todos los blancos son iguales, tenemos que el área de todos los blancos es $N_b \sigma = n_b A \sigma \inlineeqnum$, de tal forma que $\sigma$ es la sección eficaz de uno de los blancos.
+
+Tenemos entonces que si tenemos una distribución uniforme de partículas incidentes, la probabilidad de colisionar es 
+
+\begin{equation} \label{6.1.1}
+    p_{\mbox{\small col.}} = \frac{\mbox{Área de todos los blancos}}{\mbox{Área total}} = \frac{n_b A \sigma}{A} = n_b \sigma
+\end{equation} \refstepcounter{subsection}
+De esta forma, tenemos que si tenemos $N_{\mbox{\small inc.}}$ partículas incidentes, el número de partículas dispersadas, es decir, que colisionan, es 
+\begin{equation} \label{6.1.1}
+    N_{\mbox{\small disp.}} = p_{\mbox{\small col.}} N_{\mbox{\small inc.}} = N_{\mbox{\small inc.}} n_b \sigma
+\end{equation} \refstepcounter{subsection}
+Este tema se llama teoría de la dispersión, pero esta misma expresión se aplica a fenóminos similares como captura, la ionización, la fisión, etc.
+\vspace{-20pt}
+\subsection{Camino libre medio}
+Vamos a considerar la lámina como una superposición de pequeñas láminas de grosor, podemos reescribir la densidad de blancos como $n_b = N_b dx/V = \rho_b dx  \inlineeqnum$, entonces la probabilidad de colisionar con un blanco en una de esas láminas es $p_{\mbox{\small col.}}(dx) = \sigma \rho_b dx \inlineeqnum$.
+
+Llamaremos $p_{\mbox{\tiny N}}(x)$ a la probabilidad de que una partícula incidente recorra una distancia $x$ sin colisionar con un blanco, entoces podemos definir $p_{\mbox{\small col.}}(x;x+dx)=p_{\mbox{\tiny N}}(x)\cdot p_{\mbox{\small col.}}(dx) \inlineeqnum$ como la probabilidad de que ocurra una primera colisión entre $x$ y $dx$ que ocurre cuando ocurren a la vez que no ha chocado hasta llegar a $x$ y que choca entre $x$ y $x+dx$.
+
+Por otro lado tenemos que el recíproco de $p_{\mbox{\tiny N}}(x)$ es $p_{\mbox{\small col.}}(x)$, la probabilidad de chocar al menos una vez al recorrer una distancia $x$, tal que $p_{\mbox{\tiny N}}(x)+p_{\mbox{\small col.}}(x) = 1 \ \ \forall \ x \inlineeqnum$, por lo tanto, también tenemos $p_{\mbox{\tiny N}}(x+dx)+p_{\mbox{\small col.}}(x+dx) = 1 \ \ \forall \ x \inlineeqnum$.
+
+De esta forma podemos reescribir (9.1.7) como $p_{\mbox{\small col.}}(x;x+dx) = p_{\mbox{\small col.}}(x+dx) - p_{\mbox{\small col.}}(x) = p_{\mbox{\tiny N}}(x)-p_{\mbox{\tiny N}}(x+dx) \inlineeqnum$, podemos expandirlo en taylor como
+\vspace{-5pt}
+\begin{equation} \label{6.1.1}
+    p_{\mbox{\small col.}}(x;x+dx)  = - \frac{dp_{\mbox{\tiny N}}(x)}{dx} dx + O(dx^2)
+\end{equation} \refstepcounter{subsection}
+Entonces usando ahora (9.1.7) y (9.1.6)
+\vspace{-5pt}
+\begin{equation} \label{6.1.1}
+    p_{\mbox{\tiny N}}(x) \sigma \rho_b = - \frac{d p_{\mbox{\tiny N}}(x)}{dx} \implies p_{\mbox{\tiny N}}(x) = e^{-\rho_b \sigma x}
+\end{equation} \refstepcounter{subsection}
+Entonces sustituyendo de nuevo en (9.1.7) tenemos que 
+\vspace{-5pt}
+\begin{equation} \label{6.1.1}
+    p_{\mbox{\small col.}}(x;x+dx) = \rho_b \sigma e^{-\rho_b \sigma x} dx
+\end{equation} \refstepcounter{subsection}
+Y entonces el valor medio de la distancia recorrida sin colisionar será la siguiente integral sobre todos los posibles valores de $x$
+\vspace{-5pt}
+\begin{equation} \label{6.1.1}
+    \lambda = \bar{x} = \int_0^\infty x p_{\mbox{\small col.}}(x;x+dx) = \frac{1}{\rho_b \sigma}
+\end{equation} \refstepcounter{subsection}
+Para un gas ideal tenemos que $PV = N k_b T = n R T$, entonces en este caso el camino libre medio es $\lambda = k_b T/\sigma P$.
+\section{Sección eficaz diferencial}\refstepcounter{subsection}
+Vamos a estudiar la sección eficaz en función no de todas las partículas dispersadas, sino solo en aquellas dispersadas hacía un pequeño ángulo sólido alrededor de una cierta dirección concreta, especificada por los ángulos $(\theta,\varphi)$, como se observa en la figura inicial.
+
+Para ello vamos vamos a calcular la sección eficaz por ángulo solido, que es una función de los dos ángulos, tal que
+\begin{equation} \label{6.1.1}
+    \frac{d\sigma(\theta,\varphi)}{d\Omega}\ \ \ \ \ d\sigma(d\Omega, \theta,\varphi) = \frac{d\sigma(\theta,\varphi)}{d\Omega} d\Omega \ \ \ \ \ N_{\mbox{\small disp.}}(d\Omega, \theta,\varphi) = N_{\mbox{\small inc.}} n_b d\sigma(d\Omega, \theta,\varphi)
+\end{equation} \refstepcounter{subsection}
+De tal forma que la sección eficazz total será 
+\begin{equation} \label{6.1.1}
+    \sigma = \int d\sigma = \int \frac{d\sigma(\theta,\varphi)}{d\Omega} d\Omega = \int_0^{2\pi}\int_0^\pi \frac{d\sigma(\theta,\varphi)}{d\Omega} sin\theta d\theta d\varphi
+\end{equation} \refstepcounter{subsection}
+\subsection{$d\sigma/d\Omega$ en términos de $b$}
+Vamos a asumir que tenemos simetría azimutal, es decir, que $d\sigma/d\Omega$ no depende de $\varphi$ y que la dispersión ocurre para el mismo ángulo $\varphi$ con el que llega la partícula incidente.
+\vspace{-15pt}
+\begin{figure}[H]
+    \def\svgwidth{8 cm}
+    \normalsize
+	\input{images/sigma.pdf_tex}
+	\labfig{margin2}
+\end{figure}
+\vspace{-15pt}
+Como se observa en la figura superior , si variamos $b$ por $db$, el área resultante, $d\sigma$, es la expresión ahí escrita, y este cambio resulta en un cambio de theta que traza un ángulo sólido $d\Omega$ cuya expresión es la que se observa, y que se puede obtener integrando el ángulo $\varphi$ en la definición del diferencial de angulo sólido, y entonces diviendo ambos y tomando el valor absoluto por que $db/d\theta <0$, y tanto $d\sigma>0$ como $d\Omega>0$, entonces tenemos que 
+\begin{equation} \label{6.1.1}
+    \frac{d\sigma(\theta)}{d\Omega} = \frac{b}{\sin\theta}\left|\frac{db}{d\theta}\right|
+\end{equation} \refstepcounter{subsection}

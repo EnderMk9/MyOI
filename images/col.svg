@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="412.12683mm"
+   height="140.0032mm"
+   viewBox="0 0 1557.6448 529.14598"
+   version="1.1"
+   id="svg5"
+   sodipodi:docname="col.svg"
+   inkscape:version="1.1.1 (3bf5ae0d25, 2021-09-20, custom)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:document-units="mm"
+     showgrid="false"
+     inkscape:zoom="0.78615037"
+     inkscape:cx="1115.5627"
+     inkscape:cy="445.84346"
+     inkscape:window-width="1920"
+     inkscape:window-height="1050"
+     inkscape:window-x="0"
+     inkscape:window-y="30"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="g92" />
+  <defs
+     id="defs2">
+    <clipPath
+       id="WeQTeFvoxZez">
+      <path
+         fill="none"
+         stroke="none"
+         d="M 0,0 H 1532 V 997 H 0 Z"
+         id="path9" />
+    </clipPath>
+  </defs>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(340.76351,-251.84632)">
+    <g
+       id="g92"
+       transform="translate(-328.46687,46.756212)">
+      <path
+         fill="#00ffff"
+         stroke="none"
+         paint-order="stroke fill markers"
+         d="m 648.85457,712.53881 c 0,-15.5245 -3.61451,-30.83581 -10.55728,-44.72136 l -89.44272,44.72136 z"
+         fill-opacity="0.0980392"
+         id="path16" />
+      <path
+         fill="none"
+         stroke="#00ffff"
+         paint-order="fill stroke markers"
+         d="m 648.85457,712.53881 c 0,-15.5245 -3.61451,-30.83581 -10.55728,-44.72136 l -89.44272,44.72136 z"
+         stroke-opacity="1"
+         stroke-linecap="round"
+         stroke-linejoin="round"
+         stroke-miterlimit="10"
+         stroke-width="2.5"
+         id="path18" />
+      <text
+         fill="#00ffff"
+         stroke="none"
+         font-family="geogebra-sans-serif, sans-serif"
+         font-size="16px"
+         font-style="normal"
+         font-weight="normal"
+         text-decoration="normal"
+         x="661.49591"
+         y="701.10986"
+         text-anchor="start"
+         dominant-baseline="alphabetic"
+         fill-opacity="1"
+         id="text24">$\theta$</text>
+      <path
+         fill="#00ffff"
+         stroke="none"
+         paint-order="stroke fill markers"
+         d="m 913.68183,580.12519 c 0,-15.52451 -3.61451,-30.83582 -10.55729,-44.72136 l -89.44271,44.72136 z"
+         fill-opacity="0.0980392"
+         id="path26" />
+      <path
+         fill="none"
+         stroke="#00ffff"
+         paint-order="fill stroke markers"
+         d="m 913.68183,580.12519 c 0,-15.52451 -3.61451,-30.83582 -10.55729,-44.72136 l -89.44271,44.72136 z"
+         stroke-opacity="1"
+         stroke-linecap="round"
+         stroke-linejoin="round"
+         stroke-miterlimit="10"
+         stroke-width="2.5"
+         id="path28" />
+      <text
+         fill="#00ffff"
+         stroke="none"
+         font-family="geogebra-sans-serif, sans-serif"
+         font-size="16px"
+         font-style="normal"
+         font-weight="normal"
+         text-decoration="normal"
+         x="927.43732"
+         y="564.08582"
+         text-anchor="start"
+         dominant-baseline="alphabetic"
+         fill-opacity="1"
+         id="text34">$\theta$</text>
+      <path
+         fill="none"
+         stroke="#000000"
+         paint-order="fill stroke markers"
+         d="m 1543.3482,207.09011 -7.4973,3.62723 -7.4285,3.59201 -7.3603,3.55711 -7.2928,3.52257 -7.2261,3.48835 -7.16,3.45448 -7.0946,3.42093 -7.0298,3.3877 -6.9659,3.3548 -6.9024,3.32223 -6.8397,3.28995 -6.7777,3.25801 -6.7162,3.22637 -6.6555,3.19504 -6.5953,3.16401 -6.5357,3.13328 -6.4769,3.10286 -6.4186,3.07273 -6.3609,3.04289 -6.3039,3.01334 -6.2474,2.98409 -6.1915,2.9551 -6.1363,2.92642 -6.0815,2.898 -6.0275,2.86986 -5.9739,2.842 -5.921,2.81441 -5.8686,2.78708 -5.8167,2.76002 -5.7654,2.73322 -5.7147,2.70669 -5.6645,2.68042 -5.6149,2.65439 -5.5657,2.62862 -5.5172,2.60311 -5.4691,2.57784 -5.4216,2.55281 -5.3745,2.52803 -5.328,2.5035 -5.2821,2.47919 -5.2365,2.45513 -5.1916,2.4313 -5.147,2.40771 -5.1031,2.38433 -5.0595,2.3612 -9.9904,4.65386 -9.822,4.56398 -9.6575,4.47583 -9.4965,4.38938 -9.3392,4.30463 -9.1854,4.2215 -9.0353,4.13998 -8.8884,4.06005 -8.745,3.98167 -8.605,3.9048 -8.4682,3.82942 -8.3347,3.75551 -8.2043,3.68302 -8.0771,3.61195 -7.9529,3.54225 -7.8317,3.47389 -7.7137,3.40688 -7.5984,3.34114 -7.4862,3.2767 -7.3767,3.21351 -7.2701,3.15152 -7.1662,3.09076 -7.0651,3.03116 -6.9667,2.97273 -6.871,2.91542 -6.7778,2.85924 -6.6872,2.80414 -6.5992,2.75011 -6.5138,2.69712 -6.4307,2.64518 -6.3502,2.59423 -6.2721,2.54429 -6.1963,2.4953 -6.12294,2.44727 -6.05192,2.40017 -5.98319,2.35399 -5.91674,2.30871 -5.85256,2.26431 -5.7906,2.22077 -5.73086,2.17808 -5.67329,2.13622 -5.6179,2.09518 -5.56465,2.05492 -5.51352,2.01547 -5.46449,1.97677 -5.41755,1.93884 -5.37268,1.90163 -5.32985,1.86516 -5.28906,1.8294 -5.25028,1.79434 -5.21351,1.75995 -5.17873,1.72624 -5.14593,1.6932 -5.11507,1.66079 -5.08619,1.62902 -5.05923,1.59787 -5.03421,1.56733 -5.01111,1.53739 -9.96055,2.98729 -9.89098,2.87442 -9.83651,2.76592 -9.79704,2.66167 -9.77253,2.56146 -9.76294,2.46516 -9.76823,2.37263 -9.78844,2.28372 -9.82358,2.19829 -9.87372,2.11622 -9.93893,2.03738 -4.99865,0.9901 -5.02065,0.97155 -5.04456,0.95336 -5.0704,0.93554 -5.09817,0.91808 -5.12789,0.90097 -5.15956,0.88419 -5.1932,0.86777 -5.22883,0.85167 -5.26644,0.83589 -5.30607,0.82043 -5.34772,0.80529 -5.39141,0.79046 -5.43715,0.77592 -5.48498,0.76168 -5.53489,0.74773 -5.58692,0.73407 -5.64107,0.72069 -5.69738,0.70758 -5.75586,0.69474 -5.81655,0.68216 -5.87943,0.66986 -5.94458,0.65779 -6.01198,0.646 -6.08169,0.63443 -6.15371,0.62311 -6.22807,0.61203 -6.30482,0.60119 -6.38397,0.59056 -6.46555,0.58018 -6.5496,0.57 -6.63615,0.56006 -6.72524,0.55031 -6.81688,0.54078 -6.91113,0.53146 -7.00801,0.52234 -7.10757,0.51341 -7.20984,0.50469 -7.31486,0.49616 -7.42267,0.48781 -7.53331,0.47966 -7.64682,0.47168 -7.76326,0.46389 -7.88264,0.45626 -8.00506,0.44883 -8.1305,0.44155 -8.25906,0.43445 -8.39077,0.42751 -8.52568,0.42073 -8.66383,0.41412 -8.8053,0.40767 -8.95013,0.40136 -9.09836,0.39521 -9.25008,0.38922 -9.40531,0.38336 -9.56414,0.37767 -9.72661,0.3721 -9.8928,0.36669 -5.0099,0.18136 -5.05286,0.18005 -5.09631,0.17877 -5.14025,0.1775 -5.18467,0.17626 -5.22959,0.17501 -5.275,0.1738 -5.32093,0.1726 -5.36736,0.17142 -5.41429,0.17025 -5.46176,0.1691 -5.50973,0.16796 -5.55823,0.16684 -5.60727,0.16574 -5.65683,0.16465 -5.70695,0.16357 -5.75759,0.16253 -5.80879,0.16148 -5.86055,0.16045 -5.91287,0.15945 -5.96573,0.15845 -6.01919,0.15747 -6.07321,0.1565 -6.1278,0.15556 -6.18299,0.15462 -6.23877,0.1537 -6.29513,0.15279 -6.3521,0.1519 -6.40968,0.15103 -6.46786,0.15016 -6.52666,0.14932 -6.58609,0.14848 -6.64615,0.14766 -6.70683,0.14686 -6.76816,0.14607 -6.83013,0.14528 -6.89275,0.14453 -6.95604,0.14377 -7.01998,0.14304 -7.08459,0.14232 -7.14988,0.1416 -7.21586,0.14091 -7.28251,0.14023 -7.34987,0.13956 -7.417922,0.13891 -7.486686,0.13826 -7.556162,0.13764 -7.626359,0.13702 -7.697284,0.13641 -7.768942,0.13583 -7.841342,0.13525 -7.914489,0.13468 -7.988391,0.13414 -8.063055,0.13359 -8.138487,0.13307 -8.2146967,0.13256 -8.291689,0.13206 -8.3694723,0.13157"
+         stroke-opacity="0.898039"
+         stroke-linecap="round"
+         stroke-linejoin="round"
+         stroke-miterlimit="10"
+         stroke-width="4"
+         id="path36" />
+      <path
+         fill="none"
+         stroke="#00ff00"
+         paint-order="fill stroke markers"
+         d="M 416.44094,580.12519 V 712.53881"
+         stroke-opacity="1"
+         stroke-linecap="round"
+         stroke-linejoin="round"
+         stroke-miterlimit="10"
+         stroke-width="4"
+         id="path38" />
+      <text
+         fill="#00ff00"
+         stroke="none"
+         font-family="geogebra-sans-serif, sans-serif"
+         font-size="16px"
+         font-style="normal"
+         font-weight="normal"
+         text-decoration="normal"
+         x="432.39685"
+         y="650.33698"
+         text-anchor="start"
+         dominant-baseline="alphabetic"
+         fill-opacity="1"
+         id="text40">b</text>
+      <path
+         fill="none"
+         stroke="#000000"
+         paint-order="fill stroke markers"
+         d="m 937.09545,703.53881 18,18"
+         stroke-opacity="1"
+         stroke-linecap="square"
+         stroke-miterlimit="10"
+         stroke-width="4.5"
+         id="path46" />
+      <path
+         fill="none"
+         stroke="#000000"
+         paint-order="fill stroke markers"
+         d="m 937.09545,721.53881 18,-18"
+         stroke-opacity="1"
+         stroke-linecap="square"
+         stroke-miterlimit="10"
+         stroke-width="4.5"
+         id="path48" />
+      <text
+         fill="#000000"
+         stroke="none"
+         font-family="geogebra-sans-serif, sans-serif"
+         font-size="16px"
+         font-style="normal"
+         font-weight="normal"
+         text-decoration="normal"
+         x="899.42365"
+         y="759.99506"
+         text-anchor="start"
+         dominant-baseline="alphabetic"
+         fill-opacity="1"
+         id="text54">blanco</text>
+      <path
+         fill="none"
+         stroke="#00ff00"
+         paint-order="fill stroke markers"
+         d="M -5,580.12519 H 1537"
+         stroke-opacity="1"
+         stroke-linejoin="round"
+         stroke-miterlimit="10"
+         stroke-width="4"
+         stroke-dasharray="12, 8"
+         id="path56" />
+      <text
+         fill="#00ff00"
+         stroke="none"
+         font-family="geogebra-sans-serif, sans-serif"
+         font-size="16px"
+         font-style="normal"
+         font-weight="normal"
+         text-decoration="normal"
+         x="275.13449"
+         y="615.7572"
+         text-anchor="start"
+         dominant-baseline="alphabetic"
+         fill-opacity="1"
+         id="text58">$\mathbf{p}_0$</text>
+      <path
+         fill="none"
+         stroke="#000000"
+         paint-order="fill stroke markers"
+         d="M -5,712.53881 H 1537"
+         stroke-opacity="1"
+         stroke-linecap="round"
+         stroke-linejoin="round"
+         stroke-miterlimit="10"
+         stroke-width="2"
+         id="path70" />
+      <text
+         fill="#000000"
+         stroke="none"
+         font-family="geogebra-sans-serif, sans-serif"
+         font-size="16px"
+         font-style="normal"
+         font-weight="normal"
+         text-decoration="normal"
+         x="1502.7487"
+         y="687.65582"
+         text-anchor="start"
+         dominant-baseline="alphabetic"
+         fill-opacity="1"
+         id="text76">z</text>
+      <path
+         fill="none"
+         stroke="#ff0000"
+         paint-order="fill stroke markers"
+         d="M 512.41762,730.75729 1537,218.4661"
+         stroke-opacity="1"
+         stroke-linejoin="round"
+         stroke-miterlimit="10"
+         stroke-width="4"
+         stroke-dasharray="12, 8"
+         id="path78"
+         sodipodi:nodetypes="cc" />
+      <text
+         fill="#ff0000"
+         stroke="none"
+         font-family="geogebra-sans-serif, sans-serif"
+         font-size="16px"
+         font-style="normal"
+         font-weight="normal"
+         text-decoration="normal"
+         x="1251.7762"
+         y="412.44531"
+         text-anchor="start"
+         dominant-baseline="alphabetic"
+         fill-opacity="1"
+         id="text80">$\mathbf{p}_f$</text>
+    </g>
+  </g>
+</svg>
