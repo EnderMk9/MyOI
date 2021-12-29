@@ -24,7 +24,7 @@ Llamaremos a $b$ el parámetro de impacto, y $\theta$ el ángulo de dispersión,
 \section{Sección eficaz} \refstepcounter{subsection}
 Vamos considerar el ejemplo de que el blanco es una bola maziza de radio $R$, habrá colisión si $b \leq R$, de lo contrario no habrá colisión.
 
-Definimos entonces la sección eficáz en este caso como $\sigma=\pi R^2$, que es el area transversa de la bola maziza.
+Definimos entonces la sección eficaz en este caso como $\sigma=\pi R^2$, que es el area transversa de la bola maziza.
 
 Si ahora suponemos que la partícula es otra bola, con radio $R_1$ y el radio del blanco es $R_2$, entonces ahora hay colisión si $b \leq R_1+R_2$, y entonces en este caso definimos la sección eficaz como $\sigma=\pi (R_1+R_2)^2$.
 
@@ -77,15 +77,15 @@ Y entonces el valor medio de la distancia recorrida sin colisionar será la sigu
 \end{equation} \refstepcounter{subsection}
 Para un gas ideal tenemos que $PV = N k_b T = n R T$, entonces en este caso el camino libre medio es $\lambda = k_b T/\sigma P$.
 \section{Sección eficaz diferencial}\refstepcounter{subsection}
-Vamos a estudiar la sección eficaz en función no de todas las partículas dispersadas, sino solo en aquellas dispersadas hacía un pequeño ángulo sólido alrededor de una cierta dirección concreta, especificada por los ángulos $(\theta,\varphi)$, como se observa en la figura inicial.
+Vamos a estudiar la sección eficaz en función no de todas las partículas dispersadas, sino solo en aquellas dispersadas hacía un pequeño ángulo sólido alrededor de una cierta dirección concreta, especificada por los ángulos esféricos $(\psi,\varphi)$, el polar y el azimutal, respectivamente, medidos desde el blanco.
 
 Para ello vamos vamos a calcular la sección eficaz por ángulo solido, que es una función de los dos ángulos, tal que
 \begin{equation} \label{6.1.1}
-    \frac{d\sigma(\theta,\varphi)}{d\Omega}\ \ \ \ \ d\sigma(d\Omega, \theta,\varphi) = \frac{d\sigma(\theta,\varphi)}{d\Omega} d\Omega \ \ \ \ \ N_{\mbox{\small disp.}}(d\Omega, \theta,\varphi) = N_{\mbox{\small inc.}} n_b d\sigma(d\Omega, \theta,\varphi)
+    \frac{d\sigma(\psi,\varphi)}{d\Omega}\ \ \ \ \ d\sigma(d\Omega, \psi,\varphi) = \frac{d\sigma(\psi,\varphi)}{d\Omega} d\Omega \ \ \ \ \ N_{\mbox{\small disp.}}(d\Omega, \psi,\varphi) = N_{\mbox{\small inc.}} n_b d\sigma(d\Omega, \psi,\varphi)
 \end{equation} \refstepcounter{subsection}
 De tal forma que la sección eficazz total será 
 \begin{equation} \label{6.1.1}
-    \sigma = \int d\sigma = \int \frac{d\sigma(\theta,\varphi)}{d\Omega} d\Omega = \int_0^{2\pi}\int_0^\pi \frac{d\sigma(\theta,\varphi)}{d\Omega} sin\theta d\theta d\varphi
+    \sigma = \int d\sigma = \int \frac{d\sigma(\psi,\varphi)}{d\Omega} d\Omega = \int_0^{2\pi}\int_0^\pi \frac{d\sigma(\psi,\varphi)}{d\Omega} sin\psi d\psi d\varphi
 \end{equation} \refstepcounter{subsection}
 \subsection{$d\sigma/d\Omega$ en términos de $b$}
 Vamos a asumir que tenemos simetría azimutal, es decir, que $d\sigma/d\Omega$ no depende de $\varphi$ y que la dispersión ocurre para el mismo ángulo $\varphi$ con el que llega la partícula incidente.
@@ -97,7 +97,66 @@ Vamos a asumir que tenemos simetría azimutal, es decir, que $d\sigma/d\Omega$ n
 	\labfig{margin2}
 \end{figure}
 \vspace{-15pt}
-Como se observa en la figura superior , si variamos $b$ por $db$, el área resultante, $d\sigma$, es la expresión ahí escrita, y este cambio resulta en un cambio de theta que traza un ángulo sólido $d\Omega$ cuya expresión es la que se observa, y que se puede obtener integrando el ángulo $\varphi$ en la definición del diferencial de angulo sólido, y entonces diviendo ambos y tomando el valor absoluto por que $db/d\theta <0$, y tanto $d\sigma>0$ como $d\Omega>0$, entonces tenemos que 
+Como se observa en la figura superior , si variamos $b$ por $db$, el área resultante, $d\sigma$, es la expresión ahí escrita, y este cambio resulta en un cambio del ángulo de dispersión que traza un ángulo sólido $d\Omega$ cuya expresión es la que se observa, y que se puede obtener integrando el ángulo $\varphi$ en la definición del diferencial de angulo sólido. Entonces diviendo ambos y tomando el valor absoluto por que $db/d\theta <0$, y tanto $d\sigma>0$ como $d\Omega>0$, entonces tenemos que 
 \begin{equation} \label{6.1.1}
     \frac{d\sigma(\theta)}{d\Omega} = \frac{b}{\sin\theta}\left|\frac{db}{d\theta}\right|
+\end{equation} \refstepcounter{subsection}
+Es importante destacar que en general $\psi \neq \theta$, y que la expresión anterior solo es válida  para distancias largas con respecto al blanco, tal que $\psi \rightarrow \theta$, puesto que el ángulo tenemos que medirlo desde un punto fijo, como es el blanco. En general tendremos
+\begin{equation} \label{6.1.1}
+    \frac{d\sigma(\psi)}{d\Omega} = \frac{b}{\sin\psi}\left|\frac{db}{d\psi}\right|
+\end{equation} \refstepcounter{subsection}
+\subsection{Sección eficaz de Rutherford}
+Vamos a describir la sección eficaz que desarrolló Ernest Rutherford basada en su módelo atómico, incidiendo partículas $\alpha$, cuya posterior verificación experimental demostró que la composición de los átomos es aproximadamente una masa cargada positivamente en un núcleo.
+
+Las partículas $\alpha$ son $_2^4 \mbox{He}^{2+}$, y el blanco será una lámina de oro, con núcleos de $_{79}^{197} \mbox{Au}^{97+}$. Tenemos que $m_{\alpha} \ll m_{\mbox{\tiny Au}}$, lo que implica que si la energía con la que inciden las partículas $\alpha$ es pequeña, podemos considerar que los núcleos de oro permanecen inmóviles. Consideraremos además que en esta escala de energías la dispersión es elástica.
+
+Tenemos entonces que al acercarse la partícula $\alpha$, con un parámetro de impacto mucho menor al radio atómico, por que de lo contrario los electrones apantallarían el núcleo, se ve sometido aproximadamente a la fuerza de Coulomb, tal que $q$ es la carga de una partícula $\alpha$ y $Q$ es la mása de un núcleo de oro.
+\begin{equation} \label{6.1.1}
+    \mathbf{F}(r) = \frac{kqQ}{r^2}
+\end{equation} \refstepcounter{subsection}
+Si suponemos que es una colisión elástica, entoces $|\mathbf{p}_0| = |\mathbf{p}_f|$, y forman un triángulo isósceles tal que 
+\begin{equation} \label{6.1.1}
+    |\Delta\mathbf{p}| = 2 |\mathbf{p}| \sin \frac{\theta}{2}
+\end{equation} \refstepcounter{subsection}
+La hipérbola que se traza por (9.2.6) es simétrica con respecto a un pericentro, que unimos con el blanco mediante un vector $\mathbf{u}$, que nos define un ángulo $\vartheta$, cuando $t\rightarrow \infty$, entonces $\vartheta \rightarrow \vartheta_0$ y cuando $t\rightarrow -\infty$, entonces $\vartheta \rightarrow -\vartheta_0 $, tal que $2\vartheta_0 + \theta = \pi \inlineeqnum$, algo que también verifican los ángulos complementarios del triángulo isósceles, por lo tanto $\alpha = \vartheta$, por lo tanto $\Delta\mathbf{p} || \mathbf{u}$.
+
+Por otro lado tenemos que 
+\begin{equation} \label{6.1.1}
+    \Delta\mathbf{p} = \int_{-\infty}^{\infty} \mathbf{F} dt
+\end{equation} \refstepcounter{subsection}
+Por la discusión anterior, sabemos entonces que la única componente de $\Delta\mathbf{p}$ que sobrevive es la proyección sobre $\mathbf{u}$, y como $\mathbf{F} || \mathbf{r}$, el ángulo que forma con $\mathbf{u}$ es $\vartheta$, así
+\begin{equation} \label{6.1.1}
+    |\Delta\mathbf{p}| = \int_{-\infty}^{\infty} |\mathbf{F}| \cos\vartheta dt
+\end{equation} \refstepcounter{subsection}
+Ahora haremos un cambio de variable a $\vartheta$, tal que si $\dot{\vartheta} = d\vartheta/dt$, $dt = d\vartheta/\dot{\vartheta} \inlineeqnum$. Para entontrar $\dot{\vartheta}$, aplicaremos conservación del momento angular, que para un movimiento en un plano
+\begin{equation} \label{6.1.1}
+    J = m_{\alpha}r^2 \dot{\vartheta} \ \ \ \ J_0 = r p_0 \sin \gamma
+\end{equation} \refstepcounter{subsection}
+Dónde $\gamma$ es cualquiera de los dos ángulos entre $r$ y el eje $z$, puesto que su seno es el mismo, y este es por definición $b/r$, tal que
+\begin{equation} \label{6.1.1}
+    J_0 = p_0 b \implies \dot{\vartheta} = \frac{p_0 b}{m_{\alpha} r^2}
+\end{equation} \refstepcounter{subsection}
+Entonces sustituyendo en (9.2.9) el resultado de (9.2.10), teniendo en cuenta los límites que hemos expresado en el párrafo de (9.2.7), y el resultado de (9.2.12) tenemos que
+\begin{equation} \label{6.1.1}
+    \Delta\mathbf{p} = \frac{m_{\alpha}kqQ}{p_0 b}\int_{-\vartheta_0}^{\vartheta_0} \cos\vartheta d\vartheta = \frac{m_{\alpha}kqQ}{p_0 b} [\sin \vartheta]_{-\vartheta_0}^{\vartheta_0} =  \frac{2 m_{\alpha}kqQ}{p_0 b}\sin \vartheta_0
+\end{equation} \refstepcounter{subsection}
+Usando (9.2.7) llegamos a 
+\begin{equation} \label{6.1.1}
+    \sin \vartheta_0 = \sin\left(\frac{\pi}{2}-\frac{\theta}{2}\right) = \cos \frac{\theta}{2}
+\end{equation} \refstepcounter{subsection}
+Y ahora igualando (9.2.13), habiendo sustituido (9.2.14) y (9.2.6) y despejando $b$, llegamos a 
+\begin{equation} \label{6.1.1}
+    b(\theta) = \frac{m_{\alpha} k qQ}{p_0^2} \cot\frac{\theta}{2}
+\end{equation} \refstepcounter{subsection}
+Entonces para aplicar (9.2.3) hacemos la siguiente derivada
+\begin{equation} \label{6.1.1}
+    \frac{d}{d\theta} \cot\frac{\theta}{2} = -\frac{1}{2 \sin^2 (\theta/2)}
+\end{equation} \refstepcounter{subsection}
+De esta forma sustituyendo en (9.2.3), y usando que $sin\theta = 2\sin(\theta/2) \cos(\theta/2)$
+\begin{equation} \label{6.1.1}
+    \frac{d\sigma(\theta)}{d\Omega} = \left(\frac{m_{\alpha} k qQ}{p_0^2}\right)^2 \frac{\cot\theta/2}{2\sin \theta \sin^2 (\theta/2)} = \left(\frac{m_{\alpha} k qQ}{2p_0^2 \sin^2(\theta/2)}\right)^2
+\end{equation} \refstepcounter{subsection}
+Que conociendo que $E_0 = p_0^2/2 m_{\alpha}$ llegamos a 
+\begin{equation} \label{6.1.1}
+    \frac{d\sigma(\theta)}{d\Omega} = \left(\frac{k qQ}{4 E \sin^2(\theta/2)}\right)^2
 \end{equation} \refstepcounter{subsection}
