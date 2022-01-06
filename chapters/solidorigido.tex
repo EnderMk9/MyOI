@@ -186,7 +186,7 @@ resultando en las ecuaciones de Euler
     \left\{\begin{matrix}
         \lambda_1 \dot{\omega}_1 + (\lambda_3-\lambda_2) \omega_3 \omega_2 = \Gamma_1 \\
         \lambda_2 \dot{\omega}_2 + (\lambda_1-\lambda_3) \omega_3 \omega_1 = \Gamma_2\\
-        \lambda_1 \dot{\omega}_3 + (\lambda_2-\lambda_1) \omega_1 \omega_2 = \Gamma_3
+        \lambda_3 \dot{\omega}_3 + (\lambda_2-\lambda_1) \omega_1 \omega_2 = \Gamma_3
     \end{matrix}\right.
 \end{equation}\refstepcounter{subsection}
 \subsubsection{Ejemplos}
@@ -195,7 +195,7 @@ Vamos a trabajar en casos en los que $\mathbf{\Gamma} = 0$, de tal forma que ten
     \left\{\begin{matrix}
         \lambda_1 \dot{\omega}_1 = (\lambda_2-\lambda_3) \omega_3 \omega_2  \\
         \lambda_2 \dot{\omega}_2 = (\lambda_3-\lambda_1) \omega_3 \omega_1 \\
-        \lambda_1 \dot{\omega}_3 = (\lambda_1-\lambda_2) \omega_1 \omega_2 
+        \lambda_3 \dot{\omega}_3 = (\lambda_1-\lambda_2) \omega_1 \omega_2 
     \end{matrix}\right.
 \end{equation}\refstepcounter{subsection}
 Vamos a cosiderar un primer caso en el que todos los $\lambda_i$ son distintos, y que tenemos una $\vec{\omega}^0 = \omega^0 \mathbf{e}_3$, tal que $\omega_2 = \omega_1 = 0$, entonces tenemos que $\vec{\omega}$ es constante por (7.3.12).
@@ -205,7 +205,7 @@ Ahora vamos a considerar una pequeña perturbación del caso anterior, tal que $
     \left\{\begin{matrix}
         \lambda_1 \dot{\omega}_1 = (\lambda_2-\lambda_3) \omega_3^0 \omega_2 \epsilon \\
         \lambda_2 \dot{\omega}_2 = (\lambda_3-\lambda_1) \omega_3^0 \omega_1 \epsilon\\
-        \lambda_1 \dot{\omega}_3 = (\lambda_1-\lambda_2) \epsilon^2 \omega_1^0 \omega_2^0 
+        \lambda_3 \dot{\omega}_3 = (\lambda_1-\lambda_2) \epsilon^2 \omega_1^0 \omega_2^0 
     \end{matrix}\right.
 \end{equation}\refstepcounter{subsection}
 A primer orden de $\epsilon$ tenemos que $\omega_3$ es constante, tal que $\omega_3 = \omega_3^0$ y entonces en general $\vec{\omega} = \omega_3 \mathbf{e}_3 + \epsilon (\omega_1(t) \mathbf{e}_1+\omega_2(t)\mathbf{e}_2)$ y su derivada $\dot{\vec{\omega}}= \epsilon(\dot{\omega}_1 \mathbf{e}_1+\dot{\omega}_2\mathbf{e}_2)$, tal que 
