@@ -89,7 +89,7 @@ El potencial de $m\mathbf{g}$ es de la forma $mgr$ con $r$ por ejemplo la distan
 
 La fuerza de marea la podemos descomponer en dos sumandos, tal que
 \begin{equation} \label{6.1.1}
-    \mathbf{F}_{\mbox{\small marea}}= -GmM_L\frac{\mathbf{e}_d}{d^2}+GmM_L\frac{\mathbf{e}_{d_0}}{d_0^2}=-\nabla\left(\frac{GmM_L}{d}\right)-\nabla\left(\frac{GmM_Lx}{d_0^2}\right)
+    \mathbf{F}_{\mbox{\small marea}}= -GmM_L\frac{\mathbf{e}_d}{d^2}+GmM_L\frac{\mathbf{e}_{d_0}}{d_0^2}=-\nabla\left(-\frac{GmM_L}{d}\right)-\nabla\left(-\frac{GmM_Lx}{d_0^2}\right)
 \end{equation} \refstepcounter{subsection}
 $d_0$ es aproximadamente constante en las escalas temporales en las que trabajamos. $x$ es la coordenada cartesiana horizontal y $\mathbf{e}_x=\mathbf{e}_d$. $d$ es una coordenada esférica no centrada en el origen, podemos expresar el gradiente así porque $\mathbf{d}=\mathbf{d}_0+\mathbf{r}$ y los gradientes de $d$ y $r$ son iguales ya que $\mathbf{d}_0$ es constante.
 
@@ -101,7 +101,7 @@ $\Delta r = h$ es la diferencia de altura que queremos hallar, así que tenemos 
 
 A partir de (6.1.11) llegamos a que $U_{\mbox{\small marea}}$ es 
 \begin{equation} \label{6.1.1}
-    U_{\mbox{\small marea}} = -GmM_L\left(\frac{1}{d}-\frac{x}{d_0^2}\right)
+    U_{\mbox{\small marea}} = -GmM_L\left(\frac{1}{d}+\frac{x}{d_0^2}\right)
 \end{equation} \refstepcounter{subsection}
 Entonces para $C$ tenemos que $d_c$ podemos aproximarla al igual que (6.1.8)
 \begin{equation} \label{6.1.1}
@@ -117,7 +117,7 @@ Para $A$ tenemos que si $x_A = -r$, entonces $d_A = d_0+x_A =d_0-r$, esta últim
 \end{equation} \refstepcounter{subsection}
 Entonces usando $r \approx R_T$, $U_{\mbox{\small marea}}(A)$ será
 \begin{equation} \label{6.1.1}
-    U_{\mbox{\small marea}}(A) \approx -\frac{GmM_L}{d_0}\left(1-\frac{R_T^2}{d_0^2}\right)
+    U_{\mbox{\small marea}}(A) \approx -\frac{GmM_L}{d_0}\left(1+\frac{R_T^2}{d_0^2}\right)
 \end{equation} \refstepcounter{subsection}
 Entonces finalmente desarrollamos (6.1.12) usando (6.1.15) y (6.1.17)
 \begin{equation} \label{6.1.1}
