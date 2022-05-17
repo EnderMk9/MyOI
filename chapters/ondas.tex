@@ -1,0 +1,217 @@
+\chapter{Ondas}
+\refstepcounter{subsection}
+\section{Cueda discreta infinita}
+Vamos a tener un monton de masas unidas por cuerdas que crean tensión, supondremos que solo hay movimiento vertical de las másas y que para $y_n = 0$ sufren una tensión $\tau$ que mantiene al sistema en equilibrio. A su vez, vamos a asumir que las perturbaciones son pequeñas y que lo ángulos con la horizontal también.
+
+De esta forma, la fuerza que sufre una de las masas es 
+\begin{equation} \label{6.1.1}
+    m \frac{d^2 y_n}{dt^2} = \tau_n \sin\theta_n + \tau_{n+1} \sin\theta_{n+1}
+\end{equation}\refstepcounter{subsection}
+Dónde $\tau_n$ es la tensión que genera la cuerda izquierda, $\theta_n$ es el ángulo que forma la cuerda izquierda por la horizontal que pasa por $y_n$, y de forma similar para $n+1$. En general $\tau_n = \tau_n (y_{n-1},y_n)$, pero expandiendo por Taylor, vamos a asumir que la variación es pequeña, entonces nos quedan términos de orden cuadráticos que despreciatemos, de tal forma que $\tau_n \approx \tau$.
+
+Por otro lado, como vamos a asumir que las perturbaciones de ángulos, tal que $\sin\theta_n \approx \tan\theta_n = (y_{n-1}-y_n)/\delta$ y $\sin\theta_{n+1} \approx \tan\theta_{n+1} = (y_{n+1}-y_n)/\delta$, dónde $\delta$ es la distancia horizontal entre masas.
+
+Así, tenemos finalmente una fuerza por parícula, y una energía potencial del sistema
+\begin{equation} \label{6.1.1}
+    \frac{d^2 y_n}{dt^2} \approx \frac{\tau}{m \delta} \left(y_{n+1}-2y_n+y_{n-1}\right) \ \ \ \ U = \frac{1}{2} \sum_n^\infty \frac{\tau}{\delta} (y_{n+1}-y_n)^2
+\end{equation}\refstepcounter{subsection}
+% La ecuación (10.2.1) puede expresarse como un conjunto infinito de osciladores acoplados
+% \begin{equation} \label{6.1.1}
+%     \mathbb{M} \mathbf{y}-\mathbb{I}\ddot{\mathbf{y}}=0 \ \ \ \ \mathbb{M} = \frac{\tau}{m \delta} \left[\begin{matrix}
+%         \ddots & \vdots & \vdots  &  \vdots & \vdots & \vdots & \ddots\\
+%         \hdots & 1 & -2 & 1 & 0 & 0 & \hdots \\
+%         \hdots & 0 & 1 & -2 & 1 & 0 & \hdots \\
+%         \hdots & 0 & 0 & 1 & -2 & 1 & \hdots \\
+%         \ddots & \vdots & \vdots & \vdots & \vdots & \vdots & \ddots \\
+%     \end{matrix}\right]
+% \end{equation}\refstepcounter{subsection}
+% Si proponemos, como en modos normales, la conjetura $\mathbf{y} = \vec{\xi} e^{i\omega t}$, entonces obtenemos la siguiente ecuación de autovalores en un espacio de dimensión infinita.
+% \begin{equation} \label{6.1.1}
+%     (\mathbb{M} +\omega^2\mathbb{I})\vec{\xi}=0
+% \end{equation}\refstepcounter{subsection}
+% Pero $\mathbb{M} +\omega^2\mathbb{I}$ es siempre una matriz tridiagonal no nula, por lo que su núcleo (el conjunto de soluciones de (10.2.3)) es el conjunto vacío, por lo tanto la conjetura que hemos usado no nos sirve para resolver la ecuación.
+Las soluciones de la ecuación son de la forma $y_n = A e^{i(\omega t - k n \delta)}$, que sustituyendo en (10.2.1) llegamos a la relación de dispersión
+\[
+    -\omega^2 A e^{i(\omega t - k n \delta)}= A\frac{\tau}{m \delta} e^{i(\omega t - k n \delta)} \left(e^{-ik\delta}+e^{ik\delta}-2\right) = 2A\frac{\tau}{m \delta} e^{i(\omega t - k n \delta)} \left(\cos(k \delta) - 1\right)
+\]\[
+    -\omega^2 = \frac{2 \tau}{m \delta}\left(\cos(k \delta) - 1\right) = -4 \frac{\tau}{m \delta} \sin^2{\left(\frac{k\delta}{2}\right)}
+\]
+\begin{equation} \label{6.1.1}
+    \omega (k) = 2 \sqrt{\frac{\tau}{m\delta}} \left|\sin{\left(\frac{k\delta}{2}\right)\right|
+\end{equation}\refstepcounter{subsection}
+
+Hemos obtenido por tanto como solución una onda dispersiva discreta. Como se verá mas adelante, la solución general va a venir dada en forma de Transformadas de Fourier (discreta en este caso), y como también veremos, en el caso de que el sistema este confinado, en forma de Serie de Fourier.
+
+\newpage
+\subsection{Paso al contínuo}
+\refstepcounter{subsection}
+Ahora vamos a tomar el límite cuando $\lambda = 2\pi / k \gg \delta$, que es equivalente a decir que las distancias entre las masas son pequeñas, y que $k\delta \ll 1$, por lo tanto $\sin{\left(k \delta/2\right)} \approx k \delta/2$ por lo tanto la relación de dispersión nos queda 
+\begin{equation} \label{6.1.1}
+    \omega (k) \approx  \sqrt{\frac{\tau}{m/\delta}} k \ \ \ \ \frac{m}{\delta} = \mu
+\end{equation}\refstepcounter{subsection}
+Por otro lado, si tomamos los mismos limites para (10.2.1), cambiando la notación a $y_{n} (t) = y(x,t)$, $y_{n+1}(t) = y(x+\delta,t)$, $y_{n-1}(t) = y(x-\delta,t)$, y expandiendo los dos últimos en serie de Taylor tenemos
+\[\frac{\partial^2 y}{\partial t^2} \approx \frac{\tau}{m/\delta} \frac{1}{\delta^2}\left(y(x,t)+\dot{y}(x,t)\delta + \frac{1}{2}\ddot{y} \delta^2-2y(x,t)+y(x,t)-\dot{y}(x,t)\delta + \frac{1}{2}\ddot{y} \delta^2+ O(\delta^3)\right)\]
+Entonces quitando los términos que se cancelan, metiendo el $1/\delta^2$ y al tomar límites nos quitamos los términos de orden $\delta$ o mayor llegamos a la ecuación de ondas no dispersivas.
+\begin{equation} \label{6.1.1}
+    \frac{\partial^2 y}{\partial t^2} = \frac{\tau}{\mu} \frac{\partial^2 y}{\partial x^2} \ \ \ \ v = \sqrt{\frac{\tau}{\mu}}
+\end{equation}\refstepcounter{subsection}
+También podemos tomar el límite para la energía potencial de (10.1.1), tal que
+\[ U = \frac{1}{2} \sum_n^\infty \tau \left(\frac{y(x+\delta,t)-y(x,t)}{\delta}\right)^2 \delta \rightarrow U = \int_{-\infty}^\infty \frac{1}{2} \tau \left(\frac{\partial y}{\partial x}\right)^2 dx\]
+Podemos hacer algo similar para la energía cinética
+\[ T = \frac{1}{2} \sum_n^\infty \frac{m}{\delta} \left(\frac{d y_n}{dt}\right)^2 \delta \rightarrow T = \int_{-\infty}^\infty \frac{1}{2} \mu \left(\frac{\partial y}{\partial t}\right)^2 dx\]
+Podemos construirnos entonces un lagrangiano
+\begin{equation} \label{6.1.1}
+    \pazocal{L} = \int_{-\infty}^\infty \left[\frac{1}{2} \mu \left(\frac{\partial y}{\partial t}\right)^2 - \tau \left(\frac{\partial y}{\partial x}\right)^2\right] dx= \int_{-\infty}^\infty \mathfrak{L}dx \ \ \ \ \ S = \int \mathfrak{L}(y,\partial_t y,\partial_x y,t) dxdt
+\end{equation}\refstepcounter{subsection}
+Se puede comprobar que aplicando el cálculo variacional para minimizar la acción de (10.1.6) se obtiene de nuevo (10.1.5). Además se pueden obtener unas ecuaciones equivalentes a las de E-L para medios contínuos generales que involucran la densidad lagrangiana $\mathfrak{L}$.
+
+\section{La ecuación de ondas}
+\refstepcounter{subsection}
+\vspace{-20pt}
+\begin{equation} \label{6.1.1}
+    \frac{\partial^2 \eta}{\partial t^2} = v^2 \frac{\partial^2 \eta}{\partial x^2}
+\end{equation}\refstepcounter{subsection}
+Es facil demostrar sustituyendo que la solución general de (10.2.1) es de la siguiente forma, donde la primera solución se corresponde a una onda que se desplaza a la derecha y la segunda a la izquierda.
+\begin{equation} \label{6.1.1}
+    \eta(x,t) = f(x-vt) + g(x+vt)
+\end{equation}\refstepcounter{subsection}
+La solución particular de la cuerda discreta una vez hecho el paso al contínuo, y por lo tanto, solución partícular de (10.2.1) son las ondas harmónicas
+\begin{equation} \label{6.1.1}
+    \eta(x,t) = A e^{i(\omega t \mp k x)} = A e^{ ik (x \mp vt)}  \ \ \ \ \omega = vk
+\end{equation}\refstepcounter{subsection}
+En general una onda es toda aquella función que sea superposición de ondas harmónicas de la forma
+\begin{equation} \label{6.1.1}
+    \eta(x,t) = \sum_i A_i e^{i(\omega(k_i) t \pm k_i x)} \ \ \mbox{  ó  } \ \ \eta(x,t) = \int a(k) e^{i(\omega(k) t \pm k x)}dk
+\end{equation}\refstepcounter{subsection}
+Se dice que una onda es \textbf{no dispersiva} si $\omega(k)$ es lineal es $k$, y entonces verifica la ecuación (10.2.1), de lo contrario es  \textbf{dispersiva} y verfica otra ecuación de onda distinta.
+\subsubsection{Ondas en 2D y 3D}
+La ecuación de ondas en más dimensiones se generaliza como
+\begin{equation} \label{6.1.1}
+    \frac{\partial^2 \eta}{\partial t^2} = v^2 \nabla^2 \eta
+\end{equation}\refstepcounter{subsection}
+Una solución particular en 2 y 3 dimensiones son las ondas planas, que se escriben como
+\begin{equation} \label{6.1.1}
+    \eta(\mathbf{r},t) = A e^{i(\omega t - \mathbf{k} \cdot \mathbf{r})}  \ \ \ \ \mathbf{k} = |\mathbf{k}| \hat{\mathbf{n}}
+\end{equation}\refstepcounter{subsection}
+De esta forma, los frentes de onda, es decir, el lugar geométrico de todos los puntos con la misma fase en un instante concreto del tiempo, verifican que $\mathbf{k}\cdot (\mathbf{r}_2-\mathbf{r}_1) = 0$, es decir, rectas, que son perpendiculares a $\hat{\mathbf{n}}$, la dirección de propagación de la onda.
+
+La longitud de onda, $\lambda$, es la distancia entre dos frentes de onda y viene dada por $\lambda = 2\pi/|\mathbf{k}|$, también puede definirse un periodo, al igual en 1D, como $T = 2\pi/\omega$, que es lo que tarda la onda en una posición del espacio en volver a adquirir la misma fase.
+
+Otra solución particular, en este caso para ondas tridimensionales, son las ondas esféricas, o al menos un tipo de ellas, pues en coordenadas esféricas con solo dependencia radial la ecuación (10.2.5) toma la forma
+\begin{equation} \label{6.1.1}
+    \frac{\partial^2 \eta}{\partial t^2} = v^2 \frac{1}{r^2}\frac{\partial}{\partial r}\left(r^2 \frac{\partial \eta}{\partial r}\right)
+\end{equation}\refstepcounter{subsection}
+Se puede simplificar suponiendo $\eta(r,t) = \frac{1}{r} F(r,t)$, de tal forma que sustituyendo al final obtenemos (10.2.1) para $F$, así las ondas harmónicas en esféricas serán
+\begin{equation} \label{6.1.1}
+    \eta(r,t) = \frac{1}{r}A e^{i(\omega t \mp kr)}
+\end{equation}\refstepcounter{subsection}
+Y en general tendremos que para ondas de este tipo la solución general es
+\begin{equation} \label{6.1.1}
+    \eta(r,t) = \frac{1}{r}\left(f(r-vt) + g(r+vt)\right)
+\end{equation}\refstepcounter{subsection}
+La energía es proporcional a la amplitud al cuadrado, que en este caso va como $1/r^2$, entonces si calculamos la energía en esferas, esta se conserva, pues el área de la esfera va como $r^2$, esta propiedad es muy importante para campos electromagnéticos.
+
+\section{Condiciones de frontera y ondas estacionarias}
+\refstepcounter{subsection}
+Si sumamos dos ondas harmónicas con misma $k$ y $A$ pero sentido opuesto, obtenemos 
+\begin{equation} \label{6.1.1}
+    \eta(x,t) = Ae^{i(\omega t - kx)}+Ae^{i(\omega t + kx)} = A e^{i\omega t}(e^{-ikx}+e^{ikx}) = 2A e^{i\omega t} \cos{kx}
+\end{equation}\refstepcounter{subsection}
+De esta forma, se 'desacoplan' las dependencias espaciales y temporales y tenemos lo que se conoce como una onda estacionaria, con unos nodos fijos separados por $\Delta x_n = \lambda/2$.
+
+Si ahora consideramos un caso similar a (10.3.1), pero con una de las ondas ligeramente desfasadas, llegamos a
+\[\eta(x,t) = A e^{i\omega t}(e^{-ikx}+e^{i(kx + \phi)}) = A e^{i(\omega t +\phi/2)} (e^{-i(kx+\phi/2)}+e^{i(kx + \phi/2)}) = \]
+\begin{equation} \label{6.1.1}
+    = 2A e^{i(\omega t +\phi/2)} \cos(kx+\phi/2)
+\end{equation}\refstepcounter{subsection}
+Ahora, en función del problema con el que estemos tratando, podemos aplicar condiciones de contorno distintas, si aplicamos que $\eta(x_0,t) = c$, estas se conocen como condiciones de Dirichlet, por ejemplo en (10.3.2) si imponemos $\eta(0,t) = 0$, entonces $\phi = \pi +2\pi l$, $l\in \mathbb{Z}$. Por otro lado, podríamos aplicar que $\partial_x \eta|_{(x_0,t)} =c$, condiciones de Neumann, por ejemplo si imponemos que $\partial_x \eta|_{(0,t)} =0$, entonces $\phi = 0 +2\pi l$.
+
+La primera condición esta relacionada con una onda que se ve reflejada al chochar con un obstaculo, el ejemplo que hemos puesto es una onda que se ve completamente reflejada y no pierde energía, para que se conserve la energía y el momento, la onda reflejada debe tener la misma amplitud y fase contraria (puesto que la velocidad ha cambiado de signo), y por lo tanto se forma un nodo, si se transmite energía al obstaculo, entonces, la amplitud es menor y la fase no es exactamente la contraria y entonces no se anulan y no se forma un nodo.
+
+Para ondas planas en más dimensiones, lo que se refleja es la componente perpendicular al punto de colisión, de esta forma
+\begin{equation} \label{6.1.1}
+\eta(\mathbf{r},t) = A e^{i(\omega t-\mathbf{k}_{\mbox{\tiny ||}}\cdot\mathbf{r}_{\mbox{\tiny ||}})}(e^{-ik_{\mbox{\tiny $\perp$}}r_{\mbox{\tiny $\perp$}}}+e^{i(k_{\mbox{\tiny $\perp$}}r_{\mbox{\tiny $\perp$}} + \phi)}) = 2A e^{i(\omega t -\mathbf{k}_{\mbox{\tiny ||}}\cdot\mathbf{r}_{\mbox{\tiny ||}} +\phi/2)} \cos(k_{\mbox{\tiny $\perp$}}r_{\mbox{\tiny $\perp$}} +\phi/2)
+\vspace{-25pt}
+\end{equation}\refstepcounter{subsection}
+\subsection{Modos normales y series de Fourier}
+Si tenemos una cuerda finita con extremos fijos en $x=0$ y $x=L$, de tal forma que $\eta(0,t) = 0$ y $\eta(L,t) =0$, tomaremos como solución dos ondas harmónicas en sentidos opuestos, inspirándonos en el apartado anterior, y con amplitudes distintas, pues necesitamos determinar dos constantes si tenemos dos condiciones de contorno.
+\[\eta(x,t) = A e^{i(\omega t - kx)}+B e^{i(\omega t + kx)}\]
+Aplicando la primera condición tenemos que $B=-A$, y aplicando la segunda tenemos que $e^{-ikL} - e^{ikL} = 0$, lo cual se traduce en la siguiente condición para $k$
+\begin{equation} \label{6.1.1}
+    \sin(kL) = 0 \implies k_n L = \pi n \ \ \ \ \ n\in \mathbb{N} \ \rightarrow k_n = \frac{\pi n}{L} \ \ \ \lambda_n = \frac{2L}{n}
+\end{equation}\refstepcounter{subsection}
+Si la onda esta centrada en el origen, se obteniene una relación similar pero con un coseno que nos da valores impares de $k_n$. Además, también se puede dejar uno de los extremos suelto y hay que aplicar una condición de Neumann, y se obtiene otra relación distinta para $k_n$.
+
+La onda resultante de (10.3.4) es la misma que en (10.3.1) pero con un seno, de tal forma que la solución general de una onda en esta cuerda es de la forma, donde $\omega_n = v k_n$ para ondas no dispersivas y $\omega_n=\omega(k_n)$ para ondas dispersivas
+\begin{equation} \label{6.1.1}
+    \eta(x,t) = \sum_{n=1}^\infty C_n e^{i\omega_n t} \sin{k_n x} = \sum_{n=1}^\infty \sin{k_n x}\left(A_n \cos(\omega_n t)+B_n \sin(\omega_n t)\right)
+\end{equation}\refstepcounter{subsection}
+De esta forma, para estas condiciones de contorno, si queremos saber la solución de la onda dadas unas condiciones iniciales $\eta(x,0)$ y $\partial_t \eta |_{(x,0)}$, tenemos que
+\begin{equation} \label{6.1.1}
+    \eta(x,0) =  \sum_{n=1}^\infty A_n \sin{k_n x} \ \ \ \ \partial_t \eta |_{(x,0)} = \sum_{n=1}^\infty B_n \omega_n \sin{k_n x}
+\end{equation}\refstepcounter{subsection}
+Entonces simplemente descomponiendo en series de Fourier las condiciones iniciales, y obteniendo $A_n$ y $B_n$, ya tenemos la solución general usando (10.3.5)
+
+Se puede hacer la descomposición haciendo integrales ortogonales, como se detalla en (8.4), pero para ahorrarnos tener que hacer las integrales los resultados finales son
+\begin{equation} \label{6.1.1}
+    A_m = \frac{2}{L}\int_{0}^{L} \eta(x,0)\cos(k_m x)dx \ \ \ \ \ B_m = \frac{2}{L \omega_m}\int_{0}^{L} \partial_t \eta |_{(x,0)}\sin(k_m x)dx
+\end{equation}\refstepcounter{subsection}
+Si el intervalo esta centrado en el origen se pueden usar unas expresiones equivalentes a las de (8.4.2).
+\section{Solución general, Transformada de Fourier}
+\refstepcounter{subsection}
+Si tenemos una onda que abarca todo el espacio que tiene una relación de dispersión $\omega(k)$, y conocemos las condiciones iniciales $\eta(x,0)$ y $\partial_t \eta |_{(x,0)}$, vamos a poder hallar la solución general.
+
+La solución general para una onda, por definición, como se dijo en (10.2.4) se puede escribir como una Transformada de Fourier, el límite contínuo de la serie de Fourier, que es como sumar a todas las posibles longitudes de onda, cada una con su amplitud (compleja) $\hat{A}(k)$.
+\begin{equation} \label{6.1.1}
+    \eta(x,t) = \frac{1}{\sqrt{2\pi}} \int_{-\infty}^\infty \hat{A}(k) e^{i(\omega(k)t + kx)}dk
+\end{equation}\refstepcounter{subsection}
+Entonces tenemos que para $t=0$ tenemos
+\begin{equation} \label{6.1.1}
+    \eta(x,0) = \frac{1}{\sqrt{2\pi}} \int_{-\infty}^\infty \hat{A}(k) e^{ikx}dk
+\end{equation}\refstepcounter{subsection}
+Si ahora multiplicamos ambos lados de la ecuación $1/\sqrt{2pi} \int e^{-i\tilde{k}x} dx$ tenemos
+\[\frac{1}{\sqrt{2\pi}}\int_{-\infty}^\infty \eta(x,0) e^{-i\tilde{k}x}dx = \frac{1}{2\pi} \int_{-\infty}^\infty \hat{A}(k) e^{i(k-\tilde{k})x}dkdx\]
+\newpage
+Ahora, se puede ver que la siguiente función se comporta como una delta de Dirac
+\begin{equation} \label{6.1.1}
+    \frac{1}{2\pi} \int_{-\infty}^\infty e^{i(k-\tilde{k})x}dx = \delta(k-\tilde{k})
+\end{equation}\refstepcounter{subsection}
+Puesto que si $k = \tilde{k}$, entonces el integrando es 1 y la integral diverge a $\infty$, sin embargo, si $k \neq \tilde{k}$, entonces, aplicando que la función es holomorfa, tenemos que 
+\[\int_{-\infty}^\infty e^{iax}dx = \lim_{R\rightarrow \infty }\int_{c_R} e^{iaz} dz\]
+Donde $c_R$ es un contorno semicircular ubicado en el semiplano inferior o superior en función del signo de $a$. Aplicando el Lema de Jordan tenemos que
+\[\left|\int_{c_R} e^{iaz} dz\right| \leq \frac{\pi}{R} \implies \lim_{R\rightarrow \infty }\int_{c_R} e^{iaz} dz = 0\]
+Por lo tanto cuando $k \neq \tilde{k}$, la integral vale 0, así hemos comprobado que se comporta como una Delta de Dirac, el factor $1/2\pi$ esta ahí para que su integral a todos los $k$ sea 1.
+
+Ahora aplicando las propiedades de la de la Delta de dirac llegamos a que 
+\begin{equation} \label{6.1.1}
+    \hat{A}(\tilde{k}) = \frac{1}{\sqrt{2\pi}}\int_{-\infty}^\infty \eta(x,0) e^{-i\tilde{k}x}dx
+\end{equation}\refstepcounter{subsection}
+
+Así, sacando $\hat{A}(\tilde{k})$ a partir de las condiciones iniciales, podemos obtener la solución general de la onda usando (10.4.1). Si además la onda es no dispersiva entonces tenemos
+\begin{equation} \label{6.1.1}
+    \eta(x,t) = \frac{1}{\sqrt{2\pi}} \int_{-\infty}^\infty \hat{A}(k) e^{ik(x+\mbox{\tiny sign}(k) v t)}dk
+\end{equation}\refstepcounter{subsection}
+\subsection{Velocidad de grupo}
+Vamos a suponer que tenemos una onda tal que $\hat{A}(k)$ sigue una distribución normal, donde $k_0$ es la media y $\Delta k$ la desviación típica (anchura). A esto se le conoce como paquete
+\[\hat{A}(k) = A_0 e^{-\frac{(k-k_0)^2}{2\Delta k^2}}\]
+Entonces la solución de esa onda es
+\[\eta(x,t) = \frac{A_0 }{\sqrt{2\pi}} \int_{-\infty}^\infty e^{-\frac{(k-k_0)^2}{2\Delta k^2}} e^{i(\omega(k)t + kx)}dk\]
+En esta forma, la solución depende de $\omega(k)$, pero vamos a expandir esta función en Taylor y vamos a suponer que $\delta k = k-k_0$ es pequeño, de tal forma que nos quedamos a primer orden, tal que $\omega(k) \approx \omega(k_0) + \omega'(k_0) \Delta k = \omega_0 + u \delta k$.
+\[\eta(x,t) = \frac{A_0 }{\sqrt{2\pi}} e^{i(\omega_0 t - k_0 x)}\int_{-\infty}^\infty \exp\left[-i\frac{\delta k^2}{2\Delta k^2}-i\delta k(x-ut)\right]dk\]
+Ahora podemos completar cuadrados en la exponencial de la integral y tenemos
+\[\eta(x,t) = \frac{A_0 }{\sqrt{2\pi}} e^{i(\omega_0 t - k_0 x)}e^{-\frac{\Delta k^2}{2}(x-ut)^2}\int_{-\infty}^\infty \exp\left[-\frac{1}{2\Delta k^2}\left(\delta k+ i\Delta k^2 (x-ut)\right)^2\right]dk\]
+La integral de la izquierda la podemos escribir como una gaussiana, donde $a =  k_0 -i\Delta k^2 (x-ut)$
+\[I = \int_{-\infty}^\infty \exp\left[-\frac{1}{2\Delta k^2}\left(k-a\right)^2\right]dk = \Delta k \sqrt{2\pi}\]
+Esa solución vale incluso si $a\in \mathbb{C}$, para ello basta ver que derivando respecto a $a$ y haciendo el cambio de variable $u = -(k-a)^2/2\Delta k ^2$ sale 0
+\[\frac{dI}{da} = \int_{-\infty}^\infty \frac{k-a}{\Delta k^2} \exp\left[-\frac{1}{2\Delta k^2}\left(k-a\right)^2\right] dk = \int e^u du = \left|\exp\left[-\frac{1}{2\Delta k^2}\left(k-a\right)^2\right]\right|_{-\infty}^\infty = 0\]
+Así llegamos finalmente a la solución (aproximada) de la onda
+\begin{equation} \label{6.1.1}
+    \eta(x,t) = A_0 \Delta k e^{i(\omega_0 t - k_0 x)}e^{-\frac{\Delta k^2}{2}(x-ut)^2}
+\end{equation}\refstepcounter{subsection}
+De esta forma tenemos una onda con forma de paquete gaussiano con una anchura $1/\Delta k$ que se mueve a velocidad $u$, lo que denominamos la velocidad de grupo. Y esta envolvente modula a una onda viajera de longitud de onda $k_0$ y velocidad $v_0 = \omega_0/k_0$, la velocidad de cresta o fase.
+
+Si la onda es no dispersiva, $u = v$, y el paquete se mueve a la misma velocidad que la fase, pero si es dispersiva, por lo general las velocidades van a ser distintas y el paquete va a ir atradasado o adelantado a la fase.
+
+Si tenemos en cuenta más términos de $\omega(k)$, se pueden observar más efectos de la dispersión, únicos de las ondas dispersivas, como por ejemplo que la anchura del paquete crece.
+
+Se observa también un esbozo del principio de incertidumbre, si $\Delta k$ es pequeño, quiere decir que la onda esta formada por pequeño intervalo de longitudes de onda, pero entonces eso va a implicar que la anchura de la onda, que va como $1/\Delta k$, sea muy grande, y viceversa.

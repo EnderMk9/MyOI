@@ -1,0 +1,104 @@
+\chapter{Modos normales}
+\refstepcounter{subsection}
+Vamos a suponer un caso más general formado por $N$ partículas que intectúan entre sí con un potencial $U$, que siguiendo las mísmas líneas que en (8.0.1) podemos expresar el potencial a pequeñas oscilaciones de la posición de equilibrio sin pérdida de generalidad estableciendo el mínimo y el origen de potencial en el origen de las coordenadas generalizadas $q_j$
+\begin{equation} \label{6.1.1}
+    U({q_j}) \approx \frac{1}{2}\mathbf{q}^{\mbox{\tiny T}} \mathbb{H}_{\mbox{\tiny U}}(0)\mathbf{q} = \frac{1}{2} \sum_{ij}^N \left.\frac{\partial^2 U}{\partial q_i q_j}\right|_0 q_i q_j \ \ \ \ \nabla_{\mathbf{q}} U \approx \mathbb{K} \mathbf{q} \ \ \ \ \mathbb{K} = \mathbb{H}_{\mbox{\tiny U}}(0)
+\end{equation}\refstepcounter{subsection}
+Por otro lado, usando el teorema de la energía cinética cuando las coordendas generalizadas no dependen explícitamente del tiempo, y aproximando la matriz a orden constante para tener orden cuadrático en T.
+\begin{equation} \label{6.1.1}
+     T \approx \sum_{j,k}^s{\left(\sum_{\alpha,i}^{N,d}{ \frac{1}{2} m_\alpha \left.\frac{\partial x_{\alpha i}}{\partial q_j}\right|_0\left.\frac{\partial x_{\alpha i}}{\partial q_k}\right|_0\right)\dot{q}_j\dot{q}_k}} = \frac{1}{2}\dot{\mathbf{q}}^{\mbox{\tiny T}} \mathbb{M}\dot{\mathbf{q}} \ \ \ \ \nabla_{\dot{\mathbf{q}}} T \approx \mathbb{M}\dot{\mathbf{q}}
+\end{equation}\refstepcounter{subsection}
+Entones aplicando (2.2.1) (E-L) llegamos a la siguiente ecuación que queremos resolver
+\begin{equation} \label{6.1.1}
+    \mathbb{M}\ddot{\mathbf{q}} = - \mathbb{K} \mathbf{q} \ \ \ \ M_{ij} = \sum_{\alpha,k}^{N,d}{ \frac{1}{2} m_\alpha \left.\frac{\partial x_{\alpha k}}{\partial q_j}\right|_0\left.\frac{\partial x_{\alpha k2}}{\partial q_k}\right|_0 \ \ \ \ K_{ij} = \left.\frac{\partial^2 U}{\partial q_i q_j}\right|_0
+\end{equation}\refstepcounter{subsection}
+En la práctica, lo que se hace es calcularte $T$ y $U$, aproximarlas a orden cuadrático de $\dot{\mathbf{q}}$ y $\mathbf{q}$ respectivamente, y sacar las matrices de las formas cuadráticas correspondientes, que serán $\mathbb{M}$ y $\mathbb{K}$, respectivamente.
+\vspace{-15pt}
+\subsection{Soluciones de la ecuación}
+\refstepcounter{subsection}
+Para resolver esa ecuación diferencial, hacemos la conjetura $\mathbf{q} = \vec{\xi} e^{i\omega t}$, tal que $\ddot{\mathbf{q}} = -\omega^2 \vec{\xi} e^{i\omega t}$, tal que nos queda la siguiente ecuación de autovalores
+\begin{equation} \label{6.1.1}
+    (\mathbb{K}-\omega^2 \mathbb{M})\vec{\xi} = 0
+\end{equation}\refstepcounter{subsection}
+Como se observa en (9.0.3), $\mathbb{M}$ y $\mathbb{K}$ son simétricas y definidas positivas, por lo tanto, por el teorema espectral, sabemos que exite una matriz $\mathbb{O} \mathbb{O}^{\mbox{\tiny T}} = \mathbb{I}$, de tal forma que $\mathbb{M} = \mathbb{O} \mathbb{D}_\mathbb{M} \mathbb{O}^{\mbox{\tiny T}}$, entonces si las entradas de $\mathbb{D}_\mathbb{M}$ son los autovalores positivos $\lambda_i$, podemos escribirla como el de una matriz diagonal cuyas entradas son $\sqrt{\lambda_i}$, $\mathbb{D}_\mathbb{M} = \mathbb{S} \mathbb{S}$, por lo tanto $\mathbb{M} = \mathbb{O} \mathbb{S} \mathbb{S} \mathbb{O}^{\mbox{\tiny T}} = \mathbb{R}^{\mbox{\tiny T}} \mathbb{R}$.
+
+Entonces podemos hacer las siguientes manipulaciones, con $\vec{\zeta} = \mathbb{R}\vec{\xi}$ y $\mathbb{A} = (\mathbb{R}^{\mbox{\tiny T}})^{-1}\mathbb{K}\mathbb{R}^{-1}$, para llegar a 
+\begin{equation} \label{6.1.1}
+    (\mathbb{R}^{\mbox{\tiny T}})^{-1}(\mathbb{K}-\omega^2 \mathbb{M})\mathbb{R}^{-1} \mathbb{R}\vec{\xi} = (\mathbb{A}-\omega^2 \mathbb{I}) \vec{\zeta}= 0
+\end{equation}\refstepcounter{subsection}
+De esta forma, usando el hecho de que la operación inversa y transpueta conmutan, $\mathbb{A}^{\mbox{\tiny T}} = ((\mathbb{R}^{\mbox{\tiny T}})^{-1}\mathbb{K}\mathbb{R}^{-1})^{\mbox{\tiny T}}= (\mathbb{R}^{\mbox{\tiny T}})^{-1}\mathbb{K}^{\mbox{\tiny T}} \mathbb{R}^{-1}$ es simétrica, puesto que $\mathbb{K}$ lo es. Por lo tanto, por el teorema espectral existe una matriz $\mathbb{Z}\mathbb{Z}^{\mbox{\tiny T}} = \mathbb{I}$ tal que $\mathbb{Z}^{\mbox{\tiny T}} \mathbb{A} \mathbb{Z} = \mathbb{Z}^{\mbox{\tiny T}} (\mathbb{R}^{\mbox{\tiny T}})^{-1}\mathbb{K}\mathbb{R}^{-1} \mathbb{Z}=\mathbb{X}^{\mbox{\tiny T}} \mathbb{K} \mathbb{X} = \mathbb{D}$.
+
+Se observa que $\mathbb{X} \mathbb{M} \mathbb{X}^{\mbox{\tiny T}} =\mathbb{Z} (\mathbb{R}^{\mbox{\tiny T}})^{-1}\mathbb{R}^{\mbox{\tiny T}} \mathbb{R}\mathbb{R}^{-1} \mathbb{Z}^{\mbox{\tiny T}} =\mathbb{I}$ y que $\mathbb{X}\mathbb{X}^{\mbox{\tiny T}} = \mathbb{Z} (\mathbb{R}^{\mbox{\tiny T}})^{-1} \mathbb{R}^{-1} \mathbb{Z}^{\mbox{\tiny T}} = \mathbb{Z} \mathbb{S}^{-1} \mathbb{O}^{-1} (\mathbb{O}^{\mbox{\tiny T}})^{-1} \mathbb{S}^{-1} \mathbb{Z}^{\mbox{\tiny T}} =  \mathbb{Z} (\mathbb{S}^{-1})^2 \mathbb{Z}^{\mbox{\tiny T}} = \mathbb{Z} \mathbb{D}_\mathbb{M}^{-1} \mathbb{Z}^{\mbox{\tiny T}}\neq \mathbb{I}$, por lo tanto, como se verá a continuación, los vectores $\vec{\xi}$ en general no van a ser ortogonales respecto a la identidad, sino respecto al la forma bilineal simétrica definida por $\mathbb{M}$.
+
+Tenemos que $\vec{\xi} = \mathbb{R}^{-1} \vec{\zeta}$ es equivalente a $\mathbb{X} = \mathbb{R}^{-1} \mathbb{Z}$, puesto que $\mathbb{X}$ y $\mathbb{Z}$ son las matrices que contienen a los vectores $\vec{\xi}$ y $\vec{\zeta}$, respectivamente, como columnas. De esta forma, aplicando varias veces el torema espectral, hemos demostrado que la ecuación siempre tiene soluciones y hemos encontrado una expresión explícita para ellas.
+
+Otra forma de ver todo esto que hemos hecho es aplicar directamente el Teorema espectral para $(\mathbb{M}^{-1}\mathbb{K}-\omega^2 \mathbb{I})\vec{\xi} = 0$. Un operador, en este caso $\mathbb{P} = \mathbb{M}^{-1}\mathbb{K}$, es autoadjunto con respecto a una forma bilineal expresada en una misma base, en este caso $\mathbb{M}$, si $\mathbb{P} = \mathbb{M}^{-1} \mathbb{P}^T \mathbb{M} = \mathbb{M}^{-1} (\mathbb{M}^{-1}\mathbb{K})^T \mathbb{M}= \mathbb{M}^{-1} \mathbb{K}^T (\mathbb{M}^{-1})^T\mathbb{M} = \mathbb{M}^{-1} \mathbb{K} \mathbb{M}^{-1}\mathbb{M} = \mathbb{P}$, por lo tanto el Teorema espectral se aplica y existe una matriz $\mathbb{X}$ que cumple que $\mathbb{X}^T \mathbb{M}\mathbb{X} = \mathbb{I}$ tal que $\mathbb{X}^{-1} \mathbb{P} \mathbb{X} = \mathbb{D}$, de tal forma que es diagonalizable y $\mathbb{X}$ es un cambio de base ortogonal de la forma bilineal desde $\mathbb{M}$ a $\mathbb{I}$.
+
+$\mathbb{X}$ es la matriz de cambio de base de la base que diagonaliza a $\mathbb{K}$ hasta la base canónica de $\mathbf{q}$, cuyas columnas estan formadas por los autovectores de la ecuación (9.0.4), de tal forma que si expresamos $\mathbf{\mathbf{q}} = \mathbb{X} \vec{\varsigma}$ entonces la ecuación original (9.0.3) nos queda 
+\begin{equation} \label{6.1.1}
+    \mathbb{M}\mathbb{X} \ddot{\vec{\varsigma}} + \mathbb{K} \mathbb{X} \vec{\varsigma} = \mathbb{X}^{\mbox{\tiny T}}\mathbb{M}\mathbb{X} \ddot{\vec{\varsigma}} + \mathbb{X}^{\mbox{\tiny T}}\mathbb{K} \mathbb{X} \vec{\varsigma} = \mathbb{I}\ddot{\vec{\varsigma}} + \mathbb{D}\vec{\varsigma} = 0 \iff \ddot{\varsigma_i} + \omega_i^2 \varsigma_i = 0
+\end{equation}\refstepcounter{subsection}
+Las soluciones de cada una de esas ecuaciones, ya en forma real, son $\varsigma_i = A_i \cos{(\omega_i t -\delta_i)}$, dónde $A_i$ y $\delta_i$ dependen de las condiciones iniciales, de tal forma que la solución final es $\mathbf{q} = \sum_i^s A_i \vec{\xi}_i \cos{(\omega_i t -\delta_i)}$, que coincide con tomar la parte real de una combinación lineal arbitraria de las conjeturas $\mathbf{q} = \vec{\xi} e^{i\omega t}$.
+
+
+\vspace{-15pt}
+\subsection{Energía}
+\refstepcounter{subsection}
+Utilizando las expresiones de (9.0.1) y (9.0.2) tenemos que 
+\begin{equation} \label{6.1.1}
+    T = \frac{1}{2} \dot{\mathbf{q}}^{\mbox{\tiny T}}\mathbb{M} \dot{\mathbf{q}} = \frac{1}{2} \dot{\vec{\varsigma}}^{\mbox{\tiny T}} \mathbb{X}^{\mbox{\tiny T}} \mathbb{M} \mathbb{X}\dot{\vec{\varsigma}} =\frac{1}{2} \dot{\vec{\varsigma}}^{\mbox{\tiny T}} \mathbb{I}\dot{\vec{\varsigma}} = \frac{1}{2} \sum_i^s \dot{\varsigma}_i^2
+\end{equation}\refstepcounter{subsection}
+\begin{equation} \label{6.1.1}
+    U = \frac{1}{2} \mathbf{q}^{\mbox{\tiny T}}\mathbb{K} \mathbf{q} = \frac{1}{2} \vec{\varsigma}^{\mbox{\tiny T}} \mathbb{X}^{\mbox{\tiny T}} \mathbb{K} \mathbb{X}\vec{\varsigma} = \frac{1}{2} \vec{\varsigma}^{\mbox{\tiny T}} \mathbb{D}\vec{\varsigma} =\frac{1}{2} \sum_i^s \omega_i^2\varsigma_i^2
+\end{equation}\refstepcounter{subsection}
+\begin{equation} \label{6.1.1}
+    E = T+U = \frac{1}{2}\sum_i^2 \left(\dot{\varsigma}_i^2 + \omega_i^2\varsigma_i^2\right)
+\end{equation}\refstepcounter{subsection}
+
+\newpage
+\subsection{Péndulo Doble}
+\refstepcounter{subsection}
+Se va a hacer como ejemplo el péndulo doble para pequeñas oscilaciones en torno a la posición de equilibrio para dos masas iguales y longitudes de los péndulos iguales, por simplificar.
+\[
+    \begin{matrix}
+        x_1 = l \sin\theta_1 && x_2 = l (\sin\theta_1 + \sin\theta_2) \\
+        y_1 = l \cos\theta_1 && y_2 = l (\cos\theta_1 + \cos\theta_2)
+    \end{matrix}
+\]
+\[
+    T = \frac{1}{2} m \left(\dot{x}_1^2+\dot{y}_1^2+\dot{x}_2^2+\dot{y}_2^2\right) = \frac{1}{2} m l^2 \left(2\cos^2\theta_1 \dot{\theta}_1^2 +\cos^2\theta_2 \dot{\theta}_2^2 + \right.
+\]\[
+    \left.+2\cos\theta_1\cos\theta_2 \dot{\theta}_1 \dot{\theta}_2 + 2\sin^2\theta_1 \dot{\theta}_1^2 +\cos^2\theta_2 \dot{\theta}_2 - 2\sin\theta_1\cos\theta_2 \dot{\theta}_1 \dot{\theta}_2\right)  \approx  
+\]\[
+    \approx \frac{1}{2} m l^2 \left(2 \dot{\theta}_1^2 + \dot{\theta}_2^2 + 2 \dot{\theta}_1 \dot{\theta}_2\right) \implies \mathbb{M} = ml^2 \left[\begin{matrix}
+        2 && 1 \\ 1 && 1
+    \end{matrix}\right]
+\]
+\[U = -mg (y_1+y_2) = -mgl (2 \cos\theta_1+\cos\theta_2) \approx \frac{1}{2}mgl\left(2 \theta_1^2 + \theta_2^2\right)+ U_0 \implies \mathbb{K} = mgl \left[\begin{matrix}
+    2 && 0 \\ 0 && 1
+\end{matrix}\right]\]
+Ahora resolvemos $\det(\mathbb{K}-\omega^2 \mathbb{M}) = 0$
+\[\det\left[\begin{matrix}
+    2g/l-2\omega^2 && -\omega^2 \\ -\omega^2 && g/l-\omega^2
+\end{matrix}\right] = 0 \implies (\omega^2)^2=(2g/l-2\omega^2)(g/l-\omega^2)\]
+Esta ecuación es bicuadrada y las soluciones positivas que obtenemos son
+\[\omega_1 = \sqrt{\frac{g}{l}(2-\sqrt{2})} \ \ \ \ \ \omega_2 = \sqrt{\frac{g}{l}(2+\sqrt{2})}\]
+Ahora obtenemos los autovectores
+\[\left[\begin{matrix}
+    2g/l-2g/l(2-\sqrt{2}) && -2g/l(2-\sqrt{2}) \\ -2g/l(2-\sqrt{2}) && g/l-2g/l(2-\sqrt{2})
+\end{matrix}\right] \left(\begin{matrix}
+    \xi_{11} \\ \xi_{21}
+\end{matrix}\right) = 0 \implies \xi_{21} = \sqrt{2}\xi_{11}\]
+\[\left[\begin{matrix}
+    2g/l-2g/l(2+\sqrt{2}) && -2g/l(2-\sqrt{2}) \\ -2g/l(2+\sqrt{2}) && g/l-2g/l(2-\sqrt{2})
+\end{matrix}\right] \left(\begin{matrix}
+    \xi_{21} \\ \xi_{22}
+\end{matrix}\right) = 0 \implies \xi_{22} = -\sqrt{2}\xi_{21}\]
+Entonces, la solución será
+\[\left(\begin{matrix}
+    \theta_1 \\ \theta_2
+\end{matrix}\right) = A_1 \left(\begin{matrix}
+    1 \\ \sqrt{2}
+\end{matrix}\right) \cos{(\omega_1 t -\delta_1)}+A_2 \left(\begin{matrix}
+    1 \\ -\sqrt{2}
+\end{matrix}\right) \cos{(\omega_2 t -\delta_2)}\]

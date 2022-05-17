@@ -55,17 +55,17 @@ Llamaremos $p_{\mbox{\tiny N}}(x)$ a la probabilidad de que una partícula incid
 
 Por otro lado tenemos que el recíproco de $p_{\mbox{\tiny N}}(x)$ es $p_{\mbox{\small col.}}(x)$, la probabilidad de chocar al menos una vez al recorrer una distancia $x$, tal que $p_{\mbox{\tiny N}}(x)+p_{\mbox{\small col.}}(x) = 1 \ \ \forall \ x \inlineeqnum$, por lo tanto, también tenemos $p_{\mbox{\tiny N}}(x+dx)+p_{\mbox{\small col.}}(x+dx) = 1 \ \ \forall \ x \inlineeqnum$.
 
-De esta forma podemos reescribir (9.1.7) como $p_{\mbox{\small col.}}(x;x+dx) = p_{\mbox{\small col.}}(x+dx) - p_{\mbox{\small col.}}(x) = p_{\mbox{\tiny N}}(x)-p_{\mbox{\tiny N}}(x+dx) \inlineeqnum$, podemos expandirlo en taylor como
+De esta forma podemos reescribir (11.1.7) como $p_{\mbox{\small col.}}(x;x+dx) = p_{\mbox{\small col.}}(x+dx) - p_{\mbox{\small col.}}(x) = p_{\mbox{\tiny N}}(x)-p_{\mbox{\tiny N}}(x+dx) \inlineeqnum$, podemos expandirlo en taylor como
 \vspace{-5pt}
 \begin{equation} \label{6.1.1}
     p_{\mbox{\small col.}}(x;x+dx)  = - \frac{dp_{\mbox{\tiny N}}(x)}{dx} dx + O(dx^2)
 \end{equation} \refstepcounter{subsection}
-Entonces usando ahora (9.1.7) y (9.1.6)
+Entonces usando ahora (11.1.7) y (11.1.6)
 \vspace{-5pt}
 \begin{equation} \label{6.1.1}
     p_{\mbox{\tiny N}}(x) \sigma \rho_b = - \frac{d p_{\mbox{\tiny N}}(x)}{dx} \implies p_{\mbox{\tiny N}}(x) = e^{-\rho_b \sigma x}
 \end{equation} \refstepcounter{subsection}
-Entonces sustituyendo de nuevo en (9.1.7) tenemos que 
+Entonces sustituyendo de nuevo en (11.1.7) tenemos que 
 \vspace{-5pt}
 \begin{equation} \label{6.1.1}
     p_{\mbox{\small col.}}(x;x+dx) = \rho_b \sigma e^{-\rho_b \sigma x} dx
@@ -118,7 +118,7 @@ Si suponemos que es una colisión elástica, entoces $|\mathbf{p}_0| = |\mathbf{
 \begin{equation} \label{6.1.1}
     |\Delta\mathbf{p}| = 2 |\mathbf{p}| \sin \frac{\theta}{2}
 \end{equation} \refstepcounter{subsection}
-La hipérbola que se traza por (9.2.6) es simétrica con respecto a un pericentro, que unimos con el blanco mediante un vector $\mathbf{u}$, que nos define un ángulo $\vartheta$, cuando $t\rightarrow \infty$, entonces $\vartheta \rightarrow \vartheta_0$ y cuando $t\rightarrow -\infty$, entonces $\vartheta \rightarrow -\vartheta_0 $, tal que $2\vartheta_0 + \theta = \pi \inlineeqnum$, algo que también verifican los ángulos complementarios del triángulo isósceles, por lo tanto $\alpha = \vartheta$, por lo tanto $\Delta\mathbf{p} || \mathbf{u}$.
+La hipérbola que se traza por (11.2.6) es simétrica con respecto a un pericentro, que unimos con el blanco mediante un vector $\mathbf{u}$, que nos define un ángulo $\vartheta$, cuando $t\rightarrow \infty$, entonces $\vartheta \rightarrow \vartheta_0$ y cuando $t\rightarrow -\infty$, entonces $\vartheta \rightarrow -\vartheta_0 $, tal que $2\vartheta_0 + \theta = \pi \inlineeqnum$, algo que también verifican los ángulos complementarios del triángulo isósceles, por lo tanto $\alpha = \vartheta$, por lo tanto $\Delta\mathbf{p} || \mathbf{u}$.
 
 Por otro lado tenemos que 
 \begin{equation} \label{6.1.1}
@@ -136,23 +136,23 @@ Dónde $\gamma$ es cualquiera de los dos ángulos entre $r$ y el eje $z$, puesto
 \begin{equation} \label{6.1.1}
     J_0 = p_0 b \implies \dot{\vartheta} = \frac{p_0 b}{m_{\alpha} r^2}
 \end{equation} \refstepcounter{subsection}
-Entonces sustituyendo en (9.2.9) el resultado de (9.2.10), teniendo en cuenta los límites que hemos expresado en el párrafo de (9.2.7), y el resultado de (9.2.12) tenemos que
+Entonces sustituyendo en (11.2.9) el resultado de (11.2.10), teniendo en cuenta los límites que hemos expresado en el párrafo de (11.2.7), y el resultado de (11.2.12) tenemos que
 \begin{equation} \label{6.1.1}
     \Delta\mathbf{p} = \frac{m_{\alpha}kqQ}{p_0 b}\int_{-\vartheta_0}^{\vartheta_0} \cos\vartheta d\vartheta = \frac{m_{\alpha}kqQ}{p_0 b} [\sin \vartheta]_{-\vartheta_0}^{\vartheta_0} =  \frac{2 m_{\alpha}kqQ}{p_0 b}\sin \vartheta_0
 \end{equation} \refstepcounter{subsection}
-Usando (9.2.7) llegamos a 
+Usando (11.2.7) llegamos a 
 \begin{equation} \label{6.1.1}
     \sin \vartheta_0 = \sin\left(\frac{\pi}{2}-\frac{\theta}{2}\right) = \cos \frac{\theta}{2}
 \end{equation} \refstepcounter{subsection}
-Y ahora igualando (9.2.13), habiendo sustituido (9.2.14) y (9.2.6) y despejando $b$, llegamos a 
+Y ahora igualando (11.2.13), habiendo sustituido (11.2.14) y (11.2.6) y despejando $b$, llegamos a 
 \begin{equation} \label{6.1.1}
     b(\theta) = \frac{m_{\alpha} k qQ}{p_0^2} \cot\frac{\theta}{2}
 \end{equation} \refstepcounter{subsection}
-Entonces para aplicar (9.2.3) hacemos la siguiente derivada
+Entonces para aplicar (11.2.3) hacemos la siguiente derivada
 \begin{equation} \label{6.1.1}
     \frac{d}{d\theta} \cot\frac{\theta}{2} = -\frac{1}{2 \sin^2 (\theta/2)}
 \end{equation} \refstepcounter{subsection}
-De esta forma sustituyendo en (9.2.3), y usando que $sin\theta = 2\sin(\theta/2) \cos(\theta/2)$
+De esta forma sustituyendo en (11.2.3), y usando que $sin\theta = 2\sin(\theta/2) \cos(\theta/2)$
 \begin{equation} \label{6.1.1}
     \frac{d\sigma(\theta)}{d\Omega} = \left(\frac{m_{\alpha} k qQ}{p_0^2}\right)^2 \frac{\cot\theta/2}{2\sin \theta \sin^2 (\theta/2)} = \left(\frac{m_{\alpha} k qQ}{2p_0^2 \sin^2(\theta/2)}\right)^2
 \end{equation} \refstepcounter{subsection}
