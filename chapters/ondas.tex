@@ -50,7 +50,7 @@ Ahora vamos a tomar el límite cuando $\lambda = 2\pi / k \gg \delta$, que es eq
     \omega (k) \approx  \sqrt{\frac{\tau}{m/\delta}} k \ \ \ \ \frac{m}{\delta} = \mu
 \end{equation}\refstepcounter{subsection}
 Por otro lado, si tomamos los mismos limites para (10.2.1), cambiando la notación a $y_{n} (t) = y(x,t)$, $y_{n+1}(t) = y(x+\delta,t)$, $y_{n-1}(t) = y(x-\delta,t)$, y expandiendo los dos últimos en serie de Taylor tenemos
-\[\frac{\partial^2 y}{\partial t^2} \approx \frac{\tau}{m/\delta} \frac{1}{\delta^2}\left(y(x,t)+\dot{y}(x,t)\delta + \frac{1}{2}\ddot{y} \delta^2-2y(x,t)+y(x,t)-\dot{y}(x,t)\delta + \frac{1}{2}\ddot{y} \delta^2+ O(\delta^3)\right)\]
+\[\frac{\partial^2 y}{\partial t^2} \approx \frac{\tau}{m/\delta} \frac{1}{\delta^2}\left(y+\partial_x y\delta + \frac{1}{2}\partial^2_xy \delta^2-2y+y-\partial_x y \delta + \frac{1}{2}\partial^2_x y \delta^2+ O(\delta^3)\right)\]
 Entonces quitando los términos que se cancelan, metiendo el $1/\delta^2$ y al tomar límites nos quitamos los términos de orden $\delta$ o mayor llegamos a la ecuación de ondas no dispersivas.
 \begin{equation} \label{6.1.1}
     \frac{\partial^2 y}{\partial t^2} = \frac{\tau}{\mu} \frac{\partial^2 y}{\partial x^2} \ \ \ \ v = \sqrt{\frac{\tau}{\mu}}
@@ -61,7 +61,7 @@ Podemos hacer algo similar para la energía cinética
 \[ T = \frac{1}{2} \sum_n^\infty \frac{m}{\delta} \left(\frac{d y_n}{dt}\right)^2 \delta \rightarrow T = \int_{-\infty}^\infty \frac{1}{2} \mu \left(\frac{\partial y}{\partial t}\right)^2 dx\]
 Podemos construirnos entonces un lagrangiano
 \begin{equation} \label{6.1.1}
-    \pazocal{L} = \int_{-\infty}^\infty \left[\frac{1}{2} \mu \left(\frac{\partial y}{\partial t}\right)^2 - \tau \left(\frac{\partial y}{\partial x}\right)^2\right] dx= \int_{-\infty}^\infty \mathfrak{L}dx \ \ \ \ \ S = \int \mathfrak{L}(y,\partial_t y,\partial_x y,t) dxdt
+    \pazocal{L} = \int_{-\infty}^\infty \left[\frac{1}{2} \mu \left(\frac{\partial y}{\partial t}\right)^2 -\frac{1}{2} \tau \left(\frac{\partial y}{\partial x}\right)^2\right] dx= \int_{-\infty}^\infty \mathfrak{L}dx \ \ \ \ \ S = \int \mathfrak{L}(y,\partial_t y,\partial_x y,t) dxdt
 \end{equation}\refstepcounter{subsection}
 Se puede comprobar que aplicando el cálculo variacional para minimizar la acción de (10.1.6) se obtiene de nuevo (10.1.5). Además se pueden obtener unas ecuaciones equivalentes a las de E-L para medios contínuos generales que involucran la densidad lagrangiana $\mathfrak{L}$.
 
@@ -154,7 +154,7 @@ Entonces simplemente descomponiendo en series de Fourier las condiciones inicial
 
 Se puede hacer la descomposición haciendo integrales ortogonales, como se detalla en (8.4), pero para ahorrarnos tener que hacer las integrales los resultados finales son
 \begin{equation} \label{6.1.1}
-    A_m = \frac{2}{L}\int_{0}^{L} \eta(x,0)\cos(k_m x)dx \ \ \ \ \ B_m = \frac{2}{L \omega_m}\int_{0}^{L} \partial_t \eta |_{(x,0)}\sin(k_m x)dx
+    A_m = \frac{2}{L}\int_{0}^{L} \eta(x,0)\sin(k_m x)dx \ \ \ \ \ B_m = \frac{2}{L \omega_m}\int_{0}^{L} \partial_t \eta |_{(x,0)}\sin(k_m x)dx
 \end{equation}\refstepcounter{subsection}
 Si el intervalo esta centrado en el origen se pueden usar unas expresiones equivalentes a las de (8.4.2).
 \section{Solución general, Transformada de Fourier}
@@ -176,11 +176,7 @@ Ahora, se puede ver que la siguiente función se comporta como una delta de Dira
 \begin{equation} \label{6.1.1}
     \frac{1}{2\pi} \int_{-\infty}^\infty e^{i(k-\tilde{k})x}dx = \delta(k-\tilde{k})
 \end{equation}\refstepcounter{subsection}
-Puesto que si $k = \tilde{k}$, entonces el integrando es 1 y la integral diverge a $\infty$, sin embargo, si $k \neq \tilde{k}$, entonces, aplicando que la función es holomorfa, tenemos que 
-\[\int_{-\infty}^\infty e^{iax}dx = \lim_{R\rightarrow \infty }\int_{c_R} e^{iaz} dz\]
-Donde $c_R$ es un contorno semicircular ubicado en el semiplano inferior o superior en función del signo de $a$. Aplicando el Lema de Jordan tenemos que
-\[\left|\int_{c_R} e^{iaz} dz\right| \leq \frac{\pi}{R} \implies \lim_{R\rightarrow \infty }\int_{c_R} e^{iaz} dz = 0\]
-Por lo tanto cuando $k \neq \tilde{k}$, la integral vale 0, así hemos comprobado que se comporta como una Delta de Dirac, el factor $1/2\pi$ esta ahí para que su integral a todos los $k$ sea 1.
+Puesto que si $k = \tilde{k}$, entonces el integrando es 1 y la integral diverge a $\infty$, sin embargo, si $k \neq \tilde{k}$, puede demostrarse que el valor principal de la integral es 0. El factor $1/2\pi$ esta ahí para que su integral a todos los $k$ sea 1.
 
 Ahora aplicando las propiedades de la de la Delta de dirac llegamos a que 
 \begin{equation} \label{6.1.1}
@@ -215,3 +211,37 @@ Si la onda es no dispersiva, $u = v$, y el paquete se mueve a la misma velocidad
 Si tenemos en cuenta más términos de $\omega(k)$, se pueden observar más efectos de la dispersión, únicos de las ondas dispersivas, como por ejemplo que la anchura del paquete crece.
 
 Se observa también un esbozo del principio de incertidumbre, si $\Delta k$ es pequeño, quiere decir que la onda esta formada por pequeño intervalo de longitudes de onda, pero entonces eso va a implicar que la anchura de la onda, que va como $1/\Delta k$, sea muy grande, y viceversa.
+
+\section{Interferencia y difracción}
+\refstepcounter{subsection}
+Si tenemos dos ondas viajeras en la misma dirección con distinta $k$, de tal forma que $\delta k = k'-k$ y $\langle k\rangle=(k+k')/2$, entonces
+\[\eta(x,t) = e^{i(\omega t - kx)}+e^{i(\omega't-k'x)} = e^{i(\omega t - kx)}\left(1+e^{i(\delta \omega t - \delta k x)}\right)= \]
+\begin{equation} \label{6.1.1}
+    = e^{i(\omega t - kx)}e^{i(\delta \omega t - \delta k x)/2}\left(e^{-i(\delta \omega t - \delta k x)/2}+e^{i(\delta \omega t - \delta k x)/2}\right) = 2 e^{i(\langle \omega \rangle t - \langle k\rangle x)} \cos((\delta \omega t - \delta k x)/2)
+\end{equation}\refstepcounter{subsection}
+De esta forma tenemos una onda de velocidad $\langle \omega \rangle/\langle k\rangle$, muy similar a la original si $\delta k$ es pequeño, y tenemos una envolvente que se mueve a una velocidad $\delta \omega/\delta k$, muy similar a la velocidad de grupo, que modula a la otra onda. En el límite de $\delta k \rightarrow 0$ tenemos que la primera se mueve exactamente a la velocidad de fase y la segunda a la velocidad de grupo.
+\subsection{Experimento de la doble rendija}
+Supongamos que tenemos dos agueros puntuales en una pared colocada en el plano $x=0$ separados por una distancia $d$, de tal forma que estan colocados en $(0,d/2,0)$ y $(0,-d/2,0)$ respectivamente. Supongamos que tenemos otra pared que puede medir la fase de la onda a una distancia R de la original, en el plano $x=R$.
+
+Para poder hacer una aproximaciones que nos den una expresión razonable que comprobar en un laboratorio, vamos a medir la onda en posiciones verticales $y$ mucho más pequeñas que la distancia entre placas $R$, y además vamos a suponer que la distancia entre los agujeros $d$ es bastante más pequeña que las distancias $y$ en las que vamos a medir. De esta forma tenemos $R \gg y \gg d$ que debemos verificar que se cumplen en el montaje experimental para que las expresiones que obtengamos sean válidas.
+
+Por el Principio de Huygens, cualquier punto de una onda actua cómo un nuevo frente de ondas esféricas, y la interferencia de todos estos es lo que crea la onda. Por lo tanto podemos considerar que si la onda llega desde $x<0$ más o menos plana, al llegar a ambos orficios con la misma fase, se crean dos ondas esféricas con la misma fase en cada uno, tal que
+\[\phi_1 = \frac{1}{r_1} e^{i(\omega t -kr_1)} \ \ \ \ \phi_2 = \frac{1}{r_1} e^{i(\omega t -kr_2})\]
+Ahora tenemos que hayar expresiones aproximadas de $r_1$ y $r_2$, tal que 
+\[r_1=\sqrt{R^2+\left(y-\frac{d}{2}\right)^2} \ \ \ \ r_2=\sqrt{R^2+\left(y+\frac{d}{2}\right)^2}\]
+\[\frac{1}{r_1} \approx \frac{1}{R}\left[1-\frac{1}{2} \frac{\left(y-\frac{d}{2}\right)^2}{R^2}\right] \approx \frac{1}{r_2} \approx \frac{1}{R}\]
+\[r_2-r_1 \approx R\left[1+\frac{1}{2}\frac{\left(y+\frac{d}{2}\right)^2}{R^2}-1-\frac{1}{2}\frac{\left(y-\frac{d}{2}\right)^2}{R^2}\right]= \frac{dy}{R}\]
+\[r_2+r_1 \approx R\left[1+\frac{1}{2}\frac{\left(y+\frac{d}{2}\right)^2}{R^2}+1+\frac{1}{2}\frac{\left(y-\frac{d}{2}\right)^2}{R^2}\right]\approx 2R\]
+De esta forma tenemos que 
+\[\phi_t (y,t) \approx \frac{1}{R}e^{i\omega t}\left(e^{-ikr_1}+e^{-ikr_2}\right) = \frac{2}{R}e^{i(\omega t-k\langle r\rangle )} \cos\left(k \left[\frac{r2-r1}{2}\right]\right) \approx\]
+\begin{equation} \label{6.1.1}
+    \approx \frac{2}{R}e^{i(\omega t-kR)} \cos\left(\frac{kdy}{2R}\right)
+\end{equation}\refstepcounter{subsection}
+Entonces, si la intensidad de la onda es proporcional al cuadrado de la amplitud tenemos que 
+\begin{equation} \label{6.1.1}
+    I \sim \frac{4}{R^2}\cos^2\left(\frac{kdy}{2R}\right) \ \ \ \ y_{\mbox{\tiny max}} = \frac{n\lambda R}{d} \ \ \ \ n \in \mathbb{Z}
+\end{equation}\refstepcounter{subsection}
+También podemos hallar una relación para el ángulo medido desde el origen donde se mide la máxima intensidad, obteniendo la Ley de Bragg.
+\begin{equation} \label{6.1.1}
+    \sin \theta_{\mbox{\tiny max}} \approx \tan \theta_{\mbox{\tiny max}} = \frac{y_{\mbox{\tiny max}}}{R} = \frac{n\lambda}{d} \rightarrow d \sin \theta_{\mbox{\tiny max}} = n\lambda
+\end{equation}\refstepcounter{subsection}
