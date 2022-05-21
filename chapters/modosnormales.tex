@@ -12,7 +12,9 @@ Entones aplicando (2.2.1) (E-L) llegamos a la siguiente ecuación que queremos r
 \begin{equation} \label{6.1.1}
     \mathbb{M}\ddot{\mathbf{q}} = - \mathbb{K} \mathbf{q} \ \ \ \ M_{ij} = \sum_{\alpha,k}^{N,d}{ \frac{1}{2} m_\alpha \left.\frac{\partial x_{\alpha k}}{\partial q_j}\right|_0\left.\frac{\partial x_{\alpha k2}}{\partial q_k}\right|_0 \ \ \ \ K_{ij} = \left.\frac{\partial^2 U}{\partial q_i q_j}\right|_0
 \end{equation}\refstepcounter{subsection}
-En la práctica, lo que se hace es calcularte $T$ y $U$, aproximarlas a orden cuadrático de $\dot{\mathbf{q}}$ y $\mathbf{q}$ respectivamente, y sacar las matrices de las formas cuadráticas correspondientes, que serán $\mathbb{M}$ y $\mathbb{K}$, respectivamente.
+En la práctica, lo que se hace es calcularte $T$ y $U$, aproximarlas a orden cuadrático de $\dot{\mathbf{q}}$ y $\mathbf{q}$ respectivamente, y sacar las matrices de las formas cuadráticas correspondientes, que serán $\mathbb{M}$ y $\mathbb{K}$, respectivamente. En ocasiones realizar las aproximaciones se vuelve complicado y es mejor sacar directamente $\mathbb{H}_{\mbox{\tiny U}}(0)$ de su definición.
+
+En ocasiones también salen términos lineales en el potencial, lo cual significa que las coordenadas generalizadas que hemos escogido no tienen un mínimo en 0, para arreglarlo podemos utilizar completación de cuadrados en muchas circumstancias y cambiar a unas variables donde sí sea cuadrática, y si eso no funciona siempre se puede calcular el gradiente de $U$ y obtener los puntos donde se anula y centrar ahí las coordenadas.
 \vspace{-15pt}
 \subsection{Soluciones de la ecuación}
 \refstepcounter{subsection}
@@ -38,7 +40,9 @@ $\mathbb{X}$ es la matriz de cambio de base de la base que diagonaliza a $\mathb
 \begin{equation} \label{6.1.1}
     \mathbb{M}\mathbb{X} \ddot{\vec{\varsigma}} + \mathbb{K} \mathbb{X} \vec{\varsigma} = \mathbb{X}^{\mbox{\tiny T}}\mathbb{M}\mathbb{X} \ddot{\vec{\varsigma}} + \mathbb{X}^{\mbox{\tiny T}}\mathbb{K} \mathbb{X} \vec{\varsigma} = \mathbb{I}\ddot{\vec{\varsigma}} + \mathbb{D}\vec{\varsigma} = 0 \iff \ddot{\varsigma_i} + \omega_i^2 \varsigma_i = 0
 \end{equation}\refstepcounter{subsection}
-Las soluciones de cada una de esas ecuaciones, ya en forma real, son $\varsigma_i = A_i \cos{(\omega_i t -\delta_i)}$, dónde $A_i$ y $\delta_i$ dependen de las condiciones iniciales, de tal forma que la solución final es $\mathbf{q} = \sum_i^s A_i \vec{\xi}_i \cos{(\omega_i t -\delta_i)}$, que coincide con tomar la parte real de una combinación lineal arbitraria de las conjeturas $\mathbf{q} = \vec{\xi} e^{i\omega t}$.
+Las soluciones de cada una de esas ecuaciones, ya en forma real, son $\varsigma_i = A_i \cos{(\omega_i t -\delta_i)} = A_i \cos{(\omega_i t)}+B_i \sin{(\omega_i t)}$, dónde $A_i$ y $\delta_i$ dependen de las condiciones iniciales, de tal forma que la solución final es $\mathbf{q} = \sum_i^s A_i \vec{\xi}_i \cos{(\omega_i t -\delta_i)}$, que coincide con tomar la parte real de una combinación lineal arbitraria de las conjeturas $\mathbf{q} = \vec{\xi} e^{i\omega t}$.
+
+Hay que tener en cuenta que si obtenemos $\omega_i = 0$ en alguno de los autovalores, eso significa que los movimientos asociados a ese autovalor mantienen al potencial $U$ en un mínimo, además la solución de $\ddot{\varsigma_i}= 0$ es distinta a las otras, es $\varsigma_i = A+Bt$.
 
 
 \vspace{-15pt}
@@ -55,7 +59,6 @@ Utilizando las expresiones de (9.0.1) y (9.0.2) tenemos que
     E = T+U = \frac{1}{2}\sum_i^2 \left(\dot{\varsigma}_i^2 + \omega_i^2\varsigma_i^2\right)
 \end{equation}\refstepcounter{subsection}
 
-\newpage
 \subsection{Péndulo Doble}
 \refstepcounter{subsection}
 Se va a hacer como ejemplo el péndulo doble para pequeñas oscilaciones en torno a la posición de equilibrio para dos masas iguales y longitudes de los péndulos iguales, por simplificar.
