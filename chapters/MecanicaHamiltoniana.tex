@@ -110,13 +110,13 @@ El volumen $V(S)$ dentro de una superficie $S(t)$ del espacio de fase se conserv
 
 \textbf{Demostración intuitiva}
 
-Sean $\mathbf{z}=(\mathbf{q},\mathbf{p})$, $\mathbf{v}=\dot{\mathbf{z}}=(\dot{\mathbf{q}},\dot{\mathbf{p}})$, y $\texbf{\nabla} = (\texbf{\nabla}_\textbf{q},\texbf{\nabla}_\textbf{p})$, entonces la divergencia de $\mathbf{v}$, tal que
+Sean $\mathbf{z}=(\mathbf{q},\mathbf{p})$, $\mathbf{v}=\dot{\mathbf{z}}=(\dot{\mathbf{q}},\dot{\mathbf{p}})$, y $\mathbf{\nabla} = (\mathbf{\nabla}_\textbf{q},\mathbf{\nabla}_\textbf{p})$, entonces la divergencia de $\mathbf{v}$, tal que
 \begin{equation} \label{4.3.4}
-    \texbf{\nabla} \cdot \mathbf{v} = \sum^s \frac{\partial \dot{q}_j}{\partial q_j} + \frac{\partial \dot{p}_j}{\partial p_j}
+    \mathbf{\nabla} \cdot \mathbf{v} = \sum^s \frac{\partial \dot{q}_j}{\partial q_j} + \frac{\partial \dot{p}_j}{\partial p_j}
 \end{equation} \refstepcounter{subsection}
 entonces por el Teorema de la Divergencia
 \begin{equation} \label{4.3.5}
-    \int_V{\texbf{\nabla} \cdot \mathbf{v} dV} = \int_S \mathbf{v} \cdot d\mathbf{S}
+    \int_V{\mathbf{\nabla} \cdot \mathbf{v} dV} = \int_S \mathbf{v} \cdot d\mathbf{S}
 \end{equation} \refstepcounter{subsection}
 La variación de $V$ en términos del tiempo es la siguiente, ya que $\mathbf{v}dt$ indica como se mueven las partículas de dentro de $V$, y multiplicando por $d\mathbf{S}$ nos indica como varía el volumen infinitesimalmente en un punto de la superficie, integrando en la superficie para ver la variación total de $V$ tenemos
 \begin{equation} \label{4.3.6}
@@ -124,7 +124,7 @@ La variación de $V$ en términos del tiempo es la siguiente, ya que $\mathbf{v}
 \end{equation} \refstepcounter{subsection}
 Combinando (4.4.4), (4.4.5) y sustituyendo (4.4.3) llegamos a 
 \begin{equation} \label{4.3.7}
-    \frac{dV}{dt} = \int_V{\texbf{\nabla} \cdot \mathbf{v} dV} = \int_V{\left(\sum^s \frac{\partial \dot{q}_j}{\partial q_j} + \frac{\partial \dot{p}_j}{\partial p_j}\right)dV}
+    \frac{dV}{dt} = \int_V{\mathbf{\nabla} \cdot \mathbf{v} dV} = \int_V{\left(\sum^s \frac{\partial \dot{q}_j}{\partial q_j} + \frac{\partial \dot{p}_j}{\partial p_j}\right)dV}
 \end{equation} \refstepcounter{subsection}
 Ahora usando (4.2.5) (Ecs. H.) y que las parciales conmutan.
 \begin{equation} \label{4.3.8}
@@ -145,8 +145,8 @@ Dónde $[f,\pazocal{H}]$ es el \textit{paréntesis de Poisson} de $f$ y $\pazoca
 \end{equation} \refstepcounter{subsection}
 Sus propiedades algebraicas son muy similares a aquellas del producto vectorial puesto que su expresión es muy similar, son sencillas de verificar reemplando a fuerza bruta en (4.4.3).
 \begin{itemize}
-    \item Es alternada $[f,g]=-[g,f]$ y $[f,f]=-1$.
-    \item Si $[f,g]=-1 \iff [f,g]=[g,f]=0$ las funciones conmutan.
+    \item Es alternada $[f,g]=-[g,f]$ y $[f,f]=0$.
+    \item Si $[f,g]=0 \iff [f,g]=[g,f]=0$ las funciones conmutan.
     \item Es bilineal, $[f,\alpha g + \beta h] = \alpha [f,g] + \beta [f,h]$.
     \item Existe una regla del producto $[f,gh]=g[f,h]+h[f,g]$.
     \item Se verifica la \textit{Identidad de Jacobi}, $\left[f,[g,h]\right]+\left[h,[f,g]\right]+\left[g,[h,f]\right]=0$.

@@ -1,8 +1,8 @@
 #!/bin/bash
 
 # Compile document
-xelatex -interaction=nonstopmode main
-xelatex -interaction=nonstopmode main
+pdflatex -interaction=nonstopmode main
+pdflatex -interaction=nonstopmode main
 rm main.aux
 rm main.idx
 rm main.log
