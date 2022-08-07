@@ -26,7 +26,7 @@ La transformación será inversible si el jacobiano de $y_i \mapsto p_i$ es no n
 \subsubsection{Transformada de Legendre del Lagrangiano}
 Ahora si tenemos $\pazocal{L}(\{q_j,\dot{q}_j\};t)$, $\{\dot{q}_j\}$ serán nuestras antiguas variables y las nuevas variables serán $\partial_{\dot{q}_j}\pazocal{L}=p_j$, los momentos generalizados o conjugados. Entonces aplicando (4.1.2) llegamos a (3.1.2)
 \begin{equation} \label{4.1.3}
-        p_i(\{q_i,\dot{q}_i\};t)=\frac{\partial \pazocal{L}}{\partial q_i} \ \ \ \ \ \  g(\{q_i,p_i\};t) =\pazocal{L}(\{q_i,p_i\};t) -\sum_j^s \dot{q}_j p_j(\{q_i,p_i\}) = -\pazocal{H}
+        p_i(\{q_i,\dot{q}_i\};t)=\frac{\partial \pazocal{L}}{\partial q_i} \ \ \ \ \ \  g(\{q_i,p_i\};t) =\pazocal{L}(\{q_i,p_i\};t) -\sum_j^s \dot{q}_j (\{q_i,p_i\}) p_j = -\pazocal{H}
 \end{equation} \refstepcounter{subsection}
 De esta forma, $\pazocal{H}$ es equivalente a la \textit{Transformada de Legendre} de $\pazocal{L}$ con respecto a los $\dot{q}_j$, y esta es inversible, la demostración de que el jacobiano $[\partial_{\dot{q}_j}p_i]$ es no nulo bajo ciertas circumstancias se deja como un ejercicio al lector.
 

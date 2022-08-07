@@ -7,7 +7,7 @@ En contraposición, un funcional es una función $F: \mathbcal{f} \in \mathcal{F
 
 La forma genérica de los funcionales que nos interesan es la siguiente, donde ';' indica que $x$ es la variable independiente, y $f$ y $f'$ dependen explícitamente de x, y por consiguiente depende entre sí, aunque no de forma explícita en la mayoría de circunstancias:
 \begin{equation}
-    F[f]=\int_{x_A}^{x_b}{g(f(x),f'(x);x)dx} \label{1.0.1}
+    F[f]=\int_{x_A}^{x_B}{g(f(x),f'(x);x)dx} \label{1.0.1}
 \end{equation} \refstepcounter{subsection}
 Nos interesan solo las funciones $f$ tales que $f(x_A)=y_A; \ f(x_B)=y_B \label{1.0.2} \inlineeqnum$, de tal forma que la función este fija en los extremos de la integral, esta propiedad va a resultar muy importante más adelante.
     
@@ -120,9 +120,9 @@ En el caso de que existan $m$ ecuaciones de ligadura de la forma $G_i(\{f_\alpha
 En el caso de que esto no sea posible resolver el sistema, debemos recurrir a multiplicadores de \textit{Lagrange}.
 %-------------------------------------------------------------------------------------------
 \subsubsection{Multiplicadores de Lagrange}
-Partimos de que tenemos $m$ ecuaciones $G_i(\{f_\alpha\};t)=0$ que no sabemos resolver, $\Delta G_i =0$, es decir, $G_i$ se aplica de la misma forma tanto a los caminos de referencia como a los variados, además $\Delta G_i = \delta G_i + O(a^2) = 0$, como $a$ es arbitrario, entonces $\delta G_i =0$. Aplicando la regla de la cadena de (1.1.13)
+Partimos de que tenemos $m$ ecuaciones $G_i(\{f_\alpha\};x)=0$ que no sabemos resolver, $\Delta G_i =0$, es decir, $G_i$ se aplica de la misma forma tanto a los caminos de referencia como a los variados, además $\Delta G_i = \delta G_i + O(a^2) = 0$, como $a$ es arbitrario, entonces $\delta G_i =0$. Aplicando la regla de la cadena de (1.1.13)
 \begin{equation} \label{1.3.5}
-    \delta G_i(\{f_\alpha\};x) = \sum_\alpha^m{\frac{\partial G_i}{\partial f_\alpha} \delta f_\alpha}=\sum_\alpha^m{a_{i\alpha} \delta f_\alpha}=0; \ \ \ a_{i\alpha} = \frac{\partial G_i}{\partial f_\alpha}
+    \delta G_i(\{f_\alpha\};x) = \sum_\alpha^N{\frac{\partial G_i}{\partial f_\alpha} \delta f_\alpha}=\sum_\alpha^N{a_{i\alpha} \delta f_\alpha}=0; \ \ \ a_{i\alpha} = \frac{\partial G_i}{\partial f_\alpha}
 \end{equation} \refstepcounter{subsection}
 Así tenemos la ecuación que nos relaciona las distintas $\delta f_\alpha$, el término de la derivada lo podemos expresar como las componentes de un matriz. Podemos separar la expresión anterior tal que
 \begin{equation} \label{1.3.6}
