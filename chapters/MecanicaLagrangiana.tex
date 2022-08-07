@@ -6,7 +6,7 @@ Definimos además las derivadas totales temporales como $\{\dot{x}_{\alpha i}\}$
 
 \section{Principio de Hamilton}\refstepcounter{subsection}
 
-Definimos una función llamada \textbf{Lagrangiano}\sidenote{La definición de \textbf{Lagrangiano} dependerá de la configuración del sistema físico, pero como norma géneral en mecánica clásica (2.1.1) es la expresión más común de la función que verifica (2.1.3).}
+Definimos una función llamada \textbf{Lagrangiano}\sidenote{La definición de \textbf{Lagrangiano} dependerá de la configuración del sistema físico, pero como norma géneral en mecánica clásica (2.1.1) es la expresión más común de la función que verifica (2.1.3). Esto se demuestra más adelante.}
 \begin{equation} \label{2.1.1}
     \pazocal{L}(\{x_{\alpha i},\dot{x}_{\alpha i}\};t)=T-U
 \end{equation} \refstepcounter{subsection}
@@ -72,13 +72,117 @@ Que aplicando las ecuaciones de \textit{Euler-Lagrange} tanto para $q_j$ como pa
 \Large\begin{equation} \label{2.3.5}
     \frac{\partial \pazocal{L}}{\partial q_j} -\frac{d}{dt}\left(\frac{\partial \pazocal{L}}{\partial \dot{q}_j}\right) +\underbrace{\sum^m\lambda_i(t)\frac{\partial G_i}{\partial q_j}}_{Q^L_j}=0
 \end{equation} \refstepcounter{subsection}\normalsize
-Donde $Q^L_j$ es la componente $j$ de la fuerza de ligadura total, tal que $\mathbf{F}^L=\sum{Q^L_j \partial_{q_j} \mathbf{r}}$, que cumplen que $dW^L = \mathbf{F}^L\cdot d\mathbf{r}=0$ son fuerzas que o siempre perpendiculares a la ligadura, o que provocan que $d\mathbf{r}=0 \iff \mathbf{v}=0$ en el punto de contacto.
+Donde $Q^L_j$ es la componente $j$ de la fuerza generalizada de ligadura total, que cumplen que $dW^L = \mathbf{F}^L\cdot d\mathbf{r}=0$ son fuerzas que o siempre perpendiculares a la ligadura, o que provocan que $d\mathbf{r}=0 \iff \mathbf{v}=0$ en el punto de contacto.
 
+\section{Principio de D'Alambert}\refstepcounter{subsection}
+\subsubsection{Estático}
+Vamos a suponer que tenemos un sistema en equilibrio, es decir $\mathbf{F}_i = 0$ para cada partícula del sistema, o en general para cualquier punto donde se aplica una fuerza, de tal forma que $\mathbf{F}_i \cdot \delta \mathbf{r}_i = 0$.
+
+$\delta \mathbf{r}_i$ es lo que se denomina desplazamiento virtual, el sistema no se mueve, sigue en el equilibrio, estos desplazamientos se definen respetando las ligaduras del sistema, por ejemplo, tenemos en un péndulo que por la gravedad y otra fuerza externa se encuentra en equilibrio, podemos expresar la posición en términos de las coordenadas generalizadas, que respetan las ligaduras, tal que $\mathbf{r} = l (\sin \theta \mathbf{e}_x + \cos \theta \mathbf{e}_y)$, y entonces $\delta \mathbf{r} = l (\cos \theta \mathbf{e}_x-\sin\theta \mathbf{e}_y) \delta \theta$.
+
+Para sistemas tendremos entones $\sum_i \mathbf{F}_i \cdot \delta \mathbf{r}_i = 0$, pero esto no nos dice nada, sin embargo, podemos descomponer la fuerza total que se ejerce en un punto o partícula en fuerzas de ligadura o normal y fuerzas externas o aplicadas, tal que $\mathbf{F}_i = \mathbf{F}_i^{(a)}+\mathbf{f}_i$, aunque no es siempre facil distinguirlo a simple vista. De esta forma nos queda
+\begin{equation} \label{2.1.1}
+    \sum_i \mathbf{F}_i^{(a)} \cdot \delta \mathbf{r}_i + \sum_i \mathbf{f}_i \cdot \delta \mathbf{r}_i = 0
+\end{equation} \refstepcounter{subsection}
+Ahora, salvo casos muy extraños de ligaduras, el trabajo virtual de una fuerza normal o de ligadura se anula, como se ha explicado en el apartado anterior, de esta forma llegamos al principio de D'Alambert estático
+\begin{equation} \label{2.1.1}
+    \sum_i \mathbf{F}_i^{(a)} \cdot \delta \mathbf{r}_i = 0
+\end{equation} \refstepcounter{subsection}
+También es llamado principio del trabajo virtual, y al aplicarlo, las componentes $\delta \mathbf{r}_i$ son no nulas, en general implica que $\delta q_i \neq 0$, donde $q_i$ son las coordenadas generalizadas, por ejemplo, $\delta \theta$ en el ejemplo anterior.
+\subsubsection{Dinámico}
+Ahora consideraremos un sistema que no esta en equilibrio, tenemos que $\mathbf{F}_i = \dot{\mathbf{p}}_i = m_i \ddot{\mathbf{r}}_i$, de tal forma que haciendo exactamente las mismas manipulaciones que antes, y descomponiendo la fuerza total, llegamos a la versión dinámica del principio de D'Alambert
+\begin{equation} \label{2.1.1}
+    \sum_i (\dot{\mathbf{p}}_i-\mathbf{F}_i^{(a)}) \cdot \delta \mathbf{r}_i = 0
+\end{equation} \refstepcounter{subsection}
+\subsubsection{Lagrangiano}
+Si hacemos el cambio a coordenadas generalizadas usando la regla de la cadena, tenemos
+\begin{equation} \label{2.1.1}
+    \delta \mathbf{r}_i = \sum_j \frac{\partial \mathbf{r}_i}{\partial q_j} \delta q_j
+\end{equation} \refstepcounter{subsection}
+Podemos ahora definir de nuevo la fuerza generalizada
+\begin{equation} \label{2.1.1}
+    \sum_i \mathbf{F}_i \cdot \delta \mathbf{r}_i = \sum_{ij} \mathbf{F}_i \cdot \frac{\partial \mathbf{r}_i}{\partial q_j} \delta q_j = \sum_j Q_j \delta q_j \implies Q_j = \sum_i \mathbf{F}_i \cdot \frac{\partial \mathbf{r}_i}{\partial q_j}
+\end{equation} \refstepcounter{subsection}
+Es importante notar que $Q_j$ no tiene unidades de fuerza en general, pero $Q_j \delta q_j$ siempre tiene unidades de trabajo. Si consideramos solo fuerzas conservativas (aunque pueden depender del tiempo) tenemos
+\begin{equation} \label{2.1.1}
+    \mathbf{F}_i = -\nabla_i U \ \ \ \ \ \ Q_j = -\sum_i \nabla_i U \cdot \frac{\partial \mathbf{r}_i}{\partial q_j} = - \sum_{ik} \frac{\partial U}{\partial r_{ik}} \frac{\partial r_{ik}}{\partial q_j} = - \frac{\partial U}{\partial q_j}
+\end{equation} \refstepcounter{subsection}
+Ahora, hacemos lo mismo pero con el otro término de (2.4.3), y descomponemos una regla del producto
+\begin{equation} \label{2.1.1}
+    \sum_i \dot{\mathbf{p}}_i \cdot \delta \mathbf{r}_i = \sum_{ij} m \ddot{\mathbf{r}}_i \cdot \frac{\partial \mathbf{r}_i}{\partial q_j} \delta q_j \ \ \ \ \ \ \ \sum_{i} m \ddot{\mathbf{r}}_i \cdot \frac{\partial \mathbf{r}_i}{\partial q_j} = \sum_i \left[ \frac{d}{dt}\left(m_i \dot{\mathbf{r}}_i \cdot \frac{\partial \mathbf{r}_i}{\partial q_j}\right)- m_i \dot{\mathbf{r}}_i\frac{d}{dt}\left(\frac{\partial \mathbf{r}_i}{\partial q_j}\right)\right]
+\end{equation} \refstepcounter{subsection}
+\begin{equation} \label{2.1.1}
+    \frac{d}{dt}\left(\frac{\partial \mathbf{r}_i}{\partial q_j}\right) = \sum_k \frac{\partial^2 \mathbf{r}_i}{\partial q_j \partial q_k}\dot{q}_k + \frac{\partial^2 \mathbf{r}_i}{\partial q_j \partial t} = \frac{\partial}{\partial q_j}\left( \sum_k \frac{\partial \mathbf{r}_i}{ \partial q_k}\dot{q}_k + \frac{\partial\mathbf{r}_i}{\partial t} \right)= \frac{\partial \dot{\mathbf{r}}_i}{\partial q_j} = \frac{\partial \mathbf{v}_i}{\partial q_j}
+\end{equation} \refstepcounter{subsection}
+Además podemos ver que
+\begin{equation} \label{2.1.1}
+    \frac{\partial \mathbf{v}_i}{\partial \dot{q}_j} = \frac{\partial}{\partial \dot{q}_j}\left( \sum_k \frac{\partial \mathbf{r}_i}{ \partial q_k}\dot{q}_k + \frac{\partial\mathbf{r}_i}{\partial t} \right) = \sum_k \frac{\partial \mathbf{r}_i}{ \partial q_k} \delta_{kj} =  \frac{\partial \mathbf{r}_i}{ \partial q_j}
+\end{equation} \refstepcounter{subsection}
+Ahora, introducimos (2.4.7) en (2.4.6) tal que
+\[\sum_i \dot{\mathbf{p}}_i \cdot \delta \mathbf{r}_i = \sum_{ij} \left[ \frac{d}{dt}\left(m_i \mathbf{v}_i \cdot \frac{\partial \mathbf{v}_i}{\partial \dot{q}_j}\right)- m_i \mathbf{v}_i\frac{\partial \mathbf{v}_i}{\partial q_j}\right] \delta q_j = \]
+\begin{equation} \label{2.1.1}
+     = \sum_{ij} \left[ \frac{d}{dt}\left(\frac{\partial}{\partial \dot{q}_j} \left(\frac{1}{2}m_i \mathbf{v}_i \cdot \mathbf{v}_i\right)\right)- \frac{\partial}{\partial q_j} \left(\frac{1}{2}m_i \mathbf{v}_i \cdot \mathbf{v}_i\right)\right] \delta q_j = \sum_{j} \left[ \frac{d}{dt}\left(\frac{\partial T}{\partial \dot{q}_j}\right)- \frac{\partial T}{\partial q_j}\right] \delta q_j
+\end{equation} \refstepcounter{subsection}
+Ahora metiendo (2.4.10) y (2.4.6) en (2.4.3)
+\begin{equation} \label{2.1.1}
+    \sum_{j} \left[ \frac{d}{dt}\left(\frac{\partial T}{\partial \dot{q}_j}\right)- \frac{\partial T}{\partial q_j} +\frac{\partial U}{\partial q_j}\right] \delta q_j = 0
+\end{equation} \refstepcounter{subsection}
+Ahora, si suponemos que tenemos un sistema holonómico y que podemos resolver las ligaduras y que $q_j$ son holónomas, y por lo tanto independientes, y a du vez $\delta q_j$ también, tenemos el siguiente conjunto de ecuaciones
+\begin{equation} \label{2.1.1}
+    \frac{d}{dt}\left(\frac{\partial (T-U)}{\partial \dot{q}_j}\right)-\frac{\partial (T-U)}{\partial q_j} = 0 \ \ \ \ \ \ T-U= \pazocal{L}
+\end{equation} \refstepcounter{subsection}
+Como estamos considerando fuerzas conservativas, sus potenciales no dependen de las velocidades generalizadas, y por lo tanto la podemos introducir en el primer término de la ecuación sin pérdida de generalidad, y voalá, hemos demostrado (2.1.2), el principio de Hamilton para la mecánica de Newton bajo unos ciertos supuestos.
+
+Podemos considerar fuerzas no conservativas, como por ejemplo, un rozamiento dinámico, separandolas, tal que
+\begin{equation} \label{2.1.1}
+    Q_j = - \frac{\partial U}{\partial q_j} + \sum \mathbf{F}^{(nc)} \cdot \frac{\partial \mathbf{r}_i}{\partial q_j} = - \frac{\partial U}{\partial q_j} + Q_j^{(nc)} \implies \frac{d}{dt}\left(\frac{\partial \pazocal{L}}{\partial \dot{q}_j}\right)-\frac{\partial \pazocal{L}}{\partial q_j} =  Q_j^{(nc)}
+\end{equation} \refstepcounter{subsection}
+\subsubsection{Potencial generalizado}
+Además, podemos crear un tipo de potencial generalizado que dependa de $\dot{q}_j$, para ello, primero tomamos la forma genérica de (2.4.11) sin asumir nada sobre la fuerza
+\begin{equation} \label{2.1.1}
+    \frac{d}{dt}\left(\frac{\partial T}{\partial \dot{q}_j}\right)-\frac{\partial T}{\partial q_j} = Q_j
+\end{equation} \refstepcounter{subsection}
+Y por otro lado descomponemos la parte cinética y potencial de (2.4.12) e igualamos
+\begin{equation} \label{2.1.1}
+    \frac{d}{dt}\left(\frac{\partial U}{\partial \dot{q}_j}\right)-\frac{\partial U}{\partial q_j} = Q_j = \sum_i \mathbf{F}_i \cdot \frac{\partial \mathbf{r}_i}{\partial q_j}
+\end{equation} \refstepcounter{subsection}
+Entonces cualquier fuerza que pueda ser derivada de un potencial $U(\{q_i\},\{\dot{q}_i\})$ (no puede depender del tiempo en este caso) siguiendo (2.4.15) verifica también el principio de Hamilton.
+
+El ejemplo más notable de este tipo de potencial es el que crea la fuerza electromagnética, vamos a estudiarlo, lo primero es saber que es $Q_j$ en este caso, usaremos coordenadas cartesianas
+\begin{equation} \label{2.1.1}
+    Q_j = \sum_i \mathbf{F}_i \cdot \frac{\partial \mathbf{r}_i}{\partial x_j} = \sum_i \mathbf{F}_i \cdot \mathbf{e}_i \delta_{ij} = F_j
+\end{equation} \refstepcounter{subsection}
+La fuerza de Lorentz es, y podemos definir los campos $\mathbf{E}$ y $\mathbf{B}$ como 
+\begin{equation} \label{2.1.1}
+    \mathbf{F}(\mathbf{r},\dot{\mathbf{r}}) = q(\mathbf{E}(\mathbf{r})+\dot{\mathbf{r}} \times \mathbf{B}(\mathbf{r})) \ \ \ \ \ \ \ \mathbf{E}(\mathbf{r}) = -\nabla_\mathbf{r} \phi -\frac{\partial \mathbf{A}}{\partial t}  \ \ \ \ \ \ \ \mathbf{B}(\mathbf{r}) = \nabla_\mathbf{r} \times \mathbf{A}
+\end{equation} \refstepcounter{subsection}
+\[
+    B_x = \partial_y A_z - \partial_z A_y \ \ \ \ \ B_y = \partial_z A_x-\partial_x A_z \ \ \ \ \ B_z = \partial_x A_y - \partial_y A_x
+\]
+\[
+    (\dot{\mathbf{r}} \times \mathbf{B})_x= \dot{y}B_z - \dot{z}B_y \ \ \ \ \ (\dot{\mathbf{r}} \times \mathbf{B})_y = \dot{z}B_x - \dot{x}B_z \ \ \ \ \ (\dot{\mathbf{r}} \times \mathbf{B})_z = \dot{x}B_y - \dot{y}B_x
+\]
+\[F_x = q\left(-\partial_x \phi - \partial_t A_x +\dot{y}B_z - \dot{z}B_y\right) = q\left(-\partial_x \phi - \partial_t A_x +\dot{y}(\partial_x A_y - \partial_y A_x) - \dot{z}(\partial_z A_x-\partial_x A_z)\right)\]
+\[F_y = q\left(-\partial_y \phi - \partial_t A_y +\dot{z}B_x - \dot{x}B_z\right) = q\left(-\partial_y \phi - \partial_t A_y +\dot{z}(\partial_y A_z - \partial_z A_y) - \dot{x}(\partial_x A_y-\partial_y A_x)\right)\]
+\[F_z = q\left(-\partial_z \phi - \partial_t A_z +\dot{x}B_y - \dot{y}B_x\right) = q\left(-\partial_z \phi - \partial_t A_z +\dot{x}(\partial_z A_x-\partial_x A_z) - \dot{y}(\partial_y A_z - \partial_z A_y)\right)\]
+\[F_x = \frac{d}{dt}\left(\frac{\partial U}{\partial \dot{x}}\right)-\frac{\partial U}{\partial x} = \frac{\partial^2 U}{\partial \dot{x}\partial x} \dot{x} + \frac{\partial^2 U}{\partial \dot{x}\partial y} \dot{y} + \frac{\partial^2 U}{\partial \dot{x}\partial z} \dot{z} + \frac{\partial^2 U}{\partial^2 \dot{x}} \ddot{x} + \frac{\partial^2 U}{\partial \dot{x}\partial \dot{y}} \ddot{y} + \frac{\partial^2 U}{\partial \dot{x}\partial \dot{z}} \ddot{z}+\frac{\partial^2 U}{\partial \dot{x}\partial t} -\frac{\partial U}{\partial x}\]
+\[F_y = \frac{d}{dt}\left(\frac{\partial U}{\partial \dot{y}}\right)-\frac{\partial U}{\partial y} = \frac{\partial^2 U}{\partial \dot{y}\partial x} \dot{x} + \frac{\partial^2 U}{\partial \dot{y}\partial y} \dot{y} + \frac{\partial^2 U}{\partial \dot{y}\partial z} \dot{z} + \frac{\partial^2 U}{\partial \dot{y} \partial \dot{x}} \ddot{x} + \frac{\partial^2 U}{\partial^2 \dot{y}} \ddot{y} + \frac{\partial^2 U}{\partial \dot{y}\partial \dot{z}} \ddot{z}+\frac{\partial^2 U}{\partial \dot{y}\partial t} -\frac{\partial U}{\partial y}\]
+\[F_z = \frac{d}{dt}\left(\frac{\partial U}{\partial \dot{z}}\right)-\frac{\partial U}{\partial z} = \frac{\partial^2 U}{\partial \dot{z}\partial x} \dot{x} + \frac{\partial^2 U}{\partial \dot{z}\partial y} \dot{y} + \frac{\partial^2 U}{\partial \dot{z}\partial z} \dot{z} + \frac{\partial^2 U}{\partial \dot{z}\partiañ \dot{x}} \ddot{x} + \frac{\partial^2 U}{\partial \dot{z}\partial \dot{y}} \ddot{y} + \frac{\partial^2 U}{\partial^2 \dot{z}} \ddot{z}+\frac{\partial^2 U}{\partial \dot{z}\partial t} -\frac{\partial U}{\partial z}\]
+Lo términos de $\ddot{q}$ no aparecen, por lo que $U$ debe ser lineal en $\dot{q}$, gracias a los dos últimos términos, podemos integrar y saber que al menos
+\begin{equation} \label{2.1.1}
+    U = q(\phi -\dot{\mathbf{r}}\cdot \mathbf{A})
+\end{equation} \refstepcounter{subsection}
+Hace encajar los términos eléctricos $ q(-\partial_i \phi - \partial_t A_i)$, pero es que además, si sustituimos en el resto de términos, también se cumple para los términos magnéticos.
+Hay muchas manipulaciones que se pueden hacer para ver esto más sencillo, por ejemplo, usando relaciones vectoriales.
 %-------------------------------------------------------------------------------------------
 \section{Teorema de la Energía Cinética}\refstepcounter{subsection}
 %-------------------------------------------------------------------------------------------
 \subsection{Función k-homogénea}
 Una función k-homogéna cumple la siguiente expresión, donde $\lambda$ es un parámetro arbitrario cualquiera
+\begin{equation} \label{2.4.1}
+    f(\{\lambda x_i\})=\lambda^k f(\{x_i\})
+\end{equation} \refstepcounter{subsection}
+La fuerza de lorentz es la siguiente
 \begin{equation} \label{2.4.1}
     f(\{\lambda x_i\})=\lambda^k f(\{x_i\})
 \end{equation} \refstepcounter{subsection}
