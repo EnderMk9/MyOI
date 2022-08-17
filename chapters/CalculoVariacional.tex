@@ -56,10 +56,10 @@ De nuevo, si partimos de un funcional $F[y]$ que depende de un único camino, de
 \begin{equation} \label{1.1.14}
     \Delta \mathbb{F} = \int_{x_A}^{x_B}{\Delta\mathbb{g}dx}=\int_{x_A}^{x_B}{\delta \mathbb{g}dx} + O(a^2)=\underbrace{\int_{x_A}^{x_B}\delta g dx}_{\delta \mathbb{F}=\delta F} + O(a^2)
 \end{equation}
+\newpage
 \section{Extremizar un funcional} \refstepcounter{subsection}
 %-------------------------------------------------------------------------------------------
 Diremos que el extremo de $F$ ocurrirá cuando $\delta F = 0$, puesto que a primer orden el funcional no cambiará de valor al variar $y$.
-\newpage
 De (1.1.13) sustuimos en (1.1.14), sacamos factor común el parámetro $a$ e integramos por partes el segundo término, tal que $ u = \partial_{y'}g$ y $ dv = \eta' dx$
 \begin{equation} \label{1.2.1}
     \int_{x_A}^{x_B}{\left[\frac{\partial g}{\partial y} \eta + \frac{\partial g}{\partial y'} \eta'\right] adx} = a \left[\int_{x_A}^{x_B}{\frac{\partial g}{\partial y} \eta dx} + \left|\frac{\partial g}{\partial y'} \eta\right|_{x_A}^{x_B} -\int_{x_A}^{x_B}{\frac{d}{dx}\left(\frac{\partial g}{\partial y'}\right) \eta dx}\right]
@@ -75,15 +75,25 @@ Ahora, $\delta y$ es completamente arbitrario, pues depende de un parámetro ind
     \boxed{\frac{\partial g}{\partial y} -\frac{d}{dx}\left(\frac{\partial g}{\partial y'}\right) =0} \iff \delta F =0
 \end{equation} \refstepcounter{subsection}\normalsize
 Esta es la ecuación de \textit{Euler-Lagrange}, una ecuación diferencial en derivadas parciales de segundo orden cuya solución $y$ extremiza el funcional definido por $g$.
+
+Es importante notar que si definimos
+\begin{equation} \label{1.2.2}
+    \tilde{g}(f(x),f'(x);x) = g(f(x),f'(x);x) + \frac{d}{dx} h(f(x),x)
+\end{equation} \refstepcounter{subsection}
+Entonces el funcional nos queda, aplicando el teorema fundamental del cálculo
+\begin{equation} \label{1.2.2}
+    \tilde{F}[f]=\int_{x_A}^{x_B}{\tilde{g}(f(x),f'(x);x)dx}=F[f] +\int_{x_A}^{x_B}{\frac{d}{dx} h(f(x),x) dx} = F[f] + h(f(x),x)|_{x_A}^{x_B}
+\end{equation} \refstepcounter{subsection}
+Y como los dos últimos términos son constantes, se verifica que $\delta \tilde{F} = \delta F$, y por lo tanto (1.2.3) permanece invariante bajo esta transformación.
 %-------------------------------------------------------------------------------------------
 \subsubsection{Geodésica del plano}
 Un ejemplo para aplicar (1.2.3) es minimizar la distancia $d=\int{ds}$ en el plano ecuclídeo. Si $y=y(x)$, entonces $ds=\sqrt{dx^2+dy^2}=\sqrt{1+y'^2}dx=g dx$, tal que
 \[\frac{\partial g}{\partial y}=0 \implies \frac{d}{dx}\left(\frac{\partial g}{\partial y'}\right)=0 \implies \frac{\partial g}{\partial y'} = \frac{y'}{\sqrt{1+y'^2}}= K \rightarrow y' = \frac{K}{\sqrt{1-K^2}}=\alpha\]
 Lo cual implica que $y=\alpha x + y_0$, la ecuación de una recta.
 %-------------------------------------------------------------------------------------------
-
+\newpage
 \subsection{Identidad de Beltrami}
-Podemos reescribir (1.2.3) de otra forma que nos va resultar últil para resolver algunos problemas y va a resultar muy importante en episodios posteriores.
+Podemos reescribir (1.2.3) de otra forma que nos va resultar últil para resolver algunos problemas y va a resultar muy importante en episodios posteriores al definir el \textit{Hamiltoniano}
 \[\frac{dg}{dx} = \frac{\partial g}{\partial y} y' + \frac{\partial g}{\partial y'}y'' + \frac{\partial g}{\partial x}\rightarrow \frac{\partial g}{\partial y} y' = \frac{dg}{dx} - \frac{\partial g}{\partial y'}y'' - \frac{\partial g}{\partial x}\]
 Podemos observar que el término en el primer miembro de la segunda expresión aparece en (1.2.3) sin multiplicar por $y'$.
 \[\frac{dg}{dx} - \frac{\partial g}{\partial x} - \left[\frac{\partial g}{\partial y'}y'' + y' \frac{d}{dx}\left(\frac{\partial g}{\partial y'}\right)\right]=0 \rightarrow \frac{dg}{dx} - \frac{\partial g}{\partial x} - \frac{d}{dx}\left(\frac{\partial g}{\partial y'}y'\right)=0\]

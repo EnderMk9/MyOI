@@ -63,6 +63,28 @@ Para aplicar estas ecuaciones en un sistema holonómico tenemos que hayar primer
     p_j = \frac{\partial \pazocal{L}}{\partial \dot{q}_j}=p_j(\{q_k,\dot{q}_k\};t) \rightarrow \dot{q}_j = \dot{q}_j(\{q_k,p_k\};t)
 \end{equation} \refstepcounter{subsection}
 Entonces usamos la ecuación (4.1.3) con mucho cuidado de reemplazar todas las $\dot{q}_j$ por (4.2.7), y ya tendremos $\pazocal{H}$ en una forma que nos permita resolverlo usando (4.2.5).
+
+Además, usando (4.1.3) podemos escribir $\pazocal{L}$ como
+\begin{equation} \label{4.2.7}
+    \pazocal{L}(\{q_i,p_i\};t) = \sum_j^s p_j \dot{q}_j (\{q_i,p_i\};t) -\pazocal{H}(\{q_i,p_i\};t)
+\end{equation} \refstepcounter{subsection}
+Si hacemos la acción de ese lagrangiano tendremos, y al extremizarla se puede comprobar que se obtienen (4.2.5)
+\begin{equation} \label{4.2.7}
+    S = \int_{t_A}^{t_B} \left(\sum_j^s p_j \dot{q}_j -\pazocal{H}\right) dt
+\end{equation} \refstepcounter{subsection}
+Para ello, aplicamos los metodos explicados en el Capítulo 1, teniendo en cuenta que $\pazocal{L}$ no depende de $\dot{p}_i$ 
+\[
+    \delta S = 0 = \int_{t_A}^{t_B} \delta \pazocal{L} dt = \int_{t_A}^{t_B} \sum_i\left(\frac{\partial \pazocal{L}}{\partial q_i} \delta q_i + \frac{\partial \pazocal{L}}{\partial \dot{q}_i} \delta \dot{q}_i + \frac{\partial \pazocal{L}}{\partial p_i} \delta p_i\right) dt
+\]
+Integrando el segundo término por partes como en (1.2.1), usando que $\delta \dot{q}_i =  \dot{(\delta q_i)}$
+\[
+    \delta S = 0 = \int_{t_A}^{t_B} \sum_{i}\left[\left(\frac{\partial \pazocal{L}}{\partial q_i} - \frac{d}{dt}\left(\frac{\partial \pazocal{L}}{\partial \dot{q}_i}\right)\right) \delta q_i + \frac{\partial \pazocal{L}}{\partial p_i}\delta p_i\right] dt
+\]
+Haciendo las derivadas de $\pazocal{L}$ obtenemos
+\[
+    \delta S = 0 = \int_{t_A}^{t_B} \sum_{i}\left[\left(-\frac{\partial \pazocal{H}}{\partial q_i} - \dot{p}_i\right) \delta q_i + \left(\dot{q}_i-\frac{\partial \pazocal{H}}{\partial p_i}\right)\delta p_i\right] dt
+\]
+Y ahora, establecemos que los términos entre paréntesis deben ser 0, puesto que las variaciones son arbitrarias e independientes, obteniendo (4.2.5).
 \vspace{-20pt}
 \subsubsection{Ejemplo}
 Un ejemplo sencillo es el péndulo simple donde 
