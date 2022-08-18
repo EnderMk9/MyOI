@@ -60,6 +60,8 @@ Ahora, esta expresión (3.2.8) es válida para variaciones $\delta q_j$ arbitrar
     \epsilon \frac{d}{dt} \left(\sum_j^s \frac{\partial \pazocal{L}}{\partial \dot{q}_j} \frac{\partial h_j}{\partial \epsilon}\right) = \epsilon \frac{dB}{dt} \implies \epsilon \frac{d}{dt}\left[\sum_j^s \frac{\partial \pazocal{L}}{\partial \dot{q}_j} \frac{\partial h_j}{\partial \epsilon} - B \right] = 0
 \end{equation} \refstepcounter{subsection}
 Ahora, $\epsilon$ es una variación arbitraria de la transformación de la simetría, por lo tanto, la derivada debe anularse, obteniendo (3.2.3).
+
+En la mayoría de los casos, $B=0$, salvo para algunas simetrías infinitesimales. Una simetría infinitesimal es, por ejemplo, el ejemplo que muestro abajo, siendo las transformaciones mostradas rotaciones infinitesiamales.
 \subsection{Transformaciones del tiempo}
 Si además hacemos la transformación 
 \begin{equation} \label{3.3.1}
@@ -79,3 +81,4 @@ Si tenemos una masa en en plano bajo la acción de una fuerza central, tal que $
 \[\pazocal{L}'=1/2m(\dot{x}^2+\dot{y}^2+\cancel{\epsilon^2(\dot{x}^2+\dot{y}^2)}) - U\left(\sqrt{x^2 +y^2 +\cancel{\epsilon^2(x^2+y^2)}}\right)\]
 Entonces la cantidad conservada es el momento angular
 \[I=\frac{\partial \pazocal{L}}{\partial \dot{x}}\frac{d}{d\epsilon}(x+\epsilon y)+\frac{\partial \pazocal{L}}{\partial \dot{y}}\frac{d}{d\epsilon}(y-\epsilon x)=m(\dot{x}y-\dot{y}x)=-m \mathbf{r} \times \mathbf{v}= -\mathbf{J}_z\]
+Si expresamos la transformación en términos de senos y cosenos de épsilon, en vez de sus series de taylor a primer orden, se puede observar que $\pazocal{L}$ es invariante a todos los órdenes.
