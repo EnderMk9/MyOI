@@ -33,35 +33,41 @@ Consideremos unas transformaciones genéricas $h_j$ de las coordendas $q_j$, par
 \begin{equation} \label{3.3.1}
     q_j \mapsto q'_j=h_j(\{q_i\},\epsilon) \ \ \ \ h_j(\{q_i\},0)=q_j
 \end{equation} \refstepcounter{subsection}
-Si el conjunto de las transformaciones $h_j$ deja invariante a $\pazocal{L}$ de la siguiente forma
+Si el conjunto de las transformaciones $h_j$ verifican
 \begin{equation} \label{3.3.2}
-    \pazocal{L}(\(\{q_j,\dot{q}_j\};t)+\epsilon \frac{dB}{dt}+ O(\epsilon^2)=\pazocal{L}(\{h_j(\{q_i\},\epsilon),\dot{h}_j(\{q_i,\dot{q}_i\},\epsilon)\};t)
+    \tilde{\pazocal{L}}(\(\{q_j,\dot{q}_j\};t;\epsilon) = \pazocal{L}(\(\{q_j,\dot{q}_j\};t)+\epsilon \frac{dB}{dt}+ O(\epsilon^2)=\pazocal{L}(\{h_j(\{q_i\},\epsilon),\dot{h}_j(\{q_i,\dot{q}_i\},\epsilon)\};t)
 \end{equation} \refstepcounter{subsection}
-Donde $B = B(\{q_i,\dot{q}_i\};t)$, entonces se conseva la siguiente cantidad para soluciones de (2.2.1)(E-L)
+Donde $B = B(\{q_i\};t)$, entonces se conseva la siguiente cantidad para soluciones de (2.2.1)(E-L)
+\vspace{-20pt}
 \begin{equation} \label{3.3.3}
-    I (\{q_j,\dot{q}_j\};t) = \sum_j^s{\frac{\partial \pazocal{L}}{\partial \dot{q}_j}\frac{d h_j}{d\epsilon}} -B\ \ \ \ \ \frac{d I}{dt} = 0
+    I (\{q_j,\dot{q}_j\};t) = \sum_j^s{\frac{\partial \pazocal{L}}{\partial \dot{q}_j}\left.\frac{\partial h_j}{\partial \epsilon}\right|_{\epsilon=0}} -B\ \ \ \ \ \frac{d I}{dt} = 0
 \end{equation} \refstepcounter{subsection}
-\vspace{-40pt}
+\vspace{-35pt}
 \subsection{Demostración}
-Vamos a expandir en Taylor $h_j$ en términos de $\epsilon$
+Primero hay que considerar por qué usamos la condición (3.2.2) para decir que $h_j$ forman una simetría, para ello, vamos considerar que una vez hecha la transformación $h_j$, variamos con respecto a otro parámetro llamado $a$ (con sus funciones $\eta_i$ asociadas)
 \begin{equation} \label{3.3.3}
-    q_j' = h_j({q_j},\epsilon) = q_j + \epsilon \frac{\partial h_j}{\partial \epsilon} + O(\epsilon^2)
+    \tilde{S} = \int_{t_A}^{t_B}  \tilde{\pazocal{L}}(\(\{q'_j,\dot{q}'_j\};t) = S + \epsilon B|_{t_A}^{t_B} \implies \delta_a \tilde{S} = \delta_a S
 \end{equation} \refstepcounter{subsection}
-Ahora recordando la definición (1.1.1), tenemos que $\delta q_j = q_j'-q_j = \epsilon \partial_\epsilon h_j \label{1.1.1} \inlineeqnum$ (despreciamos los órdenes superiores porque $\delta q_j$ es la variación primera, $\Delta q_j$, la variación total, sí que contiene a todos los órdenes)
+Aplicando (1.2.5) vemos que la acción se mantiene invariante, es decir, que si consideramos $\epsilon \ll 1$, entonces si $q_j$ extremizan a $S$, entonces $q_j' = h_j(\{q_i\};\epsilon)$ extremizan a $\tilde{S}$, por este motivo se llaman simetrías. Hay que tener cuidado, muchas simetrías que cumplen $\tilde{\pazocal{L}}=\pazocal{L}$, pero a la hora de calcular (3.2.6) no sale 0, sino que luego se anula con los términos de orden superior.
 
-Por otro lado, y de una forma equivalente a lo que acabamos de hacer $\delta \pazocal{L}(\{q_j\}) = \epsilon dB/dt \label{1.1.1} \inlineeqnum$ (de nuevo ignoramos los órdenes superiores para la primera variación). Nótese que estas dos expresiones que hemos encontrado corresponden a establecer una función concreta para la función $\eta$ que definíamos en el primer capítulo, y $\epsilon$ toma el papel del parámetro a.
-
-Ahora, tenemos que podemos calcular $\delta \pazocal{L}$ usando la regla de la cadena, y además, al igual que hicimos en el primer capítulo, suponemos que $q_j$ extremiza el funcional, y que por tanto, verifican las ecuaciones de \texit{Euler-Lagrange} (2.2.1), además usaremos que la derivada temporal y la variación conmutan como se demostró en el prmer capítulo
+Vamos a expandir en Taylor $h_j$ en términos de $\epsilon$ y usamos la definición (1.1.1) (despreciamos los órdenes superiores porque $\delta q_j$ es la variación primera, $\Delta q_j$, la variación total, sí que contiene a todos los órdenes)
 \begin{equation} \label{3.3.3}
-    \delta \pazocal{L}(\{\delta q_j\}) =\sum_j^s \left[\frac{\partial \pazocal{L}}{\partial q_j} \delta q_j + \frac{\partial \pazocal{L}}{\partial \dot{q}_j} \delta \dot{q}_j\right] =\sum_j^s \left[\frac{d}{dt}\left(\frac{\partial \pazocal{L}}{\partial \dot{q}_j}\right) \delta q_j + \frac{\partial \pazocal{L}}{\partial \dot{q}_j} \delta \dot{q}_j\right] = \frac{d}{dt} \left(\sum_j^s \frac{\partial \pazocal{L}}{\partial \dot{q}_j} \delta q_j\right)
+    q_j' = h_j({q_j},\epsilon) = q_j + \epsilon\left.\frac{\partial h_j}{\partial \epsilon}\right|_{\epsilon=0} + O(\epsilon^2) \implies \delta_\epsilon q_j = q_j'-q_j = \epsilon\left.\frac{\partial h_j}{\partial \epsilon}\right|_{\epsilon=0}
 \end{equation} \refstepcounter{subsection}
-Ahora, esta expresión (3.2.8) es válida para variaciones $\delta q_j$ arbitrarias, si estas se hacen 0, $\delta \pazocal{L} =0$, por tanto, los caminos $q_j$ verifican (2.2.1) (E-L). Por otro lado (3.2.7) se aplica solo para las funciones  $\delta q_j$ definidas en (3.2.6), puesto que son las que vienen dadas por la simetría, pero es válida para cualquier camino $q_j$ genérico. De esta forma evaluando (3.2.7) con las $q_j$ que verifican (2.2.1) (E-L) y evaluando (3.2.8) con (3.2.6), ambas variaciones serán iguales, tal que
+Ahora tenemos la primera variación del lagrangiano siguiendo las simetrias definidas en (3.2.5), variando $\epsilon$, para unas funciones de refenrencia $q_j$ arbitrarias
 \begin{equation} \label{3.3.3}
-    \epsilon \frac{d}{dt} \left(\sum_j^s \frac{\partial \pazocal{L}}{\partial \dot{q}_j} \frac{\partial h_j}{\partial \epsilon}\right) = \epsilon \frac{dB}{dt} \implies \epsilon \frac{d}{dt}\left[\sum_j^s \frac{\partial \pazocal{L}}{\partial \dot{q}_j} \frac{\partial h_j}{\partial \epsilon} - B \right] = 0
+    \delta_\epsilon \pazocal{L}(\{q_j\}) = \epsilon \frac{dB}{dt} = \epsilon \left.\frac{d\tilde{\pazocal{L}}}{d\epsilon}\right|_{\epsilon=0} = \epsilon\sum_j^s \frac{\partial \pazocal{L}}{\partial q_j}\left.\frac{d h_j}{d\epsilon}\right|_{\epsilon=0} + \frac{\partial \pazocal{L}}{\partial \dot{q}_j}\left.\frac{d \dot{h}_j}{d\epsilon}\right|_{\epsilon=0}
+\end{equation} \refstepcounter{subsection}
+
+Ahora, calculamos $\delta_a \pazocal{L}$, la variación respecto a un parámetro a (junto con sus funciones  $\eta_i$ asociadas) arbitrario, usando la regla de la cadena, y además, en este caso los caminos de referencia $q_j$ extremizan el funcional,  por tanto, verifican las ecuaciones de \texit{Euler-Lagrange} (2.2.1), además usaremos que la derivada temporal y la variación conmutan como se demostró en el prmer capítulo
+\begin{equation} \label{3.3.3}
+    \delta_a \pazocal{L}(\{\delta q_j\}) =\sum_j^s \left[\frac{\partial \pazocal{L}}{\partial q_j} \delta_a q_j + \frac{\partial \pazocal{L}}{\partial \dot{q}_j} \delta_a \dot{q}_j\right] =\sum_j^s \left[\frac{d}{dt}\left(\frac{\partial \pazocal{L}}{\partial \dot{q}_j}\right) \delta_a q_j + \frac{\partial \pazocal{L}}{\partial \dot{q}_j} \delta_a \dot{q}_j\right] = \frac{d}{dt} \left(\sum_j^s \frac{\partial \pazocal{L}}{\partial \dot{q}_j} \delta_a q_j\right)
+\end{equation} \refstepcounter{subsection}
+Ahora, esta expresión (3.2.8) es válida para variaciones $\delta_a q_j$ arbitrarias, y los caminos $q_j$ verifican (2.2.1) (E-L). Por otro lado (3.2.7) se aplica solo para las funciones  $\delta_\epsilon q_j$ definidas en (3.2.6), puesto que son las que vienen dadas por la simetría, pero es válida para cualquier camino $q_j$ genérico. De esta forma evaluando (3.2.7) con las $q_j$ que verifican (2.2.1) (E-L) y evaluando (3.2.8) con (3.2.6), ambas variaciones serán iguales, tal que
+\begin{equation} \label{3.3.3}
+    \epsilon \frac{d}{dt} \left(\sum_j^s \frac{\partial \pazocal{L}}{\partial \dot{q}_j}\left.\frac{\partial h_j}{\partial \epsilon}\right|_{\epsilon=0}\right) = \epsilon \frac{dB}{dt} \implies \epsilon \frac{d}{dt}\left[\sum_j^s \frac{\partial \pazocal{L}}{\partial \dot{q}_j} \left.\frac{\partial h_j}{\partial \epsilon}\right|_{\epsilon=0} - B \right] = 0
 \end{equation} \refstepcounter{subsection}
 Ahora, $\epsilon$ es una variación arbitraria de la transformación de la simetría, por lo tanto, la derivada debe anularse, obteniendo (3.2.3).
-
-En la mayoría de los casos, $B=0$, salvo para algunas simetrías infinitesimales. Una simetría infinitesimal es, por ejemplo, el ejemplo que muestro abajo, siendo las transformaciones mostradas rotaciones infinitesiamales.
 \subsection{Transformaciones del tiempo}
 Si además hacemos la transformación 
 \begin{equation} \label{3.3.1}
@@ -76,7 +82,7 @@ Basta con añadir el término de la variación de $t$ en la regla de la cadena e
     \frac{d}{dt}\left[\sum_j^s \frac{\partial \pazocal{L}}{\partial \dot{q}_j} \frac{\partial h_j}{\partial \epsilon} - B \right] + \frac{\partial \pazocal{L}}{\partial t}\frac{d \tau}{d\epsilon} = 0
 \end{equation} \refstepcounter{subsection}
 \subsection{Ejemplo}
-Si tenemos una masa en en plano bajo la acción de una fuerza central, tal que $\pazocal{L}=1/2m(\dot{x}^2+\dot{y}^2)-U(\sqrt{x^2+y^2})$, si tomamos las transformaciones $x \mapsto x +\epsilon y$ y $y \mapsto y - \epsilon x$, vemos que el lagrangiano se mantiene invariante a orden $\epsilon$.
+Si tenemos una masa en en plano bajo la acción de una fuerza central, tal que $\pazocal{L}=1/2m(\dot{x}^2+\dot{y}^2)-U(\sqrt{x^2+y^2})$, si tomamos las transformaciones $x \mapsto x +\epsilon y$ y $y \mapsto y - \epsilon x$, vemos que el lagrangiano se mantiene invariante a orden $\epsilon^2$.
 \[\pazocal{L}'=1/2m((\dot{x} +\epsilon \dot{y})^2+(\dot{y} -\epsilon \dot{x})^2)-U\left(\sqrt{(x +\epsilon y)^2+(y - \epsilon x)^2}\right)\]
 \[\pazocal{L}'=1/2m(\dot{x}^2+\dot{y}^2+\cancel{\epsilon^2(\dot{x}^2+\dot{y}^2)}) - U\left(\sqrt{x^2 +y^2 +\cancel{\epsilon^2(x^2+y^2)}}\right)\]
 Entonces la cantidad conservada es el momento angular
