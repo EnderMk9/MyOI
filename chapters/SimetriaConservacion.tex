@@ -2,7 +2,7 @@
 \labch{intro}
 
 \section{Ejemplos de invariancias} 
-\subsection{Invariancia temporal y Hamiltoniano}\refstepcounter{subsection}
+\subsection{Invariancia temporal y energía generalizada}\refstepcounter{subsection}
 Si tenemos un desplazamiento arbitratio en el tiempo, $t\mapsto t + \delta t$, y se verifica que $\pazocal{L}(\{q_j,\dot{q}_j\};t)=\pazocal{L}(\{q_j,\dot{q}_j\};t+\delta t)$, esto implica que la parcial de $\pazocal{L}$ con respecto a $t$ es 0. Si ahora desarrollamos la derivadada total de de $\pazocal{L}$ con respecto a $t$, tenemos
 \vspace{-13pt}
 \[\frac{d \pazocal{L}}{dt}=\sum^s\left(\frac{\partial \pazocal{L}}{\partial q_j}\dot{q}_j+\frac{\partial \pazocal{L}}{\partial \dot{q}_j}\ddot{q}_j\right)+\cancelto{0}{\frac{\partial \pazocal{L}}{\partial t}}\]
@@ -12,14 +12,14 @@ Ahora lo de dentro del paréntesis es la derivada de un producto, y usando la li
 \begin{equation} \label{3.1.1}
     \frac{d}{dt}\left(\sum^s \frac{\partial \pazocal{L}}{\partial \dot{q}_j}\dot{q}_j-\pazocal{L}\right) = -\frac{\partial \pazocal{L}}{\partial t} =0
 \end{equation} \refstepcounter{subsection}
-Definimos entonces el \textit{Hamiltoniano} $\pazocal{H}$, que se conservará cuando $\pazocal{L}$ no dependa explícitamente del tiempo.
+Definimos entonces la función energía generalizada $H$, que se conservará cuando $\pazocal{L}$ no dependa explícitamente del tiempo.
 \begin{equation} \label{3.1.2}
-    \pazocal{H} \equiv \sum^s \frac{\partial \pazocal{L}}{\partial \dot{q}_j}\dot{q}_j-\pazocal{L} \ \ \ \ \ \frac{d \pazocal{H}}{dt}=-\frac{\partial \pazocal{L}}{\partial t}
+    H \equiv \sum^s \frac{\partial \pazocal{L}}{\partial \dot{q}_j}\dot{q}_j-\pazocal{L} \ \ \ \ \ \frac{d H}{dt}=-\frac{\partial \pazocal{L}}{\partial t}
 \end{equation} \refstepcounter{subsection} 
-Podemos además observar que si se verifican los supuestos del teorema de la energía cinética (el cambio de coordenadas no depende del tiempo) podemos aplicar (2.4.10), y la energía potencial es conservativa, llegamos a $\pazocal{H}=E$
+Podemos además observar que si se verifican los supuestos del teorema de la energía cinética (el cambio de coordenadas no depende del tiempo) podemos aplicar (2.4.10), y la energía potencial es conservativa, llegamos a $H=E$, es decir, la energía generalizada es igual a la energía clásica.
 \vspace{-10pt}
 \begin{equation} \label{3.1.3}
-    \pazocal{H} = \cancelto{2T}{\sum^s\frac{\partial \pazocal{T}}{\partial \dot{q}_j}\dot{q}_j}-\cancelto{0}{\sum^s\frac{\partial \pazocal{U}}{\partial \dot{q}_j}\dot{q}_j}-(T-U)= 2T -T + U = T+U =E 
+    H = \cancelto{2T}{\sum^s\frac{\partial \pazocal{T}}{\partial \dot{q}_j}\dot{q}_j}-\cancelto{0}{\sum^s\frac{\partial \pazocal{U}}{\partial \dot{q}_j}\dot{q}_j}-(T-U)= 2T -T + U = T+U =E 
 \end{equation} \refstepcounter{subsection}
 
 \vspace{-25pt}
@@ -33,21 +33,47 @@ Consideremos unas transformaciones genéricas $h_j$ de las coordendas $q_j$, par
 \begin{equation} \label{3.3.1}
     q_j \mapsto q'_j=h_j(\{q_i\},\epsilon) \ \ \ \ h_j(\{q_i\},0)=q_j
 \end{equation} \refstepcounter{subsection}
-\vspace{-40pt}
-\subsection{Enunciado} 
-Si el conjunto de las transformaciones $h_j$ deja invariante a $\pazocal{L}$ a orden $\epsilon$ (orden uno)
+Si el conjunto de las transformaciones $h_j$ deja invariante a $\pazocal{L}$ de la siguiente forma
 \begin{equation} \label{3.3.2}
-    \pazocal{L}(\(\{q_j,\dot{q}_j\};t)+ O(\epsilon^2)=\pazocal{L}(\(h_j(\{q_i\},\epsilon),\dot{h}_j(\{q_i,\dot{q}_i\},\epsilon)\);t)
+    \pazocal{L}(\(\{q_j,\dot{q}_j\};t)+\epsilon \frac{dB}{dt}+ O(\epsilon^2)=\pazocal{L}(\{h_j(\{q_i\},\epsilon),\dot{h}_j(\{q_i,\dot{q}_i\},\epsilon)\};t)
 \end{equation} \refstepcounter{subsection}
-Entonces se conseva la siguiente cantidad
+Donde $B = B(\{q_i,\dot{q}_i\};t)$, entonces se conseva la siguiente cantidad para soluciones de (2.2.1)(E-L)
 \begin{equation} \label{3.3.3}
-    I (\{q_j,\dot{q}_j\};t) = \sum_j^s{\frac{\partial \pazocal{L}}{\partial \dot{q}_j}\frac{d h_j}{d\epsilon}} \ \ \ \ \ \frac{d I}{dt} = 0
+    I (\{q_j,\dot{q}_j\};t) = \sum_j^s{\frac{\partial \pazocal{L}}{\partial \dot{q}_j}\frac{d h_j}{d\epsilon}} -B\ \ \ \ \ \frac{d I}{dt} = 0
 \end{equation} \refstepcounter{subsection}
-Nuestra misión va a ser encontrar las transformaciones (simetrías) que no alteren $\pazocal{L}$ para hallar cantidades conservadas asociadas.
+\vspace{-40pt}
+\subsection{Demostración}
+Vamos a expandir en Taylor $h_j$ en términos de $\epsilon$
+\begin{equation} \label{3.3.3}
+    q_j' = h_j({q_j},\epsilon) = q_j + \epsilon \frac{\partial h_j}{\partial \epsilon} + O(\epsilon^2)
+\end{equation} \refstepcounter{subsection}
+Ahora recordando la definición (1.1.1), tenemos que $\delta q_j = q_j'-q_j = \epsilon \partial_\epsilon h_j \label{1.1.1} \inlineeqnum$ (despreciamos los órdenes superiores porque $\delta q_j$ es la variación primera, $\Delta q_j$, la variación total, sí que contiene a todos los órdenes)
 
-%\subsection{Demostración}
+Por otro lado, y de una forma equivalente a lo que acabamos de hacer $\delta \pazocal{L}(\{q_j\}) = \epsilon dB/dt \label{1.1.1} \inlineeqnum$ (de nuevo ignoramos los órdenes superiores para la primera variación). Nótese que estas dos expresiones que hemos encontrado corresponden a establecer una función concreta para la función $\eta$ que definíamos en el primer capítulo, y $\epsilon$ toma el papel del parámetro a.
 
-\subsection{Ejemplo} \refstepcounter{subsection}
+Ahora, tenemos que podemos calcular $\delta \pazocal{L}$ usando la regla de la cadena, y además, al igual que hicimos en el primer capítulo, suponemos que $q_j$ extremiza el funcional, y que por tanto, verifican las ecuaciones de \texit{Euler-Lagrange} (2.2.1), además usaremos que la derivada temporal y la variación conmutan como se demostró en el prmer capítulo
+\begin{equation} \label{3.3.3}
+    \delta \pazocal{L}(\{\delta q_j\}) =\sum_j^s \left[\frac{\partial \pazocal{L}}{\partial q_j} \delta q_j + \frac{\partial \pazocal{L}}{\partial \dot{q}_j} \delta \dot{q}_j\right] =\sum_j^s \left[\frac{d}{dt}\left(\frac{\partial \pazocal{L}}{\partial \dot{q}_j}\right) \delta q_j + \frac{\partial \pazocal{L}}{\partial \dot{q}_j} \delta \dot{q}_j\right] = \frac{d}{dt} \left(\sum_j^s \frac{\partial \pazocal{L}}{\partial \dot{q}_j} \delta q_j\right)
+\end{equation} \refstepcounter{subsection}
+Ahora, esta expresión (3.2.8) es válida para variaciones $\delta q_j$ arbitrarias, si estas se hacen 0, $\delta \pazocal{L} =0$, por tanto, los caminos $q_j$ verifican (2.2.1) (E-L). Por otro lado (3.2.7) se aplica solo para las funciones  $\delta q_j$ definidas en (3.2.6), puesto que son las que vienen dadas por la simetría, pero es válida para cualquier camino $q_j$ genérico. De esta forma evaluando (3.2.7) con las $q_j$ que verifican (2.2.1) (E-L) y evaluando (3.2.8) con (3.2.6), ambas variaciones serán iguales, tal que
+\begin{equation} \label{3.3.3}
+    \epsilon \frac{d}{dt} \left(\sum_j^s \frac{\partial \pazocal{L}}{\partial \dot{q}_j} \frac{\partial h_j}{\partial \epsilon}\right) = \epsilon \frac{dB}{dt} \implies \epsilon \frac{d}{dt}\left[\sum_j^s \frac{\partial \pazocal{L}}{\partial \dot{q}_j} \frac{\partial h_j}{\partial \epsilon} - B \right] = 0
+\end{equation} \refstepcounter{subsection}
+Ahora, $\epsilon$ es una variación arbitraria de la transformación de la simetría, por lo tanto, la derivada debe anularse, obteniendo (3.2.3).
+\subsection{Transformaciones del tiempo}
+Si además hacemos la transformación 
+\begin{equation} \label{3.3.1}
+    t \mapsto \tau=\tau(t,\epsilon) \ \ \ \ \tau(t,0)=t \ \ \ \ \ \ \ \delta t = \epsilon \frac{d \tau}{d\epsilon}
+\end{equation} \refstepcounter{subsection}
+Y tenemos que
+\begin{equation} \label{3.3.2}
+    \pazocal{L}(\(\{q_j,\dot{q}_j\};t)+\epsilon \frac{dB}{dt}+ O(\epsilon^2)=\pazocal{L}(\{h_j(\{q_i\},\epsilon),\dot{h}_j(\{q_i,\dot{q}_i\},\epsilon)\};\tau(t,\epsilon))
+\end{equation} \refstepcounter{subsection}
+Basta con añadir el término de la variación de $t$ en la regla de la cadena en (3.2.8), y aplicando los mismos razonamientos que antes, llegamos a una expresión más general del teorema (aunque hay una versión aún más general, véase \textit{Johns, O. D.; Analytical mechanics for relativity and quantum mechanics.}).
+\begin{equation} \label{3.3.3}
+    \frac{d}{dt}\left[\sum_j^s \frac{\partial \pazocal{L}}{\partial \dot{q}_j} \frac{\partial h_j}{\partial \epsilon} - B \right] + \frac{\partial \pazocal{L}}{\partial t}\frac{d \tau}{d\epsilon} = 0
+\end{equation} \refstepcounter{subsection}
+\subsection{Ejemplo}
 Si tenemos una masa en en plano bajo la acción de una fuerza central, tal que $\pazocal{L}=1/2m(\dot{x}^2+\dot{y}^2)-U(\sqrt{x^2+y^2})$, si tomamos las transformaciones $x \mapsto x +\epsilon y$ y $y \mapsto y - \epsilon x$, vemos que el lagrangiano se mantiene invariante a orden $\epsilon$.
 \[\pazocal{L}'=1/2m((\dot{x} +\epsilon \dot{y})^2+(\dot{y} -\epsilon \dot{x})^2)-U\left(\sqrt{(x +\epsilon y)^2+(y - \epsilon x)^2}\right)\]
 \[\pazocal{L}'=1/2m(\dot{x}^2+\dot{y}^2+\cancel{\epsilon^2(\dot{x}^2+\dot{y}^2)}) - U\left(\sqrt{x^2 +y^2 +\cancel{\epsilon^2(x^2+y^2)}}\right)\]
