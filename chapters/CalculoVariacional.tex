@@ -82,9 +82,9 @@ Es importante notar que si definimos
 \end{equation} \refstepcounter{subsection}
 Entonces el funcional nos queda, aplicando el teorema fundamental del cálculo
 \begin{equation} \label{1.2.2}
-    \tilde{F}[f]=\int_{x_A}^{x_B}{\tilde{g}(f(x),f'(x);x)dx}=F[f] +\int_{x_A}^{x_B}{\frac{d}{dx} h(f(x),x) dx} = F[f] + h(f(x),f'(x),x)|_{x_A}^{x_B}
+    \tilde{F}[f]=\int_{x_A}^{x_B}{\tilde{g}(f(x),f'(x);x)dx}=F[f] +\int_{x_A}^{x_B}{\frac{d}{dx} h(f(x),x) dx} = F[f] + h(f(x),x)|_{x_A}^{x_B}
 \end{equation} \refstepcounter{subsection}
-Y como los dos últimos términos son constantes, se verifica que $\delta \tilde{F} = \delta F$, y por lo tanto (1.2.3) permanece invariante bajo esta transformación.
+Y como la variación en los extremos de anula (1.1.4), se verifica que $\delta \tilde{F} = \delta F$, y por lo tanto (1.2.3) permanece invariante bajo esta transformación.
 %-------------------------------------------------------------------------------------------
 \subsubsection{Geodésica del plano}
 Un ejemplo para aplicar (1.2.3) es minimizar la distancia $d=\int{ds}$ en el plano ecuclídeo. Si $y=y(x)$, entonces $ds=\sqrt{dx^2+dy^2}=\sqrt{1+y'^2}dx=g dx$, tal que

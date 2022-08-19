@@ -29,62 +29,100 @@ Si tenemos un desplazamiento arbitrario en una de las coordenadas generalizadas,
     \frac{d}{dt}\left(\frac{\partial \pazocal{L}}{\partial \dot{q}_k}\right) = \dot{p}_k = 0 \implies p_k = C
 \end{equation} \refstepcounter{subsection}
 \section{Teorema de Noether} \refstepcounter{subsection}
-Consideremos unas transformaciones genéricas $h_j$ de las coordendas $q_j$, parametrizadas por un parámetro $\epsilon$ independiente del tiempo tal que 
+Consideremos unas transformaciones genéricas $h_j$ de las coordendas $q_j$, además de la transformación $\tau$ de t, parametrizadas por un parámetro $\epsilon$ de cualquier orden
 \begin{equation} \label{3.3.1}
-    q_j \mapsto q'_j=h_j(\{q_i\},\epsilon) \ \ \ \ h_j(\{q_i\},0)=q_j
+    \begin{matrix}
+        q_j \mapsto q'_j=h_j(\{q_i\},t,\epsilon) \ \ \ \ h_j(\{q_i\},t,0)=q_j \\
+        t \mapsto t'=\tau(\{q_i\},t,\epsilon) \ \ \ \ \tau(\{q_i\},t,0)=t \\
+    \end{matrix}
 \end{equation} \refstepcounter{subsection}
-Si el conjunto de las transformaciones $h_j$ verifican
+Si estas transformaciones verifican
 \begin{equation} \label{3.3.2}
-    \tilde{\pazocal{L}}(\(\{q_j,\dot{q}_j\};t;\epsilon) = \pazocal{L}(\(\{q_j,\dot{q}_j\};t)+\epsilon \frac{dB}{dt}+ O(\epsilon^2)=\pazocal{L}(\{h_j(\{q_i\},\epsilon),\dot{h}_j(\{q_i,\dot{q}_i\},\epsilon)\};t)
+    \int_{\tau_A}^{\tau_B} \pazocal{L}(h_j,h'_j;\tau)d \tau=\int_{t_A}^{t_B}\left(\pazocal{L}(\(\{q_j,\dot{q}_j\};t) + \epsilon\frac{dB}{dt}\right)dt \ \ \ \ \ h'_j = \frac{dh_j}{d\tau}
 \end{equation} \refstepcounter{subsection}
-Donde $B = B(\{q_i\};t)$, entonces se conseva la siguiente cantidad para soluciones de (2.2.1)(E-L)
-\vspace{-20pt}
-\begin{equation} \label{3.3.3}
-    I (\{q_j,\dot{q}_j\};t) = \sum_j^s{\frac{\partial \pazocal{L}}{\partial \dot{q}_j}\left.\frac{\partial h_j}{\partial \epsilon}\right|_{\epsilon=0}} -B\ \ \ \ \ \frac{d I}{dt} = 0
-\end{equation} \refstepcounter{subsection}
-\vspace{-35pt}
-\subsection{Demostración}
-Primero hay que considerar por qué usamos la condición (3.2.2) para decir que $h_j$ forman una simetría, para ello, vamos considerar que una vez hecha la transformación $h_j$, variamos con respecto a otro parámetro llamado $a$ (con sus funciones $\eta_i$ asociadas)
-\begin{equation} \label{3.3.3}
-    \tilde{S} = \int_{t_A}^{t_B}  \tilde{\pazocal{L}}(\(\{q'_j,\dot{q}'_j\};t) = S + \epsilon B|_{t_A}^{t_B} \implies \delta_a \tilde{S} = \delta_a S
-\end{equation} \refstepcounter{subsection}
-Aplicando (1.2.5) vemos que la acción se mantiene invariante, es decir, que si consideramos $\epsilon \ll 1$, entonces si $q_j$ extremizan a $S$, entonces $q_j' = h_j(\{q_i\};\epsilon)$ extremizan a $\tilde{S}$, por este motivo se llaman simetrías. Hay que tener cuidado, muchas simetrías que cumplen $\tilde{\pazocal{L}}=\pazocal{L}$, pero a la hora de calcular (3.2.6) no sale 0, sino que luego se anula con los términos de orden superior.
-
-Vamos a expandir en Taylor $h_j$ en términos de $\epsilon$ y usamos la definición (1.1.1) (despreciamos los órdenes superiores porque $\delta q_j$ es la variación primera, $\Delta q_j$, la variación total, sí que contiene a todos los órdenes)
-\begin{equation} \label{3.3.3}
-    q_j' = h_j({q_j},\epsilon) = q_j + \epsilon\left.\frac{\partial h_j}{\partial \epsilon}\right|_{\epsilon=0} + O(\epsilon^2) \implies \delta_\epsilon q_j = q_j'-q_j = \epsilon\left.\frac{\partial h_j}{\partial \epsilon}\right|_{\epsilon=0}
-\end{equation} \refstepcounter{subsection}
-Ahora tenemos la primera variación del lagrangiano siguiendo las simetrias definidas en (3.2.5), variando $\epsilon$, para unas funciones de refenrencia $q_j$ arbitrarias
-\begin{equation} \label{3.3.3}
-    \delta_\epsilon \pazocal{L}(\{q_j\}) = \epsilon \frac{dB}{dt} = \epsilon \left.\frac{d\tilde{\pazocal{L}}}{d\epsilon}\right|_{\epsilon=0} = \epsilon\sum_j^s \frac{\partial \pazocal{L}}{\partial q_j}\left.\frac{d h_j}{d\epsilon}\right|_{\epsilon=0} + \frac{\partial \pazocal{L}}{\partial \dot{q}_j}\left.\frac{d \dot{h}_j}{d\epsilon}\right|_{\epsilon=0}
-\end{equation} \refstepcounter{subsection}
-
-Ahora, calculamos $\delta_a \pazocal{L}$, la variación respecto a un parámetro a (junto con sus funciones  $\eta_i$ asociadas) arbitrario, usando la regla de la cadena, y además, en este caso los caminos de referencia $q_j$ extremizan el funcional,  por tanto, verifican las ecuaciones de \texit{Euler-Lagrange} (2.2.1), además usaremos que la derivada temporal y la variación conmutan como se demostró en el prmer capítulo
-\begin{equation} \label{3.3.3}
-    \delta_a \pazocal{L}(\{\delta q_j\}) =\sum_j^s \left[\frac{\partial \pazocal{L}}{\partial q_j} \delta_a q_j + \frac{\partial \pazocal{L}}{\partial \dot{q}_j} \delta_a \dot{q}_j\right] =\sum_j^s \left[\frac{d}{dt}\left(\frac{\partial \pazocal{L}}{\partial \dot{q}_j}\right) \delta_a q_j + \frac{\partial \pazocal{L}}{\partial \dot{q}_j} \delta_a \dot{q}_j\right] = \frac{d}{dt} \left(\sum_j^s \frac{\partial \pazocal{L}}{\partial \dot{q}_j} \delta_a q_j\right)
-\end{equation} \refstepcounter{subsection}
-Ahora, esta expresión (3.2.8) es válida para variaciones $\delta_a q_j$ arbitrarias, y los caminos $q_j$ verifican (2.2.1) (E-L). Por otro lado (3.2.7) se aplica solo para las funciones  $\delta_\epsilon q_j$ definidas en (3.2.6), puesto que son las que vienen dadas por la simetría, pero es válida para cualquier camino $q_j$ genérico. De esta forma evaluando (3.2.7) con las $q_j$ que verifican (2.2.1) (E-L) y evaluando (3.2.8) con (3.2.6), ambas variaciones serán iguales, tal que
-\begin{equation} \label{3.3.3}
-    \epsilon \frac{d}{dt} \left(\sum_j^s \frac{\partial \pazocal{L}}{\partial \dot{q}_j}\left.\frac{\partial h_j}{\partial \epsilon}\right|_{\epsilon=0}\right) = \epsilon \frac{dB}{dt} \implies \epsilon \frac{d}{dt}\left[\sum_j^s \frac{\partial \pazocal{L}}{\partial \dot{q}_j} \left.\frac{\partial h_j}{\partial \epsilon}\right|_{\epsilon=0} - B \right] = 0
-\end{equation} \refstepcounter{subsection}
-Ahora, $\epsilon$ es una variación arbitraria de la transformación de la simetría, por lo tanto, la derivada debe anularse, obteniendo (3.2.3).
-\subsection{Transformaciones del tiempo}
-Si además hacemos la transformación 
-\begin{equation} \label{3.3.1}
-    t \mapsto \tau=\tau(t,\epsilon) \ \ \ \ \tau(t,0)=t \ \ \ \ \ \ \ \delta t = \epsilon \frac{d \tau}{d\epsilon}
-\end{equation} \refstepcounter{subsection}
-Y tenemos que
+Se dice que esas transformaciones son una simetría del sistema. Vamos a expandir las transformaciones en Taylor en función de $\epsilon$
+\[
+    q_j' = h_j(\{q_i\},t,\epsilon) = q_j + \epsilon\left.\frac{\partial h_j}{\partial \epsilon}\right|_{\epsilon=0} + O(\epsilon^2) = q_j + \epsilon\psi_j + O(\epsilon^2)
+\]
 \begin{equation} \label{3.3.2}
-    \pazocal{L}(\(\{q_j,\dot{q}_j\};t)+\epsilon \frac{dB}{dt}+ O(\epsilon^2)=\pazocal{L}(\{h_j(\{q_i\},\epsilon),\dot{h}_j(\{q_i,\dot{q}_i\},\epsilon)\};\tau(t,\epsilon))
+        t' = \tau(\{q_i\},t,\epsilon) = t + \epsilon\left.\frac{\partial \tau}{\partial \epsilon}\right|_{\epsilon=0} + O(\epsilon^2) = t + \epsilon\phi + O(\epsilon^2)
 \end{equation} \refstepcounter{subsection}
-Basta con añadir el término de la variación de $t$ en la regla de la cadena en (3.2.8), y aplicando los mismos razonamientos que antes, llegamos a una expresión más general del teorema (aunque hay una versión aún más general, véase \textit{Johns, O. D.; Analytical mechanics for relativity and quantum mechanics.}).
-\begin{equation} \label{3.3.3}
-    \frac{d}{dt}\left[\sum_j^s \frac{\partial \pazocal{L}}{\partial \dot{q}_j} \frac{\partial h_j}{\partial \epsilon} - B \right] + \frac{\partial \pazocal{L}}{\partial t}\frac{d \tau}{d\epsilon} = 0
+Ahora vamos a calcular $h'_j$, para ello usaremos la regla de la cadena, el teorema de la función inversa, y expandiremos en serie
+\[
+    h'_j=\frac{d h_j}{d\tau} = \frac{\partial h_j}{\partial t} \frac{\partial t}{\partial \tau} = \frac{\partial h_j}{\partial t} \frac{\partial \tau}{\partial t}^{-1} = \left(\dot{q}_j + \epsilon \dot{\psi}_j + O(\epsilon^2)\right)  \left(1+\epsilon \dot{\phi} + O(\epsilon^2)\right)^{-1} = 
+\]
+\begin{equation} \label{3.3.2}
+    =\left(\dot{q}_j + \epsilon \dot{\psi}_j\right) \left(1-\epsilon\dot{\phi} + O(\epsilon^2)\right) = \dot{q}_j + \epsilon \left[\dot{\psi}_j-\dot{q}_j \dot{\phi}\right] + O(\epsilon^2)
 \end{equation} \refstepcounter{subsection}
+Expandimos en Taylor $\pazocal{L}(h_j,h'_j;\tau)$ en términos de $\epsilon$ usando (3.2.3) y (3.2.4), $\pazocal{L}$ a secas es el lagrangiano origianal sin variar
+\[
+    \tilde{\pazocal{L}}=\pazocal{L}(h_j,h'_j;\tau) = \pazocal{L} + \epsilon \left.\frac{d \tilde{\pazocal{L}}}{d\epsilon}\right|_{\epsilon=0} +O(\epsilon^2) =  \pazocal{L} + \epsilon\frac{\partial \pazocal{L}}{\partial t} \left.\frac{\partial \tau}{\partial \epsilon}\right|_{\epsilon=0} + \epsilon\sum_j \left(\frac{\partial \pazocal{L}}{\partial q_j} \left.\frac{\partial h_j}{\partial \epsilon}\right|_{\epsilon=0} + \frac{\partial \pazocal{L}}{\partial \dot{q}_j} \left.\frac{\partial h'_j}{\partial \epsilon}\right|_{\epsilon=0}\right) +O(\epsilon^2) = 
+\]
+\begin{equation} \label{3.3.2}
+    = \pazocal{L} + \epsilon\frac{\partial \pazocal{L}}{\partial t} \phi + \epsilon\sum_j \left[\frac{\partial \pazocal{L}}{\partial q_j} \psi_j + \frac{\partial \pazocal{L}}{\partial \dot{q}_j} \left(\dot{\psi}_j-\dot{q}_j \dot{\phi}\right)\right] +O(\epsilon^2)
+\end{equation} \refstepcounter{subsection}
+Tenemos además que, y nótese que los límites de la integral vuelven a $t_A$ y $t_B$ al hacer el cambio de variable
+\begin{equation} \label{3.3.2}
+    d\tau = \frac{\partial\tau}{\partial t} dt = (1+\epsilon \dot{\phi} + O(\epsilon^2))dt
+\end{equation} \refstepcounter{subsection}
+Ahora sustituimos en la parte izquierda de (3.2.2)
+\[ \int_{\tau_A}^{\tau_B} \tilde{\pazocal{L}}d \tau = \int_{t_A}^{t_B}  dt\left(1+\epsilon \dot{\phi} + O(\epsilon^2)\right) \left(\pazocal{L} + \epsilon\frac{\partial \pazocal{L}}{\partial t} \phi + \epsilon\sum_j \left[\frac{\partial \pazocal{L}}{\partial q_j} \psi_j + \frac{\partial \pazocal{L}}{\partial \dot{q}_j} \left(\dot{\psi}_j-\dot{q}_j \dot{\phi}\right)\right] +O(\epsilon^2)\right)=\]
+\begin{equation} \label{3.3.2}
+    = \int_{t_A}^{t_B} dt\left[\pazocal{L} +\epsilon \dot{\phi}\pazocal{L} +\epsilon \frac{\partial \pazocal{L}}{\partial t} +\epsilon\sum_j \left(\frac{\partial \pazocal{L}}{\partial q_j} \psi_j + \frac{\partial \pazocal{L}}{\partial \dot{q}_j} \left(\dot{\psi}_j-\dot{q}_j \dot{\phi}\right)\right)\right]  + O(\epsilon^2)
+\end{equation} \refstepcounter{subsection}
+Igualamos al término derecho de (3.2.2), que nos permite cancelar el primer término de la integral, pasamo el termino de $K$, y sacando $\epsilon$ y dividiendo nos queda
+\begin{equation} \label{3.3.2}
+    \int_{t_A}^{t_B} dt\left[\dot{\phi}\pazocal{L} +\frac{\partial \pazocal{L}}{\partial t}\phi +\sum_j \left(\frac{\partial \pazocal{L}}{\partial q_j} \psi_j + \frac{\partial \pazocal{L}}{\partial \dot{q}_j} \left(\dot{\psi}_j-\dot{q}_j \dot{\phi}\right)\right)- \frac{dB}{dt}\right] = O(\epsilon)
+\end{equation} \refstepcounter{subsection}
+Ahora, podemos hacer el límite cuando $\epsilon \rightarrow 0$ a ambos miembros, obteniendo que la integral debe anularse, pues esta no depende de $\epsilon$. Vamos a integrar por partes los términos que van multiplicando a $\dot{\phi}$ y $\dot{\psi}_j$
+\begin{equation} \label{3.3.2}
+    \int_{t_A}^{t_B} dt \dot{\phi}\left(\pazocal{L}-\sum_j \dot{q}_j\frac{\partial \pazocal{L}}{\partial \dot{q}_j}\right) = \left[\phi \left(\pazocal{L}-\sum_j \dot{q}_j\frac{\partial \pazocal{L}}{\partial \dot{q}_j}\right) \right]_{t_A}^{t_B} - \int_{t_A}^{t_B} dt \phi \frac{d}{dt}\left(\pazocal{L}-\sum_j \dot{q}_j\frac{\partial \pazocal{L}}{\partial \dot{q}_j}\right)
+\end{equation} \refstepcounter{subsection}
+\begin{equation} \label{3.3.2}
+    \int_{t_A}^{t_B} dt \sum_j \frac{\partial \pazocal{L}}{\partial \dot{q}_j} \dot{\psi}_j = \left[\sum_j \frac{\partial \pazocal{L}}{\partial \dot{q}_j} \psi_j\right]_{t_A}^{t_B} - \int_{t_A}^{t_B} dt \sum_j \frac{d}{dt}\left(\frac{\partial \pazocal{L}}{\partial \dot{q}_j}\right) \psi_j
+\end{equation} \refstepcounter{subsection}
+Sustituyendo de nuevo en (3.2.8) tenemos
+\[
+    0 =  \left[ \phi \left(\pazocal{L}-\sum_j \dot{q}_j\frac{\partial \pazocal{L}}{\partial \dot{q}_j}\right) +\sum_j \frac{\partial \pazocal{L}}{\partial \dot{q}_j} \psi_j - B\right]_{t_A}^{t_B} +  \int_{t_A}^{t_B} dt \sum_j \psi_k \left(\frac{\partial \pazocal{L}}{\partial q_j}-\frac{d}{dt}\left(\frac{\partial \pazocal{L}}{\partial \dot{q}_j}\right)\right) + 
+\]\begin{equation} \label{3.3.2}
+    +\int_{t_A}^{t_B} dt \phi\left[\frac{\partial \pazocal{L}}{\partial t} -\frac{d}{dt}\left(\pazocal{L}-\sum_j \dot{q}_j\frac{\partial \pazocal{L}}{\partial \dot{q}_j}\right)\right]
+\end{equation} \refstepcounter{subsection}
+Vemos entonces que el segundo sumando se anula cuando $q_j$ verifican (2.2.1) (E-L), y el tercero es la expresión (3.1.1), que se anula también cuando $q_j$ verifican (2.2.1) (E-L). En el primer término sustituimos por (3.2.3) y (3.1.2) y, como los límites de integración son arbitrarios, lo contenido en los corchetes debe ser igual $\forall t$, por lo tanto es constante
+\begin{equation} \label{3.3.2}
+    I = \sum_j \frac{\partial \pazocal{L}}{\partial \dot{q}_j} \psi_j - H\phi -B \ \ \ \ \ \ \psi_j = \left.\frac{\partial h_j}{\partial \epsilon}\right|_{\epsilon=0} \ \ \ \ \ \ \phi = \left.\frac{\partial \tau}{\partial \epsilon}\right|_{\epsilon=0}  \ \ \ \ \ \ \ \frac{dI}{dt} = 0 
+\end{equation} \refstepcounter{subsection}
+\subsection{Resumen}
+Sean las transformaciones
+\[
+    q_j \mapsto \tilde{q}_j(\{q_i\},t,\epsilon) \ \ \ \ \tilde{q}_j(\{q_i\},t,0)=q_j  \ \ \ \ \ \ \psi_j = \left.\frac{\partial \tilde{q}_j}{\partial \epsilon}\right|_{\epsilon=0}
+\]
+\[
+        t \mapsto \tilde{t}(\{q_i\},t,\epsilon) \ \ \ \ \tilde{t}(\{q_i\},t,0)=t \ \ \ \ \ \ \phi = \left.\frac{\partial \tilde{t}}{\partial \epsilon}\right|_{\epsilon=0}
+\]
+Si verifican para una cierta función B
+\[
+    \int_{\tilde{t}_A}^{\tilde{t}_B} \pazocal{L}(\tilde{q}_j,\tilde{q}'_j;\tilde{t})d \tilde{t}=\int_{t_A}^{t_B}\left(\pazocal{L}(\(\{q_j,\dot{q}_j\};t) + \epsilon\frac{dB}{dt}\right)dt \ \ \ \ \ \tilde{q}'_j = \frac{d\tilde{q}_j}{d \tilde{t}}
+    \]
+O en su defecto tenemos las transformaciones
+\[\tilde{q}_j = q_j + \epsilon \psi_j(\{q_i\},t) \ \ \ \ \ \ \ \ \tilde{t} = t+\epsilon \phi(\{q_i\},t)\]
+y verifican para una cierta función B
+\[
+    \int_{\tilde{t}_A}^{\tilde{t}_B} \pazocal{L}(\tilde{q}_j,\tilde{q}'_j;\tilde{t})d \tilde{t}=\int_{t_A}^{t_B}\left(\pazocal{L}(\(\{q_j,\dot{q}_j\};t) + \epsilon\frac{dB}{dt}\right)dt + O(\epsilon^2)\ \ \ \ \ \tilde{q}'_j = \frac{d\tilde{q}_j}{d \tilde{t}}
+    \]
+Entonces, para ambos casos (el segundo es un caso partícular del primero), se verifica la siguiente expresión para los $q_j$ que sean solución de (2.2.1) (E-L)
+\[
+    I = \sum_j \frac{\partial \pazocal{L}}{\partial \dot{q}_j} \psi_j - H\phi -B \ \ \ \ \ \ \ \ \ \frac{dI}{dt} = 0 
+    \]
 \subsection{Ejemplo}
-Si tenemos una masa en en plano bajo la acción de una fuerza central, tal que $\pazocal{L}=1/2m(\dot{x}^2+\dot{y}^2)-U(\sqrt{x^2+y^2})$, si tomamos las transformaciones $x \mapsto x +\epsilon y$ y $y \mapsto y - \epsilon x$, vemos que el lagrangiano se mantiene invariante a orden $\epsilon^2$.
-\[\pazocal{L}'=1/2m((\dot{x} +\epsilon \dot{y})^2+(\dot{y} -\epsilon \dot{x})^2)-U\left(\sqrt{(x +\epsilon y)^2+(y - \epsilon x)^2}\right)\]
-\[\pazocal{L}'=1/2m(\dot{x}^2+\dot{y}^2+\cancel{\epsilon^2(\dot{x}^2+\dot{y}^2)}) - U\left(\sqrt{x^2 +y^2 +\cancel{\epsilon^2(x^2+y^2)}}\right)\]
-Entonces la cantidad conservada es el momento angular
-\[I=\frac{\partial \pazocal{L}}{\partial \dot{x}}\frac{d}{d\epsilon}(x+\epsilon y)+\frac{\partial \pazocal{L}}{\partial \dot{y}}\frac{d}{d\epsilon}(y-\epsilon x)=m(\dot{x}y-\dot{y}x)=-m \mathbf{r} \times \mathbf{v}= -\mathbf{J}_z\]
-Si expresamos la transformación en términos de senos y cosenos de épsilon, en vez de sus series de taylor a primer orden, se puede observar que $\pazocal{L}$ es invariante a todos los órdenes.
+Tenemos la acción
+\[S = \int_{t_A}^{t_B} -mc^2 \sqrt{1-\frac{\dot{x}^2}{c^2}}dt\]
+tenemos las transformaciones $\tilde{x} = \gamma(x-\beta c t)$ y $\tilde{t} = \gamma(t-\beta x/c})$, con $\gamma = \sqrt{1-\beta^2}^{-1}$, podemos verificar que dejan invariante la acción, para ello primero calculamos
+\[\tilde{\dot{x}}=\frac{d\tilde{x}}{d\tilde{t}} = \frac{\gamma (dx - \beta c dt)}{\gamma(dt-\beta dx/c)} = \frac{\dot{x}-\beta c}{1-\beta \dot{x}/c} = c \frac{\beta_0-\beta}{1-\beta \beta_0} \ \ \ \ \ \beta_0 = \frac{\dot{x}}{c}\]
+\[\tilde{S} = \int_{t_A}^{t_B} -mc^2 \sqrt{1-\frac{\tilde{\dot{x}}^2}{c^2}}d\tilde{t} = \int_{t_A}^{t_B} -mc^2 \gamma (1-\beta \beta_0)\sqrt{1-\left(\frac{\beta_0-\beta}{1-\beta \beta_0}\right)^2}  dt = \]
+\[= \int_{t_A}^{t_B} -mc^2 \gamma \sqrt{1 + \beta^2 \beta_0^2 -\beta^2-\beta_0^2}} dt= \int_{t_A}^{t_B} -mc^2 \gamma \sqrt{1-\beta^2}\sqrt{1-\beta_0^2}}dt = \int_{t_A}^{t_B} -mc^2 \sqrt{1-\beta_0^2}}dt = S\]
+Por lo tanto, podemos aplicar el Teorema de Noether, calculamos 
+\[\psi = \left.\frac{\partial \tilde{x}}{\partial \beta}\right|_{\beta = 0} = \left[\frac{\beta}{(1-\beta^2)^{-3/2}}(x-\beta c t) - \frac{ct}{\sqrt{1-\beta^2}} \right]_{\beta = 0} = -ct\]
+\[\phi = \left.\frac{\partial \tilde{t}}{\partial \beta}\right|_{\beta = 0} = \left[\frac{\beta}{(1-\beta^2)^{-3/2}}(t-\beta x/c) - \frac{x/c}{\sqrt{1-\beta^2}} \right]_{\beta = 0} = -\frac{x}{c}\]
+\[H = \frac{\partial \pazocal{L}}{\partial \dot{x}} \dot{x} - \pazocal{L} = \gamma m \dot{x}^2+\frac{mc^2}{\gamma} = \gamma m \left(\dot{x}^2+c^2\left(1-\frac{\dot{x}^2}{c^2}\right)\right) = +\gamma m c^2 \ \ \ \ \ \ \frac{\partial \pazocal{L}}{\partial \dot{x}} = \gamma m \dot{x}\]
+Por lo tanto, la cantidad conservada será
+\[I =\gamma m c x- \gamma m \dot{x} ct = H \frac{x}{c} - pct\]
