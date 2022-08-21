@@ -65,7 +65,7 @@ Para aplicar estas ecuaciones en un sistema holonómico tenemos que hayar primer
     p_j = \frac{\partial \pazocal{L}}{\partial \dot{q}_j}=p_j(\{q_k,\dot{q}_k\};t) \rightarrow \dot{q}_j = \dot{q}_j(\{q_k,p_k\};t)
 \end{equation} \refstepcounter{subsection}
 Entonces usamos la ecuación (4.1.3) con mucho cuidado de reemplazar todas las $\dot{q}_j$ por (4.2.7), y ya tendremos $\pazocal{H}$ en una forma que nos permita resolverlo usando (4.2.5).
-
+\subsection{Variando la acción}
 Además, usando (4.1.3) podemos escribir $\pazocal{L}$ como
 \begin{equation} \label{4.2.7}
     \pazocal{L}(\{q_i,p_i\};t) = \sum_j^s p_j \dot{q}_j (\{q_i,p_i\};t) -\pazocal{H}(\{q_i,p_i\};t)
@@ -88,6 +88,8 @@ Haciendo las derivadas de $\pazocal{L}$ obtenemos
 \]
 Y ahora, establecemos que los términos entre paréntesis deben ser 0, puesto que las variaciones son arbitrarias e independientes, obteniendo (4.2.5).
 \vspace{-20pt}
+\subsubsection{Comparación Ecs. Lagrange-Hamilton}
+La formulación Lagrangiana es mejor para tratar con ligaduras, pero la hamiltoniana nos permite reducir el orden de la ecuación diferencial resultante cuando no hay dependencia explícita en una o varias de las $q_j$, puesto que en (3.1.5) $  \pazocal{L}$ sigue dependiendo de $\dot{q}_j$, solo conseguimos reducir en 1 el orden de un ecuación de E-L, mientras que en la formulación hamiltoniana, si una variable es cíclica, es decir $\partial_{q_j}\pazocal{H}=0$, entonces ya hemos resuelto $p_j=\alpha$ por (4.2.5.B) y también por definición $\pazocal{H}$ no depende de $q_j$, de esta forma nos hemos eliminado dos dependencias y reducir el orden en 2 unidades, podemos integrar $q_j$ usando (4.2.5.A) que como no depende de $q_j$ es una EDO separable que podremos resolver integrando al final una vez tengamos el resto de variables resueltas. 
 \subsubsection{Ejemplo}
 Un ejemplo sencillo es el péndulo simple donde 
 \[\pazocal{L}=\frac{1}{2}ml^2\dot{\theta}^2+mgl\cos{\theta} \ \ \ \ \ \ p_\theta = \frac{\partial \pazocal{L}}{\partial \dot{\theta}}=ml^2\dot{\theta} \ \ \ \ \ \ \dot{\theta}=\frac{p_\theta}{ml^2}=\dot{\theta}(p_\theta)\]
@@ -95,15 +97,58 @@ Sustituyendo tenemos
 \[\pazocal{H}=p_\theta \dot{\theta} -\pazocal{L}=\frac{p_\theta^2}{ml^2} - \frac{p_\theta^2}{2ml^2}-mgl\cos\theta = \frac{p_\theta^2}{2ml^2}-mgl\cos\theta = T+U\]
 
 Ahora aplicamos (4.2.5.A), tal que $\dot{\theta} = p_\theta/ml^2$, de donde sacamos que $\dot{p}_\theta=ml^2 \ddot{\theta}$ y de (4.2.5.B) sacamos $\dot{p}_\theta=-mgl\sin\theta$, igualando y depejando tenemos $\ddot{\theta} + g/l \sin\theta = 0$, la ecuación del movimiento.
-\subsubsection{Comparación Lagrange-Hamilton}
-La formulación Lagrangiana es mejor para tratar con ligaduras, pero la hamiltoniana nos permite reducir el orden de la ecuación diferencial resultante cuando no hay dependencia explícita en una o varias de las $q_j$, puesto que en (3.1.5) $  \pazocal{L}$ sigue dependiendo de $\dot{q}_j$, solo conseguimos reducir en 1 el orden de un ecuación de E-L, mientras que en la formulación hamiltoniana, si una variable es cíclica, es decir $\partial_{q_j}\pazocal{H}=0$, entonces ya hemos resuelto $p_j=\alpha$ por (4.2.5.B) y también por definición $\pazocal{H}$ no depende de $q_j$, de esta forma nos hemos eliminado dos dependencias y reducir el orden en 2 unidades, podemos integrar $q_j$ usando (4.2.5.A) que como no depende de $q_j$ es una EDO separable. 
+\section{Transformaciones canónicas} \refstepcounter{subsection}
+Nos va a interesar encontrar un cambio de variables llamado transformaciones canónicas (restringidas, porque no dependen de $t$) de la forma $Q_i=Q_i(\{q_i,p_i\})$ y $P_i=P_i(\{q_i,p_i\})$ invertible que preserve (4.2.5) (Ecs. H.), es decir, que
+\begin{equation} \label{4.2.7}
+    \pazocal{K} (\{Q_i,P_i\};t) = \pazocal{H} (\{q_j(\{Q_i,P_i\}),p_j(\{Q_i,P_i\})\};t) \implies \dot{Q}_j = \frac{\partial \pazocal{K}}{\partial P_j} \ \ \ \ \ \ \dot{P}_j= -\frac{\partial \pazocal{K}}{\partial Q_j}
+\end{equation} \refstepcounter{subsection}
+Puesto que si conseguimos encontrar una transformación de este tipo en el que todas las coordenadas sean cíclicas, la resolución de las ecuaciones del movimiento será trivial.
+\subsubsection{Matrices simplécticas}
+Vamos a usar la siguente notación para ver que tipos de transformaciones son canónicas, donde los corchetes indican que se recorren todos los índices, es decir que son vectores de $2s$ componentes
+\begin{equation} \label{4.2.7}
+    \mathbf{z}(\mathbf{Z})=\left[\begin{matrix} \{q_i\}\\ \{p_i\}\end{matrix}\right] \ \ \ \ \ \ \mathbf{Z}(\mathbf{z})=\left[\begin{matrix} \{Q_i\}\\ \{P_i\}\end{matrix}\right]
+\end{equation} \refstepcounter{subsection}
+\begin{equation} \label{4.2.7}
+    \frac{\partial \pazocal{H}}{\partial \mathbf{z}}=\left[\begin{matrix} \left\{\frac{\partial \pazocal{H}}{\partial q_i}\right\} \\ \left\{\frac{\partial \pazocal{H}}{\partial p_i}\right\}\end{matrix}\right] \ \ \ \ \ \ \frac{\partial \pazocal{K}}{\partial \mathbf{Z}}=\left[\begin{matrix} \left\{\frac{\partial \pazocal{K}}{\partial Q_i}\right\} \\ \left\{\frac{\partial \pazocal{K}}{\partial P_i}\right\}\end{matrix}\right]
+\end{equation} \refstepcounter{subsection}
+\begin{equation} \label{4.2.7}
+    \mathbb{J} = \left[\begin{array}{c|c} \mathbb{0}_s & \mathbb{I}_s \\ \hline -\mathbb{I}_s & \mathbb{0}_s \end{array}\right]
+\end{equation} \refstepcounter{subsection}
+Puede comprobarse entonces que podemos escribir (4.2.5) y (4.3.1) (Ecs. H.) como
+\begin{equation} \label{4.2.7}
+    \dot{\mathbf{z}} = \mathbb{J} \frac{\partial \pazocal{H}}{\partial \mathbf{z}} \ \ \ \ \ \ \ \dot{\mathbf{Z}} = \mathbb{J} \frac{\partial \pazocal{K}}{\partial \mathbf{Z}}
+\end{equation} \refstepcounter{subsection}
+Usando la regla de la cadena encontramos la siguiente expresión, donde $\mathbb{M}$ es la jacobiana de la transformación
+\begin{equation} \label{4.2.7}
+    \dot{\mathbf{Z}} = \mathbb{M}\dot{\mathbf{z}}  \ \ \ \ \ \ \ M_{ij} = \frac{\partial Z_i}{\partial z_j} \ \ \ \ \ \mathbb{M} = \left[\begin{array}{cc} \left\{\frac{\partial Q_i}{\partial q_j}\right\} & \left\{\frac{\partial Q_i}{\partial p_j}\right\} \\  \left\{\frac{\partial P_i}{\partial q_j}\right\} & \left\{\frac{\partial P_i}{\partial p_j}\right\} \end{array}\right]
+\end{equation} \refstepcounter{subsection}
+Ahora usando la regla de la cadena con (4.3.1) y aplicando el Teorema de la función inversa obtenemos la siguiente relación 
+\begin{equation} \label{4.2.7}
+    \frac{\partial \pazocal{K}}{\partial Z_j} = \sum_i^{2s} \frac{\partial \pazocal{H}}{\partial z_i} \frac{\partial z_i}{\partial Z_j} = \sum_i^{2s} ({M^{-1}})_{ij} \frac{\partial \pazocal{H}}{\partial z_i} \implies \frac{\partial \pazocal{K}}{\partial \mathbf{Z}} = (\mathbb{M}^{-1})^T \frac{\partial \pazocal{H}}{\partial \mathbf{z}} \rightarrow  \frac{\partial \pazocal{H}}{\partial \mathbf{z}}  = \mathbb{M}^T \frac{\partial \pazocal{K}}{\partial \mathbf{Z}}
+\end{equation} \refstepcounter{subsection}
+Ahora introducimos (4.3.5) en (4.3.6) y después introducimos (4.3.7)
+\begin{equation} \label{4.2.7}
+    \mathbb{J} \frac{\partial \pazocal{K}}{\partial \mathbf{Z}} = \mathbb{M}\mathbb{J} \frac{\partial \pazocal{H}}{\partial \mathbf{z}} \rightarrow \mathbb{J} \frac{\partial \pazocal{K}}{\partial \mathbf{Z}} = \mathbb{M}\mathbb{J} \mathbb{M}^T \frac{\partial \pazocal{K}}{\partial \mathbf{Z}} \implies \mathbb{M}\mathbb{J} \mathbb{M}^T = \mathbb{J} 
+\end{equation} \refstepcounter{subsection}
+Si la jacobiana $\mathbb{M}$ es una matriz simpléctica, es decir, cumple (4.3.8), entonces la transformación es canónica (para cualquier problema, no depende del \texit{Hamiltoniano}).
+\newpage
+Si se hace el producto matricial de $\mathbb{J} \mathbb{M}^T = \mathbb{M}^{-1}\mathbb{J}$ equivalente a (4.3.8) se pueden obtener unas condiciones más explícitas para concluir si una trasformación es canónica
+\begin{equation} \label{4.2.7}
+    \begin{split}
+        \frac{\partial Q_i(\{q_k,p_k\})}{\partial q_j} = \frac{\partial p_j(\{Q_k,P_k\})}{\partial P_i} \ \ \ \ \ \ \ \ \frac{\partial Q_i(\{q_k,p_k\})}{\partial p_j} = -\frac{\partial q_j(\{Q_k,P_k\})}{\partial P_i} \\ 
+        \frac{\partial P_i(\{q_k,p_k\})}{\partial q_j} = -\frac{\partial p_j(\{Q_k,P_k\})}{\partial Q_i} \ \ \ \ \ \ \ \ \frac{\partial P_i(\{q_k,p_k\})}{\partial p_j} = \frac{\partial q_j(\{Q_k,P_k\})}{\partial Q_i}
+    \end{split}
+\end{equation} \refstepcounter{subsection}
+Existe un teorema\sidenote{Sothanaphan, Nat. "Determinants of block matrices with noncommuting blocks" \hspace{.}\href{https://arxiv.org/abs/1805.06027}{arXiv:1805.06027l}} que dice que si las matrices $\mathbb{C}$ y $\mathbb{D}$ de una matriz de bloques del mismo tamaño ($\mathbb{A}$, $\mathbb{B}$, $\mathbb{C}$ y $\mathbb{D}$) conmutan, entonces $\det{(\mathbb{J})} = \det{(\mathbb{A}\mathbb{D}-\mathbb{B}\mathbb{C})}$. En el caso de $\mathbb{J}$, $\mathbb{D}= \mathbb{0}$, por lo tanto conmuta con cualquier matriz y el determinante es $\det{(\mathbb{J})} = \det{(\mathbb{0}\mathbb{0}-\mathbb{I}(-\mathbb{I}))} = 1$. Otras propiedades de $\mathbb{J}$ son que $\mathbb{J}^2 = -\mathbb{I}_{2s}$ o que $\mathbb{J}^{-1} = \mathbb{J}^T = -\mathbb{J}$.
+
+Gracias a esto sabemos que $\det{(\mathbb{M}\mathbb{J} \mathbb{M}^T)} = \det{\mathbb{M}} \det{\mathbb{J}} \det{\mathbb{M}^T}=\det{\mathbb{M}}^2 = 1$
+\subsubsection{Funciones generadoras}
 \section{Espacio de fase} \refstepcounter{subsection}
 El hecho de que solo haya una sola solución para las ecuaciones del movimiento, es decir, que solo hay una posible trayectoria dadas unas condiciones dadas, significa que el sistema con el que estamos tratando es \textit{determinista}.
 
 Si es el espacio de configuración es $\{q_j\}$ para un $t$ dado, entonces definimos el \textbg{Espacio de fase} como $\{q_j,p_j\}$, donde $\{p_j\}$ es el espacio de momentos o impulsos.
 
 Este espacio es de dimensión $2s$ y nos da toda la información dinámica del sistema pues nos permite predecir su evolución, puesto que con unas condiciones iniciales de posición y momento (o velocidad) definidas por unas coordendas del espacio de fase, podemos usar (4.2.5) (Ecs. H.) para hallar la evolución del sistema.
-
 \subsection{Diagrama de fases}
 Es la trayectoria que sigue un sistema en el espacio de fase, normalmente representada en un conjunto de $s$ planos bidimensionales como una curva en cada uno de ellos, cuyos ejes representan $q_j$ y $p_j$, donde por cada punto en un $t$ dado solo puede pasar una sola trayectoria, de lo contrario el sistema no sería determinista, ya que de unas mismas condiciones iniciales podría evolucionar de varias formas.
 
@@ -114,7 +159,7 @@ Además si $\pazocal{H}$ se conserva, entonces por cada punto del espacio de fas
 	\includegraphics{phase.png}
 	\labfig{margin3}
 \end{marginfigure}
-Como ejemplo vamos a ver un péndulo, tomando las expresiones del ejemplo de (4.2), donde las coordenadas del espacio de fases son $(\theta,p_\theta)$, si $\theta << 1$, tenemos $\ddot{\theta}+\frac{g}{l}\theta=0$, cuya solución, donde $\omega^2=g/l$, es
+Como ejemplo vamos a ver un péndulo, tomando las expresiones del ejemplo de (4.2), donde las coordenadas del espacio de fases son $(\theta,p_\theta)$, si $\theta \ll 1$, tenemos $\ddot{\theta}+\frac{g}{l}\theta=0$, cuya solución, donde $\omega^2=g/l$, es
 \[\theta = A \sin{(\omega t + \theta_0)}+ B \cos{(\omega t + \theta_0)} \ \ \ \ \dot{\theta} = A\omega \cos{(\omega t + \theta_0)}- B \omega \sin{(\omega t + \theta_0)} \ \ \ \ p_\theta = ml^2 \dot{\theta}\]
 \[\theta^2 + \frac{p_\theta^2}{\omega^2 m^2l^4}=A^2+B^2 \mbox{ (elipse)}\]
 \subsection{Teorema de Liouville} \refstepcounter{subsection}

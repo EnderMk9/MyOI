@@ -47,7 +47,7 @@ Hemos obtenido por tanto como solución una onda dispersiva discreta. Como se ve
 \refstepcounter{subsection}
 Ahora vamos a tomar el límite cuando $\lambda = 2\pi / k \gg \delta$, que es equivalente a decir que las distancias entre las masas son pequeñas, y que $k\delta \ll 1$, por lo tanto $\sin{\left(k \delta/2\right)} \approx k \delta/2$ por lo tanto la relación de dispersión nos queda 
 \begin{equation} \label{6.1.1}
-    \omega (k) \approx  \sqrt{\frac{\tau}{m/\delta}} k \ \ \ \ \frac{m}{\delta} = \mu
+    \omega (k) \approx  \sqrt{\frac{\tau}{\mu}} k \ \ \ \ \mu = \lim_{\delta,m \rightarrow 0} \frac{m}{\delta}
 \end{equation}\refstepcounter{subsection}
 Por otro lado, si tomamos los mismos limites para (10.2.1), cambiando la notación a $y_{n} (t) = y(x,t)$, $y_{n+1}(t) = y(x+\delta,t)$, $y_{n-1}(t) = y(x-\delta,t)$, y expandiendo los dos últimos en serie de Taylor tenemos
 \[\frac{\partial^2 y}{\partial t^2} \approx \frac{\tau}{m/\delta} \frac{1}{\delta^2}\left(y+\partial_x y\delta + \frac{1}{2}\partial^2_xy \delta^2-2y+y-\partial_x y \delta + \frac{1}{2}\partial^2_x y \delta^2+ O(\delta^3)\right)\]

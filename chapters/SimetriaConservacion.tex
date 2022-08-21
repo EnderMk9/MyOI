@@ -36,7 +36,7 @@ Consideremos unas transformaciones genéricas $h_j$ de las coordendas $q_j$, ade
         t \mapsto t'=\tau(\{q_i\},t,\epsilon) \ \ \ \ \tau(\{q_i\},t,0)=t \\
     \end{matrix}
 \end{equation} \refstepcounter{subsection}
-Si estas transformaciones verifican
+Si estas transformaciones verifican para una cierta función $B(\{q_j\};t)$
 \begin{equation} \label{3.3.2}
     \int_{\tau_A}^{\tau_B} \pazocal{L}(h_j,h'_j;\tau)d \tau=\int_{t_A}^{t_B}\left(\pazocal{L}(\(\{q_j,\dot{q}_j\};t) + \epsilon\frac{dB}{dt}\right)dt \ \ \ \ \ h'_j = \frac{dh_j}{d\tau}
 \end{equation} \refstepcounter{subsection}
@@ -99,13 +99,13 @@ Sean las transformaciones
 \[
         t \mapsto \tilde{t}(\{q_i\},t,\epsilon) \ \ \ \ \tilde{t}(\{q_i\},t,0)=t \ \ \ \ \ \ \phi = \left.\frac{\partial \tilde{t}}{\partial \epsilon}\right|_{\epsilon=0}
 \]
-Si verifican para una cierta función B
+Si verifican para una cierta función $B(\{q_j\};t)$
 \[
     \int_{\tilde{t}_A}^{\tilde{t}_B} \pazocal{L}(\tilde{q}_j,\tilde{q}'_j;\tilde{t})d \tilde{t}=\int_{t_A}^{t_B}\left(\pazocal{L}(\(\{q_j,\dot{q}_j\};t) + \epsilon\frac{dB}{dt}\right)dt \ \ \ \ \ \tilde{q}'_j = \frac{d\tilde{q}_j}{d \tilde{t}}
     \]
 O en su defecto tenemos las transformaciones
 \[\tilde{q}_j = q_j + \epsilon \psi_j(\{q_i\},t) \ \ \ \ \ \ \ \ \tilde{t} = t+\epsilon \phi(\{q_i\},t)\]
-y verifican para una cierta función B
+y verifican para una cierta función $B(\{q_j\};t)$
 \[
     \int_{\tilde{t}_A}^{\tilde{t}_B} \pazocal{L}(\tilde{q}_j,\tilde{q}'_j;\tilde{t})d \tilde{t}=\int_{t_A}^{t_B}\left(\pazocal{L}(\(\{q_j,\dot{q}_j\};t) + \epsilon\frac{dB}{dt}\right)dt + O(\epsilon^2)\ \ \ \ \ \tilde{q}'_j = \frac{d\tilde{q}_j}{d \tilde{t}}
     \]
@@ -115,7 +115,7 @@ Entonces, para ambos casos (el segundo es un caso partícular del primero), se v
     \]
 \subsection{Ejemplo}
 Tenemos la acción
-\[S = \int_{t_A}^{t_B} -mc^2 \sqrt{1-\frac{\dot{x}^2}{c^2}}dt\]
+\[S = \int_{t_A}^{t_B} -mc^2 \sqrt{1-\frac{\dot{x}^2}{c^2}}dt = \int_{t_A}^{t_B} \frac{-mc^2}{\gamma_0} dt\]
 tenemos las transformaciones $\tilde{x} = \gamma(x-\beta c t)$ y $\tilde{t} = \gamma(t-\beta x/c})$, con $\gamma = \sqrt{1-\beta^2}^{-1}$, podemos verificar que dejan invariante la acción, para ello primero calculamos
 \[\tilde{\dot{x}}=\frac{d\tilde{x}}{d\tilde{t}} = \frac{\gamma (dx - \beta c dt)}{\gamma(dt-\beta dx/c)} = \frac{\dot{x}-\beta c}{1-\beta \dot{x}/c} = c \frac{\beta_0-\beta}{1-\beta \beta_0} \ \ \ \ \ \beta_0 = \frac{\dot{x}}{c}\]
 \[\tilde{S} = \int_{t_A}^{t_B} -mc^2 \sqrt{1-\frac{\tilde{\dot{x}}^2}{c^2}}d\tilde{t} = \int_{t_A}^{t_B} -mc^2 \gamma (1-\beta \beta_0)\sqrt{1-\left(\frac{\beta_0-\beta}{1-\beta \beta_0}\right)^2}  dt = \]
@@ -123,6 +123,9 @@ tenemos las transformaciones $\tilde{x} = \gamma(x-\beta c t)$ y $\tilde{t} = \g
 Por lo tanto, podemos aplicar el Teorema de Noether, calculamos 
 \[\psi = \left.\frac{\partial \tilde{x}}{\partial \beta}\right|_{\beta = 0} = \left[\frac{\beta}{(1-\beta^2)^{-3/2}}(x-\beta c t) - \frac{ct}{\sqrt{1-\beta^2}} \right]_{\beta = 0} = -ct\]
 \[\phi = \left.\frac{\partial \tilde{t}}{\partial \beta}\right|_{\beta = 0} = \left[\frac{\beta}{(1-\beta^2)^{-3/2}}(t-\beta x/c) - \frac{x/c}{\sqrt{1-\beta^2}} \right]_{\beta = 0} = -\frac{x}{c}\]
-\[H = \frac{\partial \pazocal{L}}{\partial \dot{x}} \dot{x} - \pazocal{L} = \gamma m \dot{x}^2+\frac{mc^2}{\gamma} = \gamma m \left(\dot{x}^2+c^2\left(1-\frac{\dot{x}^2}{c^2}\right)\right) = +\gamma m c^2 \ \ \ \ \ \ \frac{\partial \pazocal{L}}{\partial \dot{x}} = \gamma m \dot{x}\]
+\[H = \frac{\partial \pazocal{L}}{\partial \dot{x}} \dot{x} - \pazocal{L} = \gamma_0 m \dot{x}^2+\frac{mc^2}{\gamma_0} = \gamma_0 m \left(\dot{x}^2+c^2\left(1-\frac{\dot{x}^2}{c^2}\right)\right) = +\gamma_0 m c^2 \ \ \ \ \ \ \frac{\partial \pazocal{L}}{\partial \dot{x}} = \gamma_0 m \dot{x}\]
 Por lo tanto, la cantidad conservada será
-\[I =\gamma m c x- \gamma m \dot{x} ct = H \frac{x}{c} - pct\]
+\[I =\gamma_0 m c x- \gamma_0 m \dot{x} ct = H \frac{x}{c} - pct\]
+Se pueden encontrar las ecuaciones del movimiento aplicando (E-L), que salen $x = x_0 + vt$, entonces $I = \gamma_0 m c x_0$, que efectivamente se conserva, puesto que $x_0$ y $v$ son constantes.
+
+\newpage\null\thispagestyle{empty}\newpage
