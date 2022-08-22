@@ -83,9 +83,9 @@ Integrando el segundo término por partes como en (1.2.1), usando que $\delta \d
     \delta S = 0 = \int_{t_A}^{t_B} \sum_{i}\left[\left(\frac{\partial \pazocal{L}}{\partial q_i} - \frac{d}{dt}\left(\frac{\partial \pazocal{L}}{\partial \dot{q}_i}\right)\right) \delta q_i + \frac{\partial \pazocal{L}}{\partial p_i}\delta p_i\right] dt
 \]
 Haciendo las derivadas de $\pazocal{L}$ obtenemos
-\[
+\begin{equation} \label{4.2.7}
     \delta S = 0 = \int_{t_A}^{t_B} \sum_{i}\left[\left(-\frac{\partial \pazocal{H}}{\partial q_i} - \dot{p}_i\right) \delta q_i + \left(\dot{q}_i-\frac{\partial \pazocal{H}}{\partial p_i}\right)\delta p_i\right] dt
-\]
+\end{equation} \refstepcounter{subsection}
 Y ahora, establecemos que los términos entre paréntesis deben ser 0, puesto que las variaciones son arbitrarias e independientes, obteniendo (4.2.5).
 \vspace{-20pt}
 \subsubsection{Comparación Ecs. Lagrange-Hamilton}
@@ -103,7 +103,7 @@ Nos va a interesar encontrar un cambio de variables llamado transformaciones can
     \pazocal{K} (\{Q_i,P_i\};t) = \pazocal{H} (\{q_j(\{Q_i,P_i\}),p_j(\{Q_i,P_i\})\};t) \implies \dot{Q}_j = \frac{\partial \pazocal{K}}{\partial P_j} \ \ \ \ \ \ \dot{P}_j= -\frac{\partial \pazocal{K}}{\partial Q_j}
 \end{equation} \refstepcounter{subsection}
 Puesto que si conseguimos encontrar una transformación de este tipo en el que todas las coordenadas sean cíclicas, la resolución de las ecuaciones del movimiento será trivial.
-\subsubsection{Matrices simplécticas}
+\subsection{Matrices simplécticas}
 Vamos a usar la siguente notación para ver que tipos de transformaciones son canónicas, donde los corchetes indican que se recorren todos los índices, es decir que son vectores de $2s$ componentes
 \begin{equation} \label{4.2.7}
     \mathbf{z}(\mathbf{Z})=\left[\begin{matrix} \{q_i\}\\ \{p_i\}\end{matrix}\right] \ \ \ \ \ \ \mathbf{Z}(\mathbf{z})=\left[\begin{matrix} \{Q_i\}\\ \{P_i\}\end{matrix}\right]
@@ -142,7 +142,48 @@ Si se hace el producto matricial de $\mathbb{J} \mathbb{M}^T = \mathbb{M}^{-1}\m
 Existe un teorema\sidenote{Sothanaphan, Nat. "Determinants of block matrices with noncommuting blocks" \hspace{.}\href{https://arxiv.org/abs/1805.06027}{arXiv:1805.06027l}} que dice que si las matrices $\mathbb{C}$ y $\mathbb{D}$ de una matriz de bloques del mismo tamaño ($\mathbb{A}$, $\mathbb{B}$, $\mathbb{C}$ y $\mathbb{D}$) conmutan, entonces $\det{(\mathbb{J})} = \det{(\mathbb{A}\mathbb{D}-\mathbb{B}\mathbb{C})}$. En el caso de $\mathbb{J}$, $\mathbb{D}= \mathbb{0}$, por lo tanto conmuta con cualquier matriz y el determinante es $\det{(\mathbb{J})} = \det{(\mathbb{0}\mathbb{0}-\mathbb{I}(-\mathbb{I}))} = 1$. Otras propiedades de $\mathbb{J}$ son que $\mathbb{J}^2 = -\mathbb{I}_{2s}$ o que $\mathbb{J}^{-1} = \mathbb{J}^T = -\mathbb{J}$.
 
 Gracias a esto sabemos que $\det{(\mathbb{M}\mathbb{J} \mathbb{M}^T)} = \det{\mathbb{M}} \det{\mathbb{J}} \det{\mathbb{M}^T}=\det{\mathbb{M}}^2 = 1$
-\subsubsection{Funciones generadoras}
+\subsection{Funciones generadoras}
+El caso anterior es un caso particular para transformaciones canónicas restringidas, ahora vamos a estudiar un caso más general, en el que dependen del tiempo. Como se demostró antes, si tenemos la acción (4.2.9), entonces si su variación es $0$ se verifican las ecuaciones de hamilton, entonces podemos escribir lo siguiente
+\begin{equation} \label{4.2.7}
+    \delta S = \delta\int_{t_A}^{t_B} \left(\sum_j^s p_j \dot{q}_j -\pazocal{H}(\{q_i,p_i\};t)\right) dt = 0 = \delta\int_{t_A}^{t_B} \left(\sum_j^s P_j \dot{Q}_j -\pazocal{K}(\{Q_i,P_i\};t)\right) dt = \delta \tilde{S}
+\end{equation} \refstepcounter{subsection}
+Puesto que queremos que las nuevas coordenadas $Q_i=Q_i(\{q_i,p_i\};t)$ y $P_i=P_i(\{q_i,p_i\};t)$ verifiquen (4.2.5) (Ecs. H.) para una cierta función $\pazocal{K}$ que en este caso no necesariamente verifica (4.3.1). (4.3.10) es equivalente a la siguiente expresión, usando lo demostrado en (1.2.5) y que la constante conmuta con la variación
+\begin{equation} \label{4.2.7}
+    \lambda\left(\sum_j^s p_j \dot{q}_j -\pazocal{H}\right) = \sum_j^s P_j \dot{Q}_j -\pazocal{K} +  \frac{dF(\{q_i,p_i\},\{Q_i,P_i\};t)}{dt}
+\end{equation} \refstepcounter{subsection}
+La constante $\lambda$ es un factor de escala, si por ejemplo $Q_j = \mu q_j$, $P_j = \nu p_j$ y $\pazocal{K} = \mu \nu \pazocal{H}$, entonces tenemos que la ecuación de arriba nos queda $\mu\nu\left(p_j \dot{q}_j -\pazocal{H}\right) = P_j \dot{Q}_j -\pazocal{K}$ (usando el criterio de suma de indices de Einstein), por lo tanto $\lambda$ no es nada mas que el producto de dos constantes de escala, y a partir de una transformación canónica, siempre podemos encontrar otra simplemente reescalando tal que $\lambda = 1$, así, para simplificar, nos centraremos en la siguiente expresión 
+\begin{equation} \label{4.2.7}
+    \sum_j^s p_j \dot{q}_j -\pazocal{H} = \sum_j^s P_j \dot{Q}_j -\pazocal{K} + \frac{dF(\{q_i,p_i\},\{Q_i,P_i\};t)}{dt}
+\end{equation} \refstepcounter{subsection}
+La función $F$, cuya variación de su acción se anula porque las variaciones de todas las coordenadas se anulan en los extremos, se denomina \texit{Función generadora}. Se llama así porque nos va a permitir generar transformaciones canónicas a partir de transformaciones canónicas parciales.
+\newpage
+Vamos a suponer que $F$ tiene la dependencia $F = F_1(\{q_i,Q_i\};t)$, entonces haciendo la regla de la cadena en (4.3.12) tenemos
+\begin{equation} \label{4.2.7}
+    \sum_j^s p_j \dot{q}_j -\pazocal{H} = \sum_j^s P_j \dot{Q}_j -\pazocal{K} + \frac{\partial F_1}{\partial t} + \sum_j^s \left(\frac{\partial F_1}{\partial q_j}\dot{q}_j + \frac{\partial F_1}{\partial Q_j}\dot{Q}_j\right)
+\end{equation} \refstepcounter{subsection}
+Para que se cumpla esta ecuación idénticamente deben cumplirse las siguientes relaciones
+\begin{equation} \label{4.2.7}
+    \frac{\partial F_1}{\partial q_i} = p_i \ \ \ \ \ \ \ \ \frac{\partial F_1}{\partial Q_i} = -P_i \ \ \ \ \ \ \ \ \frac{\partial F_1}{\partial t} = \pazocal{K}-\pazocal{H}
+\end{equation} \refstepcounter{subsection}
+Entonces si por ejemplo conocemos $P_i=P_i(\{q_j,Q_j\};t)$ pero no $Q_i$, podemos integrar primero la segunda expresión de (4.3.14), teniendo $F_1 = -\sum_j \int P_j dQ_j + h(\{q_j\};t)$, con h arbitraria, entonces introducimos en la primera expresión y tendremos $p_i \{q_j,Q_j\}= -\sum_j\int \partial_{q_i} P_j dQ_j + \partial_{q_i} h(\{q_j\};t)$, y entonces ahora podemos invertir la relación para tener $Q_i=Q_i(\{q_j,p_j\};t)$, ahora volvemos a sustituir esta última expresión en $P_i$, así, obtenemos una familia de transformaciones canónicas, y también obtenemos la familia $\pazocal{K} = \pazocal{H}-\sum_j\int \partial_t P_j dQ_j + \partial_t h(\{q_j\};t)$ con respecto a las cuales se verifican las ecuaciones canónicas. También podríamos haber partido de de $p_i=p_i(\{q_j,Q_j\};t)$ para obtener otra familia de transfomaciones canónicas.
+
+Si tenemos otras relaciones, como por ejemplo $Q_i=Q_i(\{q_j,P_j\};t)$, podemos definir otra función $F = F_2(\{q_j,P_j\};t) - \sum_j Q_j P_j$, siendo $F_2$ equivalente a una Transformada de Legendre de $F_1$ en su segundo conjunto de variables, pero $F \neq F_1(\{q_i,Q_i(\{q_j,P_j\})\};t)$, sino que en general es una función de todas variables como se indicó en (4.3.12). Si sustituimos esta nueva dependencia y aplicamos la regla de la cadena teniendo en cuenta esta dependencia obtenemos una ecuación similar a (4.3.13) en la que se cancelan algunos términos y obtenemos las siguientes relaciones que se deben cumplir para que esta sea cierta
+\begin{equation} \label{4.2.7}
+    \frac{\partial F_2}{\partial q_i} = p_i \ \ \ \ \ \ \ \ \frac{\partial F_2}{\partial P_i} = Q_i \ \ \ \ \ \ \ \ \frac{\partial F_2}{\partial t} = \pazocal{K}-\pazocal{H}
+\end{equation} \refstepcounter{subsection}
+Podemos aplicar este procedimiento de hacer 'como' una Transformada de Legendre dos veces con las dos expresiones anteriores para obtener otras dos funciones distintas con sus relaciones correspondientes. Estas 4 funciones generadoras se resumen en la siguiente tabla
+\begin{equation} \label{4.2.7}
+        \arraycolsep=3pt\def\arraystretch{1.5}
+        \begin{array}{|c|ccc|} \hline \mbox{Función generadora} & & \mbox{Derivadas} & \\ \hline 
+            F = F_1(\{q_i,Q_i\};t) & \frac{\partial F_1}{\partial q_i} = p_i &  \frac{\partial F_1}{\partial Q_i} = -P_i & \frac{\partial F_1}{\partial t} = \pazocal{K}-\pazocal{H} \\ \hline 
+            F = F_2(\{q_i,P_i\};t) -\sum_j Q_j P_j& \frac{\partial F_2}{\partial q_i} = p_i &  \frac{\partial F_2}{\partial P_i} = Q_i  & \frac{\partial F_2}{\partial t} = \pazocal{K}-\pazocal{H} \\ \hline 
+            F = F_3(\{p_i,Q_i\};t) +\sum_j q_j p_j& \frac{\partial F_3}{\partial p_i} = -q_i &  \frac{\partial F_3}{\partial Q_i} = -P_i  & \frac{\partial F_3}{\partial t} = \pazocal{K}-\pazocal{H}\\ \hline 
+            F = F_4(\{p_i,P_i\};t) +\sum_j (q_j p_j - Q_j P_j)& \frac{\partial F_4}{\partial p_i} = -q_i & \frac{\partial F_4}{\partial P_i} = Q_i  & \frac{\partial F_4}{\partial t} = \pazocal{K}-\pazocal{H}\\ \hline 
+        \end{array}
+\end{equation} \refstepcounter{subsection}
+Entonces podremos aplicar el procedimiento que he explicado antes de forma análoga para $F_i$ cuando tengamos una relación de dependencias de variables $A_i=A_i(\{b_j,C_j\};t)$ (también es posible que solo dependa de unas de ellas, por lo general las primeras) igual a la de $F_i$ especificada en (4.3.16)
+
+Es posible (incluso necesario en algunos casos) mezclar funciones generadoras cuando tengamos varios grados de libertad, es decir, usar distintas funciones generadoras para distintas variables.
 \section{Espacio de fase} \refstepcounter{subsection}
 El hecho de que solo haya una sola solución para las ecuaciones del movimiento, es decir, que solo hay una posible trayectoria dadas unas condiciones dadas, significa que el sistema con el que estamos tratando es \textit{determinista}.
 
