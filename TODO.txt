@@ -1,2 +1,3 @@
 rehacer potencial generalizado
+Poner split donde corresponda
 mecanica hamiltoniana

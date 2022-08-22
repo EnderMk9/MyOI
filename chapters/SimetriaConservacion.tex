@@ -41,34 +41,36 @@ Si estas transformaciones verifican para una cierta función $B(\{q_j\};t)$
     \int_{\tau_A}^{\tau_B} \pazocal{L}(h_j,h'_j;\tau)d \tau=\int_{t_A}^{t_B}\left(\pazocal{L}(\(\{q_j,\dot{q}_j\};t) + \epsilon\frac{dB}{dt}\right)dt \ \ \ \ \ h'_j = \frac{dh_j}{d\tau}
 \end{equation} \refstepcounter{subsection}
 Se dice que esas transformaciones son una simetría del sistema. Vamos a expandir las transformaciones en Taylor en función de $\epsilon$
-\[
-    q_j' = h_j(\{q_i\},t,\epsilon) = q_j + \epsilon\left.\frac{\partial h_j}{\partial \epsilon}\right|_{\epsilon=0} + O(\epsilon^2) = q_j + \epsilon\psi_j + O(\epsilon^2)
-\]
 \begin{equation} \label{3.3.2}
-        t' = \tau(\{q_i\},t,\epsilon) = t + \epsilon\left.\frac{\partial \tau}{\partial \epsilon}\right|_{\epsilon=0} + O(\epsilon^2) = t + \epsilon\phi + O(\epsilon^2)
+    \begin{split}
+        q_j' = h_j(\{q_i\},t,\epsilon) &= q_j + \epsilon\left.\frac{\partial h_j}{\partial \epsilon}\right|_{\epsilon=0} \hspace{-10pt}+ O(\epsilon^2) = q_j + \epsilon\psi_j + O(\epsilon^2) \\ 
+        t' = \tau(\{q_i\},t,\epsilon) &= t + \epsilon\left.\frac{\partial \tau}{\partial \epsilon}\right|_{\epsilon=0} \hspace{-10pt}+ O(\epsilon^2) = t + \epsilon\phi + O(\epsilon^2)
+    \end{split} 
 \end{equation} \refstepcounter{subsection}
 Ahora vamos a calcular $h'_j$, para ello usaremos la regla de la cadena, el teorema de la función inversa, y expandiremos en serie
-\[
-    h'_j=\frac{d h_j}{d\tau} = \frac{\partial h_j}{\partial t} \frac{\partial t}{\partial \tau} = \frac{\partial h_j}{\partial t} \frac{\partial \tau}{\partial t}^{-1} = \left(\dot{q}_j + \epsilon \dot{\psi}_j + O(\epsilon^2)\right)  \left(1+\epsilon \dot{\phi} + O(\epsilon^2)\right)^{-1} = 
-\]
 \begin{equation} \label{3.3.2}
-    =\left(\dot{q}_j + \epsilon \dot{\psi}_j\right) \left(1-\epsilon\dot{\phi} + O(\epsilon^2)\right) = \dot{q}_j + \epsilon \left[\dot{\psi}_j-\dot{q}_j \dot{\phi}\right] + O(\epsilon^2)
+    \begin{split}
+        h'_j& =\frac{d h_j}{d\tau} = \frac{\partial h_j}{\partial t} \frac{\partial t}{\partial \tau} = \frac{\partial h_j}{\partial t} \frac{\partial \tau}{\partial t}^{-1} = \left(\dot{q}_j + \epsilon \dot{\psi}_j + O(\epsilon^2)\right)  \left(1+\epsilon \dot{\phi} + O(\epsilon^2)\right)^{-1} =  \\ 
+        & =\left(\dot{q}_j + \epsilon \dot{\psi}_j\right) \left(1-\epsilon\dot{\phi} + O(\epsilon^2)\right) = \dot{q}_j + \epsilon \left[\dot{\psi}_j-\dot{q}_j \dot{\phi}\right] + O(\epsilon^2)
+    \end{split} 
 \end{equation} \refstepcounter{subsection}
 Expandimos en Taylor $\pazocal{L}(h_j,h'_j;\tau)$ en términos de $\epsilon$ usando (3.2.3) y (3.2.4), $\pazocal{L}$ a secas es el lagrangiano origianal sin variar
-\[
-    \tilde{\pazocal{L}}=\pazocal{L}(h_j,h'_j;\tau) = \pazocal{L} + \epsilon \left.\frac{d \tilde{\pazocal{L}}}{d\epsilon}\right|_{\epsilon=0} +O(\epsilon^2) =  \pazocal{L} + \epsilon\frac{\partial \pazocal{L}}{\partial t} \left.\frac{\partial \tau}{\partial \epsilon}\right|_{\epsilon=0} + \epsilon\sum_j \left(\frac{\partial \pazocal{L}}{\partial q_j} \left.\frac{\partial h_j}{\partial \epsilon}\right|_{\epsilon=0} + \frac{\partial \pazocal{L}}{\partial \dot{q}_j} \left.\frac{\partial h'_j}{\partial \epsilon}\right|_{\epsilon=0}\right) +O(\epsilon^2) = 
-\]
 \begin{equation} \label{3.3.2}
-    = \pazocal{L} + \epsilon\frac{\partial \pazocal{L}}{\partial t} \phi + \epsilon\sum_j \left[\frac{\partial \pazocal{L}}{\partial q_j} \psi_j + \frac{\partial \pazocal{L}}{\partial \dot{q}_j} \left(\dot{\psi}_j-\dot{q}_j \dot{\phi}\right)\right] +O(\epsilon^2)
+    \begin{split}
+        \tilde{\pazocal{L}}=\pazocal{L}(h_j,h'_j;\tau) = \pazocal{L} + \epsilon \left.\frac{d \tilde{\pazocal{L}}}{d\epsilon}\right|_{\epsilon=0} \hspace{-10pt} +O(\epsilon^2) &=  \pazocal{L} + \epsilon\frac{\partial \pazocal{L}}{\partial t} \left.\frac{\partial \tau}{\partial \epsilon}\right|_{\epsilon=0} \hspace{-10pt} + \epsilon\sum_j \left(\frac{\partial \pazocal{L}}{\partial q_j} \left.\frac{\partial h_j}{\partial \epsilon}\right|_{\epsilon=0} \hspace{-10pt} + \frac{\partial \pazocal{L}}{\partial \dot{q}_j} \left.\frac{\partial h'_j}{\partial \epsilon}\right|_{\epsilon=0} \right) +O(\epsilon^2) = \\ 
+        &= \pazocal{L} + \epsilon\frac{\partial \pazocal{L}}{\partial t} \phi + \epsilon\sum_j \left[\frac{\partial \pazocal{L}}{\partial q_j} \psi_j + \frac{\partial \pazocal{L}}{\partial \dot{q}_j} \left(\dot{\psi}_j-\dot{q}_j \dot{\phi}\right)\right] +O(\epsilon^2)
+    \end{split}
 \end{equation} \refstepcounter{subsection}
-Tenemos además que, y nótese que los límites de la integral vuelven a $t_A$ y $t_B$ al hacer el cambio de variable
+Tenemos además el siguiente cambio de variable, y nótese que los límites de la integral vuelven a $t_A$ y $t_B$ al hacerlo
 \begin{equation} \label{3.3.2}
     d\tau = \frac{\partial\tau}{\partial t} dt = (1+\epsilon \dot{\phi} + O(\epsilon^2))dt
 \end{equation} \refstepcounter{subsection}
 Ahora sustituimos en la parte izquierda de (3.2.2)
-\[ \int_{\tau_A}^{\tau_B} \tilde{\pazocal{L}}d \tau = \int_{t_A}^{t_B}  dt\left(1+\epsilon \dot{\phi} + O(\epsilon^2)\right) \left(\pazocal{L} + \epsilon\frac{\partial \pazocal{L}}{\partial t} \phi + \epsilon\sum_j \left[\frac{\partial \pazocal{L}}{\partial q_j} \psi_j + \frac{\partial \pazocal{L}}{\partial \dot{q}_j} \left(\dot{\psi}_j-\dot{q}_j \dot{\phi}\right)\right] +O(\epsilon^2)\right)=\]
 \begin{equation} \label{3.3.2}
-    = \int_{t_A}^{t_B} dt\left[\pazocal{L} +\epsilon \dot{\phi}\pazocal{L} +\epsilon \frac{\partial \pazocal{L}}{\partial t} +\epsilon\sum_j \left(\frac{\partial \pazocal{L}}{\partial q_j} \psi_j + \frac{\partial \pazocal{L}}{\partial \dot{q}_j} \left(\dot{\psi}_j-\dot{q}_j \dot{\phi}\right)\right)\right]  + O(\epsilon^2)
+    \begin{split}
+        \int_{\tau_A}^{\tau_B} \tilde{\pazocal{L}}d \tau &= \int_{t_A}^{t_B}  dt\left(1+\epsilon \dot{\phi} + O(\epsilon^2)\right) \left(\pazocal{L} + \epsilon\frac{\partial \pazocal{L}}{\partial t} \phi + \epsilon\sum_j \left[\frac{\partial \pazocal{L}}{\partial q_j} \psi_j + \frac{\partial \pazocal{L}}{\partial \dot{q}_j} \left(\dot{\psi}_j-\dot{q}_j \dot{\phi}\right)\right] +O(\epsilon^2)\right)= \\ 
+        &= \int_{t_A}^{t_B} dt\left[\pazocal{L} +\epsilon \dot{\phi}\pazocal{L} +\epsilon \frac{\partial \pazocal{L}}{\partial t} +\epsilon\sum_j \left(\frac{\partial \pazocal{L}}{\partial q_j} \psi_j + \frac{\partial \pazocal{L}}{\partial \dot{q}_j} \left(\dot{\psi}_j-\dot{q}_j \dot{\phi}\right)\right)\right]  + O(\epsilon^2)
+    \end{split}
 \end{equation} \refstepcounter{subsection}
 Igualamos al término derecho de (3.2.2), que nos permite cancelar el primer término de la integral, pasamo el termino de $K$, y sacando $\epsilon$ y dividiendo nos queda
 \begin{equation} \label{3.3.2}
@@ -76,40 +78,40 @@ Igualamos al término derecho de (3.2.2), que nos permite cancelar el primer té
 \end{equation} \refstepcounter{subsection}
 Ahora, podemos hacer el límite cuando $\epsilon \rightarrow 0$ a ambos miembros, obteniendo que la integral debe anularse, pues esta no depende de $\epsilon$. Vamos a integrar por partes los términos que van multiplicando a $\dot{\phi}$ y $\dot{\psi}_j$
 \begin{equation} \label{3.3.2}
-    \int_{t_A}^{t_B} dt \dot{\phi}\left(\pazocal{L}-\sum_j \dot{q}_j\frac{\partial \pazocal{L}}{\partial \dot{q}_j}\right) = \left[\phi \left(\pazocal{L}-\sum_j \dot{q}_j\frac{\partial \pazocal{L}}{\partial \dot{q}_j}\right) \right]_{t_A}^{t_B} - \int_{t_A}^{t_B} dt \phi \frac{d}{dt}\left(\pazocal{L}-\sum_j \dot{q}_j\frac{\partial \pazocal{L}}{\partial \dot{q}_j}\right)
-\end{equation} \refstepcounter{subsection}
-\begin{equation} \label{3.3.2}
-    \int_{t_A}^{t_B} dt \sum_j \frac{\partial \pazocal{L}}{\partial \dot{q}_j} \dot{\psi}_j = \left[\sum_j \frac{\partial \pazocal{L}}{\partial \dot{q}_j} \psi_j\right]_{t_A}^{t_B} - \int_{t_A}^{t_B} dt \sum_j \frac{d}{dt}\left(\frac{\partial \pazocal{L}}{\partial \dot{q}_j}\right) \psi_j
+    \begin{split}
+        \int_{t_A}^{t_B} dt \dot{\phi}\left(\pazocal{L}-\sum_j \dot{q}_j\frac{\partial \pazocal{L}}{\partial \dot{q}_j}\right) & = \left[\phi \left(\pazocal{L}-\sum_j \dot{q}_j\frac{\partial \pazocal{L}}{\partial \dot{q}_j}\right) \right]_{t_A}^{t_B} - \int_{t_A}^{t_B} dt \phi \frac{d}{dt}\left(\pazocal{L}-\sum_j \dot{q}_j\frac{\partial \pazocal{L}}{\partial \dot{q}_j}\right) \\ 
+        \int_{t_A}^{t_B} dt \sum_j \frac{\partial \pazocal{L}}{\partial \dot{q}_j} \dot{\psi}_j & = \left[\sum_j \frac{\partial \pazocal{L}}{\partial \dot{q}_j} \psi_j\right]_{t_A}^{t_B} - \int_{t_A}^{t_B} dt \sum_j \frac{d}{dt}\left(\frac{\partial \pazocal{L}}{\partial \dot{q}_j}\right) \psi_j
+    \end{split}  
 \end{equation} \refstepcounter{subsection}
 Sustituyendo de nuevo en (3.2.8) tenemos
-\[
-    0 =  \left[ \phi \left(\pazocal{L}-\sum_j \dot{q}_j\frac{\partial \pazocal{L}}{\partial \dot{q}_j}\right) +\sum_j \frac{\partial \pazocal{L}}{\partial \dot{q}_j} \psi_j - B\right]_{t_A}^{t_B} +  \int_{t_A}^{t_B} dt \sum_j \psi_k \left(\frac{\partial \pazocal{L}}{\partial q_j}-\frac{d}{dt}\left(\frac{\partial \pazocal{L}}{\partial \dot{q}_j}\right)\right) + 
-\]\begin{equation} \label{3.3.2}
-    +\int_{t_A}^{t_B} dt \phi\left[\frac{\partial \pazocal{L}}{\partial t} -\frac{d}{dt}\left(\pazocal{L}-\sum_j \dot{q}_j\frac{\partial \pazocal{L}}{\partial \dot{q}_j}\right)\right]
+\begin{equation} \label{3.3.2}
+    \begin{split}
+        0 =  \left[ \phi \left(\pazocal{L}-\sum_j \dot{q}_j\frac{\partial \pazocal{L}}{\partial \dot{q}_j}\right) +\sum_j \frac{\partial \pazocal{L}}{\partial \dot{q}_j} \psi_j - B\right]_{t_A}^{t_B} & +  \int_{t_A}^{t_B} dt \sum_j \psi_k \left(\frac{\partial \pazocal{L}}{\partial q_j}-\frac{d}{dt}\left(\frac{\partial \pazocal{L}}{\partial \dot{q}_j}\right)\right) \\ 
+        &+\int_{t_A}^{t_B} dt \phi\left[\frac{\partial \pazocal{L}}{\partial t} -\frac{d}{dt}\left(\pazocal{L}-\sum_j \dot{q}_j\frac{\partial \pazocal{L}}{\partial \dot{q}_j}\right)\right]
+    \end{split} 
 \end{equation} \refstepcounter{subsection}
 Vemos entonces que el segundo sumando se anula cuando $q_j$ verifican (2.2.1) (E-L), y el tercero es la expresión (3.1.1), que se anula también cuando $q_j$ verifican (2.2.1) (E-L). En el primer término sustituimos por (3.2.3) y (3.1.2) y, como los límites de integración son arbitrarios, lo contenido en los corchetes debe ser igual $\forall t$, por lo tanto es constante
 \begin{equation} \label{3.3.2}
     I = \sum_j \frac{\partial \pazocal{L}}{\partial \dot{q}_j} \psi_j - H\phi -B \ \ \ \ \ \ \psi_j = \left.\frac{\partial h_j}{\partial \epsilon}\right|_{\epsilon=0} \ \ \ \ \ \ \phi = \left.\frac{\partial \tau}{\partial \epsilon}\right|_{\epsilon=0}  \ \ \ \ \ \ \ \frac{dI}{dt} = 0 
 \end{equation} \refstepcounter{subsection}
+\vspace{-25pt}
 \subsection{Resumen}
-Sean las transformaciones
+Sean las siguientes transformaciones (nótese que solo necesitamos conocer $\phi$ y $\psi_j$ para aplicar el teorema)
+\vspace{-15pt}
 \[
-    q_j \mapsto \tilde{q}_j(\{q_i\},t,\epsilon) \ \ \ \ \tilde{q}_j(\{q_i\},t,0)=q_j  \ \ \ \ \ \ \psi_j = \left.\frac{\partial \tilde{q}_j}{\partial \epsilon}\right|_{\epsilon=0}
+    \begin{split}
+        q_j \mapsto \tilde{q}_j(\{q_i\},t,\epsilon) \ \ \ \ \tilde{q}_j(\{q_i\},t,0)=q_j  \ \ \ \ \ \  \psi_j & = \left.\frac{\partial \tilde{q}_j}{\partial \epsilon}\right|_{\epsilon=0} \ \ \ \ \ s_j = q_j + \psi_j \epsilon\\ 
+        t \mapsto \tilde{t}(\{q_i\},t,\epsilon) \ \ \ \ \tilde{t}(\{q_i\},t,0)=t \ \ \ \ \ \ \ \ \ \  \phi & = \left.\frac{\partial \tilde{t}}{\partial \epsilon}\right|_{\epsilon=0} \ \ \ \ \ \ \  \tau = t + \phi \epsilon
+    \end{split}     
 \]
-\[
-        t \mapsto \tilde{t}(\{q_i\},t,\epsilon) \ \ \ \ \tilde{t}(\{q_i\},t,0)=t \ \ \ \ \ \ \phi = \left.\frac{\partial \tilde{t}}{\partial \epsilon}\right|_{\epsilon=0}
-\]
+
+\vspace{-20pt}
 Si verifican para una cierta función $B(\{q_j\};t)$
+\vspace{-5pt}
 \[
-    \int_{\tilde{t}_A}^{\tilde{t}_B} \pazocal{L}(\tilde{q}_j,\tilde{q}'_j;\tilde{t})d \tilde{t}=\int_{t_A}^{t_B}\left(\pazocal{L}(\(\{q_j,\dot{q}_j\};t) + \epsilon\frac{dB}{dt}\right)dt \ \ \ \ \ \tilde{q}'_j = \frac{d\tilde{q}_j}{d \tilde{t}}
+    \int_{\tau_A}^{\tau_B} \pazocal{L}(s_j,s'_j;\tau)d \tau=\int_{t_A}^{t_B}\left(\pazocal{L}(\(\{q_j,\dot{q}_j\};t) + \epsilon\frac{dB}{dt}\right)dt + O(\epsilon^2)\ \ \ \ \ s'_j = \frac{d s_j}{d \tau}
     \]
-O en su defecto tenemos las transformaciones
-\[\tilde{q}_j = q_j + \epsilon \psi_j(\{q_i\},t) \ \ \ \ \ \ \ \ \tilde{t} = t+\epsilon \phi(\{q_i\},t)\]
-y verifican para una cierta función $B(\{q_j\};t)$
-\[
-    \int_{\tilde{t}_A}^{\tilde{t}_B} \pazocal{L}(\tilde{q}_j,\tilde{q}'_j;\tilde{t})d \tilde{t}=\int_{t_A}^{t_B}\left(\pazocal{L}(\(\{q_j,\dot{q}_j\};t) + \epsilon\frac{dB}{dt}\right)dt + O(\epsilon^2)\ \ \ \ \ \tilde{q}'_j = \frac{d\tilde{q}_j}{d \tilde{t}}
-    \]
-Entonces, para ambos casos (el segundo es un caso partícular del primero), se verifica la siguiente expresión para los $q_j$ que sean solución de (2.2.1) (E-L)
+Entonces se verifica la siguiente expresión para los $q_j$ solución de (2.2.1) (E-L)
 \[
     I = \sum_j \frac{\partial \pazocal{L}}{\partial \dot{q}_j} \psi_j - H\phi -B \ \ \ \ \ \ \ \ \ \frac{dI}{dt} = 0 
     \]
