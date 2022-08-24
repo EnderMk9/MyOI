@@ -103,7 +103,7 @@ Nos va a interesar encontrar un cambio de variables llamado transformaciones can
     \pazocal{K} (\{Q_i,P_i\};t) = \pazocal{H} (\{q_j(\{Q_i,P_i\}),p_j(\{Q_i,P_i\})\};t) \implies \dot{Q}_j = \frac{\partial \pazocal{K}}{\partial P_j} \ \ \ \ \ \ \dot{P}_j= -\frac{\partial \pazocal{K}}{\partial Q_j}
 \end{equation} \refstepcounter{subsection}
 Puesto que si conseguimos encontrar una transformación de este tipo en el que todas las coordenadas sean cíclicas, la resolución de las ecuaciones del movimiento será trivial.
-\subsection{Matrices simplécticas}
+\subsection{Matrices simplécticas (I)}
 Vamos a usar la siguente notación para ver que tipos de transformaciones son canónicas, donde los corchetes indican que se recorren todos los índices, es decir que son vectores de $2s$ componentes
 \begin{equation} \label{4.2.7}
     \mathbf{z}(\mathbf{Z})=\left[\begin{matrix} \{q_i\}\\ \{p_i\}\end{matrix}\right] \ \ \ \ \ \ \mathbf{Z}(\mathbf{z})=\left[\begin{matrix} \{Q_i\}\\ \{P_i\}\end{matrix}\right]
@@ -157,11 +157,13 @@ La constante $\lambda$ es un factor de escala, si por ejemplo $Q_j = \mu q_j$, $
 \end{equation} \refstepcounter{subsection}
 La función $F$, cuya variación de su acción se anula porque las variaciones de todas las coordenadas se anulan en los extremos, se denomina \texit{Función generadora}. Se llama así porque nos va a permitir generar transformaciones canónicas a partir de transformaciones canónicas parciales.
 \newpage
-Vamos a suponer que $F$ tiene la dependencia $F = F_1(\{q_i,Q_i\};t)$, entonces haciendo la regla de la cadena en (4.3.12) tenemos
+Ahora, la dependencia de esa función es redundante, puesto que tenemos dos relaciones $Q_i=Q_i(\{q_i,p_i\};t)$ y $P_i=P_i(\{q_i,p_i\};t)$, o equivalentes obtenidas despejando esas, entonces podemos estudiar casos concretos de dependencias de $F$ en función de qué relaciones tengamos.
+
+Vamos a suponer primero que $F$ tiene la dependencia $F = F_1(\{q_i,Q_i\};t)$, entonces haciendo la regla de la cadena en (4.3.12) tenemos
 \begin{equation} \label{4.2.7}
     \sum_j^s p_j \dot{q}_j -\pazocal{H} = \sum_j^s P_j \dot{Q}_j -\pazocal{K} + \frac{\partial F_1}{\partial t} + \sum_j^s \left(\frac{\partial F_1}{\partial q_j}\dot{q}_j + \frac{\partial F_1}{\partial Q_j}\dot{Q}_j\right)
 \end{equation} \refstepcounter{subsection}
-Para que se cumpla esta ecuación idénticamente deben cumplirse las siguientes relaciones
+Para que se cumpla esta ecuación idénticamente deben cumplirse las siguientes relaciones 
 \begin{equation} \label{4.2.7}
     \frac{\partial F_1}{\partial q_i} = p_i \ \ \ \ \ \ \ \ \frac{\partial F_1}{\partial Q_i} = -P_i \ \ \ \ \ \ \ \ \frac{\partial F_1}{\partial t} = \pazocal{K}-\pazocal{H}
 \end{equation} \refstepcounter{subsection}
@@ -184,6 +186,60 @@ Podemos aplicar este procedimiento de hacer 'como' una Transformada de Legendre 
 Entonces podremos aplicar el procedimiento que he explicado antes de forma análoga para $F_i$ cuando tengamos una relación de dependencias de variables $A_i=A_i(\{b_j,C_j\};t)$ (también es posible que solo dependa de unas de ellas, por lo general las primeras) igual a la de $F_i$ especificada en (4.3.16)
 
 Es posible (incluso necesario en algunos casos) mezclar funciones generadoras cuando tengamos varios grados de libertad, es decir, usar distintas funciones generadoras para distintas variables.
+\subsection{Matrices simplécticas (II)}
+Como se observa en (4.3.15), si la función generadora no depende explícitamente del tiempo, entonces $\pazocal{H} = \pazocal{K}$ y se recupera la condición (4.3.1) usada para demostrar (4.3.8) cuando la transformación canónica no dependía explítamente del tiempo, por lo tanto ambos acercamientos son equivalentes.
+
+Ahora, queremos saber que ocurre con la condición (4.3.8) cuando la transformación depende explícitamente del tiempo, para ello vamos a desarrollar en pequeñas variaciones mezclando ambos acercamientos.
+
+Primero, escribimos una transformación infinitesimal de la siguiente forma forma, 
+\begin{equation} \label{4.2.7}
+    \mathbf{Z} = \mathbf{Z}(\mathbf{z},t) = \vec{\zeta}(\mathbf{Z}(\mathbf{z},t_0),t) \rightarrow \vec{\zeta} = \vec{\mu} + \epsilon \vec{\eta}(\vec{\mu}) +O(\epsilon^2) \ \ \ \ \ \ \epsilon = t-t_0 \ \ \ \ \ \ \vec{\mu} = \mathbf{Z}(\mathbf{z},t_0) \ \ \ \ \ \  \vec{\eta}(\mathbf{z}(\vec{\mu})) = \left.\frac{\partial \mathbf{Z}}{\partial t}\right|_{t=t_0}
+\end{equation} \refstepcounter{subsection}
+Ahora podemos escribir la siguiente función generadora, dónde $\tilde{q}_i$ y $\tilde{p}_i$ son las componentes de $\vec{\mu}$, el primer sumatorio es la función generadora de la identidad
+
+\vspace{-15pt}
+\begin{equation} \label{4.2.7}
+    F_2(\{\tilde{q}_i,P_i\};t) = \sum_j^s \tilde{q}_j P_j + \epsilon G(\{\tilde{q}_i,P_i\}) + O(\epsilon^2)
+\end{equation} \refstepcounter{subsection}
+
+\vspace{-20pt}
+Usando (4.3.16) nos da la relación con la transformación anterior
+
+\vspace{-18pt}
+\begin{equation} \label{4.2.7}
+    \begin{split}
+        \tilde{p}_i = P_i + \epsilon \frac{\partial G}{\partial \tilde{q}_i} + O(\epsilon^2) \ \ \ \ \ P_i-\tilde{p}_i &= \epsilon \frac{\partial G}{\partial \tilde{q}_i} + O(\epsilon^2)= \epsilon \eta_i +O(\epsilon^2)\ \ \ i = 1,\dots,s\\ 
+        Q_i = \tilde{q}_i + \epsilon \frac{\partial G}{\partial P_i} + O(\epsilon^2)\ \ \ \ \ Q_i-\tilde{q}_i &= -\epsilon \frac{\partial G}{\partial P_i} + O(\epsilon^2)= \epsilon \eta_i +O(\epsilon^2)\ \ \ i = s+1,\dots,2s \\
+        \pazocal{K} &= \pazocal{H} + G
+    \end{split}
+\end{equation} \refstepcounter{subsection}
+
+\vspace{-30pt}
+Ahora en la siguiente expresión podemos sustituir $P_i$ y expandir
+
+\vspace{-15pt}
+\begin{equation} \label{4.2.7}
+        \epsilon \frac{\partial G}{\partial P_i} = \epsilon \frac{\partial G (\{\tilde{q}_i,\tilde{p}_i + \epsilon \partial{\tilde{q}_i} G\})}{\partial (\tilde{p}_i + \epsilon \partial{\tilde{q}_i} G)} = \epsilon \frac{\partial G (\{\tilde{q}_i,\tilde{p}_i + 0 \cdot  \partial_{\tilde{q}_i} G\})}{\partial (\tilde{p}_i + 0 \cdot \partial_{\tilde{q}_i} G)} +\epsilon^2 \left.\frac{\partial^2 G (\{\tilde{q}_i,P_i\})}{\partial^2 P_i }\right|_{\epsilon=0} \hspace{-10pt}= \epsilon \frac{\partial G}{\partial \tilde{p}_i} + O(\epsilon^2)
+\end{equation} \refstepcounter{subsection}
+Entonces ahora podemos escribir sustituyendo en (4.3.19), considerando $G = G(\{\tilde{q}_i,\tilde{p}_i\})$
+\begin{equation} \label{4.2.7}
+    \begin{split}
+        \eta_i &= \ \ \ \frac{\partial G}{\partial \tilde{q}_i} +O(\epsilon) \ \ \ \ i = 1,\dots,s\\ 
+        \eta_i &= -\frac{\partial G}{\partial \tilde{p}_i} +O(\epsilon) \ \ \ \ i = s+1,\dots,2s
+    \end{split} \implies \vec{\eta} = \mathbb{J} \frac{\partial G}{\partial \vec{\mu}} +O(\epsilon)
+\end{equation} \refstepcounter{subsection}
+Si ahora calculamos el jacobiano ($\mathbb{M}$) de $\vec{\zeta}$ (4.3.17) usando (4.3.21), llegamos a la siguiente expresión, donde $\mathbb{H}$ es la Hessiana de $G$
+\begin{equation} \label{4.2.7}
+    \mathbb{M} = \frac{\partial \vec{\zeta}}{\partial \vec{\mu}} = \mathbb{I} + \epsilon \mathbb{J} \mathbb{H} + O(\epsilon^2) \ \ \ \ \ \ \mathbb{H}_{ij} = \frac{\partial^2 G}{\partial \mu_i \partial \mu_j}
+\end{equation} \refstepcounter{subsection}
+Ahora podemos que verifica la condición (4.3.8) a primer orden, aplicando el Teorema de Schwarz ($\mathbb{H}^T = \mathbb{H}$) y que $\mathbb{J}^T = -\mathbb{J}$
+\begin{equation} \label{4.2.7}
+    \begin{split}
+        \mathbb{M}^T = \mathbb{I} + \epsilon \mathbb{H}^T \mathbb{J}^T  + O(\epsilon^2) &= \mathbb{I} - \epsilon \mathbb{H} \mathbb{J}  + O(\epsilon^2)\\ 
+        \mathbb{J} = \left(\mathbb{I} + \epsilon  \mathbb{J}\mathbb{H} + O(\epsilon^2)\right) \mathbb{J} \left(\mathbb{I} - \epsilon \mathbb{H} \mathbb{J}  + O(\epsilon^2)\right) &= \mathbb{J} + \epsilon  \mathbb{J}\mathbb{H}\mathbb{J} -  \epsilon  \mathbb{J}\mathbb{H}\mathbb{J} + O(\epsilon^2) = \mathbb{J} + O(\epsilon^2)
+    \end{split}
+\end{equation} \refstepcounter{subsection}
+Por lo tanto podemos concluir que la transformación $\mathbf{Z}(\mathbf{z};t_0) \rightarrow \mathbf{Z}(\mathbf{z};t_0 + \epsilon)$ es canónica ($\mathbf{z} \rightarrow \mathbf{Z}(\mathbf{z};t_0)$ tiene que ser canónica en primer lugar) y que verifica (4.3.8) a primer orden.
 \section{Espacio de fase} \refstepcounter{subsection}
 El hecho de que solo haya una sola solución para las ecuaciones del movimiento, es decir, que solo hay una posible trayectoria dadas unas condiciones dadas, significa que el sistema con el que estamos tratando es \textit{determinista}.
 
