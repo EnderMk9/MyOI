@@ -193,7 +193,7 @@ Ahora, queremos saber que ocurre con la condición (4.3.8) cuando la transformac
 
 Primero, escribimos una transformación infinitesimal de la siguiente forma forma, 
 \begin{equation} \label{4.2.7}
-    \mathbf{Z} = \mathbf{Z}(\mathbf{z},t) = \vec{\zeta}(\mathbf{Z}(\mathbf{z},t_0),t) \rightarrow \vec{\zeta} = \vec{\mu} + \epsilon \vec{\eta}(\vec{\mu}) +O(\epsilon^2) \ \ \ \ \ \ \epsilon = t-t_0 \ \ \ \ \ \ \vec{\mu} = \mathbf{Z}(\mathbf{z},t_0) \ \ \ \ \ \  \vec{\eta}(\mathbf{z}(\vec{\mu})) = \left.\frac{\partial \mathbf{Z}}{\partial t}\right|_{t=t_0}
+    \mathbf{Z} = \mathbf{Z}(\mathbf{z},t) = \vec{\zeta}(\mathbf{Z}(\mathbf{z},t_0),t) \rightarrow \vec{\zeta}(\vec{\mu},\epsilon) = \vec{\mu} + \epsilon \vec{\eta}(\vec{\mu}) +O(\epsilon^2) \ \ \ \ \ \ \epsilon = t-t_0 \ \ \ \ \ \ \vec{\mu} = \mathbf{Z}(\mathbf{z},t_0) \ \ \ \ \ \  \vec{\eta}(\mathbf{z}(\vec{\mu})) = \left.\frac{\partial \mathbf{Z}}{\partial t}\right|_{t=t_0}
 \end{equation} \refstepcounter{subsection}
 Ahora podemos escribir la siguiente función generadora, dónde $\tilde{q}_i$ y $\tilde{p}_i$ son las componentes de $\vec{\mu}$, el primer sumatorio es la función generadora de la identidad
 
@@ -240,6 +240,72 @@ Ahora podemos que verifica la condición (4.3.8) a primer orden, aplicando el Te
     \end{split}
 \end{equation} \refstepcounter{subsection}
 Por lo tanto podemos concluir que la transformación $\mathbf{Z}(\mathbf{z};t_0) \rightarrow \mathbf{Z}(\mathbf{z};t_0 + \epsilon)$ es canónica ($\mathbf{z} \rightarrow \mathbf{Z}(\mathbf{z};t_0)$ tiene que ser canónica en primer lugar) y que verifica (4.3.8) a primer orden.
+
+De esta forma podemos escribir la transformación original como 
+\begin{equation} \label{4.2.7}
+    \mathbf{Z}(\mathbf{z},t) = \lim_{\epsilon \rightarrow 0 \ \ n \rightarrow \infty} \vec{\zeta}_n(\vec{\zeta}_{n-1}(\dots(\vec{\zeta}_0))) \ \ \ \ \ \vec{\zeta}_0 = \mathbf{Z}(\mathbf{z},t_0) \ \ \ \  n = \frac{t_n-t_0}{t_1-t_0} = \frac{t-t_0}{\epsilon} \ \ \ \ \ \ \mathbb{J} = \mathbb{M}_\mathbf{z}\mathbb{J}\mathbb{M}_\mathbf{z}^T
+\end{equation} \refstepcounter{subsection}
+Esta expresión es equivalente a aplicar el método de Euler para integrar una EDO de aplicando la ecuación $\vec{\zeta}$ de forma iterativa, además, es sencillo demostrar que la jacobiana de la composición es el producto de las jacobianas, pudiendo sustuir en (4.3.24) y usando (4.3.23) iterativamente comprobar que la expresión es cierta. Así, hemos demostrado que cualquier transformación, incluso si depende del tiempo, es canónica si y sólo si su jacobiano $\mathbb{M}$ verifica (4.3.8) ($\mathbb{J} = \mathbb{M}_\mathbf{z}\mathbb{J}\mathbb{M}_\mathbf{z}^T$) (aunque si depende del tiempo no necesariamente $\pazocal{H}=\pazocal{K}$).
+Se puede demostrar además que las transfomaciones canónicas, y concreto las matrices $\mathbb{M}$ que verifican (4.3.8) ($\mathbb{J} = \mathbb{M}_\mathbf{z}\mathbb{J}\mathbb{M}_\mathbf{z}^T$) forman un grupo bajo la operación composición.
+
+
+\section{Paréntesis de Poisson (I)} \refstepcounter{subsection}
+Sea $f=f(\{q_j,p_j\};t)$ una función de las coordenadas canónicas, podemos hacer su derivada total con respecto al tiempo, tal que
+\begin{equation} \label{4.4.1}
+    \frac{d f}{dt} = \sum^s \left(\frac{\partial f}{\partial q_j}\dot{q}_j+\frac{\partial f}{\partial p_j}\dot{p}_j\right) + \frac{\partial f}{\partial t}
+\end{equation} \refstepcounter{subsection}
+Usando (3.2.5) (Ecs. H.) llegamos a 
+\begin{equation} \label{4.4.2}
+\frac{d f}{dt} = \sum^s \left(\frac{\partial f}{\partial q_j}\frac{\partial \pazocal{H}}{\partial p_j}-\frac{\partial f}{\partial p_j}\frac{\partial \pazocal{H}}{\partial q_j}\right) + \frac{\patial f}{\partial t} = [f,\pazocal{H}]_\mathbf{z} + \frac{\partial f}{\partial t}
+\end{equation} \refstepcounter{subsection}
+Dónde $[f,\pazocal{H}]$ es el \textit{paréntesis de Poisson} de $f$ y $\pazocal{H}$, en general lo definimos para dos funciones y unas ciertas variables canónicas $\mathbf{z}$ como
+\begin{equation} \label{4.4.3}
+    [f,g]_\mathbf{z}=  \sum^s \left(\frac{\partial f}{\partial q_j}\frac{\partial g}{\partial p_j}-\frac{\partial f}{\partial p_j}\frac{\partial g}{\partial q_j}\right) = \left[\frac{\partial f}{\partial \mathbf{z}}\right]^T \hspace{-7pt} \mathbb{J} \left[\frac{\partial g}{\partial \mathbf{z}}\right]
+\end{equation} \refstepcounter{subsection}
+Sus propiedades algebraicas son muy similares a aquellas del producto vectorial puesto que su expresión es muy similar, puesto que ambos son ejemplos de álgebras de Lie, sus propiedades son y se pueden verificar reemplando en (4.4.3).
+\begin{itemize}
+    \item Es alternada $[f,g]=-[g,f]$ y $[f,f]=0$.
+    \item Si $[f,g]=0 \iff [f,g]=[g,f]=0$ las funciones conmutan.
+    \item Es bilineal, $[f,\alpha g + \beta h] = \alpha [f,g] + \beta [f,h]$ en ambas entradas.
+    \item Existe una regla del producto $[f,gh]=g[f,h]+[f,g]h$.
+    \item Se verifica la \textit{Identidad de Jacobi}, $\left[f,[g,h]\right]+\left[h,[f,g]\right]+\left[g,[h,f]\right]=0$.
+\end{itemize}
+%Otra regla del producto que se verifica, usando la conmutividad de las derivadas parciales, es $\frac{\partial}{\partial t}[f,g]=[\frac{\partial f}{\partial t},g]+[f,\frac{\partial g}{\partial t}]$.
+
+Si la función $f$ no depende explícitamente del tiempo, entonces si $f$ conmuta con $\pazocal{H}$, eso implica por (4.4.2) y las propiedades anteriores, que $f$ se conserva.
+
+Además, si tenemos dos cantidades conservadas $f$ y $g$, entonces tenemos que, usando la \textit{Identidad de Jacobi}, se conserva su paréntesis
+\begin{equation} \label{4.4.5}
+    \frac{d}{dt}[f,g]_\mathbf{z}=0
+\end{equation} \refstepcounter{subsection}
+Si hacemos $[q_k,\pazocal{H}]$ y $[p_k,\pazocal{H}]$ aplicando (4.4.3) y (3.2.5) (Ecs. H.), obtenemos las ecuaciones del movimiento expresadas en términos de \textit{paréntesis de Poisson}.
+\begin{equation} \label{4.4.6}
+    \boxed{[q_k,\pazocal{H}]_\mathbf{z} = \dot{q}_k \ \ \ \ \ [p_k,\pazocal{H}]_\mathbf{z}=\dot{p}_k} \iff [\mathbf{z},\pazocal{H}]_\mathbf{z} = \dot{\mathbf{z}}
+\end{equation} \refstepcounter{subsection}
+Tenemos también los paréntesis de \textit{paréntesis de Poisson} fundamentales
+\begin{equation} \label{4.4.7}
+    [q_k,q_l]_\mathbf{z}=[p_k,p_l]_\mathbf{z}=0 \ \ \ \ \ [q_k,p_l]_\mathbf{z}=\delta_{kl} \iff [\mathbf{z},\mathbf{z}]_\mathbf{z} = \mathbb{J}
+\end{equation} \refstepcounter{subsection}
+
+\subsection{Invariancia bajo T. Canónicas}
+Como el Corchete de Poisson esta relacionado con las ecuaciones de Hamilton y con la evolución temporal de funciones del sistema, esperamos que este se mantenga invariante bajo una transformación canónica, demostrémoslo.
+
+Vamos a suponer ahora unas transformaciones $\mathbf{Z}=\mathbf{Z}(\mathbf{z};t)$ canónicas, tal que $\mathbb{J} = \mathbb{M}_\mathbf{z}\mathbb{J}\mathbb{M}_\mathbf{z}^T$ para la jacobiana de la transformación $\mathbb{M}$. Usando la expresión (4.3.7) para una función arbitraria y su equivalente en las nuevas coordenadas, en vez tomar especificamente el \texit{Hamiltoniano}, tenemos
+\begin{equation} \label{4.4.7}
+    [f,g]_\mathbf{z} = \left[\frac{\partial f}{\partial \mathbf{z}}\right]^T \hspace{-7pt} \mathbb{J} \left[\frac{\partial g}{\partial \mathbf{z}}\right] = \left[\mathbb{M}^T\frac{\partial f}{\partial \mathbf{Z}}\right]^T \hspace{-7pt} \mathbb{J} \left[\mathbb{M}^T\frac{\partial g}{\partial \mathbf{Z}}\right] = \left[\frac{\partial f}{\partial \mathbf{Z}}\right]^T \hspace{-7pt}\mathbb{M} \mathbb{J}\mathbb{M}^T \left[\frac{\partial g}{\partial \mathbf{Z}}\right] = \left[\frac{\partial f}{\partial \mathbf{Z}}\right]^T \hspace{-7pt} \mathbb{J} \left[\frac{\partial g}{\partial \mathbf{Z}}\right] = [f,g]_\mathbf{Z}
+\end{equation} \refstepcounter{subsection}
+De esta forma, el paréntesis queda invariante si y sólo si la transfomación es canónica. De hecho podemos reformular la condición de que una transformación sea canónica a que mantenga el paréntesis invariante, puesto que son equivalentes.
+
+Además, ahora no vamos a especificar las coordenadas con respecto a las cuales hacemos el paréntesis y todas las fórmulas de la sección anterior son válidas para cualquier conjunto de coordendas canónicas.
+\subsection{Corchete de Lagrange}
+Podemos definir otra operación similar, llamada Corchete de Lagrange, que se puede demostrar de manera muy similar a (4.4.7) que se conserva bajo transformaciones canónicas
+\begin{equation} \label{4.4.3}
+    \{f,g\}=  \sum^s \left(\frac{\partial q_j}{\partial f}\frac{\partial p_j}{\partial g}-\frac{\partial p_j}{\partial f}\frac{\partial q_j}{\partial g}\right) = \left[\frac{\partial \mathbf{z}}{\partial f}\right]^T \hspace{-7pt} \mathbb{J} \left[\frac{\partial \mathbf{z}}{\partial g}\right]
+\end{equation} \refstepcounter{subsection}
+A priori, parece como hacer la 'inversa' de los corchetes de Poisson, y en cierto sentido lo es, si $\mathbf{u}$ son $2s$ funciones independientes, puede demostrarse la siguiente expresión
+\begin{equation} \label{4.4.3}
+    [\mathbf{u},\mathbf{u}]\{\mathbf{u},\mathbf{u}\}=  -1
+\end{equation} \refstepcounter{subsection}
 \section{Espacio de fase} \refstepcounter{subsection}
 El hecho de que solo haya una sola solución para las ecuaciones del movimiento, es decir, que solo hay una posible trayectoria dadas unas condiciones dadas, significa que el sistema con el que estamos tratando es \textit{determinista}.
 
@@ -257,15 +323,22 @@ Además si $\pazocal{H}$ se conserva, entonces por cada punto del espacio de fas
 	\labfig{margin3}
 \end{marginfigure}
 Como ejemplo vamos a ver un péndulo, tomando las expresiones del ejemplo de (4.2), donde las coordenadas del espacio de fases son $(\theta,p_\theta)$, si $\theta \ll 1$, tenemos $\ddot{\theta}+\frac{g}{l}\theta=0$, cuya solución, donde $\omega^2=g/l$, es
-\[\theta = A \sin{(\omega t + \theta_0)}+ B \cos{(\omega t + \theta_0)} \ \ \ \ \dot{\theta} = A\omega \cos{(\omega t + \theta_0)}- B \omega \sin{(\omega t + \theta_0)} \ \ \ \ p_\theta = ml^2 \dot{\theta}\]
-\[\theta^2 + \frac{p_\theta^2}{\omega^2 m^2l^4}=A^2+B^2 \mbox{ (elipse)}\]
+\[
+    \begin{split}
+        \theta = A \sin{(\omega t + \theta_0)}+ B \cos{(\omega t + \theta_0)} \ \ \ \ \dot{\theta} &= A\omega \cos{(\omega t + \theta_0)}- B \omega \sin{(\omega t + \theta_0)} \ \ \ \ p_\theta = ml^2 \dot{\theta}\\ 
+        \theta^2 &+ \frac{p_\theta^2}{\omega^2 m^2l^4}=A^2+B^2 \mbox{ (elipse)}
+    \end{split}    
+\]
+
+\vspace{-35pt}
+
 \subsection{Teorema de Liouville} \refstepcounter{subsection}
 \subsubsection{Volumen en el espacio de fase}
 Definimos el volumen en el espacio de fases como
 \begin{equation} \label{4.3.1}
-    V = \prod_j^s \Delta q_j \Delta p_j
+    V = \int \dots \int \prod_j^s d q_j d p_j
 \end{equation} \refstepcounter{subsection}
-Donde $\Delta q_j \Delta p_j$ es el área en uno de los $s$ planos.
+Donde $d q_j d p_j$ son elementos de área en uno de los $s$ planos. Es sencillo demostrar que una transformación deja invariante el volumen puesto que al hacer un cambio de variable hay que introducir el valor absoluto del determinante de la jacobiana, que como demostramos, es $1$, por lo tanto $dV$ se conserva y $V$ también.
 
 Si ahora tenemos una serie de condiciones iniciales distribuidas dentro de una región volumétrica del espacio de fases, siendo $\pazocal{N}$ el número de condiciones iniales dentro de $V$, entonces si consideramos como la frontera de $V$ se transforma con el tiempo para dar $V'$, entonces $\pazocal{N}$ se conserva, puesto que para que una trayectoria entre o salga del volumen sería necesario que cortase una trayectoria de la frontera, lo cual no puede ocurrir en un sistema determinista.
 \subsubsection{Teorema de Liouville} \refstepcounter{subsection}
@@ -274,66 +347,28 @@ El volumen $V(S)$ dentro de una superficie $S(t)$ del espacio de fase se conserv
     \frac{dV}{dt}=0 \implies \frac{d\rho}{dt} = 0 \ \ \ \ \rho = \frac{\pazocal{N}}{V}
 \end{equation} \refstepcounter{susection}
 
-\textbf{Demostración intuitiva}
+\textbf{Demostración}
 
-Sean $\mathbf{z}=(\mathbf{q},\mathbf{p})$, $\mathbf{v}=\dot{\mathbf{z}}=(\dot{\mathbf{q}},\dot{\mathbf{p}})$, y $\mathbf{\nabla} = (\mathbf{\nabla}_\textbf{q},\mathbf{\nabla}_\textbf{p})$, entonces la divergencia de $\mathbf{v}$, tal que
+Sea $\mathbf{\nabla} = (\mathbf{\nabla}_\textbf{q},\mathbf{\nabla}_\textbf{p})$, entonces la divergencia de $\dot{\mathbf{z}}$, tal que
 \begin{equation} \label{4.3.4}
-    \mathbf{\nabla} \cdot \mathbf{v} = \sum^s \frac{\partial \dot{q}_j}{\partial q_j} + \frac{\partial \dot{p}_j}{\partial p_j}
+    \mathbf{\nabla} \cdot \dot{\mathbf{z}} = \sum^s \frac{\partial \dot{q}_j}{\partial q_j} + \frac{\partial \dot{p}_j}{\partial p_j}
 \end{equation} \refstepcounter{subsection}
 entonces por el Teorema de la Divergencia
 \begin{equation} \label{4.3.5}
-    \int_V{\mathbf{\nabla} \cdot \mathbf{v} dV} = \int_S \mathbf{v} \cdot d\mathbf{S}
+    \int_V{\mathbf{\nabla} \cdot \dot{\mathbf{z}} dV} = \int_S \dot{\mathbf{z}} \cdot d\mathbf{S}
 \end{equation} \refstepcounter{subsection}
-La variación de $V$ en términos del tiempo es la siguiente, ya que $\mathbf{v}dt$ indica como se mueven las partículas de dentro de $V$, y multiplicando por $d\mathbf{S}$ nos indica como varía el volumen infinitesimalmente en un punto de la superficie, integrando en la superficie para ver la variación total de $V$ tenemos
+La variación de $V$ en términos del tiempo es la siguiente, ya que $\dot{\mathbf{z}}dt$ indica como se mueven las partículas de dentro de $V$, y multiplicando por $d\mathbf{S}$ nos indica como varía el volumen infinitesimalmente en un punto de la superficie, integrando en la superficie para ver la variación total de $V$ tenemos
 \begin{equation} \label{4.3.6}
-    dV=\int_S \mathbf{v} \cdot d\mathbf{S} dt \implies \frac{dV}{dt} = \int_S \mathbf{v} \cdot d\mathbf{S}
+    dV=\int_S \dot{\mathbf{z}} \cdot d\mathbf{S} dt \implies \frac{dV}{dt} = \int_S \dot{\mathbf{z}} \cdot d\mathbf{S}
 \end{equation} \refstepcounter{subsection}
 Combinando (4.4.4), (4.4.5) y sustituyendo (4.4.3) llegamos a 
 \begin{equation} \label{4.3.7}
-    \frac{dV}{dt} = \int_V{\mathbf{\nabla} \cdot \mathbf{v} dV} = \int_V{\left(\sum^s \frac{\partial \dot{q}_j}{\partial q_j} + \frac{\partial \dot{p}_j}{\partial p_j}\right)dV}
+    \frac{dV}{dt} = \int_V{\mathbf{\nabla} \cdot \dot{\mathbf{z}} dV} = \int_V{\left(\sum^s \frac{\partial \dot{q}_j}{\partial q_j} + \frac{\partial \dot{p}_j}{\partial p_j}\right)dV}
 \end{equation} \refstepcounter{subsection}
 Ahora usando (4.2.5) (Ecs. H.) y que las parciales conmutan.
 \begin{equation} \label{4.3.8}
     \frac{dV}{dt} = \int_V{\left(\sum^s \frac{\partial \pazocal{H}}{\partial q_j p_j} - \frac{\partial \pazocal{H}}{\partial p_j q_j}\right)dV} = 0
 \end{equation} \refstepcounter{subsection}
-\section{Paréntesis de Poisson} \refstepcounter{subsection}
-Sea $f=f(\{q_j,p_j\};t)$ una función de las coordenadas canónicas, podemos hacer su derivada total con respecto al tiempo, tal que
-\begin{equation} \label{4.4.1}
-    \frac{d f}{dt} = \sum^s \left(\frac{\partial f}{\partial q_j}\dot{q}_j+\frac{\partial f}{\partial p_j}\dot{p}_j\right) + \frac{\partial f}{\partial t}
-\end{equation} \refstepcounter{subsection}
-Usando (3.2.5) (Ecs. H.) llegamos a 
-\begin{equation} \label{4.4.2}
-\frac{d f}{dt} = \sum^s \left(\frac{\partial f}{\partial q_j}\frac{\partial \pazocal{H}}{\partial p_j}-\frac{\partial f}{\partial p_j}\frac{\partial \pazocal{H}}{\partial q_j}\right) + \frac{\patial f}{\partial t} = [f,\pazocal{H}] + \frac{\partial f}{\partial t}
-\end{equation} \refstepcounter{subsection}
-Dónde $[f,\pazocal{H}]$ es el \textit{paréntesis de Poisson} de $f$ y $\pazocal{H}$, en general lo definimos para dos funciones como
-\begin{equation} \label{4.4.3}
-    [f,g]=  \sum^s \left(\frac{\partial f}{\partial q_j}\frac{\partial g}{\partial p_j}-\frac{\partial f}{\partial p_j}\frac{\partial g}{\partial q_j}\right)
-\end{equation} \refstepcounter{subsection}
-Sus propiedades algebraicas son muy similares a aquellas del producto vectorial puesto que su expresión es muy similar, son sencillas de verificar reemplando a fuerza bruta en (4.4.3).
-\begin{itemize}
-    \item Es alternada $[f,g]=-[g,f]$ y $[f,f]=0$.
-    \item Si $[f,g]=0 \iff [f,g]=[g,f]=0$ las funciones conmutan.
-    \item Es bilineal, $[f,\alpha g + \beta h] = \alpha [f,g] + \beta [f,h]$.
-    \item Existe una regla del producto $[f,gh]=g[f,h]+h[f,g]$.
-    \item Se verifica la \textit{Identidad de Jacobi}, $\left[f,[g,h]\right]+\left[h,[f,g]\right]+\left[g,[h,f]\right]=0$.
-\end{itemize}
-Otra regla del producto que se verifica, usando la conmutividad de las derivadas parciales, es $\frac{\partial}{\partial t}[f,g]=[\frac{\partial f}{\partial t},g]+[f,\frac{\partial g}{\partial t}]$.
 
-Si la función $f$ no depende explícitamente del tiempo, entonces si $f$ conmuta con $\pazocal{H}$, eso implica por (4.4.2) y las propiedades anteriores, que $f$ se conserva.
 
-Además, si tenemos dos cantidades conservadas $f$ y $g$, entonces tenemos que, usando la \textit{Identidad de Jacobi}, se conserva su paréntesis
-\begin{equation} \label{4.4.5}
-    \frac{d}{dt}[f,g]=0
-\end{equation}
-
-Si hacemos $[q_k,\pazocal{H}]$ y $[p_k,\pazocal{H}]$ aplicando (4.4.3) y (3.2.5) (Ecs. H.), obtenemos las ecuaciones del movimiento expresadas en términos de \textit{paréntesis de Poisson}.
-\begin{equation} \label{4.4.6}
-    \boxed{[q_k,\pazocal{H}] = \dot{q}_k \ \ \ \ \ [p_k,\pazocal{H}]=\dot{p}_k}
-\end{equation}
-Tenemos también los paréntesis de \textit{paréntesis de Poisson} fundamentales
-\begin{equation} \label{4.4.7}
-    [q_k,q_l]=[p_k,p_l]=0 \ \ \ \ \ [q_k,p_l]=\delta_{kl}
-\end{equation}
-En mecánica cuántica se define un operador similar, y expresar expresar sistemas en términos de \textit{paréntesis de Poisson} nos permite cuantizarlos. Un ejemplo es que (4.4.2) se convierte en la ecuación de \textit{Heissenberg}.
-
-No hay mucho detalle en esta sección por que no es muy relevante para este curso, se incluye para familiarizarse con este formalismo.
+\section{Paréntesis de Poisson (II)} \refstepcounter{subsection}
