@@ -1,4 +1,5 @@
 \chapter{Modos normales}
+\refstepcounter{section}
 \refstepcounter{subsection}
 Vamos a suponer un caso más general formado por $N$ partículas que intectúan entre sí con un potencial $U$, que siguiendo las mísmas líneas que en (8.0.1) podemos expresar el potencial a pequeñas oscilaciones de la posición de equilibrio sin pérdida de generalidad estableciendo el mínimo y el origen de potencial en el origen de las coordenadas generalizadas $q_j$
 \begin{equation} \label{6.1.1}
@@ -6,11 +7,11 @@ Vamos a suponer un caso más general formado por $N$ partículas que intectúan 
 \end{equation}\refstepcounter{subsection}
 Por otro lado, usando el teorema de la energía cinética cuando las coordendas generalizadas no dependen explícitamente del tiempo, y aproximando la matriz a orden constante para tener orden cuadrático en T.
 \begin{equation} \label{6.1.1}
-     T \approx \sum_{j,k}^s{\left(\sum_{\alpha,i}^{N,d}{ \frac{1}{2} m_\alpha \left.\frac{\partial x_{\alpha i}}{\partial q_j}\right|_0\left.\frac{\partial x_{\alpha i}}{\partial q_k}\right|_0\right)\dot{q}_j\dot{q}_k}} = \frac{1}{2}\dot{\mathbf{q}}^{\mbox{\tiny T}} \mathbb{M}\dot{\mathbf{q}} \ \ \ \ \nabla_{\dot{\mathbf{q}}} T \approx \mathbb{M}\dot{\mathbf{q}}
+     T \approx \sum_{j,k}^s{\left(\sum_{\alpha,i}^{N,d} \frac{1}{2} m_\alpha \left.\frac{\partial x_{\alpha i}}{\partial q_j}\right|_0\left.\frac{\partial x_{\alpha i}}{\partial q_k}\right|_0\right)\dot{q}_j\dot{q}_k} = \frac{1}{2}\dot{\mathbf{q}}^{\mbox{\tiny T}} \mathbb{M}\dot{\mathbf{q}} \ \ \ \ \nabla_{\dot{\mathbf{q}}} T \approx \mathbb{M}\dot{\mathbf{q}}
 \end{equation}\refstepcounter{subsection}
 Entones aplicando (2.2.1) (E-L) llegamos a la siguiente ecuación que queremos resolver
 \begin{equation} \label{6.1.1}
-    \mathbb{M}\ddot{\mathbf{q}} = - \mathbb{K} \mathbf{q} \ \ \ \ M_{ij} = \sum_{\alpha,k}^{N,d}{ \frac{1}{2} m_\alpha \left.\frac{\partial x_{\alpha k}}{\partial q_j}\right|_0\left.\frac{\partial x_{\alpha k2}}{\partial q_k}\right|_0 \ \ \ \ K_{ij} = \left.\frac{\partial^2 U}{\partial q_i q_j}\right|_0
+    \mathbb{M}\ddot{\mathbf{q}} = - \mathbb{K} \mathbf{q} \ \ \ \ M_{ij} = \sum_{\alpha,k}^{N,d} \frac{1}{2} m_\alpha \left.\frac{\partial x_{\alpha k}}{\partial q_j}\right|_0\left.\frac{\partial x_{\alpha k2}}{\partial q_k}\right|_0 \ \ \ \ K_{ij} = \left.\frac{\partial^2 U}{\partial q_i q_j}\right|_0
 \end{equation}\refstepcounter{subsection}
 En la práctica, lo que se hace es calcularte $T$ y $U$, aproximarlas a orden cuadrático de $\dot{\mathbf{q}}$ y $\mathbf{q}$ respectivamente, y sacar las matrices de las formas cuadráticas correspondientes, que serán $\mathbb{M}$ y $\mathbb{K}$, respectivamente. En ocasiones realizar las aproximaciones se vuelve complicado y es mejor sacar directamente $\mathbb{H}_{\mbox{\tiny U}}(0)$ de su definición.
 
@@ -60,7 +61,7 @@ Utilizando las expresiones de (9.0.1) y (9.0.2) tenemos que
 \begin{equation} \label{6.1.1}
     E = T+U = \frac{1}{2}\sum_i^2 \left(\dot{\varsigma}_i^2 + \omega_i^2\varsigma_i^2\right)
 \end{equation}\refstepcounter{subsection}
-
+\newpage
 \subsection{Péndulo Doble}
 \refstepcounter{subsection}
 Se va a hacer como ejemplo el péndulo doble para pequeñas oscilaciones en torno a la posición de equilibrio para dos masas iguales y longitudes de los péndulos iguales, por simplificar.

@@ -13,6 +13,7 @@ Entonces un sistema de referencia es no inercial cuando, para algún $j$,
     \left(\frac{d}{dt}\mathbf{e}_j\right)_{\pazocal{S}_0} \neq 0 \iff \left(\frac{d}{dt}\mathbf{e}_{j_0}\right)_{\pazocal{S}} \neq 0 
 \end{equation} \refstepcounter{subsection}
 es decir, alguno de los vectores de $\pazocal{S}$ no es constante respecto a $\pazocal{S}_0$. También es un sistema no inercial en general cuando $\pazocal{O}$ este acelerado con respecto a un $\pazocal{S}_0$.
+\refstepcounter{section}
 \section{Aceleración rectilínea}
 \refstepcounter{subsection}
 Si tenemos que $\pazocal{S}$ esta se mueve de forma rectilínea respecto a $\pazocal{S}_0$ con aceleración $\mathbf{A}=\dot{\mathbf{V}}$, donde $\mathbf{V}$ es la velocidad de $\pazocal{S}$ respecto a $\pazocal{S}_0$.
@@ -91,7 +92,7 @@ La fuerza de marea la podemos descomponer en dos sumandos, tal que
 \begin{equation} \label{6.1.1}
     \mathbf{F}_{\mbox{\small marea}}= -GmM_L\frac{\mathbf{e}_d}{d^2}+GmM_L\frac{\mathbf{e}_{d_0}}{d_0^2}=-\nabla\left(-\frac{GmM_L}{d}\right)-\nabla\left(-\frac{GmM_Lx}{d_0^2}\right)
 \end{equation} \refstepcounter{subsection}
-$d_0$ es aproximadamente constante en las escalas temporales en las que trabajamos. $x$ es la coordenada cartesiana horizontal y $\mathbf{e}_x=\mathbf{e}_d$. $d$ es una coordenada esférica no centrada en el origen, podemos expresar el gradiente así porque $\mathbf{d}=\mathbf{d}_0+\mathbf{r}$ y los gradientes de $d$ y $r$ son iguales ya que $\mathbf{d}_0$ es constante.
+$d_0$ es aproximadamente constante en las escalas temporales en las que trabajamos. $x$ es la coordenada cartesiana horizontal y $\mathbf{e}_x=\mathbf{e}_{d0}$. $d$ es una coordenada esférica no centrada en el origen, podemos expresar el gradiente así porque $\mathbf{d}=\mathbf{d}_0+\mathbf{r}$ y los gradientes de $d$ y $r$ son iguales ya que $\mathbf{d}_0$ es constante.
 
 Entonces como tratamos con una superfice equipotencial, tenemos que $U(A)=U(C)$ y entonces tenemos que pasando los términos similares a cada lado
 \begin{equation} \label{6.1.1}
@@ -130,6 +131,7 @@ Entonces despejando $h$ de (6.1.18) y usando $g=GM_T/R_T^2$ llegamos a
 Para la Luna esto nos da del orden de medio metro, y para un sistema equivalente con el Sol nos da un cuarto de metro.
 
 En función de la posición del Sol y la Luna, las mareas de ambos se sumarán o se restarán.
+\refstepcounter{section}
 \section{Sistemas no inerciales en rotación}\refstepcounter{subsection}
 Cualquier trayectoria no rectilínea puede intepresarse como una sucesión de arcos de círculo con radio y centro variables. Definimos la velocidad angular $\omega$ como $\dot{\theta}$, siendo $\theta$ el ángulo que recorre en ese arco circular.
 \subsection{Rotación respecto a un punto fijo}
@@ -221,7 +223,7 @@ Vamos a estudiar entonces la caída libre en un cuerpo en rotación como puede s
 \end{equation} \refstepcounter{subsection}
 Haciendo el siguiente cociente, obtenemos el orden de magnitud de (6.2.11)
 \begin{equation} \label{6.1.1}
-    \frac{|\mathbf{F}_{\mbox{\small cf}}|}{|\mathbf{F}_{\mbox{g}}|} \sim \frac{\omega^2 R_T}{g_0} \approx 3 \cdot 10^{-3}}
+    \frac{|\mathbf{F}_{\mbox{\small cf}}|}{|\mathbf{F}_{\mbox{g}}|} \sim \frac{\omega^2 R_T}{g_0} \approx 3 \cdot 10^{-3}
 \end{equation} \refstepcounter{subsection}
 \begin{marginfigure}[0pt]
     \def\svgwidth{5 cm}
@@ -230,7 +232,7 @@ Haciendo el siguiente cociente, obtenemos el orden de magnitud de (6.2.11)
 	\labfig{margin2}
     \vspace{-10pt}
 \end{marginfigure}
-\vspace{-15}
+\vspace{-15pt}
 Podemos descomponer $\mathbf{e}_\rho$ en términos de $\mathbf{e}_r$ y $\mathbf{e}_\theta$, tal que
 \begin{equation} \label{6.1.1}
     \mathbf{e}_\rho = \sin\theta \mathbf{e}_r + \cos\theta \mathbf{e}_\theta
@@ -245,7 +247,7 @@ Esta inclinación es del orden de unos pocos minutos de arco como máximo (para 
 \begin{equation} \label{6.1.1}
     \alpha = \tan^{-1}\left(\left|\frac{g_\theta}{g_r}\right|\right) = \tan^{-1}\left(\left|\frac{r\omega^2 \sin \theta \cos \theta}{r\omega^2\sin^2\theta-g_0}\right|\right)
 \end{equation} \refstepcounter{subsection}
-\vspace{-20pt}
+\newpage
 \subsubsection{Fuerza de Coriolis}
 Ahora vamos a estudiar la fuerza de Coriolis, que es $2 m \dot{\mathbf{r}} \times  \vec{\omega}$, que vemos que es el producto de la velocidad por otro vector, lo que nos recuerda a la fuerza magnética $q \mathbf{v} \times \mathbf{B}$, como en este caso $\vec\omega$ es constante, el comportamiento será análogo al de una carga en presencia de un campo magnético uniforme, es decir, va a tender a girar.
 
@@ -327,20 +329,13 @@ En el caso particular de que $\mathbf{v}_0 = 0$ tenemos un desplazamiento propor
 \begin{equation} \label{6.1.1}
     t = z_0^{1/2} \sqrt{\frac{2}{g}} \implies \Delta x = \frac{ \omega \sin\theta}{3} \sqrt{\frac{8}{g}} z_0^{3/2}
 \end{equation} \refstepcounter{subsection}
-\vspace{-15}
+\vspace{-15pt}
 \subsubsection{Péndulo de Foucault}
-\begin{marginfigure}[0pt]
-    \def\svgwidth{3.5 cm}
-    \normalsize
-	\input{images/foucault.pdf_tex}
-	\labfig{margin2}
-    \vspace{-10pt}
-\end{marginfigure}
 
 \begin{marginfigure}[0pt]
     \def\svgwidth{3.5 cm}
     \normalsize
-	\input{images/foucault2.pdf_tex}
+	\input{images/foucault.pdf_tex}
 	\labfig{margin2}
     \vspace{-10pt}
 \end{marginfigure}
@@ -360,6 +355,13 @@ Que hace que las expresiones de (6.2.27) nos queden como
     \frac{\rho}{L} \approx \beta \implies \frac{x}{L} \approx \frac{y}{L} \approx \beta \ \ \ \ \ T_z \approx T \ \ \ \ \  \frac{h}{L} \approx \frac{\beta^2}{2}
 \end{equation} \refstepcounter{subsection}
 De esta forma, $h$ y sus derivadas son de orden cuadrado y podemos despreciarlos.
+\begin{marginfigure}[0pt]
+    \def\svgwidth{3.5 cm}
+    \normalsize
+	\input{images/foucault2.pdf_tex}
+	\labfig{margin2}
+    \vspace{-10pt}
+\end{marginfigure}
 
 Escribimos entonces la 2 LN, y separamos las componentes, de la misma forma que en (6.2.20) añadiendo el término de la tensión
 \begin{equation} \label{6.1.1}

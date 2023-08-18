@@ -7,6 +7,7 @@ En el espacio, bastan las posiciones de otras tres masas y sus distancias a otra
 Si ahora añadimos otra masa cuya distancia a las tres anteriores debe ser fija, hemos añadido 3 ligaduras y tres grados de libertad, por que lo que los grados de libertad del sistema no aumentan, y así podemos hacer contínuamente, puesto que solo necesitamos 3 ligaduras cada vez que añadimos una partícula para asegurar que la distancia al resto es fija.
 
 Por lo tanto, un sólido rígido tiene a lo sumo 6 grados de libertad, 3 de ellos relacionados con la posición del centro de masas, y otros 3 de ellos relacionados con la posición rotacional del sólido.
+\refstepcounter{section}
 \section{Orientación}
 \refstepcounter{subsection}
 Vamos a analizar dos sistemas de referencia, ambos con origen en el centro de masas del sólido, uno de ellos, $\pazocal{S}_0 = \left\{\pazocal{O},(\mathbf{e}_x,\mathbf{e}_y,\mathbf{e}_z)\right\}$ no tiene por que ser un sistema inercial, y tenemos $\pazocal{S} = \left\{\pazocal{O},(\mathbf{e}_1,\mathbf{e}_2,\mathbf{e}_3)\right\}$ cuyo movimiento relativo con respecto a $\pazocal{S}_0$ es el de rotación con respecto al centro de masas.
@@ -59,6 +60,7 @@ Podemos describir cualquier orientación en el espacio mediante tres rotaciones 
     0 && 0 && 1
 \end{matrix}\right]\]
 \vspace{-15pt}
+\refstepcounter{section}
 \section{Tensor de Inercia}
 \vspace{-15pt}
 \subsection{Tensores}
@@ -125,7 +127,8 @@ Sea un sólido rígido de masa M, y consideramos dos sistemas de referencia con 
 \subsubsection{Ejes principales}
 Llamamos ejes principales aquellos en los que $\mathbf{L} = \lambda \vec{\omega}$ cuando $\vec{\omega}$ es paralelo al eje.
 Siempre existen tres ejes principales, ya que $\mathbf{I}$ es hermítico, entonces siempre existe una base ortonormal de autovectores que verifican la condición anterior.
-\section{Dinámica}
+\refstepcounter{section}
+\section{Dinámica}\refstepcounter{subsection}
 \subsection{Energía cinética de rotación}
 Tenemos la siguiente expresión de la energía cinética para un sistema de partículas, que ya hemos utilizado previamente
 \begin{equation} \label{6.1.1}
@@ -139,7 +142,7 @@ Vamos a desarrolar el término de la velocidad al cuadrado, teniendo en cuenta q
 \end{equation} \refstepcounter{subsection}
 Entonces, sustituyendo en (8.2.0) tenemos
 \begin{equation} \label{6.1.1}
-    T = \frac{1}{2} \sum_{jk} \omega_j \omega_k \sum_\alpha^N m_\alpha\left(\delta_{ik}|\mathbf{r}_\alpha|^2 - r_{\alpha k} r_{\alpha j}}\right) = \frac{1}{2} \sum_{jk} \omega_j \omega_k I_{jk} = \frac{1}{2} \sum_{j} \omega_j L_j
+    T = \frac{1}{2} \sum_{jk} \omega_j \omega_k \sum_\alpha^N m_\alpha\left(\delta_{ik}|\mathbf{r}_\alpha|^2 - r_{\alpha k} r_{\alpha j}\right) = \frac{1}{2} \sum_{jk} \omega_j \omega_k I_{jk} = \frac{1}{2} \sum_{j} \omega_j L_j
 \end{equation} \refstepcounter{subsection}
 \begin{equation} \label{6.1.1}
     T = \frac{1}{2} \vec{\omega} \cdot \mathbf{L} = \frac{1}{2} \vec{\omega}^T \mathbf{I} \vec{\omega}
@@ -147,6 +150,7 @@ Entonces, sustituyendo en (8.2.0) tenemos
 Y en la base de autovectores, donde $\lambda_i$ son los autovalores, tendremos
 \begin{equation} \label{6.1.1}
     T = \frac{1}{2} \sum \omega_i^2 \lambda_i \end{equation}\refstepcounter{subsection}
+\newpage
 \subsubsection{Precesión de una peonza simétrica}
 Tenemos un sistema de referencia inercial, y un sistema de referencia no inercial solidario al trompo, que gira con él. Además los ejes de ese sistema son los ejes principales de la peonza, tal que el momento de inercia es de la forma, pues es simétrica con respecto al un eje
 \begin{equation} \label{6.1.1}
@@ -254,7 +258,7 @@ Resolviendo las ecuaciones como un sistema de ecuaciones lineales e imponiendo c
 \begin{equation} \label{6.1.1}
     \vec{\omega} = A(\cos\Omega t \mathbf{e}_1 - \sin\Omega t \mathbf{e}_2) + \omega_3 \mathbf{e}_3
 \end{equation}\refstepcounter{subsection}
-
+\newpage
 De tal forma que $\vec{\omega}$, desde el sistema de referencia del sólido, traza un movimiento de precesión circular con sentido horario con respecto a $\mathbf{e}_3$, y lo mismo con $\mathbf{L}$, que además es coplanar a $\vec{\omega}$ tal que
 \begin{equation} \label{6.1.1}
     \mathbf{L} = A\lambda_1(\cos\Omega t \mathbf{e}_1 - \sin\Omega t \mathbf{e}_2) + \lambda_3 \omega_3 \mathbf{e}_3

@@ -24,6 +24,7 @@ Usando la 2LN llegamos al oscilador harmónico cuyas soluciones son oscilaciones
     m\ddot{x} = - k(x-x_0) \implies x = x_0 + A\cos(\omega_0 t - \delta)\ \ \ \ \ \omega_0^2 = \frac{k}{m}
 \end{equation}\refstepcounter{subsection}
 \vspace{-25pt}
+\refstepcounter{section}
 \section{Oscilaciones sinusoidales}
 \refstepcounter{subsection}
 La ecuación (8.0.4) puede ser escrita de las siguientes formas equivalente
@@ -38,6 +39,7 @@ La ecuación (8.0.4) puede ser escrita de las siguientes formas equivalente
 \begin{equation} \label{6.1.1}
     x =  x_0 + \mathfrak{Re}\{C e^{i\omega_0t}\} \ \ \ \ \ \ C = A e^{-\delta}
 \end{equation}\refstepcounter{subsection}
+\newpage
 \subsection{Energía}
 La energía de un oscilador harmónico general es 
 \begin{equation} \label{6.1.1}
@@ -85,13 +87,14 @@ Corresponde a la ecuación de una elipse, que en general puede estar rotada.
 
 Si es anisótropo, es decir, los autovalores no coinciden, solo realizará trayectorias periódicas si 
 \begin{equation} \label{6.1.1}
-    \frac{\omega_0_x}{\omega_0_y} = \frac{p}{q} \rightarrow \tau = \frac{2\pi p}{\omega_0_x} = \frac{2\pi q}{\omega_0_y} \implies \left\{\begin{matrix}
-        x(t+\tau) = A_x \cos(\omega_0_xt + \omega_0_x \tau -\delta_x) = x(t) \\
-        y(t+\tau) = A_y \cos(\omega_0_yt +\omega_0_y \tau- \delta_y) = y(t)
+    \frac{{\omega_0}_x}{{\omega_0}_y} = \frac{p}{q} \rightarrow \tau = \frac{2\pi p}{{\omega_0}_x} = \frac{2\pi q}{{\omega_0}_y} \implies \left\{\begin{matrix}
+        x(t+\tau) = A_x \cos({\omega_0}_x t + {\omega_0}_x \tau -\delta_x) = x(t) \\
+        y(t+\tau) = A_y \cos({\omega_0}_y t +{\omega_0}_y \tau- \delta_y) = y(t)
     \end{matrix}\right.
 \end{equation}\refstepcounter{subsection}
 En función de ese cociente, las trayectorias trazadas se llaman curvas de Lissajous.
 \newpage
+\refstepcounter{section}
 \section{Oscilaciones amortigudas}
 \refstepcounter{subsection}
 Si añadimos una fuerza que se opone linealmente a la velocidad de la forma $-b \dot{x}$ (para una dimensión), obtenemos la siguiente ecuación diferencial.
@@ -117,7 +120,7 @@ Para el caso en el que $\beta > \omega_0$, tenemos que $\alpha = -\beta \pm \sqr
     x(t) = C_1 e^{-a_1t}+ C_2 e^{-a_2t}
 \end{equation}\refstepcounter{subsection}
 \begin{tikzpicture}[]
-    \node [shift={(-16.3cm, -21cm)}] at (current page.north east)
+    \node [shift={(-16.3cm, -21cm)}] at (current page.north east){};
     \includegraphics[width=4cm]{images/extin.png}
 \end{tikzpicture}
 De tal forma que como $a_2 > a_1$ el primer término es el que primará a tiempos largos y por lo tanto el parámetro de extinción será $a_1$.
@@ -136,6 +139,7 @@ Si representamos el parámetro de extinción en función de $\beta$ utilizando l
 
 A mayores $\beta$, hay menos posibilidad de amortiguamiento porque el sistema casi no oscila y por lo tanto la velocidad va a ser pequeña.
 
+\refstepcounter{section}
 \section{Oscilaciones forzadas}
 \refstepcounter{subsection}
 Supongamos que tenemos una fuerza externa además de la fuerza elástica y el rozamiento, de tal forma que obtenemos la siguiente ecuación diferencial
@@ -163,11 +167,11 @@ Donde el conjugado de una función holomórfica como es el cociente de dos núme
 \end{equation}\refstepcounter{subsection}
 De tal forma que tenemos la solución partícular de la inhomogénea
 \begin{equation} \label{6.1.1}
-    \tilde{x}(t) = A e^{(\omega t -\delta)i} \implies x(t) = \mathfrak{Re}\{\tilde{x}(t)\}= A \cos(\omega t -\delta)}
+    \tilde{x}(t) = A e^{(\omega t -\delta)i} \implies x(t) = \mathfrak{Re}\{\tilde{x}(t)\}= A \cos(\omega t -\delta)
 \end{equation}\refstepcounter{subsection}
 Así, la solución general (salvo $\beta=\omega_0$) es 
 \begin{equation} \label{6.1.1}
-    x(t) = A \cos(\omega t -\delta)} + e^{-\beta t} \left(c_1 e^{t\sqrt{\beta^2-\omega_0^2}}+ c_2 e^{-t\sqrt{\beta^2-\omega_0^2}}\right)
+    x(t) = A \cos(\omega t -\delta) + e^{-\beta t} \left(c_1 e^{t\sqrt{\beta^2-\omega_0^2}}+ c_2 e^{-t\sqrt{\beta^2-\omega_0^2}}\right)
 \end{equation}\refstepcounter{subsection}
 Se observa que el primer término no depende de las condiciones iniciales, y solo de $\omega$, $f_0$, $\omega_0$ y $\beta$, por eso denomina término estacionario.
 
@@ -202,7 +206,7 @@ Si ahora tomamos $\omega_0$ y variamos $\omega$, tenemos que
     \left.\frac{d^2}{d \omega^2}\right|_0 = 8\beta^2 - 4\omega_0^2  \ \ \ \ \ \left.\frac{d^2}{d \omega^2}\right|_{\sqrt{\omega_0^2-2\beta^2}} = 8\omega_0^2-16\beta^2
 \end{equation}\refstepcounter{subsection}
 \begin{tikzpicture}[]
-    \node [shift={(-16.5cm, -27.8cm)}] at (current page.north east)
+    \node [shift={(-16.5cm, -27.8cm)}] at (current page.north east){};
         \includegraphics[width=6.3cm]{images/osforz.png}
 \end{tikzpicture}
 Cuando $\beta > \omega_0 /\sqrt{2}$, tenemos un solo máximo en $\bar{\omega} = 0$.
@@ -214,13 +218,14 @@ Si $\beta \ll \omega_0$ (subamortiguado), tenemos que $\bar{\omega} = 0$ es un m
 
 En la figura lateral se observa la amplitud normalizada en función de  $\omega$ y de distintos valores de $\beta$, y comprobamos que cuando $\beta \ll \omega_0$, $\bar{\omega} \rightarrow \omega_0$, pero en general no es así, y el máximo esta desplazado con respecto a $\omega_0$.
 Además, no se observa en la figura, pero sí en la expresión (8.3.11), cuando $\beta \rightarrow 0$, $A_{\mbox{\small max.}} \rightarrow \infty$.
-
+\newpage
 \subsubsection{Factor de calidad}
 Definimos el factor de calidad como
 \begin{equation} \label{6.1.1}
     Q \equiv  \frac{\bar{\omega}}{\Delta \omega}
 \end{equation}\refstepcounter{subsection}
 
+\vspace{-15pt}
 Dónde $\Delta \omega$ es la anchura a altura media (FWHM por sus siglas en inglés).
 
 Se define originalmente para un oscilador no forzado como el periodo caracterísitico de amortiguamiento de la energía $\beta^{-1}/2$ ($E \propto x^2$) entre el tiempo necesario para oscilar un radian
@@ -228,7 +233,7 @@ Se define originalmente para un oscilador no forzado como el periodo caracterís
     Q = \frac{\tau / 2}{T/ 2\pi} = \frac{\beta^{-1}/2}{1/\omega} = \frac{\omega}{2\beta} \rightarrow E (t = T) = E_0 e^{-2 \beta (2\pi/\omega)} = E_0 e^{-2\pi/Q}
 \end{equation}\refstepcounter{subsection}
 \begin{tikzpicture}[remember picture,overlay]
-    \node [shift={(-4cm, -7cm)}] at (current page.north east)
+    \node [shift={(-4cm, -8.5cm)}] at (current page.north east)
     {\def\svgwidth{5 cm}
     \input{images/FWHM.pdf_tex}};
 \end{tikzpicture}
@@ -243,9 +248,10 @@ Resolviendo la ecuación de segundo grado en $\tilde{\omega}$ que nos queda y lu
     \tilde{\omega} \approx \omega_0 \pm \beta \implies \Delta \omega \approx 2\beta \implies Q \approx \frac{\omega_0}{2\beta}
 \end{equation}\refstepcounter{subsection}
 De esta forma $Q$ es una especie de inverso de un error relativo, y cuanto mayor sea este, más estrecha será la banda de resonancia. A su vez, según las interpretaciones anteriores, a mayor $Q$, menor será el amortiguamiento y menor energía será disipada.
+\vspace{-15pt}
 \subsubsection{Desfase}
 \begin{tikzpicture}[]
-    \node [shift={(-32cm, -22cm)}] at (current page.north east)
+    \node [shift={(-32cm, -22.5cm)}] at (current page.north east){};
         \includegraphics[width=6.3cm]{images/delta.png}
 \end{tikzpicture}
 Analizando (8.3.4), vemos que cuando $\omega \rightarrow \omega_0$, $\tan \delta \rightarrow \infty$ y por lo tanto $\delta \rightarrow \pi/2 +\pi k_1$. Si $\omega \rightarrow 0^+$, entonces $\tan \delta \rightarrow 0^+$ y $\delta \rightarrow 0 +\pi k_2$, y si $\omega \rightarrow \infty$, entonces $\tan \delta \rightarrow 0^-$ y $\delta \rightarrow 0 +\pi k_3$.
@@ -253,6 +259,7 @@ Analizando (8.3.4), vemos que cuando $\omega \rightarrow \omega_0$, $\tan \delta
 Para que la función sea contínua, tomamos $k=0$ cuando $\omega < \omega_0$ y $k=1$ cuando $\omega > \omega_0$, de tal forma que definimos naturalmente $\delta(\omega_0) = \pi/2$.
 
 Se observa este comportamiento en la figura de la derecha y como \newline cambia la función en términos de $\beta$, haciéndose casi un escalon, \newline pues cuando $\beta \rightarrow 0$, $\tan \delta \rightarrow 0$ y $\delta \rightarrow 0+\pi k$.
+\vspace{-15pt}
 \subsection{Potencia}
 Definimos la potencia en general como la derivada del trabajo \newline producido por una fuerza con respecto al tiempo, que podemos \newline reescribir tal que
 \begin{equation} \label{6.1.1}
@@ -267,6 +274,7 @@ Y haciendo la integral para un oscilador forzado obtenemos el siguiente resutado
     P(t)= -m f_0 A \omega \cos(\omega t) \sin(\omega t -\delta) \ \ \ \ \ \bar{P} = \frac{1}{2} m f_0 \omega A \sin\delta 
 \end{equation}\refstepcounter{subsection}
 \vspace{-30pt}
+\refstepcounter{section}
 \section{Fourier}\refstepcounter{subsection}
 \subsection{Teorema de Fourier}
 Sea $f(t)$ una función periódica, es decir, $\exists \ T$ tal que $f(t+T) = f(t) \ \forall \ t$, entoces podemos expresar $f(t)$ de la siguiente forma
