@@ -1,4 +1,5 @@
 \chapter{Mecánica Hamiltoniana} 
+\refstepcounter{section}
 \section{Transformada de Legendre} \refstepcounter{subsection}
 Si consideramos una función de una variable $y=f(x)$ tal que $f''(x)\neq 0$, entonces a cada punto le corresponde una sola recta tangente asociada, asociada con su pendiente $f'(x)$ y su ordenada en el origen $g(x) = f(x)-x f'(x)$, tal que $y = f'(x)x + g(x)$, a esta familia de rectas definida por el par $(f'(x),g)$ se le llama \textbf{envolvente} y contiene toda la información original de la función.
 \begin{marginfigure}[0cm]
@@ -33,6 +34,7 @@ De esta forma, $\pazocal{H}$ es equivalente a la \textit{Transformada de Legendr
 Se observa que la función $\pazocal{H}$, llamada \textit{Hamiltoniano} es funcionalmente igual a la función energía generalizada $H$ definida en el capítulo anterior, pero en función de las nuevas variables $q_j$ y $p_j$.
 
 De esta forma, no hemos perdido ninguna información del sistema al pasar de $\pazocal{L}$ a $\pazocal{H}$, y a continuación reformularemos las ecuaciones del movimiento en función de esta cantidad de una forma equivalente a la fomulación lagrangiana.
+\refstepcounter{section}
 \section{Ecuaciones de Hamilton} \refstepcounter{subsection}
 Si hacemos la diferencial exacta de $\pazocal{H}$ usando la regla de la cadena tenemos
 \begin{equation} \label{4.2.1}
@@ -97,6 +99,7 @@ Sustituyendo tenemos
 \[\pazocal{H}=p_\theta \dot{\theta} -\pazocal{L}=\frac{p_\theta^2}{ml^2} - \frac{p_\theta^2}{2ml^2}-mgl\cos\theta = \frac{p_\theta^2}{2ml^2}-mgl\cos\theta = T+U\]
 
 Ahora aplicamos (4.2.5.A), tal que $\dot{\theta} = p_\theta/ml^2$, de donde sacamos que $\dot{p}_\theta=ml^2 \ddot{\theta}$ y de (4.2.5.B) sacamos $\dot{p}_\theta=-mgl\sin\theta$, igualando y depejando tenemos $\ddot{\theta} + g/l \sin\theta = 0$, la ecuación del movimiento.
+\refstepcounter{section}
 \section{Transformaciones canónicas} \refstepcounter{subsection}
 Nos va a interesar encontrar un cambio de variables llamado transformaciones canónicas (restringidas, porque no dependen de $t$) de la forma $Q_i=Q_i(\{q_i,p_i\})$ y $P_i=P_i(\{q_i,p_i\})$ invertible que preserve (4.2.5) (Ecs. H.), es decir, que
 \begin{equation} \label{4.2.7}
@@ -130,7 +133,7 @@ Ahora introducimos (4.3.5) en (4.3.6) y después introducimos (4.3.7)
 \begin{equation} \label{4.2.7}
     \mathbb{J} \frac{\partial \pazocal{K}}{\partial \mathbf{Z}} = \mathbb{M}\mathbb{J} \frac{\partial \pazocal{H}}{\partial \mathbf{z}} \rightarrow \mathbb{J} \frac{\partial \pazocal{K}}{\partial \mathbf{Z}} = \mathbb{M}\mathbb{J} \mathbb{M}^T \frac{\partial \pazocal{K}}{\partial \mathbf{Z}} \implies \mathbb{M}\mathbb{J} \mathbb{M}^T = \mathbb{J} 
 \end{equation} \refstepcounter{subsection}
-Si la jacobiana $\mathbb{M}$ es una matriz simpléctica, es decir, cumple (4.3.8), entonces la transformación es canónica (para cualquier problema, no depende del \texit{Hamiltoniano}).
+Si la jacobiana $\mathbb{M}$ es una matriz simpléctica, es decir, cumple (4.3.8), entonces la transformación es canónica (para cualquier problema, no depende del \textit{Hamiltoniano}).
 \newpage
 Si se hace el producto matricial de $\mathbb{J} \mathbb{M}^T = \mathbb{M}^{-1}\mathbb{J}$ equivalente a (4.3.8) se pueden obtener unas condiciones más explícitas para concluir si una trasformación es canónica
 \begin{equation} \label{4.2.7}
@@ -139,7 +142,7 @@ Si se hace el producto matricial de $\mathbb{J} \mathbb{M}^T = \mathbb{M}^{-1}\m
         \frac{\partial P_i(\{q_k,p_k\})}{\partial q_j} = -\frac{\partial p_j(\{Q_k,P_k\})}{\partial Q_i} \ \ \ \ \ \ \ \ \frac{\partial P_i(\{q_k,p_k\})}{\partial p_j} = \frac{\partial q_j(\{Q_k,P_k\})}{\partial Q_i}
     \end{split}
 \end{equation} \refstepcounter{subsection}
-Existe un teorema\sidenote{Sothanaphan, Nat. "Determinants of block matrices with noncommuting blocks" \hspace{.}\href{https://arxiv.org/abs/1805.06027}{arXiv:1805.06027l}} que dice que si las matrices $\mathbb{C}$ y $\mathbb{D}$ de una matriz de bloques del mismo tamaño ($\mathbb{A}$, $\mathbb{B}$, $\mathbb{C}$ y $\mathbb{D}$) conmutan, entonces $\det{(\mathbb{J})} = \det{(\mathbb{A}\mathbb{D}-\mathbb{B}\mathbb{C})}$. En el caso de $\mathbb{J}$, $\mathbb{D}= \mathbb{0}$, por lo tanto conmuta con cualquier matriz y el determinante es $\det{(\mathbb{J})} = \det{(\mathbb{0}\mathbb{0}-\mathbb{I}(-\mathbb{I}))} = 1$. Otras propiedades de $\mathbb{J}$ son que $\mathbb{J}^2 = -\mathbb{I}_{2s}$ o que $\mathbb{J}^{-1} = \mathbb{J}^T = -\mathbb{J}$.
+Existe un teorema\sidenote{Sothanaphan, Nat. "Determinants of block matrices with noncommuting blocks" \hspace{1pt}\href{https://arxiv.org/abs/1805.06027}{arXiv:1805.06027l}} que dice que si las matrices $\mathbb{C}$ y $\mathbb{D}$ de una matriz de bloques del mismo tamaño ($\mathbb{A}$, $\mathbb{B}$, $\mathbb{C}$ y $\mathbb{D}$) conmutan, entonces $\det{(\mathbb{J})} = \det{(\mathbb{A}\mathbb{D}-\mathbb{B}\mathbb{C})}$. En el caso de $\mathbb{J}$, $\mathbb{D}= \mathbb{0}$, por lo tanto conmuta con cualquier matriz y el determinante es $\det{(\mathbb{J})} = \det{(\mathbb{0}\mathbb{0}-\mathbb{I}(-\mathbb{I}))} = 1$. Otras propiedades de $\mathbb{J}$ son que $\mathbb{J}^2 = -\mathbb{I}_{2s}$ o que $\mathbb{J}^{-1} = \mathbb{J}^T = -\mathbb{J}$.
 
 Gracias a esto sabemos que $\det{(\mathbb{M}\mathbb{J} \mathbb{M}^T)} = \det{\mathbb{M}} \det{\mathbb{J}} \det{\mathbb{M}^T}=\det{\mathbb{M}}^2 = 1$
 \subsection{Funciones generadoras}
@@ -155,7 +158,7 @@ La constante $\lambda$ es un factor de escala, si por ejemplo $Q_j = \mu q_j$, $
 \begin{equation} \label{4.2.7}
     \sum_j^s p_j \dot{q}_j -\pazocal{H} = \sum_j^s P_j \dot{Q}_j -\pazocal{K} + \frac{dF(\{q_i,p_i\},\{Q_i,P_i\};t)}{dt}
 \end{equation} \refstepcounter{subsection}
-La función $F$, cuya variación de su acción se anula porque las variaciones de todas las coordenadas se anulan en los extremos, se denomina \texit{Función generadora}. Se llama así porque nos va a permitir generar transformaciones canónicas a partir de transformaciones canónicas parciales.
+La función $F$, cuya variación de su acción se anula porque las variaciones de todas las coordenadas se anulan en los extremos, se denomina \textit{Función generadora}. Se llama así porque nos va a permitir generar transformaciones canónicas a partir de transformaciones canónicas parciales.
 \newpage
 Ahora, la dependencia de esa función es redundante, puesto que tenemos dos relaciones $Q_i=Q_i(\{q_i,p_i\};t)$ y $P_i=P_i(\{q_i,p_i\};t)$, o equivalentes obtenidas despejando esas, entonces podemos estudiar casos concretos de dependencias de $F$ en función de qué relaciones tengamos.
 
@@ -249,6 +252,7 @@ Esta expresión es equivalente a aplicar el método de Euler para integrar una E
 Se puede demostrar además que las transfomaciones canónicas, y concreto las matrices $\mathbb{M}$ que verifican (4.3.8) ($\mathbb{J} = \mathbb{M}_\mathbf{z}\mathbb{J}\mathbb{M}_\mathbf{z}^T$) forman un grupo bajo la operación composición.
 
 
+\refstepcounter{section}
 \section{Paréntesis de Poisson (I)} \refstepcounter{subsection}
 Sea $f=f(\{q_j,p_j\};t)$ una función de las coordenadas canónicas, podemos hacer su derivada total con respecto al tiempo, tal que
 \begin{equation} \label{4.4.1}
@@ -256,13 +260,13 @@ Sea $f=f(\{q_j,p_j\};t)$ una función de las coordenadas canónicas, podemos hac
 \end{equation} \refstepcounter{subsection}
 Usando (3.2.5) (Ecs. H.) llegamos a 
 \begin{equation} \label{4.4.2}
-\frac{d f}{dt} = \sum^s \left(\frac{\partial f}{\partial q_j}\frac{\partial \pazocal{H}}{\partial p_j}-\frac{\partial f}{\partial p_j}\frac{\partial \pazocal{H}}{\partial q_j}\right) + \frac{\patial f}{\partial t} = [f,\pazocal{H}]_\mathbf{z} + \frac{\partial f}{\partial t}
+\frac{d f}{dt} = \sum^s \left(\frac{\partial f}{\partial q_j}\frac{\partial \pazocal{H}}{\partial p_j}-\frac{\partial f}{\partial p_j}\frac{\partial \pazocal{H}}{\partial q_j}\right) + \frac{\partial f}{\partial t} = [f,\pazocal{H}]_\mathbf{z} + \frac{\partial f}{\partial t}
 \end{equation} \refstepcounter{subsection}
 Dónde $[f,\pazocal{H}]$ es el \textit{paréntesis de Poisson} de $f$ y $\pazocal{H}$, en general lo definimos para dos funciones y unas ciertas variables canónicas $\mathbf{z}$ como
 \begin{equation} \label{4.4.3}
     [f,g]_\mathbf{z}=  \sum^s \left(\frac{\partial f}{\partial q_j}\frac{\partial g}{\partial p_j}-\frac{\partial f}{\partial p_j}\frac{\partial g}{\partial q_j}\right) = \left[\frac{\partial f}{\partial \mathbf{z}}\right]^T \hspace{-7pt} \mathbb{J} \left[\frac{\partial g}{\partial \mathbf{z}}\right]
 \end{equation} \refstepcounter{subsection}
-Sus propiedades algebraicas son muy similares a aquellas del producto vectorial puesto que su expresión es muy similar, puesto que ambos son ejemplos de álgebras de Lie, sus propiedades son y se pueden verificar reemplando en (4.4.3).
+Sus propiedades algebraicas son muy similares a aquellas del producto vectorial puesto que su expresión es muy similar, puesto que ambos son ejemplos de álgebras de Lie, sus propiedades son y se pueden verificar reemplazando en (4.4.3).
 \begin{itemize}
     \item Es alternada $[f,g]=-[g,f]$ y $[f,f]=0$.
     \item Si $[f,g]=0 \iff [f,g]=[g,f]=0$ las funciones conmutan.
@@ -290,7 +294,7 @@ Tenemos también los paréntesis de \textit{paréntesis de Poisson} fundamentale
 \subsection{Invariancia bajo T. Canónicas}
 Como el Corchete de Poisson esta relacionado con las ecuaciones de Hamilton y con la evolución temporal de funciones del sistema, esperamos que este se mantenga invariante bajo una transformación canónica, demostrémoslo.
 
-Vamos a suponer ahora unas transformaciones $\mathbf{Z}=\mathbf{Z}(\mathbf{z};t)$ canónicas, tal que $\mathbb{J} = \mathbb{M}_\mathbf{z}\mathbb{J}\mathbb{M}_\mathbf{z}^T$ para la jacobiana de la transformación $\mathbb{M}$. Usando la expresión (4.3.7) para una función arbitraria y su equivalente en las nuevas coordenadas, en vez tomar especificamente el \texit{Hamiltoniano}, tenemos
+Vamos a suponer ahora unas transformaciones $\mathbf{Z}=\mathbf{Z}(\mathbf{z};t)$ canónicas, tal que $\mathbb{J} = \mathbb{M}_\mathbf{z}\mathbb{J}\mathbb{M}_\mathbf{z}^T$ para la jacobiana de la transformación $\mathbb{M}$. Usando la expresión (4.3.7) para una función arbitraria y su equivalente en las nuevas coordenadas, en vez tomar especificamente el \textit{Hamiltoniano}, tenemos
 \begin{equation} \label{4.4.7}
     [f,g]_\mathbf{z} = \left[\frac{\partial f}{\partial \mathbf{z}}\right]^T \hspace{-7pt} \mathbb{J} \left[\frac{\partial g}{\partial \mathbf{z}}\right] = \left[\mathbb{M}^T\frac{\partial f}{\partial \mathbf{Z}}\right]^T \hspace{-7pt} \mathbb{J} \left[\mathbb{M}^T\frac{\partial g}{\partial \mathbf{Z}}\right] = \left[\frac{\partial f}{\partial \mathbf{Z}}\right]^T \hspace{-7pt}\mathbb{M} \mathbb{J}\mathbb{M}^T \left[\frac{\partial g}{\partial \mathbf{Z}}\right] = \left[\frac{\partial f}{\partial \mathbf{Z}}\right]^T \hspace{-7pt} \mathbb{J} \left[\frac{\partial g}{\partial \mathbf{Z}}\right] = [f,g]_\mathbf{Z}
 \end{equation} \refstepcounter{subsection}
@@ -306,10 +310,11 @@ A priori, parece como hacer la 'inversa' de los corchetes de Poisson, y en ciert
 \begin{equation} \label{4.4.3}
     [\mathbf{u},\mathbf{u}]\{\mathbf{u},\mathbf{u}\}=  -1
 \end{equation} \refstepcounter{subsection}
+\refstepcounter{section}
 \section{Espacio de fase} \refstepcounter{subsection}
 El hecho de que solo haya una sola solución para las ecuaciones del movimiento, es decir, que solo hay una posible trayectoria dadas unas condiciones dadas, significa que el sistema con el que estamos tratando es \textit{determinista}.
 
-Si es el espacio de configuración es $\{q_j\}$ para un $t$ dado, entonces definimos el \textbg{Espacio de fase} como $\{q_j,p_j\}$, donde $\{p_j\}$ es el espacio de momentos o impulsos.
+Si es el espacio de configuración es $\{q_j\}$ para un $t$ dado, entonces definimos el \textbf{Espacio de fase} como $\{q_j,p_j\}$, donde $\{p_j\}$ es el espacio de momentos o impulsos.
 
 Este espacio es de dimensión $2s$ y nos da toda la información dinámica del sistema pues nos permite predecir su evolución, puesto que con unas condiciones iniciales de posición y momento (o velocidad) definidas por unas coordendas del espacio de fase, podemos usar (4.2.5) (Ecs. H.) para hallar la evolución del sistema.
 \subsection{Diagrama de fases}
@@ -345,7 +350,7 @@ Si ahora tenemos una serie de condiciones iniciales distribuidas dentro de una r
 El volumen $V(S)$ dentro de una superficie $S(t)$ del espacio de fase se conserva.
 \begin{equation} \label{4.3.2}
     \frac{dV}{dt}=0 \implies \frac{d\rho}{dt} = 0 \ \ \ \ \rho = \frac{\pazocal{N}}{V}
-\end{equation} \refstepcounter{susection}
+\end{equation} \refstepcounter{subsection}
 
 \textbf{Demostración}
 
@@ -371,4 +376,5 @@ Ahora usando (4.2.5) (Ecs. H.) y que las parciales conmutan.
 \end{equation} \refstepcounter{subsection}
 
 
+\refstepcounter{section}
 \section{Paréntesis de Poisson (II)} \refstepcounter{subsection}

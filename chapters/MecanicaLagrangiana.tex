@@ -3,10 +3,10 @@
 %-------------------------------------------------------------------------------------------
 Ahora la variable independiente sobre la que vamos a trabajar va a ser el tiempo, $t$, y las variables dependientes son las coordenadas cartesianas $\{x_{\alpha i}\}$, donde $\alpha$ indica la partícula y $i$ indica la componente de la posición.
 Definimos además las derivadas totales temporales como $\{\dot{x}_{\alpha i}\}$.
-
+\refstepcounter{section}
 \section{Principio de Hamilton}\refstepcounter{subsection}
 
-Definimos una función llamada \textbf{Lagrangiano}\sidenote{La definición de \textbf{Lagrangiano} dependerá de la configuración del sistema físico, pero como norma géneral en mecánica clásica (2.1.1) es la expresión más común de la función que verifica (2.1.3). Esto se demuestra más adelante.}
+Definimos una función llamada \textbf{Lagrangiano}\sidenote{La definición de \textbf{Lagrangiano} dependerá de la configuración del sistema físico, pero como norma géneral en mecánica clásica \eqref{2.1.1} es la expresión más común de la función que verifica \eqref{2.1.3}. Esto se demuestra más adelante.}
 \begin{equation} \label{2.1.1}
     \pazocal{L}(\{x_{\alpha i},\dot{x}_{\alpha i}\};t)=T-U
 \end{equation} \refstepcounter{subsection}
@@ -18,25 +18,25 @@ Dónde $T$ es la energía cinética del sistema y $U$ es la energía potencial (
 \begin{equation} \label{2.1.3}
     \frac{\partial \pazocal{L}}{\partial x_{\alpha i}} -\frac{d}{dt}\left(\frac{\partial \pazocal{L}}{\partial \dot{x}_{\alpha i}}\right) =0
 \end{equation} \refstepcounter{subsection}
-Para la mecánica clásica, este principio es equivalente a las leyes de \textit{Newton}, cuando $\pazocal{L}$ toma la forma de (2.1.1) con ligeras modificaciones que discutiremos en las próximas secciones.
+Para la mecánica clásica, este principio es equivalente a las leyes de \textit{Newton}, cuando $\pazocal{L}$ toma la forma de \eqref{2.1.1} con ligeras modificaciones que discutiremos en las próximas secciones.
 %-------------------------------------------------------------------------------------------
 \subsubsection{Muelle elástico}
 Un sencillo ejemplo para aplicar este principio es el de un muelle elástico en una dirección, donde $T=m\dot{x}^2/2$ y $U = kx^2/2$ (el término $mgh$ es constante y puede ser ignorado), si $\pazocal{L} = T-U$, entonces
 \[\frac{\partial \pazocal{L}}{\partial x}=-kx \ \ \ \ \frac{\partial \pazocal{L}}{\partial \dot{x}}=m\dot{x} = p \ \ \ \ \frac{d p}{dt} = m\ddot{x} \rightarrow m\ddot{x} = -kx \iff F=-kx=ma\]
 %-------------------------------------------------------------------------------------------
+\refstepcounter{section}
 \section{Coordendas generalizadas} \refstepcounter{subsection}
 Podemos realizar un cambio de variables para poder expresar $x_{\alpha i}$ en función de otras variables $q_j$, las cuales pueden resultarnos más sencillas para resolver un problema, tal que $x_{\alpha i}=x_{\alpha i}(\{q_j\};t)$. Esta transformación será invertible cuando
-\vspace{-10pt}
 \[J_l^k=\frac{\partial x_k}{\partial q_l}\]
 el determinante de esa matriz, el jacobiano, sea no nulo, tal que existe la transformación $q_j = q_j(\{x_{\alpha i}\};t)$.
 
 Usando la regla de la cadena podemos ver la dependencia de las velociades entre sí, $\dot{x}_{\alpha i}=\dot{x}_{\alpha i}(\{q_j,\dot{q}_j\};t)$ y que $\dot{q}_j = \dot{q}_j(\{x_{\alpha i},\dot{x}_{\alpha i}\};t)$.
 
-De esta forma, podemos expresar $\pazocal{L}$ en función de las coordenadas y velocidades generalizadas, tal que $\pazocal{L}=\pazocal{L}(\{q_j,\dot{q}_j\};t)$ de tal forma que (2.1.3) queda como 
+De esta forma, podemos expresar $\pazocal{L}$ en función de las coordenadas y velocidades generalizadas, tal que $\pazocal{L}=\pazocal{L}(\{q_j,\dot{q}_j\};t)$ de tal forma que \eqref{2.1.3} queda como 
 
 \vspace{-10pt}
 \Large\begin{equation} \label{2.2.1}
-    \boxed{\frac{\partial \pazocal{L}}{\partial q_j} -\frac{d}{dt}\left(\frac{\partial \pazocal{L}}{\partial \dot{q}_j}\right) =0}
+    \boxed{\frac{\partial \pazocal{L}}{\partial q_j} -\frac{d}{dt}\left(\frac{\partial \pazocal{L}}{\partial \dot{q}_j}\right) =0} \tag{2.2.1/E-L}
 \end{equation} \refstepcounter{subsection}\normalsize
 
 Definimos además el \textbf{momento generalizado}, que para cartesianas es el momento lineal y para polares es el momento angular. También definimos la \textbf{fuerza generalizada}, que es la proyección del vector cartesiano en el sistema de vectores asociado a las coordenadas generalizadas.
@@ -44,8 +44,10 @@ Definimos además el \textbf{momento generalizado}, que para cartesianas es el m
     p_j = \frac{\partial \pazocal{L}}{\partial \dot{q}_j} \ \ \ \ Q_j = -\frac{\partial U}{\partial q_j}=\sum_\alpha^N{\mathbf{F}_\alpha\cdot \frac{\partial \mathbf{r}_{\alpha}}{\partial q_j}}
 \end{equation} \refstepcounter{subsection}
 %-------------------------------------------------------------------------------------------
+\vspace{-30pt}
+\refstepcounter{section}
 \section{Ligaduras}\refstepcounter{subsection}
-Al igual que en la sección \textit{Ligaduras} de la sección 1.3, tendremos $M$ ecuaciones de ligadura, los tipos de las cuales se datallarán a continuación, pero antes definimos lo que vamos a denominar \textbf{grados de libertad}, que indica el número mínimo de parámetros que es necesario para especifcar la configuración del sistema en un tiempo dado, tal que $s = N\cdot d- M \label{2.3.1} \inlineeqnum$, donde $s$ son los \textbf{grados de libertad}, $N$ el número de partículas del sistema, y $d$ la dimensión del espacio.
+Al igual que en la sección \textit{Ligaduras} de la sección \hyperref[sec:1.3]{1.3}, tendremos $M$ ecuaciones de ligadura, los tipos de las cuales se datallarán a continuación, pero antes definimos lo que vamos a denominar \textbf{grados de libertad}, que indica el número mínimo de parámetros que es necesario para especifcar la configuración del sistema en un tiempo dado, tal que $s = N\cdot d- M \label{2.3.1} \inlineeqnum$, donde $s$ son los \textbf{grados de libertad}, $N$ el número de partículas del sistema, y $d$ la dimensión del espacio.
 %-------------------------------------------------------------------------------------------
 \subsubsection{Tipos de ligaduras}
 Cuando las ecuaciones de ligadura no dependen de las veclocidades, $G_i(\{q_j\})=0$, se denominan ligaduras \textbf{holónomas} y son con las que vamos a trabajar. Si las ecuaciones de ligadura dependen de la velocidad,$ G_i(\{q_j,\dot{q}_j\})=0$, se denominan \textbf{no holónomas} y salvo que sean integrables no trabjaremos con ellas. Son \textbf{integrables} cuando son de la forma siguiente donde $h=h(\{q_i\};t)$ tal que
@@ -58,11 +60,13 @@ Entonces podemos ver que nos queda la regla de la cadena e integramos
 \end{equation} \refstepcounter{subsection}
 Luego a parte si la ligadura depende explícitamente del tiempo se llama \textbf{forzada} o \textbf{reónoma}, si no depende explcítamente del tiempo, se denominan \textbf{naturales} o \textbf{esclerónomas}.
 %-------------------------------------------------------------------------------------------
+
+\newpage
 \subsection{Sistema holonómico}
-Decimos que un sistema es \textbf{holonómico} cuando podemos resolver (o bien en cartesianas o en generalizadas) las ecuaciones de ligadura (holónomas) y expresar $m$ coordenadas como explícitamente dependientes de $s$ coordenadas independientes, reduciendo el sistema a $s$ variables que podemos resolver usando (2.2.1)  (\textit{E-L}).
+Decimos que un sistema es \textbf{holonómico} cuando podemos resolver (o bien en cartesianas o en generalizadas) las ecuaciones de ligadura (holónomas) y expresar $m$ coordenadas como explícitamente dependientes de $s$ coordenadas independientes, reduciendo el sistema a $s$ variables que podemos resolver usando \eqref{2.2.1}.
 %-------------------------------------------------------------------------------------------
 \subsection{Multiplicadores de Lagrange}
-En el caso en el que el sistema no sea holonómico, y no podamos resolver las ecuaciones de ligadura, al igual que en la sección 1.3 tenemos que recurrir a multiplicadores de multiplicadores de \textit{Lagrange}, podemos obtener una expresión equivalente a (1.3.15) modificando el lagrangiano de la siguiente forma
+En el caso en el que el sistema no sea holonómico, y no podamos resolver las ecuaciones de ligadura, al igual que en la sección  \hyperref[sec:1.3]{1.3} tenemos que recurrir a multiplicadores de multiplicadores de \textit{Lagrange}, podemos obtener una expresión equivalente a \eqref{1.3.15} modificando el lagrangiano de la siguiente forma
 \begin{equation} \label{2.3.4}
     \pazocal{L}^* = \pazocal{L}+\sum^m{\lambda_i G_i}
 \end{equation} \refstepcounter{subsection}
@@ -74,6 +78,7 @@ Que aplicando las ecuaciones de \textit{Euler-Lagrange} tanto para $q_j$ como pa
 \end{equation} \refstepcounter{subsection}\normalsize
 Donde $Q^L_j$ es la componente $j$ de la fuerza generalizada de ligadura total, que cumplen que $dW^L = \mathbf{F}^L\cdot d\mathbf{r}=0$ son fuerzas que o siempre perpendiculares a la ligadura, o que provocan que $d\mathbf{r}=0 \iff \mathbf{v}=0$ en el punto de contacto.
 
+\refstepcounter{section}
 \section{Principio de D'Alambert}\refstepcounter{subsection}
 \subsubsection{Estático}
 Vamos a suponer que tenemos un sistema en equilibrio, es decir $\mathbf{F}_i = 0$ para cada partícula del sistema, o en general para cualquier punto donde se aplica una fuerza, de tal forma que $\mathbf{F}_i \cdot \delta \mathbf{r}_i = 0$.
@@ -81,163 +86,165 @@ Vamos a suponer que tenemos un sistema en equilibrio, es decir $\mathbf{F}_i = 0
 $\delta \mathbf{r}_i$ es lo que se denomina desplazamiento virtual, el sistema no se mueve, sigue en el equilibrio, estos desplazamientos se definen respetando las ligaduras del sistema, por ejemplo, tenemos en un péndulo que por la gravedad y otra fuerza externa se encuentra en equilibrio, podemos expresar la posición en términos de las coordenadas generalizadas, que respetan las ligaduras, tal que $\mathbf{r} = l (\sin \theta \mathbf{e}_x + \cos \theta \mathbf{e}_y)$, y entonces $\delta \mathbf{r} = l (\cos \theta \mathbf{e}_x-\sin\theta \mathbf{e}_y) \delta \theta$.
 
 Para sistemas tendremos entones $\sum_i \mathbf{F}_i \cdot \delta \mathbf{r}_i = 0$, pero esto no nos dice nada, sin embargo, podemos descomponer la fuerza total que se ejerce en un punto o partícula en fuerzas de ligadura o normal y fuerzas externas o aplicadas, tal que $\mathbf{F}_i = \mathbf{F}_i^{(a)}+\mathbf{f}_i$, aunque no es siempre facil distinguirlo a simple vista. De esta forma nos queda
-\begin{equation} \label{2.1.1}
+\begin{equation} \label{2.4.1}
     \sum_i \mathbf{F}_i^{(a)} \cdot \delta \mathbf{r}_i + \sum_i \mathbf{f}_i \cdot \delta \mathbf{r}_i = 0
 \end{equation} \refstepcounter{subsection}
 Ahora, salvo casos muy extraños de ligaduras, el trabajo virtual de una fuerza normal o de ligadura se anula, como se ha explicado en el apartado anterior, de esta forma llegamos al principio de D'Alambert estático
-\begin{equation} \label{2.1.1}
+\begin{equation} \label{2.4.2}
     \sum_i \mathbf{F}_i^{(a)} \cdot \delta \mathbf{r}_i = 0
 \end{equation} \refstepcounter{subsection}
 También es llamado principio del trabajo virtual, y al aplicarlo, las componentes $\delta \mathbf{r}_i$ son no nulas, en general implica que $\delta q_i \neq 0$, donde $q_i$ son las coordenadas generalizadas, por ejemplo, $\delta \theta$ en el ejemplo anterior.
 \subsubsection{Dinámico}
 Ahora consideraremos un sistema que no esta en equilibrio, tenemos que $\mathbf{F}_i = \dot{\mathbf{p}}_i = m_i \ddot{\mathbf{r}}_i$, de tal forma que haciendo exactamente las mismas manipulaciones que antes, y descomponiendo la fuerza total, llegamos a la versión dinámica del principio de D'Alambert
-\begin{equation} \label{2.1.1}
+\begin{equation} \label{2.4.3}
     \sum_i (\dot{\mathbf{p}}_i-\mathbf{F}_i^{(a)}) \cdot \delta \mathbf{r}_i = 0
 \end{equation} \refstepcounter{subsection}
+\vspace{-25pt}
 \subsubsection{Lagrangiano}
 Si hacemos el cambio a coordenadas generalizadas usando la regla de la cadena, tenemos
-\begin{equation} \label{2.1.1}
+\begin{equation} \label{2.4.4}
     \delta \mathbf{r}_i = \sum_j \frac{\partial \mathbf{r}_i}{\partial q_j} \delta q_j
 \end{equation} \refstepcounter{subsection}
 Podemos ahora definir de nuevo la fuerza generalizada
-\begin{equation} \label{2.1.1}
+\begin{equation} \label{2.4.5}
     \sum_i \mathbf{F}_i \cdot \delta \mathbf{r}_i = \sum_{ij} \mathbf{F}_i \cdot \frac{\partial \mathbf{r}_i}{\partial q_j} \delta q_j = \sum_j Q_j \delta q_j \implies Q_j = \sum_i \mathbf{F}_i \cdot \frac{\partial \mathbf{r}_i}{\partial q_j}
 \end{equation} \refstepcounter{subsection}
 Es importante notar que $Q_j$ no tiene unidades de fuerza en general, pero $Q_j \delta q_j$ siempre tiene unidades de trabajo. Si consideramos solo fuerzas conservativas (aunque pueden depender del tiempo) tenemos
-\begin{equation} \label{2.1.1}
+\begin{equation} \label{2.4.6}
     \mathbf{F}_i = -\nabla_i U \ \ \ \ \ \ Q_j = -\sum_i \nabla_i U \cdot \frac{\partial \mathbf{r}_i}{\partial q_j} = - \sum_{ik} \frac{\partial U}{\partial r_{ik}} \frac{\partial r_{ik}}{\partial q_j} = - \frac{\partial U}{\partial q_j}
 \end{equation} \refstepcounter{subsection}
-Ahora, hacemos lo mismo pero con el otro término de (2.4.3), y descomponemos una regla del producto
-\begin{equation} \label{2.1.1}
+Ahora, hacemos lo mismo pero con el otro término de \eqref{2.4.3}, y descomponemos una regla del producto
+\begin{equation} \label{2.4.7}
     \sum_i \dot{\mathbf{p}}_i \cdot \delta \mathbf{r}_i = \sum_{ij} m \ddot{\mathbf{r}}_i \cdot \frac{\partial \mathbf{r}_i}{\partial q_j} \delta q_j \ \ \ \ \ \ \ \sum_{i} m \ddot{\mathbf{r}}_i \cdot \frac{\partial \mathbf{r}_i}{\partial q_j} = \sum_i \left[ \frac{d}{dt}\left(m_i \dot{\mathbf{r}}_i \cdot \frac{\partial \mathbf{r}_i}{\partial q_j}\right)- m_i \dot{\mathbf{r}}_i\frac{d}{dt}\left(\frac{\partial \mathbf{r}_i}{\partial q_j}\right)\right]
 \end{equation} \refstepcounter{subsection}
-\begin{equation} \label{2.1.1}
+\begin{equation} \label{2.4.8}
     \frac{d}{dt}\left(\frac{\partial \mathbf{r}_i}{\partial q_j}\right) = \sum_k \frac{\partial^2 \mathbf{r}_i}{\partial q_j \partial q_k}\dot{q}_k + \frac{\partial^2 \mathbf{r}_i}{\partial q_j \partial t} = \frac{\partial}{\partial q_j}\left( \sum_k \frac{\partial \mathbf{r}_i}{ \partial q_k}\dot{q}_k + \frac{\partial\mathbf{r}_i}{\partial t} \right)= \frac{\partial \dot{\mathbf{r}}_i}{\partial q_j} = \frac{\partial \mathbf{v}_i}{\partial q_j}
 \end{equation} \refstepcounter{subsection}
 Además podemos ver que
-\begin{equation} \label{2.1.1}
+\begin{equation} \label{2.4.9}
     \frac{\partial \mathbf{v}_i}{\partial \dot{q}_j} = \frac{\partial}{\partial \dot{q}_j}\left( \sum_k \frac{\partial \mathbf{r}_i}{ \partial q_k}\dot{q}_k + \frac{\partial\mathbf{r}_i}{\partial t} \right) = \sum_k \frac{\partial \mathbf{r}_i}{ \partial q_k} \delta_{kj} =  \frac{\partial \mathbf{r}_i}{ \partial q_j}
 \end{equation} \refstepcounter{subsection}
-Ahora, introducimos (2.4.7) en (2.4.6) tal que
+Ahora, introducimos \eqref{2.4.8} en \eqref{2.4.7} tal que
 \[\sum_i \dot{\mathbf{p}}_i \cdot \delta \mathbf{r}_i = \sum_{ij} \left[ \frac{d}{dt}\left(m_i \mathbf{v}_i \cdot \frac{\partial \mathbf{v}_i}{\partial \dot{q}_j}\right)- m_i \mathbf{v}_i\frac{\partial \mathbf{v}_i}{\partial q_j}\right] \delta q_j = \]
-\begin{equation} \label{2.1.1}
+\begin{equation} \label{2.4.10}
      = \sum_{ij} \left[ \frac{d}{dt}\left(\frac{\partial}{\partial \dot{q}_j} \left(\frac{1}{2}m_i \mathbf{v}_i \cdot \mathbf{v}_i\right)\right)- \frac{\partial}{\partial q_j} \left(\frac{1}{2}m_i \mathbf{v}_i \cdot \mathbf{v}_i\right)\right] \delta q_j = \sum_{j} \left[ \frac{d}{dt}\left(\frac{\partial T}{\partial \dot{q}_j}\right)- \frac{\partial T}{\partial q_j}\right] \delta q_j
 \end{equation} \refstepcounter{subsection}
-Ahora metiendo (2.4.10) y (2.4.6) en (2.4.3)
-\begin{equation} \label{2.1.1}
+Ahora metiendo \eqref{2.4.10} y \eqref{2.4.6} en \eqref{2.4.3}
+\begin{equation} \label{2.4.11}
     \sum_{j} \left[ \frac{d}{dt}\left(\frac{\partial T}{\partial \dot{q}_j}\right)- \frac{\partial T}{\partial q_j} +\frac{\partial U}{\partial q_j}\right] \delta q_j = 0
 \end{equation} \refstepcounter{subsection}
 Ahora, si suponemos que tenemos un sistema holonómico y que podemos resolver las ligaduras y que $q_j$ son holónomas, y por lo tanto independientes, y a du vez $\delta q_j$ también, tenemos el siguiente conjunto de ecuaciones
-\begin{equation} \label{2.1.1}
+\begin{equation} \label{2.4.12}
     \frac{d}{dt}\left(\frac{\partial (T-U)}{\partial \dot{q}_j}\right)-\frac{\partial (T-U)}{\partial q_j} = 0 \ \ \ \ \ \ T-U= \pazocal{L}
 \end{equation} \refstepcounter{subsection}
-Como estamos considerando fuerzas conservativas, sus potenciales no dependen de las velocidades generalizadas, y por lo tanto la podemos introducir en el primer término de la ecuación sin pérdida de generalidad, y voalá, hemos demostrado (2.1.2), el principio de Hamilton para la mecánica de Newton bajo unos ciertos supuestos.
+Como estamos considerando fuerzas conservativas, sus potenciales no dependen de las velocidades generalizadas, y por lo tanto la podemos introducir en el primer término de la ecuación sin pérdida de generalidad, y voalá, hemos demostrado \eqref{2.1.3}, el principio de Hamilton para la mecánica de Newton bajo unos ciertos supuestos.
 
 Podemos considerar fuerzas no conservativas, como por ejemplo, un rozamiento dinámico, separandolas, tal que
-\begin{equation} \label{2.1.1}
+\begin{equation} \label{2.4.13}
     Q_j = - \frac{\partial U}{\partial q_j} + \sum \mathbf{F}^{(nc)} \cdot \frac{\partial \mathbf{r}_i}{\partial q_j} = - \frac{\partial U}{\partial q_j} + Q_j^{(nc)} \implies \frac{d}{dt}\left(\frac{\partial \pazocal{L}}{\partial \dot{q}_j}\right)-\frac{\partial \pazocal{L}}{\partial q_j} =  Q_j^{(nc)}
 \end{equation} \refstepcounter{subsection}
+\vspace{-20pt}
 \subsubsection{Potencial generalizado}
-Además, podemos crear un tipo de potencial generalizado que dependa de $\dot{q}_j$, para ello, primero tomamos la forma genérica de (2.4.11) sin asumir nada sobre la fuerza
-\begin{equation} \label{2.1.1}
+Además, podemos crear un tipo de potencial generalizado que dependa de $\dot{q}_j$, para ello, primero tomamos la forma genérica de \eqref{2.4.11} sin asumir nada sobre la fuerza
+\begin{equation} \label{2.4.14}
     \frac{d}{dt}\left(\frac{\partial T}{\partial \dot{q}_j}\right)-\frac{\partial T}{\partial q_j} = Q_j
 \end{equation} \refstepcounter{subsection}
-Y por otro lado descomponemos la parte cinética y potencial de (2.4.12) e igualamos
-\begin{equation} \label{2.1.1}
+Y por otro lado descomponemos la parte cinética y potencial de \eqref{2.4.12} e igualamos
+\begin{equation} \label{2.4.15}
     \frac{d}{dt}\left(\frac{\partial U}{\partial \dot{q}_j}\right)-\frac{\partial U}{\partial q_j} = Q_j = \sum_i \mathbf{F}_i \cdot \frac{\partial \mathbf{r}_i}{\partial q_j}
 \end{equation} \refstepcounter{subsection}
-Entonces cualquier fuerza que pueda ser derivada de un potencial $U(\{q_i\},\{\dot{q}_i\})$ (no puede depender del tiempo en este caso) siguiendo (2.4.15) verifica también el principio de Hamilton.
+Entonces cualquier fuerza que pueda ser derivada de un potencial $U(\{q_i\},\{\dot{q}_i\})$ (no puede depender del tiempo en este caso) siguiendo \eqref{2.4.15} verifica también el principio de Hamilton.
 
 El ejemplo más notable de este tipo de potencial es el que crea la fuerza electromagnética, vamos a estudiarlo, lo primero es saber que es $Q_j$ en este caso, usaremos coordenadas cartesianas
-\begin{equation} \label{2.1.1}
+\begin{equation} \label{2.4.16}
     Q_j = \sum_i \mathbf{F}_i \cdot \frac{\partial \mathbf{r}_i}{\partial x_j} = \sum_i \mathbf{F}_i \cdot \mathbf{e}_i \delta_{ij} = F_j
 \end{equation} \refstepcounter{subsection}
 La fuerza de Lorentz es, y podemos definir los campos $\mathbf{E}$ y $\mathbf{B}$ como 
-\begin{equation} \label{2.1.1}
+\begin{equation} \label{2.4.17}
     \mathbf{F}(\mathbf{r},\dot{\mathbf{r}}) = q(\mathbf{E}(\mathbf{r})+\dot{\mathbf{r}} \times \mathbf{B}(\mathbf{r})) \ \ \ \ \ \ \ \mathbf{E}(\mathbf{r}) = -\nabla_\mathbf{r} \phi -\frac{\partial \mathbf{A}}{\partial t}  \ \ \ \ \ \ \ \mathbf{B}(\mathbf{r}) = \nabla_\mathbf{r} \times \mathbf{A}
 \end{equation} \refstepcounter{subsection}
+\vspace{-10pt}
 \[
     B_x = \partial_y A_z - \partial_z A_y \ \ \ \ \ B_y = \partial_z A_x-\partial_x A_z \ \ \ \ \ B_z = \partial_x A_y - \partial_y A_x
 \]
 \[
     (\dot{\mathbf{r}} \times \mathbf{B})_x= \dot{y}B_z - \dot{z}B_y \ \ \ \ \ (\dot{\mathbf{r}} \times \mathbf{B})_y = \dot{z}B_x - \dot{x}B_z \ \ \ \ \ (\dot{\mathbf{r}} \times \mathbf{B})_z = \dot{x}B_y - \dot{y}B_x
 \]
-\[F_x = q\left(-\partial_x \phi - \partial_t A_x +\dot{y}B_z - \dot{z}B_y\right) = q\left(-\partial_x \phi - \partial_t A_x +\dot{y}(\partial_x A_y - \partial_y A_x) - \dot{z}(\partial_z A_x-\partial_x A_z)\right)\]
-\[F_y = q\left(-\partial_y \phi - \partial_t A_y +\dot{z}B_x - \dot{x}B_z\right) = q\left(-\partial_y \phi - \partial_t A_y +\dot{z}(\partial_y A_z - \partial_z A_y) - \dot{x}(\partial_x A_y-\partial_y A_x)\right)\]
-\[F_z = q\left(-\partial_z \phi - \partial_t A_z +\dot{x}B_y - \dot{y}B_x\right) = q\left(-\partial_z \phi - \partial_t A_z +\dot{x}(\partial_z A_x-\partial_x A_z) - \dot{y}(\partial_y A_z - \partial_z A_y)\right)\]
-\[F_x = \frac{d}{dt}\left(\frac{\partial U}{\partial \dot{x}}\right)-\frac{\partial U}{\partial x} = \frac{\partial^2 U}{\partial \dot{x}\partial x} \dot{x} + \frac{\partial^2 U}{\partial \dot{x}\partial y} \dot{y} + \frac{\partial^2 U}{\partial \dot{x}\partial z} \dot{z} + \frac{\partial^2 U}{\partial^2 \dot{x}} \ddot{x} + \frac{\partial^2 U}{\partial \dot{x}\partial \dot{y}} \ddot{y} + \frac{\partial^2 U}{\partial \dot{x}\partial \dot{z}} \ddot{z}+\frac{\partial^2 U}{\partial \dot{x}\partial t} -\frac{\partial U}{\partial x}\]
-\[F_y = \frac{d}{dt}\left(\frac{\partial U}{\partial \dot{y}}\right)-\frac{\partial U}{\partial y} = \frac{\partial^2 U}{\partial \dot{y}\partial x} \dot{x} + \frac{\partial^2 U}{\partial \dot{y}\partial y} \dot{y} + \frac{\partial^2 U}{\partial \dot{y}\partial z} \dot{z} + \frac{\partial^2 U}{\partial \dot{y} \partial \dot{x}} \ddot{x} + \frac{\partial^2 U}{\partial^2 \dot{y}} \ddot{y} + \frac{\partial^2 U}{\partial \dot{y}\partial \dot{z}} \ddot{z}+\frac{\partial^2 U}{\partial \dot{y}\partial t} -\frac{\partial U}{\partial y}\]
-\[F_z = \frac{d}{dt}\left(\frac{\partial U}{\partial \dot{z}}\right)-\frac{\partial U}{\partial z} = \frac{\partial^2 U}{\partial \dot{z}\partial x} \dot{x} + \frac{\partial^2 U}{\partial \dot{z}\partial y} \dot{y} + \frac{\partial^2 U}{\partial \dot{z}\partial z} \dot{z} + \frac{\partial^2 U}{\partial \dot{z}\partiañ \dot{x}} \ddot{x} + \frac{\partial^2 U}{\partial \dot{z}\partial \dot{y}} \ddot{y} + \frac{\partial^2 U}{\partial^2 \dot{z}} \ddot{z}+\frac{\partial^2 U}{\partial \dot{z}\partial t} -\frac{\partial U}{\partial z}\]
-Lo términos de $\ddot{q}$ no aparecen, por lo que $U$ debe ser lineal en $\dot{q}$, gracias a los dos últimos términos, podemos integrar y saber que al menos
-\begin{equation} \label{2.1.1}
+Es sencillo comprobar que el siguiente potencial verifica \eqref{2.4.15}
+\begin{equation} \label{2.4.18}
     U = q(\phi -\dot{\mathbf{r}}\cdot \mathbf{A})
 \end{equation} \refstepcounter{subsection}
-Hace encajar los términos eléctricos $ q(-\partial_i \phi - \partial_t A_i)$, pero es que además, si sustituimos en el resto de términos, también se cumple para los términos magnéticos.
 Hay muchas manipulaciones que se pueden hacer para ver esto más sencillo, por ejemplo, usando relaciones vectoriales.
 %-------------------------------------------------------------------------------------------
+\refstepcounter{section}
 \section{Teorema de la Energía Cinética}\refstepcounter{subsection}
 %-------------------------------------------------------------------------------------------
 \subsection{Función k-homogénea}
 Una función k-homogéna cumple la siguiente expresión, donde $\lambda$ es un parámetro arbitrario cualquiera
-\begin{equation} \label{2.4.1}
+\begin{equation} \label{2.5.1}
     f(\{\lambda x_i\})=\lambda^k f(\{x_i\})
 \end{equation} \refstepcounter{subsection}
 \vspace{-35pt}
 \subsubsection{Teorema de Euler}
-Podemos derivar cada lado de (2.4.1) con respecto al parámetro
+Podemos derivar cada lado de \eqref{2.5.1} con respecto al parámetro
 \[\frac{\partial}{\partial \lambda} f(\{\lambda x_i\})= \frac{\partial}{\partial \lambda} \lambda^k f(\{x_i\})\]
 En el primer miembro hacemos la regla de la cadena y en el segundo es la derivada de una potencia
 \[\sum_j^N \frac{\partial f(\{\lambda x_i\})}{\partial (\lambda x_j)} \frac{d (\lambda x_j)}{d \lambda}= \sum_j^N \frac{\partial f(\{\lambda x_i\})}{\partial (\lambda x_j)} x_j=  k \lambda^{k-1} f(\{x_i\})\]
 Como $\lambda$ es un parámetro arbitrario, podemos tomar $\lambda=1$ y tenemos
-\begin{equation} \label{2.4.2}
+\begin{equation} \label{2.5.2}
     \sum_j^N \frac{\partial f(\{x_i\})}{\partial x_j} x_j=  k f(\{x_i\})
 \end{equation} \refstepcounter{subsection}
 %------------------------------------------------------------------------------------------
+\vspace{-30pt}
 \subsection{Forma cuadrática}
 Una forma cuadrática es una función 2-homogénea de la siguiente forma
-\begin{equation} \label{2.4.3}
+\begin{equation} \label{2.5.3}
     f(\{x_i\})=\sum_{i,j}^N{{a_{jk} x_j x_k}}=\mathbf{x} A \mathbf{x}^T
 \end{equation} \refstepcounter{subsection}
 Donde $a_{jk}$ no tienen por que ser constantes, pueden ser funciones de otras variables, pero no de $x_i$.
 %------------------------------------------------------------------------------------------
-\subsection{Teorema}
+\subsection{Teorema de la E.C.}
 En coordenadas cartesianas la expresión de la energía cinética es una forma cuadrática que solo depende de las velocidades que tiene la siguiente forma
-\begin{equation} \label{2.4.4}
+\vspace{-12pt}
+\begin{equation} \label{2.5.4}
     T=T(\{x_{\alpha i}\})=\frac{1}{2} \sum_{\alpha, i}^{N,d} m_\alpha \dot{x}_{\alpha i}^2
 \end{equation} \refstepcounter{subsection}
-\vspace{-25pt}
 
+\vspace{-25pt}
 Si $x_{\alpha i}(\{q_j\};t)$, entonces
-\begin{equation} \label{2.4.5}
+\vspace{-12pt}
+\begin{equation} \label{2.5.5}
     \dot{x}_{\alpha i}=\sum_j^s \frac{\partial x_{\alpha i}}{\partial q_j}\dot{q}_j + \frac{\partial x_{\alpha i}}{\partial t}=\dot{x}_{\alpha i}(\{q_j,\dot{q}_j\};t)
 \end{equation} \refstepcounter{subsection}
-Elevando (2.4.5) al cuadrado tenemos
+
+\vspace{-17pt}
+Elevando \eqref{2.5.5} al cuadrado tenemos
 \[\dot{x}_{\alpha i}^2= \left(\sum_j^s \frac{\partial x_{\alpha i}}{\partial q_j}\dot{q}_j \right) \left(\sum_k^s \frac{\partial x_{\alpha i}}{\partial q_k}\dot{q}_k \right) + 2\frac{\partial x_{\alpha i}}{\partial t} \sum_j^s \frac{\partial x_{\alpha i}}{\partial q_j}\dot{q}_j  + \left(\frac{\partial x_{\alpha i}}{\partial t}\right)^2 = \]
-\begin{equation} \label{2.4.6}
+\begin{equation} \label{2.5.6}
     = \sum_{j,k}^s{\frac{\partial x_{\alpha i}}{\partial q_j}\frac{\partial x_{\alpha i}}{\partial q_k}\dot{q}_j\dot{q}_k} + 2\frac{\partial x_{\alpha i}}{\partial t} \sum_j^s \frac{\partial x_{\alpha i}}{\partial q_j}\dot{q}_j + \left(\frac{\partial x_{\alpha i}}{\partial t}\right)^2
 \end{equation} \refstepcounter{subsection}
-Sustituyendo (2.4.6) en (2.4.4)
+Sustituyendo \eqref{2.5.6} en \eqref{2.5.4}
 \[ T = \frac{1}{2} \sum_{\alpha, i}^{N,d} m_\alpha \left[\sum_{j,k}^s{\frac{\partial x_{\alpha i}}{\partial q_j}\frac{\partial x_{\alpha i}}{\partial q_k}\dot{q}_j\dot{q}_k} + 2\frac{\partial x_{\alpha i}}{\partial t} \sum_j^s \frac{\partial x_{\alpha i}}{\partial q_j}\dot{q}_j + \left(\frac{\partial x_{\alpha i}}{\partial t}\right)^2\right]\]
 Usando que los sumatorios conmutan y son lineales llegamos a
 \begin{equation}  
-    T = \sum_{j,k}^s{\left(\sum_{\alpha,i}^{N,d}{ \frac{1}{2} m_\alpha \frac{\partial x_{\alpha i}}{\partial q_j}\frac{\partial x_{\alpha i}}{\partial q_k}\right)\dot{q}_j\dot{q}_k}} + \sum_j^s{\left( \sum_{\alpha,i}^{N,d}{m_\alpha \frac{\partial x_{\alpha i}}{\partial t}\frac{\partial x_{\alpha i}}{\partial q_j}\right)}\dot{q}_j} + \sum_{\alpha,i}^{N,d}{\frac{1}{2} m_\alpha\left(\frac{\partial x_{\alpha i}}{\partial t}\right)^2} \label{2.4.7}
+    T = \sum_{j,k}^s{\left(\sum_{\alpha,i}^{N,d} \frac{1}{2} m_\alpha \frac{\partial x_{\alpha i}}{\partial q_j}\frac{\partial x_{\alpha i}}{\partial q_k}\right)\dot{q}_j\dot{q}_k} + \sum_j^s{\left( \sum_{\alpha,i}^{N,d}m_\alpha \frac{\partial x_{\alpha i}}{\partial t}\frac{\partial x_{\alpha i}}{\partial q_j}\right)}\dot{q}_j + \sum_{\alpha,i}^{N,d}{\frac{1}{2} m_\alpha\left(\frac{\partial x_{\alpha i}}{\partial t}\right)^2} \label{2.5.7}
 \end{equation} \refstepcounter{subsection}
 De una forma más reducida obtenemos
-\begin{equation} \label{2.4.8}
+\begin{equation} \label{2.5.8}
     T = T(\{q_j,\dot{q}_j\};t) = \sum_{j,k}^sA_{ij}\dot{q}_j\dot{q}_k + \sum^s_j B_j \dot{q}_j + C
 \end{equation} \refstepcounter{subsection}
-Así, fijándonos en (2.4.7), si el cambio de coordenadas no depende explícitamente del tiempo, $B_j$ y $C$ se anulan, y entonces $T$ es una forma cuadrática en los $\dot{q}_j$.
+Así, fijándonos en \eqref{2.5.7}, si el cambio de coordenadas no depende explícitamente del tiempo, $B_j$ y $C$ se anulan, y entonces $T$ es una forma cuadrática en los $\dot{q}_j$.
 
 \textbf{Teorema de la Energía cinética.} Si las coordenadas no dependen explícitamente del tiempo, entonces $T$ es una forma cuadrática en los $\dot{q}$.
 
 Si ahora partimos de este supuesto y hacemos la parcial de $T$ con respecto a un $\dot{q}_l$ dado, obtenemos
-\[\frac{\partial T}{\partial \dot{q}_l} = \cancelto{0}{\frac{\partial}{\partial \dot{q}_l} \sum_{j,k\neq l}^s{A_{jk}^s\dot{q}_j\dot{q}_k}}+\frac{\partial}{\partial \dot{q}_l} \sum_{j=l, k\neq l}^s{A_{lk}\dot{q}_l\dot{q}_k} + \frac{\partial}{\partial \dot{q}_l} \sum_{j\neq l, k = l}^s{A_{jl}\dot{q}_j\dot{q}_l + \frac{\partial}{\partial \dot{q}_l} \left(A_{ll} \dot{q}_l^2\right) = \]
-\begin{equation} \label{2.4.9}
+\[\frac{\partial T}{\partial \dot{q}_l} = \cancelto{0}{\frac{\partial}{\partial \dot{q}_l} \sum_{j,k\neq l}^s{A_{jk}^s\dot{q}_j\dot{q}_k}}+\frac{\partial}{\partial \dot{q}_l} \sum_{j=l, k\neq l}^s{A_{lk}\dot{q}_l\dot{q}_k} + \frac{\partial}{\partial \dot{q}_l} \sum_{j\neq l, k = l}^s A_{jl}\dot{q}_j\dot{q}_l + \frac{\partial}{\partial \dot{q}_l} \left(A_{ll} \dot{q}_l^2\right) = \]
+\begin{equation} \label{2.5.9}
     =\sum_{j=l, k\neq l}^s{A_{lk}\dot{q}_k} + \sum_{j\neq l, k = l}^s{A_{jl}\dot{q}_j} + 2A_{ll} \dot{q}_l =2 \sum_i^s A_{li} \dot{q}_i=2 \sum_i^s A_{il} \dot{q}_i
 \end{equation} \refstepcounter{subsection}
-Si ahora hacemos lo siguiente usando (2.4.9), vemos que se verifica (2.4.2)
-\begin{equation} \label{2.4.10}
-    \sum_j^s \frac{\partial T}{\partial \dot{q}_j} \dot{q}_j = 2 \sum_{i,k}^s{A_{kj}\dot{q}_j\dot{q}_k=2 T}
+Si ahora hacemos lo siguiente usando \eqref{2.5.9}, vemos que se verifica \eqref{2.5.2}
+\begin{equation} \label{2.5.10}
+    \sum_j^s \frac{\partial T}{\partial \dot{q}_j} \dot{q}_j = 2 \sum_{j,k}^s{A_{kj}\dot{q}_j\dot{q}_k=2 T}
 \end{equation} \refstepcounter{subsection}
 
 %\newpage\null\thispagestyle{empty}\newpage

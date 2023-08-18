@@ -7,6 +7,7 @@ puesto que $1/r$ y $1/r\sin\theta$ no pueden ser 0, esto implica que $U=U(r)$ y 
     F(r)=-\frac{\partial U}{\partial r}
 \end{equation} \refstepcounter{subsection}
 La recíproca, que $\mathbf{F}(r)=F(r) \hat{\mathbf{e}}_r$ es conservativa se puede obtener calculando su rotacional y verificando que es igual a 0.
+\refstepcounter{section}
 \section{Problema de los dos cuerpos} \refstepcounter{subsection}
 \begin{marginfigure}[-2cm]
     \def\svgwidth{125 pt}
@@ -33,7 +34,7 @@ Ahora podemos escribir $\pazocal{L}$ del sistema, para la energía cinética, ve
     \pazocal{L} = \pazocal{L}_{CM} + \pazocal{L}_{\mbox{\small rel}}= \left(\frac{1}{2}M(\dot{\mathbf{R}})^2\right) + \left(\frac{1}{2}\mu(\dot{\mathbf{r}})^2-U(r)\right)
 \end{equation} \refstepcounter{subsection}
 Es de notar que cuando la diferencia en las masas es muy grande, la masa reducida, $\mu$ tiende a la masa más pequeña.
-
+\newpage
 De la ecuación (5.1.6) podemos concluir usando (E-L) que el momento asociado a $\mathbf{R}$ se conserva, puesto que que $\pazocal{L}$ no depende explícitamente de $\mathbf{R}$, entonces podemos llegar a tres ecuaciones resumidas en $M\ddot{\mathbf{R}}=0 \label{5.1.7} \inlineeqnum$, que indican que la velocidad del CM es constante.
 
 Para el movimiento relativo en $\mathbf{r}$, aplicando (E-L), podemos llegar a tres ecuaciones que resuminos en $\mu\ddot{\mathbf{r}}=-\nabla U \label{5.1.8} \inlineeqnum$.
@@ -45,6 +46,7 @@ Entonces por (5.1.7), el sistema de referencia relativo al CM es un sistema iner
 Observando el dibujo de la página anterior, esta claro que en el sistema del CM, las posiciones de ambas masas deben estar en el mismo eje, es decir, sus vectores de posición son paralelos, puesto que $\mathbf{R}$ se encuentra siempre entre la recta que une a ambas masas.
 
 Hay que tener cuidado por que $\mathbf{r}$ no es un vector posición, sino como definimos en (5.1.2), es la diferencia entre los dos vectores de posición.
+\refstepcounter{section}
 \section{Conservación del momento angular}  \refstepcounter{subsection}
 Definimos el momento angular total con respecto a O como $\mathbf{J} = \mathbf{J}_1 + \mathbf{J}_2 \label{5.1.10} \inlineeqnum$, donde $\mathbf{J}_i = \mathbf{r}_i \times \mathbf{p}_i = m_i \mathbf{r}_i \times \dot{\mathbf{r}}_i \label{5.1.11} \inlineeqnum$. La derivada del momento angular será entonces
 \begin{equation} \label{5.1.12}
@@ -94,6 +96,7 @@ Si consideramos el área que barre $\mathbf{r}$ en un pequeño incremento del ti
     dA = \frac{1}{2} r\cdot r\dot{\varphi} dt \ \ \ \ \ \dot{A} = \frac{J}{2\mu} \ \ \ \ \ddot{A} = 0
 \end{equation} \refstepcounter{subsection}
 Esta ecuación se conoce como la segunda ley de \textit{Kepler}.
+\refstepcounter{section}
 \section{Energía} \refstepcounter{subsection}
 La energía (conservada e igual a $\pazocal{H}$), es, por (5.2.6) y (5.2.7)
 \begin{equation} \label{5.1.22}
@@ -105,6 +108,7 @@ La ecuación (5.3.1) es una EDO de primer orden separable que nos permite hallar
 \end{equation} \refstepcounter{subsection}
 
 Usando (5.2.7) podemos encontrar $\varphi(t)$ una vez tenemos $r(t)$, de forma similar al formalismo Hamiltoniano.
+\refstepcounter{section}
 \section{Ecuación del movimiento} \refstepcounter{subsection}
 Haciendo (2.2.1)(E-L) con respecto a $r$ obtenemos la ecuación del movimiento del sistema
 \begin{equation} \label{5.1.24}
@@ -124,6 +128,7 @@ Despejando $\ddot{r}$ de (5.4.3) y sustituyendo en (5.4.1) llegamos a la ecuaci�
 \begin{equation} \label{5.1.27}
     \frac{\partial^2 u}{\partial \varphi^2} + u = -\frac{\mu}{J^2 u^2}F(u) \iff \frac{\partial^2}{\partial \varphi^2}\left(\frac{1}{r}\right) + \frac{1}{r} = -\frac{\mu}{J^2}r^2F(r)
 \end{equation} \refstepcounter{subsection}
+\refstepcounter{section}
 \section{Potencial efectivo} \refstepcounter{subsection}
 El primer término de la ecuación (5.4.1) se denomina fuerza centrífuga, a la que podemos asociar un potencial, tal que 
 \begin{equation} \label{5.1.28}
@@ -143,6 +148,7 @@ El primer término de (5.5.3) lo llamamos el término cinético y siempre es pos
 
 
 \clearpage
+\refstepcounter{section}
 \section{Potenciales $-\gamma/r$}\refstepcounter{subsection}
 Si tenemos un potencial de la forma siguiente, entonces el potencial efectivo asociado toma la siguiente expresión representada en la figura.
 \begin{equation} \label{5.6.1}
@@ -166,6 +172,7 @@ Diremos que una de trayectoria es cerrada cuando exista un periodo $\tau$ tal qu
 
 Si $E=U_{\mbox{\small ef}}$, la velocidad radial se anula y $r$ es constante, describiendo una órbita circular de radio $r_c$.
 
+\refstepcounter{section}
 \section{Órbitas de Kepler} \refstepcounter{subsection}
 Tenemos de nuevo $U(r)=-\gamma/r$ y $F(r)=-\gamma/r^2$ tal que $\gamma > 0$. Usando la ecuación de la trayectoria (5.4.4), tenemos que $F(u)=-\gamma u^2$, si $u=u(\varphi)$, entonces
 \begin{equation} \label{5.7.1}
@@ -180,7 +187,7 @@ Renombrando ciertas constantes, usando que $A\geq0$ y sustituyendo $u$ llegamos 
     \frac{1}{c} = \frac{\mu \gamma}{J^2}>0 \ \ \ \ \epsilon=\frac{A J^2}{\mu \gamma}\geq 0 \ \ \ \ \ \ r(\varphi) = \frac{c}{1+\epsilon \cos\varphi}
 \end{equation} \refstepcounter{subsection}
 Veremos que (5.7.3) es la ecuación de las secciones cónicas en coordenadas polares.
-\subsection{Caso $0 \leq \epsilon < 1 $}
+\subsection{Caso $ 0 \leq \epsilon < 1 $}
 Si $0 \leq \epsilon < 1 $, entonces el denominador de (5.7.3) nunca se anula, lo que significa que $r$ va a estar acotado con extremos $r_{\mbox{\small min}}$ y $r_{\mbox{\small max}}$ que ocurrirán en $\cos \varphi = \{1,-1\}$
 \begin{equation} \label{5.7.4}
     r_{\mbox{\small min}}= \frac{c}{1+\epsilon} \ \ \ \ \ \ r_{\mbox{\small max}} = \frac{c}{1-\epsilon}
@@ -226,10 +233,10 @@ De esta forma pasando $a^2$ dividiendo y usando (5.7.9) obtenemos la ecuación d
 \vspace{15pt}
 Como se puede apreciar en (5.7.11), el centro de la elipse esta desplazado $d$ unidades hacía la derecha de $O$, la posición de $m_2$. Las constantes $a$ y $b$ son los semiejes mayor y menor respectivamente.
 
-\subsubsection{Primera Ley de \texit{Kepler}}
+\subsubsection{Primera Ley de \textit{Kepler}}
 Es importante notar que no estamos en el sistema del CM, sino en el sistema de $m_2$, aunque si la relación de masas es muy grade ambas posiciones son muy cercanas, de lo contrario siempre podemos usar (5.1.9) para obtener el moviemiento entorno al CM.
 
-$m_2$ se encuentra en uno de los focos de la elipse por estar precisamente una distancia d del centro, esta es la primera ley de \texit{Kepler}.
+$m_2$ se encuentra en uno de los focos de la elipse por estar precisamente una distancia d del centro, esta es la primera ley de \textit{Kepler}.
 
 \subsubsection{Excentricidad}
 $\epsilon$ es la excentricidad de la elipse, podemos hallar una expresión de esta en función de $a$ y $b$ usando (5.7.9)
@@ -249,7 +256,7 @@ Usando (5.7.3), (5.7.8) y (5.7.9) llegamos a
 \begin{equation} \label{5.1.14}
     \tau^2 = 4 \pi^2 \frac{\mu^2 a^2 b^2}{J^2} = 4 \pi^2 \frac{\mu^2 a^2 b^2}{c \gamma \mu} =  \frac{4 \pi^2  \mu}{\gamma} a^3
 \end{equation} \refstepcounter{subsection}
-Que dado $m_2 >> m_1$, entonces $\mu = m_1$ y si $\gamma = G m_1 m_2 $, (5.7.14) se transforma en la tercera ley de \texit{Kepler}.
+Que dado $m_2 >> m_1$, entonces $\mu = m_1$ y si $\gamma = G m_1 m_2 $, (5.7.14) se transforma en la tercera ley de \textit{Kepler}.
 \begin{equation} \label{5.1.14}
     \tau^2 =\frac{4 \pi^2}{G m_2} a^3
 \end{equation} \refstepcounter{subsection}
@@ -268,7 +275,7 @@ Sustituyendo en (5.17.16) y operando llegamos a
     E = \frac{\gamma^2 \mu}{2 J^2} (\epsilon^2-1) \ \ \ \ \ \epsilon = \sqrt{1+\frac{2EJ^2}{\gamma^2 \mu}}
 \end{equation} \refstepcounter{subsection}
 Esta expresión se cumple para cualquier valor de $\epsilon$, lo que nos permite realcionar los valores de $\epsilon$ a las energías y relacionar con lo visto en (5.6), donde por ejemplo (5.6.2) es equivalente a las expresiones encontradas ahora.
-\subsection{Caso $ç\epsilon = 1 $}
+\subsection{Caso $\epsilon = 1 $}
 En este caso, el denominador se anula en $\cos \varphi = -1$, que ocurre cuando $\varphi$ tiende a $\pi$. Si de nuevo expresamos la ecuación (5.3.7) en cartesianas tenemos.
 \begin{equation} \label{5.1.14}
     r = \frac{c}{1+\cos\varphi} \rightarrow r+x=c \rightarrow x^2+y^2 = (c-x)^2
@@ -278,7 +285,7 @@ En este caso, el denominador se anula en $\cos \varphi = -1$, que ocurre cuando 
     y^2 = c^2 -2cx \rightarrow x = \frac{c^2 - y^2}{2c}
 \end{equation} \refstepcounter{subsection}
 Esta es la ecuación de una parábola en $y$ que se abre hacía la izquierda, cuando $\varphi$ tiende a $\pi$.
-\subsection{Caso $ç\epsilon > 1 $}
+\subsection{Caso $\epsilon > 1 $}
 En este caso, el denominador se anulará cuando $\cos \varphi = -1/\epsilon \label{5.1.7} \inlineeqnum$. Podemos aprovechar las mismas expresiones que en (5.7.11), pero teneiendo en cuenta que en (5.7.8) y (5.7.9), $1-\epsilon < 0$ y $1-\epsilon^2 < 0$, redefiniendo las constantes para que nos queden positivas tenemos
 \begin{equation} \label{5.1.14}
     \delta = -d >0 \ \ \ \ \  \beta^2 = -b^2 >0 \ \ \ \ \alpha = -a>0
