@@ -25,7 +25,7 @@ Si ahora tenemos $f(\{x_i,y_i\})$ donde $\{y_i\}$ son las variables sobre las qu
 \end{equation} \refstepcounter{subsection}
 La transformación será inversible si el jacobiano de $y_i \mapsto p_i$ es no nulo.
 \subsubsection{Transformada de Legendre del Lagrangiano}
-Ahora si tenemos $\pazocal{L}(\{q_j,\dot{q}_j\};t)$, $\{\dot{q}_j\}$ serán nuestras antiguas variables y las nuevas variables serán $\partial_{\dot{q}_j}\pazocal{L}=p_j$, los momentos generalizados o conjugados. Entonces aplicando (4.1.2) llegamos a (3.1.2)
+Ahora si tenemos $\pazocal{L}(\{q_j,\dot{q}_j\};t)$, $\{\dot{q}_j\}$ serán nuestras antiguas variables y las nuevas variables serán $\partial_{\dot{q}_j}\pazocal{L}=p_j$, los momentos generalizados o conjugados. Entonces aplicando \eqref{4.1.2} llegamos a \eqref{3.1.2}
 \begin{equation} \label{4.1.3}
         p_i(\{q_i,\dot{q}_i\};t)=\frac{\partial \pazocal{L}}{\partial q_i} \ \ \ \ \ \  g(\{q_i,p_i\};t) =\pazocal{L}(\{q_i,p_i\};t) -\sum_j^s \dot{q}_j (\{q_i,p_i\}) p_j = -\pazocal{H}
 \end{equation} \refstepcounter{subsection}
@@ -40,11 +40,11 @@ Si hacemos la diferencial exacta de $\pazocal{H}$ usando la regla de la cadena t
 \begin{equation} \label{4.2.1}
     d\pazocal{H} = \sum^s\left(\frac{\partial \pazocal{H}}{\partial q_j}dq_j+\frac{\partial \pazocal{H}}{\partial p_j}dp_j\right)+\frac{\partial \pazocal{H}}{\partial t} dt
 \end{equation} \refstepcounter{subsection}
-Si por otro lado hacemos el diferencial de $\pazocal{H}$ desde (3.1.2) o (4.1.3)
+Si por otro lado hacemos el diferencial de $\pazocal{H}$ desde \eqref{3.1.2} o \eqref{4.1.3}
 \begin{equation} \label{4.2.2}
     d\pazocal{H} = \sum^s\left(p_j d\dot{q}_j+\dot{q}_j dp_j\right)-d\pazocal{L}
 \end{equation} \refstepcounter{subsection}
-si $d\pazocal{L}$ es por regla de la cadena, y usando (2.2.1) y (2.2.2)
+si $d\pazocal{L}$ es por regla de la cadena, y usando \eqref{2.2.1} y \eqref{2.2.2}
 \begin{equation} \label{4.2.3}
     d\pazocal{L}= \sum^s\left(\frac{\partial \pazocal{L}}{\partial q_j}dq_j+\frac{\partial \pazocal{L}}{\partial \dot{q}_j}d\dot{q}_j\right) + \frac{\partial \pazocal{L}}{\partial t}dt = \sum^s\left(\dot{p}_j dq_j+p_j d\dot{q}_j\right) + \frac{\partial \pazocal{L}}{\partial t}dt
 \end{equation} \refstepcounter{subsection}
@@ -52,11 +52,11 @@ Sustituyendo (4.2.3) en (4.2.2)
 \begin{equation} \label{4.2.4}
     d\pazocal{H} = \sum^s p_j d\dot{q}_j+\dot{q}_j dp_j-\sum^s \dot{p}_j dq_j+p_j d\dot{q}_j - \frac{\partial \pazocal{L}}{\partial t}dt = \sum^s \dot{q}_j dp_j-\dot{p}_j dq_j - \frac{\partial \pazocal{L}}{\partial t}dt
 \end{equation} \refstepcounter{subsection}
-Como $dq_j$, $dp_j$ y $dt$ son funciones independientes y arbitrarias, podemos igualar término a término (4.2.4) y (4.2.1), de tal forma que obtenemos tres ecuaciones
+Como $dq_j$, $dp_j$ y $dt$ son funciones independientes y arbitrarias, podemos igualar término a término \eqref{4.2.4} y \eqref{4.2.1}, de tal forma que obtenemos tres ecuaciones
 \Large \begin{equation} \label{4.2.5}
     \boxed{\dot{q}_j = \frac{\partial \pazocal{H}}{\partial p_j} \ \ \ \ \ \ \dot{p}_j= -\frac{\partial \pazocal{H}}{\partial q_j}}
 \end{equation} \refstepcounter{subsection} \normalsize
-Estas dos primeras ecuaciones son las \textit{Ecuaciones de Hamilton} del movimiento o \textit{Ecuaciones canónicas}. Por otro lado tenemos la tercera ecuación, que junto a (3.1.2)
+Estas dos primeras ecuaciones son las \textit{Ecuaciones de Hamilton} del movimiento o \textit{Ecuaciones canónicas}. Por otro lado tenemos la tercera ecuación, que junto a \eqref{3.1.2}
 \begin{equation} \label{4.2.6}
     \frac{\partial \pazocal{H}}{\partial t} = - \frac{\partial \pazocal{L}}{\partial t} = \frac{d \pazocal{H}}{dt}
 \end{equation} \refstepcounter{subsection}
@@ -66,14 +66,15 @@ Para aplicar estas ecuaciones en un sistema holonómico tenemos que hayar primer
 \begin{equation} \label{4.2.7}
     p_j = \frac{\partial \pazocal{L}}{\partial \dot{q}_j}=p_j(\{q_k,\dot{q}_k\};t) \rightarrow \dot{q}_j = \dot{q}_j(\{q_k,p_k\};t)
 \end{equation} \refstepcounter{subsection}
-Entonces usamos la ecuación (4.1.3) con mucho cuidado de reemplazar todas las $\dot{q}_j$ por (4.2.7), y ya tendremos $\pazocal{H}$ en una forma que nos permita resolverlo usando (4.2.5).
+Entonces usamos la ecuación \eqref{4.1.3} con mucho cuidado de reemplazar todas las $\dot{q}_j$ por \eqref{4.2.7}, y ya tendremos $\pazocal{H}$ en una forma que nos permita resolverlo usando \eqref{4.2.5}.
+\newpage
 \subsection{Variando la acción}
 Además, usando (4.1.3) podemos escribir $\pazocal{L}$ como
-\begin{equation} \label{4.2.7}
+\begin{equation} \label{4.2.8}
     \pazocal{L}(\{q_i,p_i\};t) = \sum_j^s p_j \dot{q}_j (\{q_i,p_i\};t) -\pazocal{H}(\{q_i,p_i\};t)
 \end{equation} \refstepcounter{subsection}
 Si hacemos la acción de ese lagrangiano tendremos, y al extremizarla se puede comprobar que se obtienen (4.2.5)
-\begin{equation} \label{4.2.7}
+\begin{equation} \label{4.2.9}
     S = \int_{t_A}^{t_B} \left(\sum_j^s p_j \dot{q}_j -\pazocal{H}\right) dt
 \end{equation} \refstepcounter{subsection}
 Para ello, aplicamos los metodos explicados en el Capítulo 1, teniendo en cuenta que $\pazocal{L}$ no depende de $\dot{p}_i$ 
@@ -85,20 +86,11 @@ Integrando el segundo término por partes como en (1.2.1), usando que $\delta \d
     \delta S = 0 = \int_{t_A}^{t_B} \sum_{i}\left[\left(\frac{\partial \pazocal{L}}{\partial q_i} - \frac{d}{dt}\left(\frac{\partial \pazocal{L}}{\partial \dot{q}_i}\right)\right) \delta q_i + \frac{\partial \pazocal{L}}{\partial p_i}\delta p_i\right] dt
 \]
 Haciendo las derivadas de $\pazocal{L}$ obtenemos
-\begin{equation} \label{4.2.7}
+\begin{equation} \label{4.2.10}
     \delta S = 0 = \int_{t_A}^{t_B} \sum_{i}\left[\left(-\frac{\partial \pazocal{H}}{\partial q_i} - \dot{p}_i\right) \delta q_i + \left(\dot{q}_i-\frac{\partial \pazocal{H}}{\partial p_i}\right)\delta p_i\right] dt
 \end{equation} \refstepcounter{subsection}
 Y ahora, establecemos que los términos entre paréntesis deben ser 0, puesto que las variaciones son arbitrarias e independientes, obteniendo (4.2.5).
 \vspace{-20pt}
-\subsubsection{Comparación Ecs. Lagrange-Hamilton}
-La formulación Lagrangiana es mejor para tratar con ligaduras, pero la hamiltoniana nos permite reducir el orden de la ecuación diferencial resultante cuando no hay dependencia explícita en una o varias de las $q_j$, puesto que en (3.1.5) $  \pazocal{L}$ sigue dependiendo de $\dot{q}_j$, solo conseguimos reducir en 1 el orden de un ecuación de E-L, mientras que en la formulación hamiltoniana, si una variable es cíclica, es decir $\partial_{q_j}\pazocal{H}=0$, entonces ya hemos resuelto $p_j=\alpha$ por (4.2.5.B) y también por definición $\pazocal{H}$ no depende de $q_j$, de esta forma nos hemos eliminado dos dependencias y reducir el orden en 2 unidades, podemos integrar $q_j$ usando (4.2.5.A) que como no depende de $q_j$ es una EDO separable que podremos resolver integrando al final una vez tengamos el resto de variables resueltas. 
-\subsubsection{Ejemplo}
-Un ejemplo sencillo es el péndulo simple donde 
-\[\pazocal{L}=\frac{1}{2}ml^2\dot{\theta}^2+mgl\cos{\theta} \ \ \ \ \ \ p_\theta = \frac{\partial \pazocal{L}}{\partial \dot{\theta}}=ml^2\dot{\theta} \ \ \ \ \ \ \dot{\theta}=\frac{p_\theta}{ml^2}=\dot{\theta}(p_\theta)\]
-Sustituyendo tenemos 
-\[\pazocal{H}=p_\theta \dot{\theta} -\pazocal{L}=\frac{p_\theta^2}{ml^2} - \frac{p_\theta^2}{2ml^2}-mgl\cos\theta = \frac{p_\theta^2}{2ml^2}-mgl\cos\theta = T+U\]
-
-Ahora aplicamos (4.2.5.A), tal que $\dot{\theta} = p_\theta/ml^2$, de donde sacamos que $\dot{p}_\theta=ml^2 \ddot{\theta}$ y de (4.2.5.B) sacamos $\dot{p}_\theta=-mgl\sin\theta$, igualando y depejando tenemos $\ddot{\theta} + g/l \sin\theta = 0$, la ecuación del movimiento.
 \refstepcounter{section}
 \section{Transformaciones canónicas} \refstepcounter{subsection}
 Nos va a interesar encontrar un cambio de variables llamado transformaciones canónicas (restringidas, porque no dependen de $t$) de la forma $Q_i=Q_i(\{q_i,p_i\})$ y $P_i=P_i(\{q_i,p_i\})$ invertible que preserve (4.2.5) (Ecs. H.), es decir, que
@@ -106,6 +98,7 @@ Nos va a interesar encontrar un cambio de variables llamado transformaciones can
     \pazocal{K} (\{Q_i,P_i\};t) = \pazocal{H} (\{q_j(\{Q_i,P_i\}),p_j(\{Q_i,P_i\})\};t) \implies \dot{Q}_j = \frac{\partial \pazocal{K}}{\partial P_j} \ \ \ \ \ \ \dot{P}_j= -\frac{\partial \pazocal{K}}{\partial Q_j}
 \end{equation} \refstepcounter{subsection}
 Puesto que si conseguimos encontrar una transformación de este tipo en el que todas las coordenadas sean cíclicas, la resolución de las ecuaciones del movimiento será trivial.
+\newpage
 \subsection{Matrices simplécticas (I)}
 Vamos a usar la siguente notación para ver que tipos de transformaciones son canónicas, donde los corchetes indican que se recorren todos los índices, es decir que son vectores de $2s$ componentes
 \begin{equation} \label{4.2.7}
@@ -134,7 +127,7 @@ Ahora introducimos (4.3.5) en (4.3.6) y después introducimos (4.3.7)
     \mathbb{J} \frac{\partial \pazocal{K}}{\partial \mathbf{Z}} = \mathbb{M}\mathbb{J} \frac{\partial \pazocal{H}}{\partial \mathbf{z}} \rightarrow \mathbb{J} \frac{\partial \pazocal{K}}{\partial \mathbf{Z}} = \mathbb{M}\mathbb{J} \mathbb{M}^T \frac{\partial \pazocal{K}}{\partial \mathbf{Z}} \implies \mathbb{M}\mathbb{J} \mathbb{M}^T = \mathbb{J} 
 \end{equation} \refstepcounter{subsection}
 Si la jacobiana $\mathbb{M}$ es una matriz simpléctica, es decir, cumple (4.3.8), entonces la transformación es canónica (para cualquier problema, no depende del \textit{Hamiltoniano}).
-\newpage
+%\newpage
 Si se hace el producto matricial de $\mathbb{J} \mathbb{M}^T = \mathbb{M}^{-1}\mathbb{J}$ equivalente a (4.3.8) se pueden obtener unas condiciones más explícitas para concluir si una trasformación es canónica
 \begin{equation} \label{4.2.7}
     \begin{split}
@@ -159,7 +152,7 @@ La constante $\lambda$ es un factor de escala, si por ejemplo $Q_j = \mu q_j$, $
     \sum_j^s p_j \dot{q}_j -\pazocal{H} = \sum_j^s P_j \dot{Q}_j -\pazocal{K} + \frac{dF(\{q_i,p_i\},\{Q_i,P_i\};t)}{dt}
 \end{equation} \refstepcounter{subsection}
 La función $F$, cuya variación de su acción se anula porque las variaciones de todas las coordenadas se anulan en los extremos, se denomina \textit{Función generadora}. Se llama así porque nos va a permitir generar transformaciones canónicas a partir de transformaciones canónicas parciales.
-\newpage
+%\newpage
 Ahora, la dependencia de esa función es redundante, puesto que tenemos dos relaciones $Q_i=Q_i(\{q_i,p_i\};t)$ y $P_i=P_i(\{q_i,p_i\};t)$, o equivalentes obtenidas despejando esas, entonces podemos estudiar casos concretos de dependencias de $F$ en función de qué relaciones tengamos.
 
 Vamos a suponer primero que $F$ tiene la dependencia $F = F_1(\{q_i,Q_i\};t)$, entonces haciendo la regla de la cadena en (4.3.12) tenemos
